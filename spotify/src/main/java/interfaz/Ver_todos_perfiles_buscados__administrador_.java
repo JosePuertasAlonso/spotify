@@ -1,0 +1,6 @@
+package interfaz;
+
+public class Ver_todos_perfiles_buscados__administrador_ extends Barra_buscador {
+	public Buscador_administrador _buscador_administrador;
+	public Lista_de_perfiles__ver_todo_administrador_ _lista_de_perfiles__ver_todo_administrador_;
+}

@@ -1,0 +1,7 @@
+package interfaz;
+
+public class Lista_de_reproduccion__lista_ extends Lista_de_reproduccion {
+	public Listas_de_reproduccion_buscadas _listas_de_reproduccion_buscadas;
+	public Listas_del_usuario _listas_del_usuario;
+	public Ver_lista_de_reproduccion_ajena _ver_lista_de_reproduccion_ajena;
+}
