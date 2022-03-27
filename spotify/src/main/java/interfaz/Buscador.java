@@ -1,6 +1,8 @@
 package interfaz;
 
-public class Buscador extends Barra_buscador {
+import vistas.VistaBuscador;
+
+public class Buscador extends VistaBuscador {
 //	private Label _tituloL;
 //	private Label _resultados_BusquedaL;
 //	private Label _cancionesL;

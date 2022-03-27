@@ -1,6 +1,8 @@
 package interfaz;
 
-public class Cancion_Administrador extends Cancion {
+import vistas.VistaCancion_administrador;
+
+public class Cancion_Administrador extends VistaCancion_administrador {
 //	private CheckBox _establecer_ultimo_exitoCB;
 //	private Button _eliminarB;
 //	private Button _modificarB;

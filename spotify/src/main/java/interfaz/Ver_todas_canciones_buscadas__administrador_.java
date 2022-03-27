@@ -1,6 +1,8 @@
 package interfaz;
 
-public class Ver_todas_canciones_buscadas__administrador_ extends Barra_buscador {
+import vistas.VistaVer_todas_canciones_buscadas_administrador;
+
+public class Ver_todas_canciones_buscadas__administrador_ extends VistaVer_todas_canciones_buscadas_administrador {
 	public Buscador_administrador _buscador_administrador;
 	public Lista_de_canciones__ver_todo_administrador_ _lista_de_canciones__ver_todo_administrador_;
 }

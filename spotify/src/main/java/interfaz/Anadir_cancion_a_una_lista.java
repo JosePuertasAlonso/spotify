@@ -1,6 +1,8 @@
 package interfaz;
 
-public class Anadir_cancion_a_una_lista {
+import vistas.VistaAnadir_cancion_a_una_lista;
+
+public class Anadir_cancion_a_una_lista extends VistaAnadir_cancion_a_una_lista{
 //	private Label _tituloL;
 //	private Button _crear_ListaB;
 	public Opciones_cancion _opciones_cancion;

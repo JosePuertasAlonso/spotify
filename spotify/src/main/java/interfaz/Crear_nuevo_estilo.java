@@ -1,6 +1,8 @@
 package interfaz;
 
-public class Crear_nuevo_estilo {
+import vistas.VistaCrear_nuevo_estilo;
+
+public class Crear_nuevo_estilo extends VistaCrear_nuevo_estilo{
 //	private Label _tituloL;
 //	private Label _nombreL;
 //	private TextField _nombreTF;

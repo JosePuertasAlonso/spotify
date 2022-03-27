@@ -1,6 +1,8 @@
 package interfaz;
 
-public class Confirmar_registro {
+import vistas.VistaConfirmar_registro;
+
+public class Confirmar_registro extends VistaConfirmar_registro{
 //	private Label _tituloL;
 //	private Button _iniciar_SesionB;
 //	private Label _registradoL;

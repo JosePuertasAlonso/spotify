@@ -1,6 +1,8 @@
 package interfaz;
 
-public class Dar_de_alta_artista {
+import vistas.VistaDar_de_alta_artista;
+
+public class Dar_de_alta_artista extends VistaDar_de_alta_artista{
 //	private Button _seleccionar_foto_perfilB;
 //	private Label _tituloL;
 //	private Label _usuarioL;

@@ -1,6 +1,8 @@
 package interfaz;
 
-public class Eliminar_perfil {
+import vistas.VistaEliminar_perfil;
+
+public class Eliminar_perfil extends VistaEliminar_perfil{
 //	private Button _confirmar_eliminar_perfilB;
 //	private Label _tituloL;
 //	private Label _atencionL;

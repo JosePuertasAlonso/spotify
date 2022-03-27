@@ -1,6 +1,8 @@
 package interfaz;
 
-public class Ver_perfil_usuario {
+import vistas.VistaVer_perfil_usuario;
+
+public class Ver_perfil_usuario extends VistaVer_perfil_usuario{
 //	private Button _seguir_usuarioB;
 //	private Label _nombreL;
 //	private Label _seguidoresL;

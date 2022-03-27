@@ -1,6 +1,8 @@
 package interfaz;
 
-public class Reproductor_resumido {
+import vistas.VistaReproductor_resumido;
+
+public class Reproductor_resumido extends VistaReproductor_resumido{
 //	private Button _pausar_cancionB;
 //	private Button _reanudar_cancionB;
 //	private Button _reproducir_siguienteB;

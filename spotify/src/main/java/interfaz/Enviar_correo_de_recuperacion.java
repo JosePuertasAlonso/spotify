@@ -1,6 +1,8 @@
 package interfaz;
 
-public class Enviar_correo_de_recuperacion {
+import vistas.VistaEnviar_correo_de_recuperacion;
+
+public class Enviar_correo_de_recuperacion extends VistaEnviar_correo_de_recuperacion{
 //	private Label _tituloL;
 //	private Label _correo_EnviadoL;
 //	private Button _aceptarB;

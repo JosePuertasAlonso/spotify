@@ -2,8 +2,9 @@ package interfaz;
 
 import java.util.Vector;
 import interfaz.Cancion__bloque_administrador_;
+import vistas.VistaLista_de_canciones_buscadas_administrador;
 
-public class Lista_de_canciones_buscadas__administrador_ {
+public class Lista_de_canciones_buscadas__administrador_ extends VistaLista_de_canciones_buscadas_administrador{
 	public Buscador_administrador _buscador_administrador;
 	public Vector<Cancion__bloque_administrador_> _list_Cancion__bloque_administrador_ = new Vector<Cancion__bloque_administrador_>();
 }

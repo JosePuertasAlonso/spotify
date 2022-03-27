@@ -1,6 +1,8 @@
 package interfaz;
 
-public class Eliminar_lista {
+import vistas.VistaEliminar_lista;
+
+public class Eliminar_lista extends VistaEliminar_lista{
 //	private Label _tituloL;
 //	private Label _atencionL;
 //	private Button _cancelarB;

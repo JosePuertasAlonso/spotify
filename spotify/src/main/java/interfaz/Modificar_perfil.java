@@ -1,6 +1,8 @@
 package interfaz;
 
-public class Modificar_perfil {
+import vistas.VistaModificar_perfil;
+
+public class Modificar_perfil extends VistaModificar_perfil{
 //	private Label _tituloL;
 //	private Label _nombre_UsuarioL;
 //	private Label _email_ActualL;

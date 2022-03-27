@@ -1,6 +1,8 @@
 package interfaz;
 
-public class Estilo {
+import vistas.VistaEstilo;
+
+public class Estilo extends VistaEstilo{
 //	private Button _seleccionar_estiloB;
 //	private Label _estiloL;
 	public Estilos _estilos;

@@ -1,6 +1,8 @@
 package interfaz;
 
-public class Cancion__lista_ extends Cancion {
+import vistas.VistaCancion_lista;
+
+public class Cancion__lista_ extends VistaCancion_lista {
 	public Canciones_del_album _canciones_del_album;
 	public Canciones_de_lista _canciones_de_lista;
 	public Lista_de_canciones_buscadas _lista_de_canciones_buscadas;

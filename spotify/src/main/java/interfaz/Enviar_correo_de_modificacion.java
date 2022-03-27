@@ -1,6 +1,8 @@
 package interfaz;
 
-public class Enviar_correo_de_modificacion {
+import vistas.VistaEnviar_correo_de_modificacion;
+
+public class Enviar_correo_de_modificacion extends VistaEnviar_correo_de_modificacion{
 //	private Label _tituloL;
 //	private Label _correo_EnviadoL;
 //	private Button _iniciar_SesionB;

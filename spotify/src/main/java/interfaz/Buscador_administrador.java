@@ -1,6 +1,8 @@
 package interfaz;
 
-public class Buscador_administrador extends Barra_buscador {
+import vistas.VistaBuscador_administrador;
+
+public class Buscador_administrador extends VistaBuscador_administrador {
 //	private Label _buscar_ModificarL;
 //	private Label _resultadosL;
 //	private Label _cancionesL;

@@ -1,6 +1,8 @@
 package interfaz;
 
-public class Iniciar_sesion {
+import vistas.VistaIniciar_sesion;
+
+public class Iniciar_sesion extends VistaIniciar_sesion{
 //	private Button _iniciar_sesion_con_GoogleB;
 //	private Button _iniciar_sesion_con_AppleB;
 //	private Button _iniciar_sesion_con_FacebookB;

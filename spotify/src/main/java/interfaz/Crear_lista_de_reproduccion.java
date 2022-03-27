@@ -1,6 +1,8 @@
 package interfaz;
 
-public class Crear_lista_de_reproduccion {
+import vistas.VistaCrear_lista_de_reproduccion;
+
+public class Crear_lista_de_reproduccion extends VistaCrear_lista_de_reproduccion{
 //	private Button _crear_listaB;
 //	private Label _tituloL;
 //	private Label _nombre_ListaL;

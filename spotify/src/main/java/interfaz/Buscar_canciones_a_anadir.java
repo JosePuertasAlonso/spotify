@@ -1,6 +1,8 @@
 package interfaz;
 
-public class Buscar_canciones_a_anadir extends Barra_buscador {
+import vistas.VistaBuscar_canciones_a_anadir;
+
+public class Buscar_canciones_a_anadir extends VistaBuscar_canciones_a_anadir {
 //	private Button _volverB;
 //	private Button _buscarB;
 //	private Label _todas_CancionesL;

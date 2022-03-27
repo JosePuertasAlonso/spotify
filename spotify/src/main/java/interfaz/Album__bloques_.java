@@ -1,6 +1,8 @@
 package interfaz;
 
-public class Album__bloques_ {
+import vistas.VistaAlbum_bloques;
+
+public class Album__bloques_ extends VistaAlbum_bloques{
 //	private Label _nombreL;
 //	private Image _imagenI;
 //	private Button _reproducirB;

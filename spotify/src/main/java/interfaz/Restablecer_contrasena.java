@@ -1,6 +1,8 @@
 package interfaz;
 
-public class Restablecer_contrasena {
+import vistas.VistaRestablecer_contrasena;
+
+public class Restablecer_contrasena extends VistaRestablecer_contrasena{
 //	private Label _tituloL;
 //	private Label _nueva_ContrasenaL;
 //	private TextField _nueva_ContrasenaTF;

@@ -1,6 +1,8 @@
 package interfaz;
 
-public class Ver_creditos_cancion {
+import vistas.VistaVer_creditos_cancion;
+
+public class Ver_creditos_cancion extends VistaVer_creditos_cancion{
 //	private Label _tituloL;
 //	private Label _albumL;
 //	private Label _nombre_CancionL;

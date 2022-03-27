@@ -1,6 +1,8 @@
 package interfaz;
 
-public class Crear_anuncio {
+import vistas.VistaCrear_anuncio;
+
+public class Crear_anuncio extends VistaCrear_anuncio{
 //	private Button _publicar_anuncioB;
 //	private Label _tituloL;
 //	private Label _ponle_TituloL;

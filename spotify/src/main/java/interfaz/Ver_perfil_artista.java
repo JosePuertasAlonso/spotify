@@ -1,6 +1,8 @@
 package interfaz;
 
-public class Ver_perfil_artista {
+import vistas.VistaVer_perfil_artista;
+
+public class Ver_perfil_artista extends VistaVer_perfil_artista{
 //	private Button _seguir_artista;
 //	private Button _ver_listas_con_vista_en_listaB;
 //	private Button _ver_lista_con_vista_en_bloquesB;

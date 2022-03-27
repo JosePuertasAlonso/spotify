@@ -1,6 +1,8 @@
 package interfaz;
 
-public class Enviar_correo_anadir_artista {
+import vistas.VistaEnviar_correo_anadir_artista;
+
+public class Enviar_correo_anadir_artista extends VistaEnviar_correo_anadir_artista{
 //	private Label _tituloL;
 //	private Label _email_EnviadoL;
 //	private Button _aceptarB;

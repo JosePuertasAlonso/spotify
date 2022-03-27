@@ -1,6 +1,8 @@
 package interfaz;
 
-public class Registrarse {
+import vistas.VistaRegistrarse;
+
+public class Registrarse extends VistaRegistrarse{
 //	private Button _registrarse_con_GoogleB;
 //	private Button _registrarse_con_AppleB;
 //	private Button _registrarse_con_FacebookB;

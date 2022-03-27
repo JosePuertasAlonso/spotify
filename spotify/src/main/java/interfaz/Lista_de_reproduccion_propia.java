@@ -1,6 +1,8 @@
 package interfaz;
 
-public class Lista_de_reproduccion_propia {
+import vistas.VistaLista_de_reproduccion_propia;
+
+public class Lista_de_reproduccion_propia extends VistaLista_de_reproduccion_propia{
 //	private Button _eliminar_listaB;
 //	private Button _modificarB;
 //	private Button _verB;

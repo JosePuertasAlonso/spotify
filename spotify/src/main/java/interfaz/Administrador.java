@@ -1,8 +1,10 @@
 package interfaz;
 
+import vistas.VistaAdministrador;
+
 //import basededatos.iAdministrador;
 
-public class Administrador {
+public class Administrador extends VistaAdministrador{
 //	public iAdministrador _iAdministrador;
 //	public Buscador_administrador _buscador_administrador;
 //	public Anadir_nuevo_album _anadir_nuevo_album;

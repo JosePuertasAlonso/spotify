@@ -1,6 +1,8 @@
 package interfaz;
 
-public class Modificar_cancion {
+import vistas.VistaModificar_cancion;
+
+public class Modificar_cancion extends VistaModificar_cancion{
 //	private Button _confirmar_cancionB;
 //	private Label _tituloL;
 //	private Label _titulo_CancionL;

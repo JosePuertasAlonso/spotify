@@ -1,6 +1,8 @@
 package interfaz;
 
-public class Ver_anuncios_de_artistas {
+import vistas.VistaVer_anuncios_de_artistas;
+
+public class Ver_anuncios_de_artistas extends VistaVer_anuncios_de_artistas{
 //	private Label _anuncios_ArtistasL;
 //	private Label _anuncios_Sin_LeerL;
 	public Ver_perfil_cibernauta_registrado _ver_perfil_cibernauta_registrado;

@@ -1,6 +1,8 @@
 package interfaz;
 
-public class Artista__Administrador_ extends Artista_ {
+import vistas.VistaArtista_administrador;
+
+public class Artista__Administrador_ extends VistaArtista_administrador {
 //	private Button _eliminarB;
 //	private Button _modificarB;
 	public Eliminar_artista _eliminar_artista;

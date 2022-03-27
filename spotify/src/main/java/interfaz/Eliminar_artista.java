@@ -1,6 +1,8 @@
 package interfaz;
 
-public class Eliminar_artista {
+import vistas.VistaEliminar_artista;
+
+public class Eliminar_artista extends VistaEliminar_artista{
 //	private event _confirmar_eliminar_artistaB;
 //	private Label _tituloL;
 //	private Label _atencionL;

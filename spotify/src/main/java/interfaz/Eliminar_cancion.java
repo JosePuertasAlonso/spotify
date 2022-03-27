@@ -1,6 +1,8 @@
 package interfaz;
 
-public class Eliminar_cancion {
+import vistas.VistaEliminar_cancion;
+
+public class Eliminar_cancion extends VistaEliminar_cancion{
 //	private Button _confirmar_eliminar_cancionB;
 //	private Label _tituloL;
 //	private Label _atencionL;

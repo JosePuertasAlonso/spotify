@@ -1,6 +1,8 @@
 package interfaz;
 
-public class Recuperar_contrasena {
+import vistas.VistaRecuperar_contrasena;
+
+public class Recuperar_contrasena extends VistaRecuperar_contrasena{
 //	private Label _tituloL;
 //	private Label _introducir_EmailL;
 //	private Button _enviarB;

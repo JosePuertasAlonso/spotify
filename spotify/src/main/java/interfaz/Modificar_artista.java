@@ -1,6 +1,8 @@
 package interfaz;
 
-public class Modificar_artista {
+import vistas.VistaModificar_artista;
+
+public class Modificar_artista extends VistaModificar_artista{
 //	private Button _seleccionar_foto_perfilB;
 //	private Label _tituloL;
 //	private Image _imagenI;

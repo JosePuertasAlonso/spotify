@@ -1,6 +1,8 @@
 package interfaz;
 
-public class Compositor {
+import vistas.VistaCompositor;
+
+public class Compositor extends VistaCompositor{
 //	private Label _nombreL;
 	public Compositores _compositores;
 }

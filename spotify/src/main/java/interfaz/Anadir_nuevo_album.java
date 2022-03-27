@@ -1,6 +1,8 @@
 package interfaz;
 
-public class Anadir_nuevo_album {
+import vistas.VistaAnadir_nuevo_album;
+
+public class Anadir_nuevo_album extends VistaAnadir_nuevo_album{
 //	private Label _tituloL;
 //	private Label _titulo_AlbumL;
 //	private Label _titulo_Album_EtiquetaL;

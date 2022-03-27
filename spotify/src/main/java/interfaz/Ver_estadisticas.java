@@ -1,6 +1,8 @@
 package interfaz;
 
-public class Ver_estadisticas {
+import vistas.VistaVer_estadisticas;
+
+public class Ver_estadisticas extends VistaVer_estadisticas{
 //	private Label _tituloL;
 //	private Label _nombreL;
 //	private Label _seguidoresL;

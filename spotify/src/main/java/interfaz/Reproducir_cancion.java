@@ -1,6 +1,8 @@
 package interfaz;
 
-public class Reproducir_cancion {
+import vistas.VistaReproducir_cancion;
+
+public class Reproducir_cancion extends VistaReproducir_cancion{
 //	private Button _pausar_cancionB;
 //	private Button _reanudar_cancionB;
 //	private Button _reproducir_siguienteB;
