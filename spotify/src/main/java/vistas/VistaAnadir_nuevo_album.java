@@ -27,8 +27,6 @@ public class VistaAnadir_nuevo_album extends LitTemplate {
 	private Element vL_fondo;
 	@Id("label_anadeNuevoAlbum")
 	private Label label_anadeNuevoAlbum;
-	@Id("vistaCabecera")
-	private VistaCabecera vistaCabecera;
 	@Id("hL_cancionesDatosImagen")
 	private HorizontalLayout hL_cancionesDatosImagen;
 	@Id("vL_cancionesAlbum")
@@ -37,8 +35,6 @@ public class VistaAnadir_nuevo_album extends LitTemplate {
 	private Label label_cancionesAlbum;
 	@Id("hL_cancionesDelAlbumAdministrador")
 	private HorizontalLayout hL_cancionesDelAlbumAdministrador;
-	@Id("vistaCanciones_del_album_administrador")
-	private VistaCanciones_del_album_administrador vistaCanciones_del_album_administrador;
 	@Id("button_anadirCancion")
 	private NativeButton button_anadirCancion;
 	@Id("vL_datosAlbum")
@@ -92,18 +88,6 @@ public class VistaAnadir_nuevo_album extends LitTemplate {
 
 
 
-	public VistaCabecera getVistaCabecera() {
-		return vistaCabecera;
-	}
-
-
-
-	public void setVistaCabecera(VistaCabecera vistaCabecera) {
-		this.vistaCabecera = vistaCabecera;
-	}
-
-
-
 	public HorizontalLayout gethL_cancionesDatosImagen() {
 		return hL_cancionesDatosImagen;
 	}
@@ -150,18 +134,6 @@ public class VistaAnadir_nuevo_album extends LitTemplate {
 		this.hL_cancionesDelAlbumAdministrador = hL_cancionesDelAlbumAdministrador;
 	}
 
-
-
-	public VistaCanciones_del_album_administrador getVistaCanciones_del_album_administrador() {
-		return vistaCanciones_del_album_administrador;
-	}
-
-
-
-	public void setVistaCanciones_del_album_administrador(
-			VistaCanciones_del_album_administrador vistaCanciones_del_album_administrador) {
-		this.vistaCanciones_del_album_administrador = vistaCanciones_del_album_administrador;
-	}
 
 
 

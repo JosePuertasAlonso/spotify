@@ -24,8 +24,6 @@ public class VistaVer_estadisticas extends LitTemplate {
 
     @Id("vL_fondo")
 	private Element vL_fondo;
-	@Id("vistaCabecera")
-	private VistaCabecera vistaCabecera;
 	@Id("vL_cuerpo")
 	private Element vL_cuerpo;
 	@Id("label_misEstadisticas")
@@ -36,8 +34,6 @@ public class VistaVer_estadisticas extends LitTemplate {
 	private Element vL_cancionMasEscuchada;
 	@Id("label_cancionMasEscuchada")
 	private Label label_cancionMasEscuchada;
-	@Id("vistaCancion")
-	private VistaCancion vistaCancion;
 	@Id("vL_datosUsuario")
 	private Element vL_datosUsuario;
 	@Id("label_nombreUsuario")
@@ -54,10 +50,6 @@ public class VistaVer_estadisticas extends LitTemplate {
 	private Element vL_ultimaReproduccion;
 	@Id("label_ultimaReproduccion")
 	private Label label_ultimaReproduccion;
-	@Id("vistaCancion1")
-	private VistaCancion vistaCancion1;
-	@Id("vistaReproductor_resumido")
-	private VistaReproductor_resumido vistaReproductor_resumido;
 	
 	
 
@@ -70,19 +62,6 @@ public class VistaVer_estadisticas extends LitTemplate {
 	public void setvL_fondo(Element vL_fondo) {
 		this.vL_fondo = vL_fondo;
 	}
-
-
-
-	public VistaCabecera getVistaCabecera() {
-		return vistaCabecera;
-	}
-
-
-
-	public void setVistaCabecera(VistaCabecera vistaCabecera) {
-		this.vistaCabecera = vistaCabecera;
-	}
-
 
 
 	public Element getvL_cuerpo() {
@@ -143,17 +122,6 @@ public class VistaVer_estadisticas extends LitTemplate {
 		this.label_cancionMasEscuchada = label_cancionMasEscuchada;
 	}
 
-
-
-	public VistaCancion getVistaCancion() {
-		return vistaCancion;
-	}
-
-
-
-	public void setVistaCancion(VistaCancion vistaCancion) {
-		this.vistaCancion = vistaCancion;
-	}
 
 
 
@@ -252,28 +220,6 @@ public class VistaVer_estadisticas extends LitTemplate {
 	}
 
 
-
-	public VistaCancion getVistaCancion1() {
-		return vistaCancion1;
-	}
-
-
-
-	public void setVistaCancion1(VistaCancion vistaCancion1) {
-		this.vistaCancion1 = vistaCancion1;
-	}
-
-
-
-	public VistaReproductor_resumido getVistaReproductor_resumido() {
-		return vistaReproductor_resumido;
-	}
-
-
-
-	public void setVistaReproductor_resumido(VistaReproductor_resumido vistaReproductor_resumido) {
-		this.vistaReproductor_resumido = vistaReproductor_resumido;
-	}
 
 
 

@@ -28,8 +28,6 @@ public class VistaLista extends LitTemplate {
 
     @Id("vL_fondo")
 	private Element vL_fondo;
-	@Id("vistaCabecera")
-	private VistaCabecera vistaCabecera;
 	@Id("vL_cuerpo")
 	private Element vL_cuerpo;
 	@Id("hL_imagenTituloBotones")
@@ -66,18 +64,10 @@ public class VistaLista extends LitTemplate {
 	private NativeButton button_anadirCancion;
 	@Id("vL_cancionesDeListaAlbumListaeliminar")
 	private Element vL_cancionesDeListaAlbumListaeliminar;
-	@Id("vistaCanciones_de_lista")
-	private VistaCanciones_de_lista vistaCanciones_de_lista;
-	@Id("vistaCanciones_de_lista_a_eliminar")
-	private VistaCanciones_de_lista_a_eliminar vistaCanciones_de_lista_a_eliminar;
-	@Id("vistaReproductor_resumido")
-	private VistaReproductor_resumido vistaReproductor_resumido;
 	@Id("hL_tituloAceptar")
 	private HorizontalLayout hL_tituloAceptar;
 	@Id("input_titulo")
 	private Input input_titulo;
-	@Id("vistaCanciones_del_album")
-	private VistaCanciones_del_album vistaCanciones_del_album;
 	
 	
 
@@ -90,20 +80,8 @@ public class VistaLista extends LitTemplate {
 	public void setvL_fondo(Element vL_fondo) {
 		this.vL_fondo = vL_fondo;
 	}
-
-
-
-	public VistaCabecera getVistaCabecera() {
-		return vistaCabecera;
-	}
-
-
-
-	public void setVistaCabecera(VistaCabecera vistaCabecera) {
-		this.vistaCabecera = vistaCabecera;
-	}
-
-
+	
+	
 
 	public Element getvL_cuerpo() {
 		return vL_cuerpo;
@@ -318,44 +296,7 @@ public class VistaLista extends LitTemplate {
 	public void setvL_cancionesDeListaAlbumListaeliminar(Element vL_cancionesDeListaAlbumListaeliminar) {
 		this.vL_cancionesDeListaAlbumListaeliminar = vL_cancionesDeListaAlbumListaeliminar;
 	}
-
-
-
-	public VistaCanciones_de_lista getVistaCanciones_de_lista() {
-		return vistaCanciones_de_lista;
-	}
-
-
-
-	public void setVistaCanciones_de_lista(VistaCanciones_de_lista vistaCanciones_de_lista) {
-		this.vistaCanciones_de_lista = vistaCanciones_de_lista;
-	}
-
-
-
-	public VistaCanciones_de_lista_a_eliminar getVistaCanciones_de_lista_a_eliminar() {
-		return vistaCanciones_de_lista_a_eliminar;
-	}
-
-
-
-	public void setVistaCanciones_de_lista_a_eliminar(
-			VistaCanciones_de_lista_a_eliminar vistaCanciones_de_lista_a_eliminar) {
-		this.vistaCanciones_de_lista_a_eliminar = vistaCanciones_de_lista_a_eliminar;
-	}
-
-
-
-	public VistaReproductor_resumido getVistaReproductor_resumido() {
-		return vistaReproductor_resumido;
-	}
-
-
-
-	public void setVistaReproductor_resumido(VistaReproductor_resumido vistaReproductor_resumido) {
-		this.vistaReproductor_resumido = vistaReproductor_resumido;
-	}
-
+	
 
 
 	public HorizontalLayout gethL_tituloAceptar() {
@@ -380,17 +321,6 @@ public class VistaLista extends LitTemplate {
 		this.input_titulo = input_titulo;
 	}
 
-
-
-	public VistaCanciones_del_album getVistaCanciones_del_album() {
-		return vistaCanciones_del_album;
-	}
-
-
-
-	public void setVistaCanciones_del_album(VistaCanciones_del_album vistaCanciones_del_album) {
-		this.vistaCanciones_del_album = vistaCanciones_del_album;
-	}
 
 
 

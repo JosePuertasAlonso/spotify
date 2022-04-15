@@ -9,6 +9,7 @@ import vistas.VistaCabecera;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.html.Input;
 import com.vaadin.flow.component.html.NativeButton;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 
 /**
  * A Designer generated component for the vista-restablecer_contrasena template.
@@ -28,6 +29,18 @@ public class VistaRestablecer_contrasena extends LitTemplate {
 	private Label label_restablecerContrasena;
 	@Id("label_instrucciones")
 	private Label label_instrucciones;
+	public HorizontalLayout gethL_cabecera() {
+		return hL_cabecera;
+	}
+
+
+
+	public void sethL_cabecera(HorizontalLayout hL_cabecera) {
+		this.hL_cabecera = hL_cabecera;
+	}
+
+
+
 	@Id("label_errorContrasenaRequisitos")
 	private Label label_errorContrasenaRequisitos;
 	@Id("label_errorContrasenaCoincidir")
@@ -42,6 +55,8 @@ public class VistaRestablecer_contrasena extends LitTemplate {
 	private Input input_confirmaContrasena;
 	@Id("button_restablecerContrasena")
 	private NativeButton button_restablecerContrasena;
+	@Id("hL_cabecera")
+	private HorizontalLayout hL_cabecera;
 	
 	
 

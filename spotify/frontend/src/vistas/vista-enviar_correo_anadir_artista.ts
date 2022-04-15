@@ -1,6 +1,5 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
-import './vista-cabecera';
 
 @customElement('vista-enviar_correo_anadir_artista')
 export class VistaEnviar_correo_anadir_artista extends LitElement {
@@ -47,11 +46,10 @@ export class VistaEnviar_correo_anadir_artista extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%; background-color:#121212;" class="fuentes inicio-boton" theme="spacing" id="vL_fondo">
- <vista-cabecera style="width: 100%; max-height: 10%;" id="vistaCabecera"></vista-cabecera>
  <label style="align-self: center; font-size: 2.5rem; text-align: center;" id="label_artistaAnadido">¡Artista añadido con éxito!</label>
  <label style="flex-shrink: 0; align-self: center; margin-top: var(--lumo-space-xl);" id="label_envioEmail">Hemos enviado al artista un email con un enlace para confirmar tu cuenta.</label>
- <label style="flex-shrink: 0; align-self: center; font-weight: 300; font-size:" id="label_revisarEmail">Cuando revise su email y haga click en el enlace podrá empezar a usar Spotify.</label>
- <button id="button_aceptar" class="registro">ACEPTAR</button>
+ <label style="flex-shrink: 0; align-self: center; font-weight: 300;" id="label_revisarEmail">Cuando revise su email y haga click en el enlace podrá empezar a usar Spotify.</label>
+ <button id="button_aceptar" class="registro" style="color:#000000; background-color:#FFFFFF; max-height: 7%; max-width: 14%; height: 7%; min-height: 7%;">ACEPTAR</button>
 </vaadin-vertical-layout>
 `;
   }

@@ -22,16 +22,38 @@ public class VistaCibernauta_no_registrado extends LitTemplate {
 
     @Id("vL_fondo")
 	private Element vL_fondo;
-	@Id("vistaCabecera")
-	private VistaCabecera vistaCabecera;
 	@Id("hL_ultimosExitos")
 	private HorizontalLayout hL_ultimosExitos;
-	@Id("vistaUltimos_exitos")
-	private VistaUltimos_exitos vistaUltimos_exitos;
-	@Id("vistaReproductor_resumido")
-	private VistaReproductor_resumido vistaReproductor_resumido;
+	@Id("hL_cabecera")
+	private HorizontalLayout hL_cabecera;
+	@Id("hL_minireproductor")
+	private HorizontalLayout hL_minireproductor;
 	
 	
+
+	public HorizontalLayout gethL_cabecera() {
+		return hL_cabecera;
+	}
+
+
+
+	public void sethL_cabecera(HorizontalLayout hL_cabecera) {
+		this.hL_cabecera = hL_cabecera;
+	}
+
+
+
+	public HorizontalLayout gethL_minireproductor() {
+		return hL_minireproductor;
+	}
+
+
+
+	public void sethL_minireproductor(HorizontalLayout hL_minireproductor) {
+		this.hL_minireproductor = hL_minireproductor;
+	}
+
+
 
 	public Element getvL_fondo() {
 		return vL_fondo;
@@ -43,19 +65,7 @@ public class VistaCibernauta_no_registrado extends LitTemplate {
 		this.vL_fondo = vL_fondo;
 	}
 
-
-
-	public VistaCabecera getVistaCabecera() {
-		return vistaCabecera;
-	}
-
-
-
-	public void setVistaCabecera(VistaCabecera vistaCabecera) {
-		this.vistaCabecera = vistaCabecera;
-	}
-
-
+	
 
 	public HorizontalLayout gethL_ultimosExitos() {
 		return hL_ultimosExitos;
@@ -65,30 +75,6 @@ public class VistaCibernauta_no_registrado extends LitTemplate {
 
 	public void sethL_ultimosExitos(HorizontalLayout hL_ultimosExitos) {
 		this.hL_ultimosExitos = hL_ultimosExitos;
-	}
-
-
-
-	public VistaUltimos_exitos getVistaUltimos_exitos() {
-		return vistaUltimos_exitos;
-	}
-
-
-
-	public void setVistaUltimos_exitos(VistaUltimos_exitos vistaUltimos_exitos) {
-		this.vistaUltimos_exitos = vistaUltimos_exitos;
-	}
-
-
-
-	public VistaReproductor_resumido getVistaReproductor_resumido() {
-		return vistaReproductor_resumido;
-	}
-
-
-
-	public void setVistaReproductor_resumido(VistaReproductor_resumido vistaReproductor_resumido) {
-		this.vistaReproductor_resumido = vistaReproductor_resumido;
 	}
 
 

@@ -10,6 +10,7 @@ import vistas.VistaBarra_buscador;
 import com.vaadin.flow.component.html.Label;
 import vistas.VistaLista_canciones;
 import vistas.VistaReproductor_resumido;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 
 /**
  * A Designer generated component for the vista-ver_todas_las_canciones_buscadas template.
@@ -23,18 +24,12 @@ public class VistaVer_todas_las_canciones_buscadas extends LitTemplate {
 
     @Id("vL_fondo")
 	private Element vL_fondo;
-	@Id("vistaCabecera")
-	private VistaCabecera vistaCabecera;
 	@Id("vL_cuerpo")
 	private Element vL_cuerpo;
-	@Id("vistaBarra_buscador")
-	private VistaBarra_buscador vistaBarra_buscador;
 	@Id("label_todasLasCancionesPara")
 	private Label label_todasLasCancionesPara;
-	@Id("vistaLista_canciones")
-	private VistaLista_canciones vistaLista_canciones;
-	@Id("vistaReproductor_resumido")
-	private VistaReproductor_resumido vistaReproductor_resumido;
+	@Id("hL_barraBuscador")
+	private HorizontalLayout hL_barraBuscador;
 	
 	
 
@@ -46,18 +41,6 @@ public class VistaVer_todas_las_canciones_buscadas extends LitTemplate {
 
 	public void setvL_fondo(Element vL_fondo) {
 		this.vL_fondo = vL_fondo;
-	}
-
-
-
-	public VistaCabecera getVistaCabecera() {
-		return vistaCabecera;
-	}
-
-
-
-	public void setVistaCabecera(VistaCabecera vistaCabecera) {
-		this.vistaCabecera = vistaCabecera;
 	}
 
 
@@ -74,17 +57,6 @@ public class VistaVer_todas_las_canciones_buscadas extends LitTemplate {
 
 
 
-	public VistaBarra_buscador getVistaBarra_buscador() {
-		return vistaBarra_buscador;
-	}
-
-
-
-	public void setVistaBarra_buscador(VistaBarra_buscador vistaBarra_buscador) {
-		this.vistaBarra_buscador = vistaBarra_buscador;
-	}
-
-
 
 	public Label getLabel_todasLasCancionesPara() {
 		return label_todasLasCancionesPara;
@@ -98,26 +70,14 @@ public class VistaVer_todas_las_canciones_buscadas extends LitTemplate {
 
 
 
-	public VistaLista_canciones getVistaLista_canciones() {
-		return vistaLista_canciones;
+	public HorizontalLayout gethL_barraBuscador() {
+		return hL_barraBuscador;
 	}
 
 
 
-	public void setVistaLista_canciones(VistaLista_canciones vistaLista_canciones) {
-		this.vistaLista_canciones = vistaLista_canciones;
-	}
-
-
-
-	public VistaReproductor_resumido getVistaReproductor_resumido() {
-		return vistaReproductor_resumido;
-	}
-
-
-
-	public void setVistaReproductor_resumido(VistaReproductor_resumido vistaReproductor_resumido) {
-		this.vistaReproductor_resumido = vistaReproductor_resumido;
+	public void sethL_barraBuscador(HorizontalLayout hL_barraBuscador) {
+		this.hL_barraBuscador = hL_barraBuscador;
 	}
 
 

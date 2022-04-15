@@ -1,7 +1,5 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
-import './vista-cabecera';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 
 @customElement('vista-confirmar_registro')
 export class VistaConfirmar_registro extends LitElement {
@@ -21,7 +19,7 @@ export class VistaConfirmar_registro extends LitElement {
 
     .inicio-boton button {
     	width:100%; 
-    	max-width: 14%; 
+    	max-width: 100%; 
     	max-height: 6.5%; 
     	border:none; 
     	cursor:pointer; 
@@ -51,12 +49,13 @@ export class VistaConfirmar_registro extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout class="fuentes inicio-boton" style="width: 100%; height: 100%; background-color:#121212;" id="vL_fondo" theme="spacing">
- <vista-cabecera style="width: 100%; max-height: 10%;" id="vistaCabecera"></vista-cabecera>
- <label style="align-self: center; font-size: 2.5rem; text-align: center;" id="label_graciasPorRegistrarte">¡Gracias por registrarte!</label>
- <label style="flex-shrink: 0; align-self: center; margin-top: var(--lumo-space-xl);" id="label_envioEmail">Te hemos enviado un email con un enlace para confirmar tu cuenta.</label>
- <label style="flex-shrink: 0; align-self: center; font-weight: 300; font-size:" id="label_revisaEmail">Por favor, revisa tu email y haz click en el enlace para empezar a usar Spotify.</label>
- <button id="button_iniciarSesion" class="registro">INICIAR SESIÓN</button>
+<vaadin-vertical-layout style="width: 100%; height: 100%; background-color:#121212;" id="vL_fondo" theme="spacing">
+ <vaadin-vertical-layout theme="spacing" class="fuentes botones-cabecera" style="width: 100%; height: 100%;">
+  <label style="align-self: center; font-size: 2.5rem; text-align: center;" id="label_graciasPorRegistrarte">¡Gracias por registrarte!</label>
+  <label style="flex-shrink: 0; align-self: center; margin-top: var(--lumo-space-xl);" id="label_envioEmail">Te hemos enviado un email con un enlace para confirmar tu cuenta.</label>
+  <label style="flex-shrink: 0; align-self: center; font-weight: 300;" id="label_revisaEmail">Por favor, revisa tu email y haz click en el enlace para empezar a usar Spotify.</label>
+  <button id="button_iniciarSesion" class="registro" style="color:#000000; background-color:#FFFFFF; max-height: 7%; max-width: 14%;">INICIAR SESIÓN</button>
+ </vaadin-vertical-layout>
 </vaadin-vertical-layout>
 `;
   }

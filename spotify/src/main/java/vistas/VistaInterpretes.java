@@ -19,12 +19,6 @@ public class VistaInterpretes extends LitTemplate {
 
     @Id("vL_contenedorInterpretes")
 	private Element vL_contenedorInterpretes;
-	@Id("vistaInterprete")
-	private VistaInterprete vistaInterprete;
-	@Id("vistaInterprete1")
-	private VistaInterprete vistaInterprete1;
-	@Id("vistaInterprete2")
-	private VistaInterprete vistaInterprete2;
 	
 	
 
@@ -37,43 +31,6 @@ public class VistaInterpretes extends LitTemplate {
 	public void setvL_contenedorInterpretes(Element vL_contenedorInterpretes) {
 		this.vL_contenedorInterpretes = vL_contenedorInterpretes;
 	}
-
-
-
-	public VistaInterprete getVistaInterprete() {
-		return vistaInterprete;
-	}
-
-
-
-	public void setVistaInterprete(VistaInterprete vistaInterprete) {
-		this.vistaInterprete = vistaInterprete;
-	}
-
-
-
-	public VistaInterprete getVistaInterprete1() {
-		return vistaInterprete1;
-	}
-
-
-
-	public void setVistaInterprete1(VistaInterprete vistaInterprete1) {
-		this.vistaInterprete1 = vistaInterprete1;
-	}
-
-
-
-	public VistaInterprete getVistaInterprete2() {
-		return vistaInterprete2;
-	}
-
-
-
-	public void setVistaInterprete2(VistaInterprete vistaInterprete2) {
-		this.vistaInterprete2 = vistaInterprete2;
-	}
-
 
 
 	/**

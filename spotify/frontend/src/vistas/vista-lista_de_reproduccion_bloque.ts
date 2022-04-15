@@ -37,8 +37,8 @@ export class VistaLista_de_reproduccion_bloque extends LitElement {
    <label style="align-self: flex-start; color:#FFFFFF;" id="label_titulo">Pop con Ñ Clásicos</label>
    <label style="align-self: flex-start; color:#9D9D9D; font-weight: 400; width: 100%;" id="label_creador">Creador</label>
   </vaadin-vertical-layout>
-  <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="hL_botones">
-   <button style="align-self: flex-start; flex-grow: 0; flex-shrink: 0; width: 3rem; height: 3rem; border:none; background:none; align-self:center; cursor:pointer; background-color:#1ED760;border-radius:50%" id="button_play">
+  <vaadin-horizontal-layout theme="spacing" id="hL_botones">
+   <button style="align-self: flex-start; flex-grow: 0; flex-shrink: 0; width: 3rem; height: 3rem; border:none; align-self:center; cursor:pointer; background-color:#1ED760;border-radius:50%" id="button_play">
     <svg role="img" height="" width="" viewbox="0 0 24 24" class="Svg-sc-1bi12j5-0 hDgDGI" style="text-align; center; display: flex; align-items: center;">
      <path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path>
     </svg></button>

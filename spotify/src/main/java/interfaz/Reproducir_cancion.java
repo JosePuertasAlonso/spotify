@@ -32,6 +32,14 @@ public class Reproducir_cancion extends VistaReproducir_cancion{
 	public Cancion__bloque_sin_opciones_ _cancion__bloque_sin_opciones_;
 	public Reproductor_resumido__cibernauta_no_registrado_ _reproductor_resumido__cibernauta_no_registrado_;
 	public Ver_creditos_cancion _ver_creditos_cancion;
+	
+	public Reproducir_cancion() {
+		this.getStyle().set("margin", "0px");
+		this.getStyle().set("width", "100%");
+		this.getStyle().set("height", "100%");
+		this.getButton_opciones().setVisible(false);
+		
+	}
 
 	public void Pausar_cancion() {
 		throw new UnsupportedOperationException();

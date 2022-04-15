@@ -25,8 +25,6 @@ public class VistaDar_de_alta_artista extends LitTemplate {
 
     @Id("vL_fondo")
 	private Element vL_fondo;
-	@Id("vistaCabecera")
-	private VistaCabecera vistaCabecera;
 	@Id("label_anadeArtista")
 	private Label label_anadeArtista;
 	@Id("hL_datosImagen")
@@ -55,8 +53,6 @@ public class VistaDar_de_alta_artista extends LitTemplate {
 	private Label label_estilos;
 	@Id("hL_estilos")
 	private HorizontalLayout hL_estilos;
-	@Id("vistaEstilos")
-	private VistaEstilos vistaEstilos;
 	@Id("vL_imagen")
 	private Element vL_imagen;
 	@Id("imagen")
@@ -78,18 +74,6 @@ public class VistaDar_de_alta_artista extends LitTemplate {
 
 	public void setvL_fondo(Element vL_fondo) {
 		this.vL_fondo = vL_fondo;
-	}
-
-
-
-	public VistaCabecera getVistaCabecera() {
-		return vistaCabecera;
-	}
-
-
-
-	public void setVistaCabecera(VistaCabecera vistaCabecera) {
-		this.vistaCabecera = vistaCabecera;
 	}
 
 
@@ -258,18 +242,6 @@ public class VistaDar_de_alta_artista extends LitTemplate {
 
 	public void sethL_estilos(HorizontalLayout hL_estilos) {
 		this.hL_estilos = hL_estilos;
-	}
-
-
-
-	public VistaEstilos getVistaEstilos() {
-		return vistaEstilos;
-	}
-
-
-
-	public void setVistaEstilos(VistaEstilos vistaEstilos) {
-		this.vistaEstilos = vistaEstilos;
 	}
 
 

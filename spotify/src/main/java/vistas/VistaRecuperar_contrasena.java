@@ -9,6 +9,7 @@ import vistas.VistaCabecera;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.html.Input;
 import com.vaadin.flow.component.html.NativeButton;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 
 /**
  * A Designer generated component for the vista-recuperar_contrasena template.
@@ -22,8 +23,6 @@ public class VistaRecuperar_contrasena extends LitTemplate {
 
     @Id("vL_fondo")
 	private Element vL_fondo;
-	@Id("vistaCabecera")
-	private VistaCabecera vistaCabecera;
 	@Id("label_nuevaContrasena")
 	private Label label_nuevaContrasena;
 	@Id("label_instrucciones")
@@ -47,18 +46,6 @@ public class VistaRecuperar_contrasena extends LitTemplate {
 
 	public void setvL_fondo(Element vL_fondo) {
 		this.vL_fondo = vL_fondo;
-	}
-
-
-
-	public VistaCabecera getVistaCabecera() {
-		return vistaCabecera;
-	}
-
-
-
-	public void setVistaCabecera(VistaCabecera vistaCabecera) {
-		this.vistaCabecera = vistaCabecera;
 	}
 
 

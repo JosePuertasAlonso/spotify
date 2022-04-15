@@ -9,6 +9,12 @@ public class Eliminar_perfil extends VistaEliminar_perfil{
 //	private Label _desea_ContinuarL;
 //	private Button _cancelarB;
 	public Perfil_administrador _perfil_administrador;
+	
+	public Eliminar_perfil() {
+		this.getStyle().set("margin", "0px");
+		this.getStyle().set("width", "100%");
+		this.getStyle().set("height", "100%");
+	}
 
 	public void Confirmar_eliminar_perfil() {
 		throw new UnsupportedOperationException();

@@ -24,8 +24,6 @@ public class VistaAnadir_cancion_a_una_lista extends LitTemplate {
 
     @Id("vL_fondo")
 	private Element vL_fondo;
-	@Id("vistaCabecera")
-	private VistaCabecera vistaCabecera;
 	@Id("vL_cuerpo")
 	private Element vL_cuerpo;
 	@Id("label_anadeCancionLista")
@@ -38,10 +36,6 @@ public class VistaAnadir_cancion_a_una_lista extends LitTemplate {
 	private NativeButton button_crearLista;
 	@Id("hL_listasCreadas")
 	private HorizontalLayout hL_listasCreadas;
-	@Id("vistaListas_creadas")
-	private VistaListas_creadas vistaListas_creadas;
-	@Id("vistaReproductor_resumido")
-	private VistaReproductor_resumido vistaReproductor_resumido;
 	
 	
 
@@ -53,18 +47,6 @@ public class VistaAnadir_cancion_a_una_lista extends LitTemplate {
 
 	public void setvL_fondo(Element vL_fondo) {
 		this.vL_fondo = vL_fondo;
-	}
-
-
-
-	public VistaCabecera getVistaCabecera() {
-		return vistaCabecera;
-	}
-
-
-
-	public void setVistaCabecera(VistaCabecera vistaCabecera) {
-		this.vistaCabecera = vistaCabecera;
 	}
 
 
@@ -137,30 +119,6 @@ public class VistaAnadir_cancion_a_una_lista extends LitTemplate {
 
 	public void sethL_listasCreadas(HorizontalLayout hL_listasCreadas) {
 		this.hL_listasCreadas = hL_listasCreadas;
-	}
-
-
-
-	public VistaListas_creadas getVistaListas_creadas() {
-		return vistaListas_creadas;
-	}
-
-
-
-	public void setVistaListas_creadas(VistaListas_creadas vistaListas_creadas) {
-		this.vistaListas_creadas = vistaListas_creadas;
-	}
-
-
-
-	public VistaReproductor_resumido getVistaReproductor_resumido() {
-		return vistaReproductor_resumido;
-	}
-
-
-
-	public void setVistaReproductor_resumido(VistaReproductor_resumido vistaReproductor_resumido) {
-		this.vistaReproductor_resumido = vistaReproductor_resumido;
 	}
 
 

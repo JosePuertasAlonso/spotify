@@ -1,6 +1,6 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
-import './vista-cabecera';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 
 @customElement('vista-iniciar_sesion')
 export class VistaIniciar_sesion extends LitElement {
@@ -92,7 +92,6 @@ export class VistaIniciar_sesion extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%; background-color:#121212; overflow-y:scroll;" class="fuentes" theme="spacing" id="vL_fondo">
- <vista-cabecera style="width: 100%; max-height: 10%;" id="vistaCabecera"></vista-cabecera>
  <label style="align-self: center; font-size: 2.5rem; text-align: center;" id="label_iniciarSesion">Inicia sesión en Spotify</label>
  <vaadin-vertical-layout style="max-width: 31%; width: 100%; align-self: center;" theme="spacing" class="inicio-boton" id="vL_datosInicioSesion">
   <label style="flex-shrink: 0; align-self: center; text-align:center; display: flex; align-items: center; background-color:#E91429; width: 100%; justify-content: center; min-width: 100%; max-width: 100%; padding-right: 10px; padding-left: 10px; margin-left: var(--lumo-space-l); padding-top: var(--lumo-space-xs); padding-bottom: var(--lumo-space-xs);font-weight:400; font-size:1.1rem" id="label_errorInicioSesion">
@@ -108,7 +107,7 @@ export class VistaIniciar_sesion extends LitElement {
  </vaadin-vertical-layout>
  <label style="align-self: center; margin-top: var(--lumo-space-l);" id="label_o">ó</label>
  <vaadin-horizontal-layout class="media-boton" theme="spacing-xl" style="align-self: center; margin-top: var(--lumo-space-l); flex-shrink: 0;" id="hL_GoogleAppleFacebook">
-  <button style="min-width: 65px; min-height: 65px; max-width: 65px; max-height: 65px; flex-grow: 0; flex-shrink: 0; align-self: center; width: 65px; height: 65px;" id="button_Google"><img style="width: 15; align-self: center;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1024px-Google_%22G%22_Logo.svg.png" id="img"></button>
+  <button style="min-width: 65px; min-height: 65px; max-width: 65px; max-height: 65px; flex-grow: 0; flex-shrink: 0; align-self: center; width: 65px; height: 65px; margin: 0px;" id="button_Google"><img style="width: 15; align-self: center;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1024px-Google_%22G%22_Logo.svg.png" id="img"></button>
   <button style="min-width: 65px; min-height: 65px; max-width: 65px; max-height: 65px; flex-grow: 0; flex-shrink: 0; padding: var(--lumo-space-m); align-self: center; background-color:#1C1C1C" id="button_Apple"><img style="min-width: 60px; width: 60px; height: 60px; min-height: 60px; max-height: 60px; max-width: 60px; border-radius:50px;" src="https://cdn3.iconfinder.com/data/icons/inficons/512/apple.png" id="img1"></button>
   <button style="min-width: 65px; min-height: 65px; max-width: 65px; max-height: 65px; flex-grow: 0; flex-shrink: 0; padding: var(--lumo-space-m); align-self: center; background-color:#295396" id="button_Facebook"><img style="width: 15; min-width: 70px; max-width: 70px; min-height: 70px; max-height: 70px; border-radius:50px;" src="https://www.academiaaudioplace.com/wp-content/uploads/2017/10/facebook-icon-preview-200x200.png" id="img2"></button>
  </vaadin-horizontal-layout>

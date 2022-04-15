@@ -11,6 +11,13 @@ public class Reproductor_resumido extends VistaReproductor_resumido{
 //	private Label _artistaL;
 //	private Image _imagenI;
 //	private Slider _barraS;
+	
+	public Reproductor_resumido() {
+		this.getStyle().set("margin", "0px");
+		this.getStyle().set("width", "100%");
+		this.getStyle().set("height", "100%");
+
+	}
 
 	public void Pausar_cancion() {
 		throw new UnsupportedOperationException();

@@ -23,20 +23,16 @@ public class VistaVer_todos_perfiles_buscados_administrador extends LitTemplate 
 
     @Id("vL_fondo")
 	private Element vL_fondo;
-	@Id("vistaCabecera")
-	private VistaCabecera vistaCabecera;
 	@Id("vL_cuerpo")
 	private Element vL_cuerpo;
 	@Id("label_buscaModifica")
 	private Label label_buscaModifica;
-	@Id("vistaBarra_buscador")
-	private VistaBarra_buscador vistaBarra_buscador;
 	@Id("label_todosPerfilesPara")
 	private Label label_todosPerfilesPara;
 	@Id("hL_listaDePerfilesVerTodoAdmin")
 	private HorizontalLayout hL_listaDePerfilesVerTodoAdmin;
-	@Id("vistaLista_de_perfiles_ver_todo_administrador")
-	private VistaLista_de_perfiles_ver_todo_administrador vistaLista_de_perfiles_ver_todo_administrador;
+	@Id("hL_barraBuscador")
+	private HorizontalLayout hL_barraBuscador;
 
 	
 	public Element getvL_fondo() {
@@ -47,18 +43,6 @@ public class VistaVer_todos_perfiles_buscados_administrador extends LitTemplate 
 
 	public void setvL_fondo(Element vL_fondo) {
 		this.vL_fondo = vL_fondo;
-	}
-
-
-
-	public VistaCabecera getVistaCabecera() {
-		return vistaCabecera;
-	}
-
-
-
-	public void setVistaCabecera(VistaCabecera vistaCabecera) {
-		this.vistaCabecera = vistaCabecera;
 	}
 
 
@@ -87,18 +71,6 @@ public class VistaVer_todos_perfiles_buscados_administrador extends LitTemplate 
 
 
 
-	public VistaBarra_buscador getVistaBarra_buscador() {
-		return vistaBarra_buscador;
-	}
-
-
-
-	public void setVistaBarra_buscador(VistaBarra_buscador vistaBarra_buscador) {
-		this.vistaBarra_buscador = vistaBarra_buscador;
-	}
-
-
-
 	public Label getLabel_todosPerfilesPara() {
 		return label_todosPerfilesPara;
 	}
@@ -123,15 +95,14 @@ public class VistaVer_todos_perfiles_buscados_administrador extends LitTemplate 
 
 
 
-	public VistaLista_de_perfiles_ver_todo_administrador getVistaLista_de_perfiles_ver_todo_administrador() {
-		return vistaLista_de_perfiles_ver_todo_administrador;
+	public HorizontalLayout gethL_barraBuscador() {
+		return hL_barraBuscador;
 	}
 
 
 
-	public void setVistaLista_de_perfiles_ver_todo_administrador(
-			VistaLista_de_perfiles_ver_todo_administrador vistaLista_de_perfiles_ver_todo_administrador) {
-		this.vistaLista_de_perfiles_ver_todo_administrador = vistaLista_de_perfiles_ver_todo_administrador;
+	public void sethL_barraBuscador(HorizontalLayout hL_barraBuscador) {
+		this.hL_barraBuscador = hL_barraBuscador;
 	}
 
 

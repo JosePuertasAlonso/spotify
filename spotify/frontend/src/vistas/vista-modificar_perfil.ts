@@ -1,6 +1,4 @@
 import { LitElement, html, css, customElement } from 'lit-element';
-import './vista-cabecera';
-import './vista-reproductor_resumido';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 
 @customElement('vista-modificar_perfil')
@@ -49,7 +47,7 @@ export class VistaModificar_perfil extends LitElement {
     	font-size:13px;
     }
 
-    button {
+    button{
     	font-size: 12px;
     }
 
@@ -64,12 +62,11 @@ export class VistaModificar_perfil extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%; background-color:#121212;" class="fuentes" id="vL_fondo">
- <vista-cabecera style="width: 100%; max-height: 10%;" id="vistaCabecera"></vista-cabecera>
- <vaadin-vertical-layout theme="spacing" style="max-height: 80%; padding-top: var(--lumo-space-l); padding-right: var(--lumo-space-l); padding-left: var(--lumo-space-l); height: 100%; width: 100%;" id="vL_cuerpo">
+ <vaadin-vertical-layout theme="spacing" style="max-height: 100%; padding-top: var(--lumo-space-l); height: 100%; width: 100%; margin: 0px;" id="vL_cuerpo" class="boton_modificar">
   <label style="align-self: center; font-size: 2.5rem; text-align: center;" id="label_modificarPerfil">Modificar perfil de Spotify</label>
   <label style="flex-shrink: 0; align-self: center;" id="label_nombreUsuario">Nombre de usuario</label>
-  <vaadin-horizontal-layout theme="spacing-xl" style="width: 100%; max-width: 50%; align-self: center; margin-top: var(--lumo-space-xl);" id="hL_datosImagen">
-   <vaadin-vertical-layout style="max-width: 70%; width: 100%; margin-right: var(--lumo-space-xl);" theme="spacing" id="vL_datos">
+  <vaadin-horizontal-layout theme="" style="max-width: 50%; align-self: center; margin-top: var(--lumo-space-xl); width: 100%; margin-right: 0px; margin-left: 0px; padding: 0px;" id="hL_datosImagen">
+   <vaadin-vertical-layout style="max-width: 70%; width: 100%; margin: 0px;" theme="spacing" id="vL_datos">
     <label style="flex-shrink: 0;" id="label_correoActual">Correo electrónico actual</label>
     <label style="flex-shrink: 0; align-self: center; text-align:center; display: flex; align-items: center; background-color:#E91429; width: 100%; justify-content: center; min-width: 100%; max-width: 100%; padding-right: 10px; padding-left: 10px; margin-left: var(--lumo-space-l); padding-top: var(--lumo-space-xs); padding-bottom: var(--lumo-space-xs);font-weight:400; font-size:1.1rem" id="label_errorCorreoActual">
      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px" fill="#FFFFFF" style="margin-right: var(--lumo-space-s);">
@@ -83,7 +80,7 @@ export class VistaModificar_perfil extends LitElement {
      </svg>El correo introducido ya está registrado.</label>
     <input type="email" placeholder="Pon el nuevo correo electrónico." style="width: 100%; padding: 10px;" id="input_correoNuevo">
    </vaadin-vertical-layout>
-   <vaadin-vertical-layout theme="spacing-l" class="botonlabel" style="max-width: 30%; width: 100%; align-items: center; align-self: center;" id="vL_imagen">
+   <vaadin-vertical-layout theme="spacing-l" class="botonlabel" style="max-width: 30%; width: 100%; align-items: center; align-self: center; margin-left: 100px;" id="vL_imagen">
     <img style="max-width: 100%; max-height: 100%; border-radius:50%; border: 2px solid #FFFFFF;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/2048px-User-avatar.svg.png" id="imagen">
     <input type="file" id="file" accept="image/*" style="display:none">
     <label for="file" style="color:#121212; background-color:#FFFFFF; border-radius:500px; display: flex; align-items: center; cursor:pointer; padding: 8px 34px; letter-spacing: 1.76px; padding-top: 12px; padding-bottom: 12px; justify-content: center; width: 100%; max-width: 65%;" id="botonLabel_elegirFoto">
@@ -93,9 +90,8 @@ export class VistaModificar_perfil extends LitElement {
      </svg>ELEGIR FOTO</label>
    </vaadin-vertical-layout>
   </vaadin-horizontal-layout>
-  <button style="width:100%; max-width: 15%; max-height: 8%; border:none; cursor:pointer; border-radius: 500px; color:#121212; padding: 8px 34px; font-weight:700; letter-spacing:1.76px; line-height:18px; background-color:#FFFFFF; align-self: center; margin-top: var(--lumo-space-xl); height: 100%; min-height: 8%;" id="button_modificarPerfil" class="registro">MODIFICAR PERFIL</button>
+  <button id="button_modificarPerfil">MODIFICAR PERFIL</button>
  </vaadin-vertical-layout>
- <vista-reproductor_resumido style="width: 100%; height: 10%;"></vista-reproductor_resumido>
 </vaadin-vertical-layout>
 `;
   }

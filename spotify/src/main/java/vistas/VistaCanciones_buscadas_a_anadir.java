@@ -19,18 +19,6 @@ public class VistaCanciones_buscadas_a_anadir extends LitTemplate {
 
     @Id("vL_contenedorCancionesAAnadir")
 	private Element vL_contenedorCancionesAAnadir;
-	@Id("vistaCancion_a_anadir")
-	private VistaCancion_a_anadir vistaCancion_a_anadir;
-	@Id("vistaCancion_a_anadir1")
-	private VistaCancion_a_anadir vistaCancion_a_anadir1;
-	@Id("vistaCancion_a_anadir2")
-	private VistaCancion_a_anadir vistaCancion_a_anadir2;
-	@Id("vistaCancion_a_anadir3")
-	private VistaCancion_a_anadir vistaCancion_a_anadir3;
-	@Id("vistaCancion_a_anadir4")
-	private VistaCancion_a_anadir vistaCancion_a_anadir4;
-	@Id("vistaCancion_a_anadir5")
-	private VistaCancion_a_anadir vistaCancion_a_anadir5;
 	
 	
 
@@ -42,78 +30,6 @@ public class VistaCanciones_buscadas_a_anadir extends LitTemplate {
 
 	public void setvL_contenedorCancionesAAnadir(Element vL_contenedorCancionesAAnadir) {
 		this.vL_contenedorCancionesAAnadir = vL_contenedorCancionesAAnadir;
-	}
-
-
-
-	public VistaCancion_a_anadir getVistaCancion_a_anadir() {
-		return vistaCancion_a_anadir;
-	}
-
-
-
-	public void setVistaCancion_a_anadir(VistaCancion_a_anadir vistaCancion_a_anadir) {
-		this.vistaCancion_a_anadir = vistaCancion_a_anadir;
-	}
-
-
-
-	public VistaCancion_a_anadir getVistaCancion_a_anadir1() {
-		return vistaCancion_a_anadir1;
-	}
-
-
-
-	public void setVistaCancion_a_anadir1(VistaCancion_a_anadir vistaCancion_a_anadir1) {
-		this.vistaCancion_a_anadir1 = vistaCancion_a_anadir1;
-	}
-
-
-
-	public VistaCancion_a_anadir getVistaCancion_a_anadir2() {
-		return vistaCancion_a_anadir2;
-	}
-
-
-
-	public void setVistaCancion_a_anadir2(VistaCancion_a_anadir vistaCancion_a_anadir2) {
-		this.vistaCancion_a_anadir2 = vistaCancion_a_anadir2;
-	}
-
-
-
-	public VistaCancion_a_anadir getVistaCancion_a_anadir3() {
-		return vistaCancion_a_anadir3;
-	}
-
-
-
-	public void setVistaCancion_a_anadir3(VistaCancion_a_anadir vistaCancion_a_anadir3) {
-		this.vistaCancion_a_anadir3 = vistaCancion_a_anadir3;
-	}
-
-
-
-	public VistaCancion_a_anadir getVistaCancion_a_anadir4() {
-		return vistaCancion_a_anadir4;
-	}
-
-
-
-	public void setVistaCancion_a_anadir4(VistaCancion_a_anadir vistaCancion_a_anadir4) {
-		this.vistaCancion_a_anadir4 = vistaCancion_a_anadir4;
-	}
-
-
-
-	public VistaCancion_a_anadir getVistaCancion_a_anadir5() {
-		return vistaCancion_a_anadir5;
-	}
-
-
-
-	public void setVistaCancion_a_anadir5(VistaCancion_a_anadir vistaCancion_a_anadir5) {
-		this.vistaCancion_a_anadir5 = vistaCancion_a_anadir5;
 	}
 
 

@@ -12,4 +12,14 @@ public class Lista_de_reproduccion_propia extends VistaLista_de_reproduccion_pro
 	public Modificar_lista _modificar_lista;
 	public Ver_lista_de_reproduccion_propia _ver_lista_de_reproduccion_propia;
 	public Eliminar_lista _eliminar_lista;
+	
+	public Lista_de_reproduccion_propia() {
+		this.getStyle().set("margin", "0px");
+		this.getStyle().set("width", "100%");
+		this.getStyle().set("height", "100%");
+		
+		
+
+	}
+	
 }

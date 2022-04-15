@@ -39,11 +39,11 @@ export class VistaEliminar_lista extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="background-color:#121212; width: 100%; height: 100%; padding: var(--lumo-space-xl); align-items: center; border:none; border: 2px solid #A8A8A8; justify-content: center;" class="fuentes boton-rectangulo" theme="spacing" id="vL_fondo">
- <label style="flex-shrink: 0; align-self: center; text-align:center;" id="label_eliminar">Eliminar lista de reproudcción</label>
- <label style="flex-shrink: 0; align-self: center; font-weight: 300; font-size:" id="label_atencion">¡Atención! va a eliminar la lista "nombre de lista"</label>
- <vaadin-horizontal-layout theme="spacing-xl" style="width: 100%; align-self: center; align-items: center; justify-content: center; margin-top: var(--lumo-space-l);" id="hL_botones">
-  <button style="align-self: center;" id="button_siEliminar">SÍ, ELIMINAR LISTA</button>
+<vaadin-vertical-layout style="background-color:#121212; width: 100%; height: 100%; padding: var(--lumo-space-xl); align-items: center; border:none; border: 2px solid #A8A8A8; justify-content: center; margin-left: 0px; margin-right: 0px;" class="fuentes boton-rectangulo" theme="spacing" id="vL_fondo">
+ <label style="flex-shrink: 0; align-self: center; text-align:center; margin-right: 0px; margin-left: 0px;" id="label_eliminar">Eliminar lista de reproudcción</label>
+ <label style="flex-shrink: 0; align-self: center; font-weight: 300; margin-right: 0px; margin-left: 0px;" id="label_atencion">¡Atención! va a eliminar la lista "nombre de lista"</label>
+ <vaadin-horizontal-layout theme="spacing-xl" style="width: 100%; align-self: center; align-items: center; justify-content: center; margin-top: var(--lumo-space-l); margin-right: 0px; margin-left: 0px;" id="hL_botones">
+  <button style="align-self: center; margin: 0px;" id="button_siEliminar">SÍ, ELIMINAR LISTA</button>
   <button style="align-self: center;" id="buttonCancelar">CANCELAR</button>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>

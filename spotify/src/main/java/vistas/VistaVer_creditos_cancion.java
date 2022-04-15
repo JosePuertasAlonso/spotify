@@ -39,20 +39,14 @@ public class VistaVer_creditos_cancion extends LitTemplate {
 	private HorizontalLayout hL_compositores;
 	@Id("label_compositores")
 	private Label label_compositores;
-	@Id("vistaCompositores")
-	private VistaCompositores vistaCompositores;
 	@Id("hL_productores")
 	private HorizontalLayout hL_productores;
 	@Id("label_productores")
 	private Label label_productores;
-	@Id("vistaProductores")
-	private VistaProductores vistaProductores;
 	@Id("hL_interpretes")
 	private HorizontalLayout hL_interpretes;
 	@Id("label_interpretes")
 	private Label label_interpretes;
-	@Id("vistaInterpretes")
-	private VistaInterpretes vistaInterpretes;
 	
 	
 	public Element getvL_fondo() {
@@ -145,16 +139,6 @@ public class VistaVer_creditos_cancion extends LitTemplate {
 	}
 
 
-	public VistaCompositores getVistaCompositores() {
-		return vistaCompositores;
-	}
-
-
-	public void setVistaCompositores(VistaCompositores vistaCompositores) {
-		this.vistaCompositores = vistaCompositores;
-	}
-
-
 	public HorizontalLayout gethL_productores() {
 		return hL_productores;
 	}
@@ -172,16 +156,6 @@ public class VistaVer_creditos_cancion extends LitTemplate {
 
 	public void setLabel_productores(Label label_productores) {
 		this.label_productores = label_productores;
-	}
-
-
-	public VistaProductores getVistaProductores() {
-		return vistaProductores;
-	}
-
-
-	public void setVistaProductores(VistaProductores vistaProductores) {
-		this.vistaProductores = vistaProductores;
 	}
 
 
@@ -204,15 +178,6 @@ public class VistaVer_creditos_cancion extends LitTemplate {
 		this.label_interpretes = label_interpretes;
 	}
 
-
-	public VistaInterpretes getVistaInterpretes() {
-		return vistaInterpretes;
-	}
-
-
-	public void setVistaInterpretes(VistaInterpretes vistaInterpretes) {
-		this.vistaInterpretes = vistaInterpretes;
-	}
 
 
 	/**

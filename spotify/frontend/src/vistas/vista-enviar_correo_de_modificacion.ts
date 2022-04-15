@@ -1,6 +1,5 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
-import './vista-cabecera';
 
 @customElement('vista-enviar_correo_de_modificacion')
 export class VistaEnviar_correo_de_modificacion extends LitElement {
@@ -47,12 +46,11 @@ export class VistaEnviar_correo_de_modificacion extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%; background-color:#121212;" class="fuentes inicio-boton" theme="spacing" id="vL_fondo">
- <vista-cabecera style="width: 100%; height: 10%;" id="vistaCabecera"></vista-cabecera>
+<vaadin-vertical-layout style="width: 100%; height: 100%; background-color:#121212;" class="fuentes botones-cabecera" theme="spacing" id="vL_fondo">
  <label style="align-self: center; font-size: 2.5rem; text-align: center;" id="label_perfilModificado">¡Perfil modificado con éxito!</label>
  <label style="flex-shrink: 0; align-self: center; margin-top: var(--lumo-space-xl);" id="label_envioEmail">Te hemos enviado un email con un enlace para confirmar tu cuenta.</label>
- <label style="flex-shrink: 0; align-self: center; font-weight: 300; font-size:" id="label_revisarEmail">Por favor, revisa tu email y haz click en el enlace para continuar utilizando Spotify.</label>
- <button id="button_iniciarSesion" class="registro">INICIAR SESIÓN</button>
+ <label style="flex-shrink: 0; align-self: center; font-weight: 300;" id="label_revisarEmail">Por favor, revisa tu email y haz click en el enlace para continuar utilizando Spotify.</label>
+ <button id="button_iniciarSesion" class="botones-cabecera" style="color:#000000; background-color:#FFFFFF; max-height: 7%; max-width: 14%;">INICIAR SESIÓN</button>
 </vaadin-vertical-layout>
 `;
   }

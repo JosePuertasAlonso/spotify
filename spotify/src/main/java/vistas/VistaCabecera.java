@@ -23,8 +23,6 @@ public class VistaCabecera extends LitTemplate {
 
 	@Id("hL_fondo")
 	private HorizontalLayout hL_fondo;
-	@Id("logo")
-	private VistaLogo logo;
 	@Id("hL_usuarioCerrarSesion")
 	private HorizontalLayout hL_usuarioCerrarSesion;
 	@Id("hL_fotoNombreUsuario")
@@ -39,6 +37,10 @@ public class VistaCabecera extends LitTemplate {
 	private HorizontalLayout hL_registrarseIniciarSesion;
 	@Id("button_registrarse")
 	private NativeButton button_registrarse;
+	@Id("hL_Logo")
+	private HorizontalLayout hL_Logo;
+	@Id("button_iniciarSesion")
+	private NativeButton button_iniciarSesion;
 	
 	
 
@@ -50,18 +52,6 @@ public class VistaCabecera extends LitTemplate {
 
 	public void sethL_fondo(HorizontalLayout hL_fondo) {
 		this.hL_fondo = hL_fondo;
-	}
-
-
-
-	public VistaLogo getLogo() {
-		return logo;
-	}
-
-
-
-	public void setLogo(VistaLogo logo) {
-		this.logo = logo;
 	}
 
 
@@ -156,5 +146,29 @@ public class VistaCabecera extends LitTemplate {
     public VistaCabecera() {
         // You can initialise any data required for the connected UI components here.
     }
+
+
+
+	public HorizontalLayout gethL_Logo() {
+		return hL_Logo;
+	}
+
+
+
+	public void sethL_Logo(HorizontalLayout hL_Logo) {
+		this.hL_Logo = hL_Logo;
+	}
+
+
+
+	public NativeButton getButton_iniciarSesion() {
+		return button_iniciarSesion;
+	}
+
+
+
+	public void setButton_iniciarSesion(NativeButton button_iniciarSesion) {
+		this.button_iniciarSesion = button_iniciarSesion;
+	}
 
 }

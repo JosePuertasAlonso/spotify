@@ -22,8 +22,6 @@ public class VistaDar_de_baja_perfil extends LitTemplate {
 
     @Id("vL_fondo")
 	private Element vL_fondo;
-	@Id("vistaCabecera")
-	private VistaCabecera vistaCabecera;
 	@Id("label_eliminarPerfil")
 	private Label label_eliminarPerfil;
 	@Id("label_atencion")
@@ -47,18 +45,6 @@ public class VistaDar_de_baja_perfil extends LitTemplate {
 
 	public void setvL_fondo(Element vL_fondo) {
 		this.vL_fondo = vL_fondo;
-	}
-
-
-
-	public VistaCabecera getVistaCabecera() {
-		return vistaCabecera;
-	}
-
-
-
-	public void setVistaCabecera(VistaCabecera vistaCabecera) {
-		this.vistaCabecera = vistaCabecera;
 	}
 
 

@@ -23,6 +23,11 @@ public class Iniciar_sesion extends VistaIniciar_sesion{
 	public Apple _apple;
 	public Facebook _facebook;
 	public Recuperar_contrasena _recuperar_contrasena;
+	
+	public Iniciar_sesion() {
+    	getStyle().set("margin", "0px");
+    	this.getLabel_errorInicioSesion().setVisible(false);
+	}
 
 	public void Iniciar_sesion_con_Google() {
 		throw new UnsupportedOperationException();
@@ -39,4 +44,5 @@ public class Iniciar_sesion extends VistaIniciar_sesion{
 	public void Validar_iniciar_sesion() {
 		throw new UnsupportedOperationException();
 	}
+	
 }

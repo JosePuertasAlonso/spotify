@@ -19,16 +19,6 @@ public class VistaCanciones_del_album_administrador extends LitTemplate {
 
     @Id("vL_contenedorCancionesAlbum")
 	private Element vL_contenedorCancionesAlbum;
-	@Id("vistaCancion_album")
-	private VistaCancion_album vistaCancion_album;
-	@Id("vistaCancion_album1")
-	private VistaCancion_album vistaCancion_album1;
-	@Id("vistaCancion_album2")
-	private VistaCancion_album vistaCancion_album2;
-	@Id("vistaCancion_album3")
-	private VistaCancion_album vistaCancion_album3;
-	@Id("vistaCancion_album4")
-	private VistaCancion_album vistaCancion_album4;
 	
 	
 
@@ -42,65 +32,6 @@ public class VistaCanciones_del_album_administrador extends LitTemplate {
 		this.vL_contenedorCancionesAlbum = vL_contenedorCancionesAlbum;
 	}
 
-
-
-	public VistaCancion_album getVistaCancion_album() {
-		return vistaCancion_album;
-	}
-
-
-
-	public void setVistaCancion_album(VistaCancion_album vistaCancion_album) {
-		this.vistaCancion_album = vistaCancion_album;
-	}
-
-
-
-	public VistaCancion_album getVistaCancion_album1() {
-		return vistaCancion_album1;
-	}
-
-
-
-	public void setVistaCancion_album1(VistaCancion_album vistaCancion_album1) {
-		this.vistaCancion_album1 = vistaCancion_album1;
-	}
-
-
-
-	public VistaCancion_album getVistaCancion_album2() {
-		return vistaCancion_album2;
-	}
-
-
-
-	public void setVistaCancion_album2(VistaCancion_album vistaCancion_album2) {
-		this.vistaCancion_album2 = vistaCancion_album2;
-	}
-
-
-
-	public VistaCancion_album getVistaCancion_album3() {
-		return vistaCancion_album3;
-	}
-
-
-
-	public void setVistaCancion_album3(VistaCancion_album vistaCancion_album3) {
-		this.vistaCancion_album3 = vistaCancion_album3;
-	}
-
-
-
-	public VistaCancion_album getVistaCancion_album4() {
-		return vistaCancion_album4;
-	}
-
-
-
-	public void setVistaCancion_album4(VistaCancion_album vistaCancion_album4) {
-		this.vistaCancion_album4 = vistaCancion_album4;
-	}
 
 
 

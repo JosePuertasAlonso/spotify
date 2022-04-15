@@ -1,9 +1,6 @@
 import { LitElement, html, css, customElement } from 'lit-element';
-import './vista-cabecera';
-import './vista-reproductor_resumido';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
-import './vista-barra_buscador';
-import './vista-lista_de_reproduccion_ver_todo';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 
 @customElement('vista-ver_todas_listas_buscadas')
 export class VistaVer_todas_listas_buscadas extends LitElement {
@@ -37,13 +34,10 @@ export class VistaVer_todas_listas_buscadas extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="background:#121212; max-width: 100%; max-height: 100%; align-items: flex-start; height: 100%;" class="fuentes" id="vL_fondo">
- <vista-cabecera style="width: 100%; height: 10%;" id="vistaCabecera"></vista-cabecera>
- <vaadin-vertical-layout theme="spacing" style="max-height: 80%; padding-top: var(--lumo-space-l); padding-right: var(--lumo-space-l); padding-left: var(--lumo-space-l); width: 100%; height: 100%;overflow-y:scroll" id="vL_cuerpo">
-  <vista-barra_buscador style="max-width: 100%; max-height: 5%; width: 50%;" id="vistaBarra_buscador"></vista-barra_buscador>
+ <vaadin-vertical-layout theme="spacing" style="max-height: 100%; padding-top: var(--lumo-space-l); padding-right: var(--lumo-space-l); padding-left: var(--lumo-space-l); width: 100%; height: 100%; overflow-y:scroll;" id="vL_cuerpo">
+  <vaadin-horizontal-layout theme="spacing" id="hL_barraBuscador" style="max-width: 100%; max-height: 7%; width: 50%;"></vaadin-horizontal-layout>
   <label style="align-self: flex-start; font-size: 2.5rem; flex-shrink: 1;" id="label_todasLasListasPara">Todas las listas de reproducción para "busqueda"</label>
-  <vista-lista_de_reproduccion_ver_todo id="vistaLista_de_reproduccion_ver_todo"></vista-lista_de_reproduccion_ver_todo>
  </vaadin-vertical-layout>
- <vista-reproductor_resumido style="width: 100%; height: 10%;" id="vistaReproductor_resumido"></vista-reproductor_resumido>
 </vaadin-vertical-layout>
 `;
   }

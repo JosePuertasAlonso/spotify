@@ -8,6 +8,10 @@ public class Enviar_correo_de_recuperacion extends VistaEnviar_correo_de_recuper
 //	private Button _aceptarB;
 	public Recuperar_contrasena _recuperar_contrasena;
 	public Gestor_correo_electronico _gestor_correo_electronico;
+	
+	public Enviar_correo_de_recuperacion() {
+    	getStyle().set("margin", "0px");
+	}
 
 	public void Enviar_correo() {
 		throw new UnsupportedOperationException();

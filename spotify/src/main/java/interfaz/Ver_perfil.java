@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 import vistas.VistaVer_perfil;
 
 public class Ver_perfil extends VistaVer_perfil{
@@ -21,8 +23,20 @@ public class Ver_perfil extends VistaVer_perfil{
 	public Listas_de_reproduccion_del_perfil _listas_de_reproduccion_del_perfil;
 	public Ver_anuncios_de_artistas _ver_anuncios_de_artistas;
 	public Modificar_perfil _modificar_perfil;
+	
+	public Ver_perfil() {
+		_listas_de_reproduccion_del_perfil = new Listas_de_reproduccion_del_perfil();
+		this.getStyle().set("margin", "0px");
+		this.getvL_lisaDeReproduccionDelPerfil().as(VerticalLayout.class).add(_listas_de_reproduccion_del_perfil);
+		this.getStyle().set("width", "100%");
+		this.getStyle().set("height", "100%");
+
+		this.getButton_crearAnuncio().setVisible(false);
+		this.getButton_recuperarPerfil().setVisible(false);
+	}
 
 	public void Recuperar_perfil() {
 		throw new UnsupportedOperationException();
 	}
+	
 }

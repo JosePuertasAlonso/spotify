@@ -40,8 +40,22 @@ public class VistaReproducir_cancion extends LitTemplate {
 	private Label label_artista;
 	@Id("hL_reproductor")
 	private HorizontalLayout hL_reproductor;
+	@Id("hL_opciones")
+	private HorizontalLayout hL_opciones;
 	
 	
+
+	public HorizontalLayout gethL_opciones() {
+		return hL_opciones;
+	}
+
+
+
+	public void sethL_opciones(HorizontalLayout hL_opciones) {
+		this.hL_opciones = hL_opciones;
+	}
+
+
 
 	public Element getvL_fondo() {
 		return vL_fondo;

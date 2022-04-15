@@ -19,16 +19,6 @@ public class VistaLista_de_artistas_buscados extends LitTemplate {
 
     @Id("vL_contenedorArtistaLista")
 	private Element vL_contenedorArtistaLista;
-	@Id("vistaArtista_lista")
-	private VistaArtista_lista vistaArtista_lista;
-	@Id("vistaArtista_lista1")
-	private VistaArtista_lista vistaArtista_lista1;
-	@Id("vistaArtista_lista2")
-	private VistaArtista_lista vistaArtista_lista2;
-	@Id("vistaArtista_lista3")
-	private VistaArtista_lista vistaArtista_lista3;
-	@Id("vistaArtista_lista4")
-	private VistaArtista_lista vistaArtista_lista4;
 	
 	
 
@@ -41,67 +31,6 @@ public class VistaLista_de_artistas_buscados extends LitTemplate {
 	public void setvL_contenedorArtistaLista(Element vL_contenedorArtistaLista) {
 		this.vL_contenedorArtistaLista = vL_contenedorArtistaLista;
 	}
-
-
-
-	public VistaArtista_lista getVistaArtista_lista() {
-		return vistaArtista_lista;
-	}
-
-
-
-	public void setVistaArtista_lista(VistaArtista_lista vistaArtista_lista) {
-		this.vistaArtista_lista = vistaArtista_lista;
-	}
-
-
-
-	public VistaArtista_lista getVistaArtista_lista1() {
-		return vistaArtista_lista1;
-	}
-
-
-
-	public void setVistaArtista_lista1(VistaArtista_lista vistaArtista_lista1) {
-		this.vistaArtista_lista1 = vistaArtista_lista1;
-	}
-
-
-
-	public VistaArtista_lista getVistaArtista_lista2() {
-		return vistaArtista_lista2;
-	}
-
-
-
-	public void setVistaArtista_lista2(VistaArtista_lista vistaArtista_lista2) {
-		this.vistaArtista_lista2 = vistaArtista_lista2;
-	}
-
-
-
-	public VistaArtista_lista getVistaArtista_lista3() {
-		return vistaArtista_lista3;
-	}
-
-
-
-	public void setVistaArtista_lista3(VistaArtista_lista vistaArtista_lista3) {
-		this.vistaArtista_lista3 = vistaArtista_lista3;
-	}
-
-
-
-	public VistaArtista_lista getVistaArtista_lista4() {
-		return vistaArtista_lista4;
-	}
-
-
-
-	public void setVistaArtista_lista4(VistaArtista_lista vistaArtista_lista4) {
-		this.vistaArtista_lista4 = vistaArtista_lista4;
-	}
-
 
 
 	/**

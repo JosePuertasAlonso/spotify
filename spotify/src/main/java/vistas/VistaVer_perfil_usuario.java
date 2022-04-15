@@ -25,8 +25,6 @@ public class VistaVer_perfil_usuario extends LitTemplate {
 
     @Id("vL_fondo")
 	private Element vL_fondo;
-	@Id("vistaCabecera")
-	private VistaCabecera vistaCabecera;
 	@Id("vL_cuerpo")
 	private Element vL_cuerpo;
 	@Id("hL_datosUsuario")
@@ -55,10 +53,6 @@ public class VistaVer_perfil_usuario extends LitTemplate {
 	private Label label_listasDeReproduccionUsuario;
 	@Id("vL_listasDelUsuario")
 	private Element vL_listasDelUsuario;
-	@Id("vistaListas_del_usuario")
-	private VistaListas_del_usuario vistaListas_del_usuario;
-	@Id("vistaReproductor_resumido")
-	private VistaReproductor_resumido vistaReproductor_resumido;
 	
 	
 
@@ -70,18 +64,6 @@ public class VistaVer_perfil_usuario extends LitTemplate {
 
 	public void setvL_fondo(Element vL_fondo) {
 		this.vL_fondo = vL_fondo;
-	}
-
-
-
-	public VistaCabecera getVistaCabecera() {
-		return vistaCabecera;
-	}
-
-
-
-	public void setVistaCabecera(VistaCabecera vistaCabecera) {
-		this.vistaCabecera = vistaCabecera;
 	}
 
 
@@ -250,30 +232,6 @@ public class VistaVer_perfil_usuario extends LitTemplate {
 
 	public void setvL_listasDelUsuario(Element vL_listasDelUsuario) {
 		this.vL_listasDelUsuario = vL_listasDelUsuario;
-	}
-
-
-
-	public VistaListas_del_usuario getVistaListas_del_usuario() {
-		return vistaListas_del_usuario;
-	}
-
-
-
-	public void setVistaListas_del_usuario(VistaListas_del_usuario vistaListas_del_usuario) {
-		this.vistaListas_del_usuario = vistaListas_del_usuario;
-	}
-
-
-
-	public VistaReproductor_resumido getVistaReproductor_resumido() {
-		return vistaReproductor_resumido;
-	}
-
-
-
-	public void setVistaReproductor_resumido(VistaReproductor_resumido vistaReproductor_resumido) {
-		this.vistaReproductor_resumido = vistaReproductor_resumido;
 	}
 
 

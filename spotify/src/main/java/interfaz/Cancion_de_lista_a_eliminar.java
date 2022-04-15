@@ -8,6 +8,12 @@ public class Cancion_de_lista_a_eliminar extends VistaCancion_de_lista_a_elimina
 //	private Image _imagenI;
 //	private Label _artista_s_L;
 	public Canciones_de_lista_a_eliminar _canciones_de_lista_a_eliminar;
+	
+	public Cancion_de_lista_a_eliminar() {
+		this.getStyle().set("margin", "0px");
+		this.getStyle().set("width", "100%");
+		this.getStyle().set("height", "100%");
+	}
 
 	public void Eliminar_cancion_de_lista() {
 		throw new UnsupportedOperationException();

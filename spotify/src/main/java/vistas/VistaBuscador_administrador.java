@@ -27,14 +27,10 @@ public class VistaBuscador_administrador extends LitTemplate {
 
     @Id("vL_fondo")
 	private Element vL_fondo;
-	@Id("vistaCabecera")
-	private VistaCabecera vistaCabecera;
 	@Id("vL_cuerpo")
 	private Element vL_cuerpo;
 	@Id("label_buscaModificaElementos")
 	private Label label_buscaModificaElementos;
-	@Id("vistaBarra_buscador")
-	private VistaBarra_buscador vistaBarra_buscador;
 	@Id("label_resultadosPara")
 	private Label label_resultadosPara;
 	@Id("hL_cancionesAlbumesArtistasPerfiles")
@@ -49,8 +45,6 @@ public class VistaBuscador_administrador extends LitTemplate {
 	private NativeButton button_verTodoCanciones;
 	@Id("hL_listaDeCancionesBuscadasAdmin")
 	private HorizontalLayout hL_listaDeCancionesBuscadasAdmin;
-	@Id("vistaLista_de_canciones_buscadas_administrador")
-	private VistaLista_de_canciones_buscadas_administrador vistaLista_de_canciones_buscadas_administrador;
 	@Id("vL_albumes")
 	private Element vL_albumes;
 	@Id("hL_albumesVertodo")
@@ -61,8 +55,6 @@ public class VistaBuscador_administrador extends LitTemplate {
 	private NativeButton button_verTodoAlbumes;
 	@Id("hL_listaDeAlbumesBuscadosAdmin")
 	private HorizontalLayout hL_listaDeAlbumesBuscadosAdmin;
-	@Id("vistaLista_de_albumes_buscados_administrador")
-	private VistaLista_de_albumes_buscados_administrador vistaLista_de_albumes_buscados_administrador;
 	@Id("vL_artistasPerfiles")
 	private Element vL_artistasPerfiles;
 	@Id("vL_artistas")
@@ -75,8 +67,6 @@ public class VistaBuscador_administrador extends LitTemplate {
 	private NativeButton button_verTodoArtistas;
 	@Id("hL_listaDeArtistasBuscadosAdmin")
 	private HorizontalLayout hL_listaDeArtistasBuscadosAdmin;
-	@Id("vistaLista_de_artistas_buscados_administrador")
-	private VistaLista_de_artistas_buscados_administrador vistaLista_de_artistas_buscados_administrador;
 	@Id("vL_perfiles")
 	private Element vL_perfiles;
 	@Id("hL_perfilesVertodo")
@@ -87,8 +77,8 @@ public class VistaBuscador_administrador extends LitTemplate {
 	private NativeButton button_verTodoPerfiles;
 	@Id("hL_listaDePerfilesBuscadosAdmin")
 	private HorizontalLayout hL_listaDePerfilesBuscadosAdmin;
-	@Id("vistaLista_de_perfiles_buscados_administrador")
-	private VistaLista_de_perfiles_buscados_administrador vistaLista_de_perfiles_buscados_administrador;
+	@Id("hL_barraBuscador")
+	private HorizontalLayout hL_barraBuscador;
 
 	
 	
@@ -102,20 +92,6 @@ public class VistaBuscador_administrador extends LitTemplate {
 
 	public void setvL_fondo(Element vL_fondo) {
 		this.vL_fondo = vL_fondo;
-	}
-
-
-
-
-	public VistaCabecera getVistaCabecera() {
-		return vistaCabecera;
-	}
-
-
-
-
-	public void setVistaCabecera(VistaCabecera vistaCabecera) {
-		this.vistaCabecera = vistaCabecera;
 	}
 
 
@@ -144,20 +120,6 @@ public class VistaBuscador_administrador extends LitTemplate {
 
 	public void setLabel_buscaModificaElementos(Label label_buscaModificaElementos) {
 		this.label_buscaModificaElementos = label_buscaModificaElementos;
-	}
-
-
-
-
-	public VistaBarra_buscador getVistaBarra_buscador() {
-		return vistaBarra_buscador;
-	}
-
-
-
-
-	public void setVistaBarra_buscador(VistaBarra_buscador vistaBarra_buscador) {
-		this.vistaBarra_buscador = vistaBarra_buscador;
 	}
 
 
@@ -261,21 +223,6 @@ public class VistaBuscador_administrador extends LitTemplate {
 
 
 
-	public VistaLista_de_canciones_buscadas_administrador getVistaLista_de_canciones_buscadas_administrador() {
-		return vistaLista_de_canciones_buscadas_administrador;
-	}
-
-
-
-
-	public void setVistaLista_de_canciones_buscadas_administrador(
-			VistaLista_de_canciones_buscadas_administrador vistaLista_de_canciones_buscadas_administrador) {
-		this.vistaLista_de_canciones_buscadas_administrador = vistaLista_de_canciones_buscadas_administrador;
-	}
-
-
-
-
 	public Element getvL_albumes() {
 		return vL_albumes;
 	}
@@ -344,19 +291,6 @@ public class VistaBuscador_administrador extends LitTemplate {
 	}
 
 
-
-
-	public VistaLista_de_albumes_buscados_administrador getVistaLista_de_albumes_buscados_administrador() {
-		return vistaLista_de_albumes_buscados_administrador;
-	}
-
-
-
-
-	public void setVistaLista_de_albumes_buscados_administrador(
-			VistaLista_de_albumes_buscados_administrador vistaLista_de_albumes_buscados_administrador) {
-		this.vistaLista_de_albumes_buscados_administrador = vistaLista_de_albumes_buscados_administrador;
-	}
 
 
 
@@ -445,21 +379,6 @@ public class VistaBuscador_administrador extends LitTemplate {
 
 
 
-	public VistaLista_de_artistas_buscados_administrador getVistaLista_de_artistas_buscados_administrador() {
-		return vistaLista_de_artistas_buscados_administrador;
-	}
-
-
-
-
-	public void setVistaLista_de_artistas_buscados_administrador(
-			VistaLista_de_artistas_buscados_administrador vistaLista_de_artistas_buscados_administrador) {
-		this.vistaLista_de_artistas_buscados_administrador = vistaLista_de_artistas_buscados_administrador;
-	}
-
-
-
-
 	public Element getvL_perfiles() {
 		return vL_perfiles;
 	}
@@ -530,16 +449,15 @@ public class VistaBuscador_administrador extends LitTemplate {
 
 
 
-	public VistaLista_de_perfiles_buscados_administrador getVistaLista_de_perfiles_buscados_administrador() {
-		return vistaLista_de_perfiles_buscados_administrador;
+	public HorizontalLayout gethL_barraBuscador() {
+		return hL_barraBuscador;
 	}
 
 
 
 
-	public void setVistaLista_de_perfiles_buscados_administrador(
-			VistaLista_de_perfiles_buscados_administrador vistaLista_de_perfiles_buscados_administrador) {
-		this.vistaLista_de_perfiles_buscados_administrador = vistaLista_de_perfiles_buscados_administrador;
+	public void sethL_barraBuscador(HorizontalLayout hL_barraBuscador) {
+		this.hL_barraBuscador = hL_barraBuscador;
 	}
 
 

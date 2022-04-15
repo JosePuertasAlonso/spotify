@@ -9,6 +9,10 @@ public class Enviar_correo_de_modificacion extends VistaEnviar_correo_de_modific
 	public Gestor_correo_electronico _gestor_correo_electronico;
 	public Modificar_perfil _modificar_perfil;
 	public Iniciar_sesion _iniciar_sesion;
+	
+	public Enviar_correo_de_modificacion() {
+		this.getStyle().set("margin", "0px");
+	}
 
 	public void Enviar_correo() {
 		throw new UnsupportedOperationException();

@@ -23,8 +23,6 @@ public class VistaVer_anuncios_de_artistas extends LitTemplate {
 
     @Id("vL_fondo")
 	private Element vL_fondo;
-	@Id("vistaCabecera")
-	private VistaCabecera vistaCabecera;
 	@Id("vL_cuerpo")
 	private Element vL_cuerpo;
 	@Id("label_anunciosArtistas")
@@ -35,10 +33,8 @@ public class VistaVer_anuncios_de_artistas extends LitTemplate {
 	private Label label_anunciosSinLeer;
 	@Id("label_nAnuncios")
 	private Label label_nAnuncios;
-	@Id("vistaAnuncios")
-	private VistaAnuncios vistaAnuncios;
-	@Id("vistaReproductor_resumido")
-	private VistaReproductor_resumido vistaReproductor_resumido;
+	@Id("hL_contenedorAnuncios")
+	private HorizontalLayout hL_contenedorAnuncios;
 	
 	
 
@@ -50,18 +46,6 @@ public class VistaVer_anuncios_de_artistas extends LitTemplate {
 
 	public void setvL_fondo(Element vL_fondo) {
 		this.vL_fondo = vL_fondo;
-	}
-
-
-
-	public VistaCabecera getVistaCabecera() {
-		return vistaCabecera;
-	}
-
-
-
-	public void setVistaCabecera(VistaCabecera vistaCabecera) {
-		this.vistaCabecera = vistaCabecera;
 	}
 
 
@@ -123,29 +107,15 @@ public class VistaVer_anuncios_de_artistas extends LitTemplate {
 	public void setLabel_nAnuncios(Label label_nAnuncios) {
 		this.label_nAnuncios = label_nAnuncios;
 	}
-
-
-
-	public VistaAnuncios getVistaAnuncios() {
-		return vistaAnuncios;
+	
+	public HorizontalLayout gethL_contenedorAnuncios() {
+		return hL_contenedorAnuncios;
 	}
 
 
 
-	public void setVistaAnuncios(VistaAnuncios vistaAnuncios) {
-		this.vistaAnuncios = vistaAnuncios;
-	}
-
-
-
-	public VistaReproductor_resumido getVistaReproductor_resumido() {
-		return vistaReproductor_resumido;
-	}
-
-
-
-	public void setVistaReproductor_resumido(VistaReproductor_resumido vistaReproductor_resumido) {
-		this.vistaReproductor_resumido = vistaReproductor_resumido;
+	public void sethL_contenedorAnuncios(HorizontalLayout hL_contenedorAnuncios) {
+		this.hL_contenedorAnuncios = hL_contenedorAnuncios;
 	}
 
 

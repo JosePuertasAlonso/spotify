@@ -8,6 +8,10 @@ public class Recuperar_contrasena extends VistaRecuperar_contrasena{
 //	private Button _enviarB;
 	public Iniciar_sesion _iniciar_sesion;
 	public Enviar_correo_de_recuperacion _enviar_correo_de_recuperacion;
+	
+	public Recuperar_contrasena() {
+    	getStyle().set("margin", "0px");
+	}
 
 	public void Validar_correo_existente() {
 		throw new UnsupportedOperationException();

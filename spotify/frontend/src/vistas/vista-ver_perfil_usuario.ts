@@ -1,8 +1,5 @@
 import { LitElement, html, css, customElement } from 'lit-element';
-import './vista-cabecera';
-import './vista-reproductor_resumido';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
-import './vista-listas_del_usuario';
 
 @customElement('vista-ver_perfil_usuario')
 export class VistaVer_perfil_usuario extends LitElement {
@@ -53,9 +50,8 @@ export class VistaVer_perfil_usuario extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="background:#121212; max-width: 100%; max-height: 100%; align-items: flex-start; height: 100%;" id="vL_fondo">
- <vista-cabecera style="width: 100%; height: 10%;" id="vistaCabecera"></vista-cabecera>
- <vaadin-vertical-layout theme="spacing-xl" class="fuentes boton-rectangulo" style="max-height: 80%; padding-top: var(--lumo-space-l); padding-right: var(--lumo-space-l); padding-left: var(--lumo-space-l); overflow-y:scroll; width: 100%; height: 100%;" id="vL_cuerpo">
-  <vaadin-horizontal-layout theme="spacing-l" style="max-height: 43%; width: 100%;" id="hL_datosUsuario">
+ <vaadin-vertical-layout theme="spacing-xl" class="fuentes boton-rectangulo" style="max-height: 100%; padding-top: var(--lumo-space-l); padding-right: var(--lumo-space-l); padding-left: var(--lumo-space-l); overflow-y:scroll; width: 100%; height: 100%;" id="vL_cuerpo">
+  <vaadin-horizontal-layout theme="spacing-l" style="max-height: 40%; width: 100%;" id="hL_datosUsuario">
    <img style="max-width: 100%; max-height: 100%; border-radius:50%; border: 2px solid #FFFFFF;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/2048px-User-avatar.svg.png" id="imagen">
    <vaadin-vertical-layout style="width: 100%; justify-content: space-between;" id="vL_datosBotones">
     <vaadin-vertical-layout id="vL_nombreSeguidores">
@@ -72,11 +68,8 @@ export class VistaVer_perfil_usuario extends LitElement {
    </vaadin-vertical-layout>
   </vaadin-horizontal-layout>
   <label style="font-size: 1.5rem; line-height: 1.75rem; letter-spacing: -0.04em; text-transform: none; font-weight: 700; color:#FFFFFF; width: 100%;" id="label_listasDeReproduccionUsuario">Listas de reproducción de usuario</label>
-  <vaadin-vertical-layout theme="spacing" style="width: 100%; max-height: 10%; height: 100%;" id="vL_listasDelUsuario">
-   <vista-listas_del_usuario style="width: 100%; height: 100%;" id="vistaListas_del_usuario"></vista-listas_del_usuario>
-  </vaadin-vertical-layout>
+  <vaadin-vertical-layout theme="spacing" style="width: 100%; max-height: 16%; height: 100%; margin-top: 0px;" id="vL_listasDelUsuario"></vaadin-vertical-layout>
  </vaadin-vertical-layout>
- <vista-reproductor_resumido style="width: 100%; height: 10%;" id="vistaReproductor_resumido"></vista-reproductor_resumido>
 </vaadin-vertical-layout>
 `;
   }

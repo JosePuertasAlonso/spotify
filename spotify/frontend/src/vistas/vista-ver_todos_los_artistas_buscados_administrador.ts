@@ -1,9 +1,6 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
-import './vista-cabecera';
-import './vista-barra_buscador';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
-import './vista-lista_de_artistas_ver_todo_administrador';
 
 @customElement('vista-ver_todos_los_artistas_buscados_administrador')
 export class VistaVer_todos_los_artistas_buscados_administrador extends LitElement {
@@ -37,14 +34,11 @@ export class VistaVer_todos_los_artistas_buscados_administrador extends LitEleme
   render() {
     return html`
 <vaadin-vertical-layout style="background:#121212; max-width: 100%; max-height: 100%; align-items: flex-start; height: 100%;" class="fuentes" id="vL_fondo">
- <vista-cabecera style="width: 100%; height: 10%;" id="vistaCabecera"></vista-cabecera>
- <vaadin-vertical-layout theme="spacing" style="max-height: 90%; padding-top: var(--lumo-space-l); padding-right: var(--lumo-space-l); padding-left: var(--lumo-space-l); width: 100%; height: 100%;overflow-y:scroll" id="vL_cuerpo">
+ <vaadin-vertical-layout theme="spacing" style="padding-top: var(--lumo-space-l); padding-right: var(--lumo-space-l); padding-left: var(--lumo-space-l); width: 100%; height: 100%; overflow-y:scroll;" id="vL_cuerpo">
   <label style="align-self: center; font-size: 2.5rem; flex-shrink: 1;" id="label_buscaModifica">Busca y modifica elementos</label>
-  <vista-barra_buscador style="max-height: 6%; max-width: 50%; width: 100%; height: 100%; align-self: center;" id="vistaBarra_buscador"></vista-barra_buscador>
+  <vaadin-horizontal-layout theme="spacing" id="hL_barraBuscador" style="max-height: 7%; max-width: 50%; width: 100%; height: 100%; align-self: center;"></vaadin-horizontal-layout>
   <label style="font-size: 1.5rem; line-height: 1.75rem; letter-spacing: -0.04em; text-transform: none; font-weight: 700; color:#FFFFFF; flex-shrink: 0; margin-top: var(--lumo-space-xl);" id="label_todosArtistasPara">Todos los artistas para "busqueda"</label>
-  <vaadin-horizontal-layout theme="spacing" style="width: 100%; max-height: 9%; height: 100%;" id="hL_listaDeArtistasVerTodoAdmin">
-   <vista-lista_de_artistas_ver_todo_administrador style="width: 100%;" id="vistaLista_de_artistas_ver_todo_administrador"></vista-lista_de_artistas_ver_todo_administrador>
-  </vaadin-horizontal-layout>
+  <vaadin-horizontal-layout theme="spacing" style="width: 100%; max-height: 12%; height: 100%; margin: 0px;" id="hL_listaDeArtistasVerTodoAdmin"></vaadin-horizontal-layout>
  </vaadin-vertical-layout>
 </vaadin-vertical-layout>
 `;

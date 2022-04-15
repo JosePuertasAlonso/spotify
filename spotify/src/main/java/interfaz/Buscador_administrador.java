@@ -22,4 +22,29 @@ public class Buscador_administrador extends VistaBuscador_administrador {
 	public Ver_todos_los_albumes_buscados__administrador_ _ver_todos_los_albumes_buscados__administrador_;
 	public Lista_de_artistas_buscados__administrador_ _lista_de_artistas_buscados__administrador_;
 	public Ver_todos_los_artistas_buscados__administrador_ _ver_todos_los_artistas_buscados__administrador_;
+	
+	//ANADIDO A MANO
+	public Barra_buscador _barra_buscador;
+	
+	public Buscador_administrador() {
+		this.getStyle().set("margin", "0px");
+		this.getStyle().set("width", "100%");
+		this.getStyle().set("height", "100%");
+		
+		_barra_buscador = new Barra_buscador();
+		this.gethL_barraBuscador().add(_barra_buscador);
+		
+		_lista_de_canciones_buscadas__administrador_ = new Lista_de_canciones_buscadas__administrador_();
+		this.gethL_listaDeCancionesBuscadasAdmin().add(_lista_de_canciones_buscadas__administrador_);
+		
+		_lista_de_albumbes_buscados__administrador_ = new Lista_de_albumbes_buscados__administrador_();
+		this.gethL_listaDeAlbumesBuscadosAdmin().add(_lista_de_albumbes_buscados__administrador_);
+		
+		_lista_de_artistas_buscados__administrador_ = new Lista_de_artistas_buscados__administrador_();
+		this.gethL_listaDeArtistasBuscadosAdmin().add(_lista_de_artistas_buscados__administrador_);
+		
+		_lista_de_perfiles_buscados__administrador_ = new Lista_de_perfiles_buscados__administrador_();
+		this.gethL_listaDePerfilesBuscadosAdmin().add(_lista_de_perfiles_buscados__administrador_);
+		
+	}
 }

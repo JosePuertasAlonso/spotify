@@ -1,11 +1,6 @@
 import { LitElement, html, css, customElement } from 'lit-element';
-import './vista-cabecera';
-import './vista-reproductor_resumido';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
-import './vista-lista_canciones';
-import './vista-albumes_del_artista';
-import './vista-artistas_similares';
-import './vista-listas_de_reproduccion_del_artista';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 
 @customElement('vista-ver_perfil_artista')
 export class VistaVer_perfil_artista extends LitElement {
@@ -56,9 +51,8 @@ export class VistaVer_perfil_artista extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="background:#121212; max-width: 100%; max-height: 100%; align-items: flex-start; height: 100%;" id="vL_fondo">
- <vista-cabecera style="width: 100%; height: 10%;" id="vistaCabecera"></vista-cabecera>
- <vaadin-vertical-layout theme="spacing-xl" class="fuentes boton-rectangulo" style="max-height: 80%; padding-top: var(--lumo-space-l); padding-right: var(--lumo-space-l); padding-left: var(--lumo-space-l); overflow-y:scroll; width: 100%; height: 100%;" id="vL_cuerpo">
-  <vaadin-horizontal-layout theme="spacing-l" style="max-height: 43%; width: 100%;" id="hL_datosArtista">
+ <vaadin-vertical-layout theme="spacing-xl" class="fuentes " style="max-height: 100%; padding-top: var(--lumo-space-l); padding-right: var(--lumo-space-l); padding-left: var(--lumo-space-l); overflow-y:scroll; width: 100%; height: 100%;" id="vL_cuerpo">
+  <vaadin-horizontal-layout theme="spacing-l" style="max-height: 40%; width: 100%;" id="hL_datosArtista" class="boton-rectangulo">
    <img style="max-width: 100%; max-height: 100%; border-radius:50%; border: 2px solid #FFFFFF;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/2048px-User-avatar.svg.png" id="imagen">
    <vaadin-vertical-layout style="width: 100%; justify-content: space-between;" id="vL_nombreEstilosBotones">
     <vaadin-vertical-layout id="vL_nombreEstilos">
@@ -74,15 +68,14 @@ export class VistaVer_perfil_artista extends LitElement {
     </vaadin-horizontal-layout>
    </vaadin-vertical-layout>
   </vaadin-horizontal-layout>
-  <vista-lista_canciones id="vistaLista_canciones"></vista-lista_canciones>
+  <vaadin-horizontal-layout theme="spacing" id="hL_hits"></vaadin-horizontal-layout>
   <label style="font-size: 1.5rem; line-height: 1.75rem; letter-spacing: -0.04em; text-transform: none; font-weight: 700; color:#FFFFFF; width: 100%;" id="label_albumes">Álbumes</label>
-  <vista-albumes_del_artista style="margin-top: var(--lumo-space-m);" id="vistaAlbumes_del_artista"></vista-albumes_del_artista>
+  <vaadin-horizontal-layout theme="spacing" id="hL_albumes"></vaadin-horizontal-layout>
   <label style="font-size: 1.5rem; line-height: 1.75rem; letter-spacing: -0.04em; text-transform: none; font-weight: 700; color:#FFFFFF; width: 100%;" id="label_artistasSimilares">Artistas similares</label>
-  <vista-artistas_similares style="margin-top: var(--lumo-space-m);" id="vistaArtistas_similares"></vista-artistas_similares>
+  <vaadin-horizontal-layout theme="spacing" id="hL_artistasSimilares"></vaadin-horizontal-layout>
   <label style="font-size: 1.5rem; line-height: 1.75rem; letter-spacing: -0.04em; text-transform: none; font-weight: 700; color:#FFFFFF; width: 100%;" id="label_listasDelArtista">Listas de reproducción de "artista"</label>
-  <vista-listas_de_reproduccion_del_artista id="vistaListas_de_reproduccion_del_artista"></vista-listas_de_reproduccion_del_artista>
+  <vaadin-horizontal-layout theme="spacing" id="hL_listasDelArtista"></vaadin-horizontal-layout>
  </vaadin-vertical-layout>
- <vista-reproductor_resumido style="width: 100%; height: 10%;" id="vistaReproductor_resumido"></vista-reproductor_resumido>
 </vaadin-vertical-layout>
 `;
   }

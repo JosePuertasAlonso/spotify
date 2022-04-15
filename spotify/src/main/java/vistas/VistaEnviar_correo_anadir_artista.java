@@ -21,8 +21,6 @@ public class VistaEnviar_correo_anadir_artista extends LitTemplate {
 
     @Id("vL_fondo")
 	private Element vL_fondo;
-	@Id("vistaCabecera")
-	private VistaCabecera vistaCabecera;
 	@Id("label_artistaAnadido")
 	private Label label_artistaAnadido;
 	@Id("label_envioEmail")
@@ -42,18 +40,6 @@ public class VistaEnviar_correo_anadir_artista extends LitTemplate {
 
 	public void setvL_fondo(Element vL_fondo) {
 		this.vL_fondo = vL_fondo;
-	}
-
-
-
-	public VistaCabecera getVistaCabecera() {
-		return vistaCabecera;
-	}
-
-
-
-	public void setVistaCabecera(VistaCabecera vistaCabecera) {
-		this.vistaCabecera = vistaCabecera;
 	}
 
 

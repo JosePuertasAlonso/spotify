@@ -25,20 +25,16 @@ public class VistaVer_todos_los_artistas_buscados_administrador extends LitTempl
 
 	@Id("vL_fondo")
 	private Element vL_fondo;
-	@Id("vistaCabecera")
-	private VistaCabecera vistaCabecera;
 	@Id("vL_cuerpo")
 	private Element vL_cuerpo;
 	@Id("label_buscaModifica")
 	private Label label_buscaModifica;
-	@Id("vistaBarra_buscador")
-	private VistaBarra_buscador vistaBarra_buscador;
 	@Id("label_todosArtistasPara")
 	private Label label_todosArtistasPara;
 	@Id("hL_listaDeArtistasVerTodoAdmin")
 	private HorizontalLayout hL_listaDeArtistasVerTodoAdmin;
-	@Id("vistaLista_de_artistas_ver_todo_administrador")
-	private VistaLista_de_artistas_ver_todo_administrador vistaLista_de_artistas_ver_todo_administrador;
+	@Id("hL_barraBuscador")
+	private HorizontalLayout hL_barraBuscador;
 
 	
 	
@@ -50,18 +46,6 @@ public class VistaVer_todos_los_artistas_buscados_administrador extends LitTempl
 
 	public void setvL_fondo(Element vL_fondo) {
 		this.vL_fondo = vL_fondo;
-	}
-
-
-
-	public VistaCabecera getVistaCabecera() {
-		return vistaCabecera;
-	}
-
-
-
-	public void setVistaCabecera(VistaCabecera vistaCabecera) {
-		this.vistaCabecera = vistaCabecera;
 	}
 
 
@@ -90,17 +74,6 @@ public class VistaVer_todos_los_artistas_buscados_administrador extends LitTempl
 
 
 
-	public VistaBarra_buscador getVistaBarra_buscador() {
-		return vistaBarra_buscador;
-	}
-
-
-
-	public void setVistaBarra_buscador(VistaBarra_buscador vistaBarra_buscador) {
-		this.vistaBarra_buscador = vistaBarra_buscador;
-	}
-
-
 
 	public Label getLabel_todosArtistasPara() {
 		return label_todosArtistasPara;
@@ -126,15 +99,14 @@ public class VistaVer_todos_los_artistas_buscados_administrador extends LitTempl
 
 
 
-	public VistaLista_de_artistas_ver_todo_administrador getVistaLista_de_artistas_ver_todo_administrador() {
-		return vistaLista_de_artistas_ver_todo_administrador;
+	public HorizontalLayout gethL_barraBuscador() {
+		return hL_barraBuscador;
 	}
 
 
 
-	public void setVistaLista_de_artistas_ver_todo_administrador(
-			VistaLista_de_artistas_ver_todo_administrador vistaLista_de_artistas_ver_todo_administrador) {
-		this.vistaLista_de_artistas_ver_todo_administrador = vistaLista_de_artistas_ver_todo_administrador;
+	public void sethL_barraBuscador(HorizontalLayout hL_barraBuscador) {
+		this.hL_barraBuscador = hL_barraBuscador;
 	}
 
 

@@ -1,10 +1,6 @@
 import { LitElement, html, css, customElement } from 'lit-element';
-import './vista-cabecera';
-import './vista-reproductor_resumido';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
-import './vista-barra_buscador';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
-import './vista-canciones_buscadas_a_anadir';
 
 @customElement('vista-buscar_canciones_a_anadir')
 export class VistaBuscar_canciones_a_anadir extends LitElement {
@@ -55,22 +51,18 @@ export class VistaBuscar_canciones_a_anadir extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="background:#121212; max-width: 100%; max-height: 100%; align-items: flex-start; height: 100%;" class="fuentes boton-rectangulo" id="vL_fondo">
- <vista-cabecera style="width: 100%; height: 10%;" id="vistaCabecera"></vista-cabecera>
- <vaadin-vertical-layout theme="spacing-l" style="max-height: 80%; padding-top: var(--lumo-space-l); padding-right: var(--lumo-space-l); padding-left: var(--lumo-space-l); overflow-y:scroll; width: 100%; height: 100%;" id="vL_cuerpo">
-  <vaadin-horizontal-layout style="width: 100%; justify-content: space-between;" id="hL_anadeCancionVolver">
-   <label style="align-self: flex-start; font-size: 2.5rem; flex-shrink: 1;" id="label_anadeCancion">Añade una canción a la lista "nombre lista"</label>
+ <vaadin-vertical-layout theme="spacing-l" style="max-height: 100%; padding-top: var(--lumo-space-l); padding-right: var(--lumo-space-l); padding-left: var(--lumo-space-l); overflow-y:scroll; width: 100%; height: 100%;" id="vL_cuerpo">
+  <label style="align-self: flex-start; font-size: 2.5rem; flex-shrink: 1; margin: 0px; padding-left: var(--lumo-space-m);" id="label_anadeCancion">Añade una canción a la lista "nombre lista"</label>
+  <vaadin-horizontal-layout style="width: 100%; justify-content: space-between; margin: 0px; max-height: 7%; margin-top: var(--lumo-space-m);" id="hL_anadeCancionVolver">
+   <vaadin-horizontal-layout theme="spacing" id="hL_barraBuscador" style="max-width: 100%; max-height: 100%; width: 50%;"></vaadin-horizontal-layout>
    <button style="align-self: center; width: 100%; max-width: 10%;" id="button_volver">VOLVER</button>
   </vaadin-horizontal-layout>
-  <vista-barra_buscador style="max-width: 100%; max-height: 5%; width: 50%;" id="vistaBarra_buscador"></vista-barra_buscador>
   <vaadin-horizontal-layout theme="spacing" style="width: 100%;" id="hL_todasCancionesNuevaCancion">
    <label style="font-size: 1.5rem; line-height: 1.75rem; letter-spacing: -0.04em; text-transform: none; font-weight: 700; color:#FFFFFF; width: 100%;" id="label_todasCancionesPara">Todas las canciones para "búsqueda"</label>
    <button style="align-self: center; width: 100%; max-width: 10%;" id="button_nuevaCancion">NUEVA CANCIÓN</button>
   </vaadin-horizontal-layout>
-  <vaadin-vertical-layout theme="spacing" style="width: 100%; max-height: 10%; height: 100%;" id="vL_cancionesBuscadasAAnadir">
-   <vista-canciones_buscadas_a_anadir style="width: 100%;" id="vistaCanciones_buscadas_a_anadir"></vista-canciones_buscadas_a_anadir>
-  </vaadin-vertical-layout>
+  <vaadin-vertical-layout theme="spacing" style="width: 100%; max-height: 16%; height: 100%; margin: 0px;" id="vL_cancionesBuscadasAAnadir"></vaadin-vertical-layout>
  </vaadin-vertical-layout>
- <vista-reproductor_resumido style="width: 100%; height: 10%;" id="vistaReproductor_resumido"></vista-reproductor_resumido>
 </vaadin-vertical-layout>
 `;
   }

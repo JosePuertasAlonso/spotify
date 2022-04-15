@@ -32,10 +32,10 @@ public class VistaLista_de_reproduccion_bloque extends LitTemplate {
 	private Label label_titulo;
 	@Id("label_creador")
 	private Label label_creador;
-	@Id("vaadinHorizontalLayout")
-	private HorizontalLayout vaadinHorizontalLayout;
 	@Id("button_play")
 	private NativeButton button_play;
+	@Id("hL_botones")
+	private HorizontalLayout hL_botones;
 	
 	
 
@@ -107,18 +107,6 @@ public class VistaLista_de_reproduccion_bloque extends LitTemplate {
 
 	public void setLabel_creador(Label label_creador) {
 		this.label_creador = label_creador;
-	}
-
-
-
-	public HorizontalLayout getVaadinHorizontalLayout() {
-		return vaadinHorizontalLayout;
-	}
-
-
-
-	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
-		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
 	}
 
 

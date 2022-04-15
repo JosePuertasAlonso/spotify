@@ -1,5 +1,4 @@
 import { LitElement, html, css, customElement } from 'lit-element';
-import './vista-cabecera';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 
@@ -68,7 +67,6 @@ export class VistaRegistrarse extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout class="fuentes" style="width: 100%; height: 100%; background-color:#121212; overflow-y:scroll;" id="vaadinVerticalLayout" theme="spacing" dir="vL_fondo">
- <vista-cabecera style="width: 100%; max-height: 10%;" id="vistaCabecera"></vista-cabecera>
  <label style="align-self: center; font-size: 2.5rem; text-align: center;" id="label_creaCuenta">Crea una cuenta de Spotify</label>
  <vaadin-horizontal-layout theme="spacing-xl" style="width: 100%; max-width: 50%; align-self: center; margin-top: var(--lumo-space-xl);" id="hL_datosImagen">
   <vaadin-vertical-layout style="max-width: 70%; width: 100%; margin-right: var(--lumo-space-xl);" theme="spacing" id="vL_datos">
@@ -110,7 +108,7 @@ export class VistaRegistrarse extends LitElement {
  <button style="width:100%; max-width: 14%; max-height: 6.5%; border:none; cursor:pointer; border-radius: 500px; font-size:12px; color:#121212; padding: 8px 34px; font-weight:700; letter-spacing:1.76px; line-height:18px; align-self: center; margin-top: var(--lumo-space-l); height: 100%; min-height: 6.5%;" id="button_registrarse" class="registro">REGISTRARSE</button>
  <label style="align-self: center; margin-top: var(--lumo-space-l);" id="label_o">ó</label>
  <vaadin-horizontal-layout class="media-boton" theme="spacing-xl" style="align-self: center; margin-top: var(--lumo-space-l); flex-shrink: 0;" id="hL_GoogleAppleFacebook">
-  <button style="min-width: 65px; min-height: 65px; max-width: 65px; max-height: 65px; flex-grow: 0; flex-shrink: 0; align-self: center; width: 65px; height: 65px;" id="button_Google"><img style="width: 15; align-self: center;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1024px-Google_%22G%22_Logo.svg.png"></button>
+  <button style="min-width: 65px; min-height: 65px; max-width: 65px; max-height: 65px; flex-grow: 0; flex-shrink: 0; align-self: center; width: 65px; height: 65px; margin: 0px;" id="button_Google"><img style="width: 15; align-self: center;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1024px-Google_%22G%22_Logo.svg.png"></button>
   <button style="min-width: 65px; min-height: 65px; max-width: 65px; max-height: 65px; flex-grow: 0; flex-shrink: 0; padding: var(--lumo-space-m); align-self: center; background-color:#1C1C1C" id="button_Apple"><img style="min-width: 60px; width: 60px; height: 60px; min-height: 60px; max-height: 60px; max-width: 60px; border-radius:50px;" src="https://cdn3.iconfinder.com/data/icons/inficons/512/apple.png"></button>
   <button style="min-width: 65px; min-height: 65px; max-width: 65px; max-height: 65px; flex-grow: 0; flex-shrink: 0; padding: var(--lumo-space-m); align-self: center; background-color:#295396" id="button_Facebook"><img style="width: 15; min-width: 70px; max-width: 70px; min-height: 70px; max-height: 70px; border-radius:50px;" src="https://www.academiaaudioplace.com/wp-content/uploads/2017/10/facebook-icon-preview-200x200.png"></button>
  </vaadin-horizontal-layout>

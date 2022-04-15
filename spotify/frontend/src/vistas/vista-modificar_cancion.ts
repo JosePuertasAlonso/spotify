@@ -1,6 +1,5 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
-import './vista-cabecera';
 
 @customElement('vista-modificar_cancion')
 export class VistaModificar_cancion extends LitElement {
@@ -51,8 +50,7 @@ export class VistaModificar_cancion extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%; background-color:#121212;" class="fuentes" id="vL_fondo">
- <vista-cabecera style="width: 100%; max-height: 10%;" id="vistaCabecera"></vista-cabecera>
- <vaadin-vertical-layout theme="spacing" style="max-height: 80%; padding-top: var(--lumo-space-l); padding-right: var(--lumo-space-l); padding-left: var(--lumo-space-l); height: 100%; width: 100%;" id="vL_cuerpo">
+ <vaadin-vertical-layout theme="spacing" style="max-height: 100%; padding-top: var(--lumo-space-l); padding-right: var(--lumo-space-l); padding-left: var(--lumo-space-l); height: 100%; width: 100%;" id="vL_cuerpo" class="botones-cabecera">
   <label style="align-self: center; font-size: 2.5rem; text-align: center;" id="label_anadeNuevaCancion">Añade una nueva canción</label>
   <vaadin-horizontal-layout theme="spacing-xl" style="max-width: 55%; align-self: center; margin-top: var(--lumo-space-xl); margin-bottom: var(--lumo-space-m); width: 100%; justify-content: center;" id="hL_datosCancion">
    <vaadin-vertical-layout style="max-width: 70%; width: 100%; margin-right: var(--lumo-space-xl);" theme="spacing" id="vL_cancion">
@@ -77,7 +75,7 @@ export class VistaModificar_cancion extends LitElement {
      </svg>ELEGIR CANCIÓN</label>
    </vaadin-vertical-layout>
   </vaadin-horizontal-layout>
-  <button style="width:100%; max-width: 17%; max-height: 8%; border:none; cursor:pointer; border-radius: 500px; color:#121212; padding: 8px 34px; font-weight:700; letter-spacing:1.76px; line-height:18px; background-color:#FFFFFF; align-self: center; margin-top: var(--lumo-space-xl); height: 100%; min-height: 8%;" id="button_modificarCancion" class="registro">MODIFICAR CANCIÓN</button>
+  <button style="color:#000000; background-color:#FFFFFF; max-height: 7%; max-width: 17%; margin-top: var(--lumo-space-l);" id="button_modificarCancion" class="registro">MODIFICAR CANCIÓN</button>
  </vaadin-vertical-layout>
 </vaadin-vertical-layout>
 `;

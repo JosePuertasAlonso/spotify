@@ -5,8 +5,349 @@
 */
 
 /* Example: CSS class name to center align the content . */
+      
+     
 .centered-content {
   margin: 0 auto;
   max-width: 250px;
 }
 
+::before{
+	content: none;
+}
+
+::-webkit-scrollbar {
+		width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+		background: #414141;
+		background: #A8A8A8;
+		border-radius: 5px;
+}
+
+.botones-cabecera button {
+	width: 100%; 
+	height: 100%; 
+	border:none; 
+	background:none;
+	cursor: pointer; 
+	border-radius: 500px; 
+	font-size: 12px; 
+	color: #FFFFFF;
+	max-width: 50%; 
+	padding: 8px 34px;
+	align-self: center;
+	font-weight: 700;
+	letter-spacing: 1.76px;
+	line-height: 18px;
+	background-color: #000000;
+}
+
+.botones-cabecera button:hover {
+	font-size: 13px;
+}
+
+
+.fuentes input {
+	color: #FFFFFF;
+	font-size: 1.1rem;
+	border: 1px solid #FFFFFF;
+	background-color:#121212;
+	outline-color: #FFFFFF;
+}
+
+.fuentes input::placeholder {
+	color:#A8A8A8;
+}
+
+.fuentes label {
+	font-size: 1.3rem;
+	letter-spacing: -0.04em;
+	font-weight: 700; 
+	color:#FFFFFF;
+}
+
+.inicio-boton button {
+	width:100%; 
+	border:none; 
+	cursor:pointer; 
+	border-radius: 500px; 
+	font-size:12px; 
+	color:#121212; 
+	padding: 8px 34px; 
+	font-weight:700; 
+	letter-spacing:1.76px; 
+	line-height:18px; 
+	background-color:#1ED760; 
+	align-self: center; 
+	margin-top: var(--lumo-space-l); 
+	height: 100%; 
+	max-width: 43%; 
+	min-height: 15%; 
+	max-height: 15%;
+}
+
+.inicio-boton button:hover {
+	font-size:13px; 
+}
+
+.media-boton button {
+	border:none; 
+	background:none;
+	cursor: pointer; 
+	border-radius: 50%;
+	align-self: center;
+	background-color: #FFFFFF;
+	display: flex;
+	align-items: center;
+	padding: 0px 0px;
+	justify-content: center;
+    }
+
+.media-boton button img {
+	min-width: 35px; 
+	min-height: 35px; 
+	max-width: 35px; 
+	max-height: 35px
+}
+
+audio {
+	filter: invert(100%);
+}
+
+audio::-webkit-media-controls-current-time-display, video::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display, video::-webkit-media-controls-time-remaining-display {
+	line-height: 300px;    
+	font-size: 18px;
+	font-weight: 800;
+
+}
+
+audio::-webkit-media-controls-panel {
+	background-color: #eeeeee;
+}
+
+audio::-webkit-media-controls-play-button, video::-webkit-media-controls-play-button {
+	filter: invert(100%);
+	-webkit-appearance: media-play-button;
+	display: flex;
+	flex: none;
+	border: none;
+	box-sizing: border-box;
+	width: 40px;
+	height: 40px;
+	border-radius:100%;
+	line-height: 30px;
+	margin-left: 9px;
+	margin-right: 9px;
+	padding: 0;
+	background-color: white;
+	color: inherit;
+}
+
+
+
+
+
+
+
+.label-cancion label {
+	font-size: 1rem;
+	line-height: 1.5rem;
+	text-transform: none;
+	letter-spacing: normal;
+	font-weight: 700;
+}
+
+.boton-ajustes button {
+	border:none; 
+	background:none;
+	cursor: pointer; 
+	font-size: 15px; 
+	color: #A8A8A8;
+	align-self: center;
+	font-weight: 700;
+	line-height: 18px;
+}
+
+.boton-ajustes button:hover {
+	color: #FFFFFF;
+}
+
+.boton-play button {
+	border:none; 
+	background:none; 
+	align-self: center; 
+	flex-grow: 0; 
+	cursor: pointer;
+	background-color: #1ED760;
+	border-radius: 50%;
+}
+
+.boton-play svg:hover {
+	fill:white;
+}
+
+.boton-play img:hover {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+
+
+.buscar button {
+	border:none; 
+	background:none;
+	border: 1px solid #A8A8A8;
+	border-radius: 5px;
+	cursor: pointer; 
+	color: #FFFFFF;
+	align-self: center;
+	font-size: 0.875rem;
+	padding: 7px 15px;
+}
+
+.buscar button:hover {
+	border: 1px solid #FFFFFF;
+}
+
+.buscar input {
+	font-size: 0.875rem;
+	line-height: 1rem;
+	border: none;
+	background:none;
+	outline: none;
+}
+
+.label-lista label {
+	font-size: 1rem;
+	line-height: 1.5rem;
+	text-transform: none;
+	letter-spacing: normal;
+	font-weight: 700;
+}
+
+.label-lista svg:hover {
+	fill:white;
+}
+
+
+.boton-rectangulo button {
+	border:none; 
+	background:none;
+	border: 1px solid #A8A8A8;
+	border-radius: 5px;
+	cursor: pointer; 
+	color: #FFFFFF;
+	align-self: center;
+	font-size: 0.875rem;
+	padding: 7px 15px;
+}
+
+.boton-rectangulo button:hover {
+	border: 1px solid #FFFFFF; 
+}
+
+.botonlabel label{
+	font-size:12px;
+}
+
+.botonlabel label:hover{
+	font-size:13px;
+}
+
+.boton_modificar button{
+	width:100%; 
+	max-width: 15%; 
+	max-height: 8%; 
+	border:none; 
+	cursor:pointer; 
+	border-radius: 500px; 
+	color:#121212; 
+	padding: 8px 34px; 
+	font-weight:700; 
+	letter-spacing:1.76px; 
+	line-height:18px; 
+	background-color:#FFFFFF; 
+	align-self: center; 
+	margin-top: var(--lumo-space-xl); 
+	height: 100%; 
+	min-height: 8%;
+	font-size: 12px;
+}
+    
+    
+.boton_modificar button:hover{
+	font-size: 13px;
+}
+
+
+.fuentes textarea {
+	color: #FFFFFF;
+	font-size: 1.1rem;
+	font-family: helvetica;
+	border: 1px solid #FFFFFF;
+	background-color:#121212;
+	outline-color: #FFFFFF;
+}
+
+.fuentes textarea::placeholder {
+	color:#A8A8A8;
+}
+
+
+.boton-superior button {
+	border:none; 
+	background:none;
+	cursor: pointer; 
+	color: #A8A8A8;
+	align-self: center;
+	line-height: 18px;
+	font-size: 0.875rem;
+	line-height: 1.5rem;
+	text-transform: none;
+	letter-spacing: normal;
+	font-weight: 700;
+}
+
+.boton-superior button:hover {
+	color: #FFFFFF;
+}
+
+
+.boton-creditos button  {
+	border: none;
+	background: none;
+	border: 1px solid #A8A8A8;
+	border-radius: 5px;
+	cursor: pointer;
+	color: #FFFFFF;
+	align-self: center;
+	font-size: 0.875rem;
+	padding: 7px 15px;
+}
+
+.boton-creditos button:hover {
+	border: 1px solid #FFFFFF;
+}
+
+
+
+input[type="checkbox"] {
+	appearance: none;
+	-webkit-appearance: none;
+	height: 25px;
+	width: 25px;
+	background-color: #181818;
+	border: 1px solid #FFFFFF;
+	cursor: pointer;
+}
+
+input[type="checkbox"]:hover {
+	background-color: #121212;
+}
+
+input[type="checkbox"]:checked {
+	background-color: #1ED760;
+}

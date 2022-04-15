@@ -26,12 +26,8 @@ public class VistaBuscador extends LitTemplate {
 
     @Id("vL_fondo")
 	private Element vL_fondo;
-	@Id("vistaCabecera")
-	private VistaCabecera vistaCabecera;
 	@Id("vL_cuerpo")
 	private Element vL_cuerpo;
-	@Id("vistaBarra_buscador")
-	private VistaBarra_buscador vistaBarra_buscador;
 	@Id("label_resultadosPara")
 	private Label label_resultadosPara;
 	@Id("hL_cancionesArtistasListas")
@@ -46,8 +42,6 @@ public class VistaBuscador extends LitTemplate {
 	private NativeButton button_verTodoCanciones;
 	@Id("hL_listaDeCancionesBuscadas")
 	private HorizontalLayout hL_listaDeCancionesBuscadas;
-	@Id("vistaLista_de_canciones_buscadas")
-	private VistaLista_de_canciones_buscadas vistaLista_de_canciones_buscadas;
 	@Id("vL_artistas")
 	private Element vL_artistas;
 	@Id("hL_artistasVertodo")
@@ -58,8 +52,6 @@ public class VistaBuscador extends LitTemplate {
 	private NativeButton button_verTodoArtistas;
 	@Id("hL_listaDeArtistasBuscados")
 	private HorizontalLayout hL_listaDeArtistasBuscados;
-	@Id("vistaLista_de_artistas_buscados")
-	private VistaLista_de_artistas_buscados vistaLista_de_artistas_buscados;
 	@Id("vL_listasDeReproduccion")
 	private Element vL_listasDeReproduccion;
 	@Id("hL_listasVertodo")
@@ -70,8 +62,8 @@ public class VistaBuscador extends LitTemplate {
 	private NativeButton button_verTodoListas;
 	@Id("hL_listasDeReproduccionBuscadas")
 	private HorizontalLayout hL_listasDeReproduccionBuscadas;
-	@Id("vistaListas_de_reproduccion_buscadas")
-	private VistaListas_de_reproduccion_buscadas vistaListas_de_reproduccion_buscadas;
+	@Id("hL_barraBuscador")
+	private HorizontalLayout hL_barraBuscador;
 
 	
 	
@@ -90,20 +82,6 @@ public class VistaBuscador extends LitTemplate {
 
 
 
-	public VistaCabecera getVistaCabecera() {
-		return vistaCabecera;
-	}
-
-
-
-
-	public void setVistaCabecera(VistaCabecera vistaCabecera) {
-		this.vistaCabecera = vistaCabecera;
-	}
-
-
-
-
 	public Element getvL_cuerpo() {
 		return vL_cuerpo;
 	}
@@ -113,20 +91,6 @@ public class VistaBuscador extends LitTemplate {
 
 	public void setvL_cuerpo(Element vL_cuerpo) {
 		this.vL_cuerpo = vL_cuerpo;
-	}
-
-
-
-
-	public VistaBarra_buscador getVistaBarra_buscador() {
-		return vistaBarra_buscador;
-	}
-
-
-
-
-	public void setVistaBarra_buscador(VistaBarra_buscador vistaBarra_buscador) {
-		this.vistaBarra_buscador = vistaBarra_buscador;
 	}
 
 
@@ -230,20 +194,6 @@ public class VistaBuscador extends LitTemplate {
 
 
 
-	public VistaLista_de_canciones_buscadas getVistaLista_de_canciones_buscadas() {
-		return vistaLista_de_canciones_buscadas;
-	}
-
-
-
-
-	public void setVistaLista_de_canciones_buscadas(VistaLista_de_canciones_buscadas vistaLista_de_canciones_buscadas) {
-		this.vistaLista_de_canciones_buscadas = vistaLista_de_canciones_buscadas;
-	}
-
-
-
-
 	public Element getvL_artistas() {
 		return vL_artistas;
 	}
@@ -309,20 +259,6 @@ public class VistaBuscador extends LitTemplate {
 
 	public void sethL_listaDeArtistasBuscados(HorizontalLayout hL_listaDeArtistasBuscados) {
 		this.hL_listaDeArtistasBuscados = hL_listaDeArtistasBuscados;
-	}
-
-
-
-
-	public VistaLista_de_artistas_buscados getVistaLista_de_artistas_buscados() {
-		return vistaLista_de_artistas_buscados;
-	}
-
-
-
-
-	public void setVistaLista_de_artistas_buscados(VistaLista_de_artistas_buscados vistaLista_de_artistas_buscados) {
-		this.vistaLista_de_artistas_buscados = vistaLista_de_artistas_buscados;
 	}
 
 
@@ -395,19 +331,19 @@ public class VistaBuscador extends LitTemplate {
 		this.hL_listasDeReproduccionBuscadas = hL_listasDeReproduccionBuscadas;
 	}
 
+	
 
 
 
-	public VistaListas_de_reproduccion_buscadas getVistaListas_de_reproduccion_buscadas() {
-		return vistaListas_de_reproduccion_buscadas;
+	public HorizontalLayout gethL_barraBuscador() {
+		return hL_barraBuscador;
 	}
 
 
 
 
-	public void setVistaListas_de_reproduccion_buscadas(
-			VistaListas_de_reproduccion_buscadas vistaListas_de_reproduccion_buscadas) {
-		this.vistaListas_de_reproduccion_buscadas = vistaListas_de_reproduccion_buscadas;
+	public void sethL_barraBuscador(HorizontalLayout hL_barraBuscador) {
+		this.hL_barraBuscador = hL_barraBuscador;
 	}
 
 

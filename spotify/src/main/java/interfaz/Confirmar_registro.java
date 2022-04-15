@@ -11,6 +11,10 @@ public class Confirmar_registro extends VistaConfirmar_registro{
 	public Gestor_correo_electronico _gestor_correo_electronico;
 	public Iniciar_sesion _iniciar_sesion;
 
+	public Confirmar_registro() {
+    	getStyle().set("margin", "0px");
+	}
+	
 	public void Enviar_correo() {
 		throw new UnsupportedOperationException();
 	}

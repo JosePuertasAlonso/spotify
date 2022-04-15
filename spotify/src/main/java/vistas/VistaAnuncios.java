@@ -20,14 +20,6 @@ public class VistaAnuncios extends LitTemplate {
 
 	@Id("vL_contenedorAnuncios")
 	private Element vL_contenedorAnuncios;
-	@Id("vistaAnuncio")
-	private VistaAnuncio vistaAnuncio;
-	@Id("vistaAnuncio1")
-	private VistaAnuncio vistaAnuncio1;
-	@Id("vistaAnuncio2")
-	private VistaAnuncio vistaAnuncio2;
-	@Id("vistaAnuncio3")
-	private VistaAnuncio vistaAnuncio3;
 	
 	
 
@@ -39,54 +31,6 @@ public class VistaAnuncios extends LitTemplate {
 
 	public void setvL_contenedorAnuncios(Element vL_contenedorAnuncios) {
 		this.vL_contenedorAnuncios = vL_contenedorAnuncios;
-	}
-
-
-
-	public VistaAnuncio getVistaAnuncio() {
-		return vistaAnuncio;
-	}
-
-
-
-	public void setVistaAnuncio(VistaAnuncio vistaAnuncio) {
-		this.vistaAnuncio = vistaAnuncio;
-	}
-
-
-
-	public VistaAnuncio getVistaAnuncio1() {
-		return vistaAnuncio1;
-	}
-
-
-
-	public void setVistaAnuncio1(VistaAnuncio vistaAnuncio1) {
-		this.vistaAnuncio1 = vistaAnuncio1;
-	}
-
-
-
-	public VistaAnuncio getVistaAnuncio2() {
-		return vistaAnuncio2;
-	}
-
-
-
-	public void setVistaAnuncio2(VistaAnuncio vistaAnuncio2) {
-		this.vistaAnuncio2 = vistaAnuncio2;
-	}
-
-
-
-	public VistaAnuncio getVistaAnuncio3() {
-		return vistaAnuncio3;
-	}
-
-
-
-	public void setVistaAnuncio3(VistaAnuncio vistaAnuncio3) {
-		this.vistaAnuncio3 = vistaAnuncio3;
 	}
 
 

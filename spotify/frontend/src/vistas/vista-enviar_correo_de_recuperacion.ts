@@ -1,6 +1,5 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
-import './vista-cabecera';
 
 @customElement('vista-enviar_correo_de_recuperacion')
 export class VistaEnviar_correo_de_recuperacion extends LitElement {
@@ -58,11 +57,10 @@ export class VistaEnviar_correo_de_recuperacion extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%; background-color:#121212;" class="fuentes inicio-boton" theme="spacing" id="vL_fondo">
- <vista-cabecera style="width: 100%; max-height: 10%;" id="vistaCabecera"></vista-cabecera>
+<vaadin-vertical-layout style="width: 100%; height: 100%; background-color:#121212;" class="fuentes botones-cabecera" theme="spacing" id="vL_fondo">
  <label style="align-self: center; font-size: 2.5rem; text-align: center;" id="label_restablecerContrasena">Restablecer contraseña de Spotify</label>
- <label style="flex-shrink: 0; align-self: center; font-weight: 300; font-size:; max-width: 40%; text-align:center; margin-top: var(--lumo-space-xl);" id="label_envioEmail">Te hemos enviado un correo electrónico con instrucciones para volver a establecer tu contraseña.</label>
- <button id="button_aceptar" class="registro" style="margin-top: var(--lumo-space-xl); background-color:">ACEPTAR</button>
+ <label style="flex-shrink: 0; align-self: center; font-weight: 300; max-width: 40%; text-align:center; margin-top: var(--lumo-space-xl);" id="label_envioEmail">Te hemos enviado un correo electrónico con instrucciones para volver a establecer tu contraseña.</label>
+ <button id="button_aceptar" class="registro" style="margin-top: var(--lumo-space-xl); color:#000000; background-color:#FFFFFF; max-height: 7%; max-width: 14%;">ACEPTAR</button>
 </vaadin-vertical-layout>
 `;
   }

@@ -23,8 +23,6 @@ public class VistaCrear_lista_de_reproduccion extends LitTemplate {
 
     @Id("vL_fondo")
 	private Element vL_fondo;
-	@Id("vistaCabecera")
-	private VistaCabecera vistaCabecera;
 	@Id("vL_cuerpo")
 	private Element vL_cuerpo;
 	@Id("label_creaLista")
@@ -35,8 +33,6 @@ public class VistaCrear_lista_de_reproduccion extends LitTemplate {
 	private Input input_titulo;
 	@Id("button_crearLista")
 	private NativeButton button_crearLista;
-	@Id("vistaReproductor_resumido")
-	private VistaReproductor_resumido vistaReproductor_resumido;
 	
 	
 
@@ -48,18 +44,6 @@ public class VistaCrear_lista_de_reproduccion extends LitTemplate {
 
 	public void setvL_fondo(Element vL_fondo) {
 		this.vL_fondo = vL_fondo;
-	}
-
-
-
-	public VistaCabecera getVistaCabecera() {
-		return vistaCabecera;
-	}
-
-
-
-	public void setVistaCabecera(VistaCabecera vistaCabecera) {
-		this.vistaCabecera = vistaCabecera;
 	}
 
 
@@ -120,18 +104,6 @@ public class VistaCrear_lista_de_reproduccion extends LitTemplate {
 
 	public void setButton_crearLista(NativeButton button_crearLista) {
 		this.button_crearLista = button_crearLista;
-	}
-
-
-
-	public VistaReproductor_resumido getVistaReproductor_resumido() {
-		return vistaReproductor_resumido;
-	}
-
-
-
-	public void setVistaReproductor_resumido(VistaReproductor_resumido vistaReproductor_resumido) {
-		this.vistaReproductor_resumido = vistaReproductor_resumido;
 	}
 
 

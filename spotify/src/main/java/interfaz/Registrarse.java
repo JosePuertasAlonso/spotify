@@ -25,6 +25,14 @@ public class Registrarse extends VistaRegistrarse{
 	public Apple _apple;
 	public Facebook _facebook;
 	public Confirmar_registro _confirmar_registro;
+	
+	public Registrarse() {
+    	getStyle().set("margin", "0px");
+		this.getLabel_errorConfirmarContrasena().setVisible(false);
+		this.getLabel_errorContrasena().setVisible(false);
+		this.getLabel_errorCorreo().setVisible(false);
+		this.getLabel_errorNombrePerfil().setVisible(false);
+	}
 
 	public void Registrarse_con_Google() {
 		throw new UnsupportedOperationException();

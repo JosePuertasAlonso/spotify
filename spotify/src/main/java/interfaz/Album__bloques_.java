@@ -8,4 +8,11 @@ public class Album__bloques_ extends VistaAlbum_bloques{
 //	private Button _reproducirB;
 	public Albumes_del_artista _albumes_del_artista;
 	public Ver_album _ver_album;
+	
+	public Album__bloques_() {
+		this.getStyle().set("margin", "0px");
+		this.getStyle().set("width", "100%");
+		this.getStyle().set("height", "100%");
+	}
+	
 }

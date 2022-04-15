@@ -1,6 +1,5 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
-import './vista-anuncio';
 
 @customElement('vista-anuncios')
 export class VistaAnuncios extends LitElement {
@@ -15,13 +14,7 @@ export class VistaAnuncios extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="background:#121212; width: 100%; height: 100%;" theme="spacing" id="vL_contenedorAnuncios">
- <vista-anuncio id="vistaAnuncio"></vista-anuncio>
- <vista-anuncio id="vistaAnuncio1"></vista-anuncio>
- <vista-anuncio id="vistaAnuncio2"></vista-anuncio>
- <vista-anuncio id="vistaAnuncio3"></vista-anuncio>
- <vista-anuncio></vista-anuncio>
-</vaadin-vertical-layout>
+<vaadin-vertical-layout style="background:#121212; width: 100%; height: 100%;" theme="spacing" id="vL_contenedorAnuncios"></vaadin-vertical-layout>
 `;
   }
 

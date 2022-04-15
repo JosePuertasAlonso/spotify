@@ -1,9 +1,6 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
-import './vista-interpretes';
-import './vista-productores';
-import './vista-compositores';
 
 @customElement('vista-ver_creditos_cancion')
 export class VistaVer_creditos_cancion extends LitElement {
@@ -47,15 +44,12 @@ export class VistaVer_creditos_cancion extends LitElement {
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout theme="spacing" id="hL_compositores">
   <label style="flex-shrink: 0; align-self: flex-start;" id="label_compositores">Compositores:</label>
-  <vista-compositores id="vistaCompositores"></vista-compositores>
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout theme="spacing" id="hL_productores">
   <label style="flex-shrink: 0; align-self: flex-start;" id="label_productores">Productores:</label>
-  <vista-productores style="margin-left: 31px;" id="vistaProductores"></vista-productores>
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout theme="spacing" id="hL_interpretes">
   <label style="flex-shrink: 0; align-self: flex-start;" id="label_interpretes">Intérpretes:</label>
-  <vista-interpretes style="margin-left: 42px;" id="vistaInterpretes"></vista-interpretes>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>
 `;

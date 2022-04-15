@@ -1,6 +1,5 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
-import './vista-cabecera';
 
 @customElement('vista-dar_de_baja_perfil')
 export class VistaDar_de_baja_perfil extends LitElement {
@@ -40,10 +39,9 @@ export class VistaDar_de_baja_perfil extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%; background-color:#121212;" class="fuentes boton-rectangulo" theme="spacing" id="vL_fondo">
- <vista-cabecera style="width: 100%; height: 10%;" id="vistaCabecera"></vista-cabecera>
  <label style="align-self: center; font-size: 2.5rem; text-align: center;" id="label_eliminarPerfil">Eliminar perfil</label>
  <label style="flex-shrink: 0; align-self: center; margin-top: var(--lumo-space-xl); max-width: 30%; text-align:center;" id="label_atencion">¡Atención! si confirma la eliminación del perfil este desaparecerá definitivamente en 30 días.</label>
- <label style="flex-shrink: 0; align-self: center; font-weight: 300; font-size:" id="label_continuar">¿Desea continuar?</label>
+ <label style="flex-shrink: 0; align-self: center; font-weight: 300;" id="label_continuar">¿Desea continuar?</label>
  <vaadin-horizontal-layout theme="spacing-xl" style="width: 100%; align-self: center; align-items: center; justify-content: center; margin-top: var(--lumo-space-l);" id="hL_botones">
   <button style="align-self: center; width: 100%; max-width: 15%;" id="button_siEliminar">SÍ, ELIMINAR PERFIL</button>
   <button style="align-self: center; width: 100%; max-width: 15%;" id="button_noVolver">NO, VOLVER A MI PERFIL</button>

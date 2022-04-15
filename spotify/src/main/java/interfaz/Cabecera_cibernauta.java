@@ -7,4 +7,10 @@ public class Cabecera_cibernauta extends Cabecera {
 	public Cibernauta_no_registrado _cibernauta_no_registrado;
 	public Registrarse _registrarse;
 	public Iniciar_sesion _iniciar_sesion;
+
+	public Cabecera_cibernauta() {
+		this.gethL_usuarioCerrarSesion().setVisible(false);
+	}
+
 }
+

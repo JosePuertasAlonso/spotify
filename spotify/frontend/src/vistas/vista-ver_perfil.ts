@@ -1,9 +1,6 @@
 import { LitElement, html, css, customElement } from 'lit-element';
-import './vista-cabecera';
-import './vista-reproductor_resumido';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
-import './vista-lista_de_reproduccion_del_perfil';
 
 @customElement('vista-ver_perfil')
 export class VistaVer_perfil extends LitElement {
@@ -53,8 +50,7 @@ export class VistaVer_perfil extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="background:#121212; max-width: 100%; max-height: 100%; align-items: flex-start; height: 100%;" class="fuentes boton-rectangulo" id="vL_fondo">
- <vista-cabecera style="width: 100%; height: 10%;" id="vistaCabecera"></vista-cabecera>
- <vaadin-vertical-layout theme="spacing-xl" style="max-height: 80%; padding-top: var(--lumo-space-l); padding-right: var(--lumo-space-l); padding-left: var(--lumo-space-l); overflow-y:scroll;" id="vL_cuerpo">
+ <vaadin-vertical-layout theme="spacing-xl" style="max-height: 100%; padding-top: var(--lumo-space-l); padding-right: var(--lumo-space-l); padding-left: var(--lumo-space-l); overflow-y:scroll; margin: 0px;" id="vL_cuerpo">
   <vaadin-horizontal-layout theme="spacing-l" style="max-height: 43%; width: 100%;" id="hL_datosUsuario">
    <img style="max-width: 100%; max-height: 100%; border-radius:50%; border: 2px solid #FFFFFF;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/2048px-User-avatar.svg.png" id="imagen">
    <vaadin-vertical-layout style="width: 100%;" theme="spacing-s" id="vL_datosBotones">
@@ -64,7 +60,7 @@ export class VistaVer_perfil extends LitElement {
      <label style="color:#A8A8A8; font-weight:400; align-self: flex-end;" id="label_nSeguidores">123</label>
     </vaadin-horizontal-layout>
     <vaadin-horizontal-layout theme="spacing" style="width: 100%;" id="hL_botones">
-     <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout" style="bL_botonesEstadisticasModificar">
+     <vaadin-vertical-layout theme="spacing" id="bL_botonesEstadisticasModificar">
       <button style="align-self: center; width: 100%;" id="button_estadisticas">ESTADÍSTICAS</button>
       <button style="align-self: center; width: 100%;" id="button_modificarPerfil">MODIFICAR PERFIL</button>
      </vaadin-vertical-layout>
@@ -86,11 +82,8 @@ export class VistaVer_perfil extends LitElement {
    </vaadin-vertical-layout>
    <button style="align-self: center;" id="button_crearLista">CREAR LISTA</button>
   </vaadin-horizontal-layout>
-  <vaadin-vertical-layout theme="spacing" style="width: 100%; max-height: 10%; height: 100%;" id="vL_lisaDeReproduccionDelPerfil">
-   <vista-lista_de_reproduccion_del_perfil style="width: 100%; height: 100%;" id="vistaLista_de_reproduccion_del_perfil"></vista-lista_de_reproduccion_del_perfil>
-  </vaadin-vertical-layout>
+  <vaadin-vertical-layout theme="spacing" style="max-height: 18%; height: 100%; width: 100%; margin: 0px;" id="vL_lisaDeReproduccionDelPerfil"></vaadin-vertical-layout>
  </vaadin-vertical-layout>
- <vista-reproductor_resumido style="width: 100%; height: 10%;" id="vistaReproductor_resumido"></vista-reproductor_resumido>
 </vaadin-vertical-layout>
 `;
   }

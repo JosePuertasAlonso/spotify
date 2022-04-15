@@ -10,6 +10,7 @@ import vistas.VistaBarra_buscador;
 import com.vaadin.flow.component.html.Label;
 import vistas.VistaLista_de_reproduccion_ver_todo;
 import vistas.VistaReproductor_resumido;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 
 /**
  * A Designer generated component for the vista-ver_todas_listas_buscadas template.
@@ -23,18 +24,12 @@ public class VistaVer_todas_listas_buscadas extends LitTemplate {
 
     @Id("vL_fondo")
 	private Element vL_fondo;
-	@Id("vistaCabecera")
-	private VistaCabecera vistaCabecera;
 	@Id("vL_cuerpo")
 	private Element vL_cuerpo;
-	@Id("vistaBarra_buscador")
-	private VistaBarra_buscador vistaBarra_buscador;
 	@Id("label_todasLasListasPara")
 	private Label label_todasLasListasPara;
-	@Id("vistaLista_de_reproduccion_ver_todo")
-	private VistaLista_de_reproduccion_ver_todo vistaLista_de_reproduccion_ver_todo;
-	@Id("vistaReproductor_resumido")
-	private VistaReproductor_resumido vistaReproductor_resumido;
+	@Id("hL_barraBuscador")
+	private HorizontalLayout hL_barraBuscador;
 	
 	
 
@@ -46,18 +41,6 @@ public class VistaVer_todas_listas_buscadas extends LitTemplate {
 
 	public void setvL_fondo(Element vL_fondo) {
 		this.vL_fondo = vL_fondo;
-	}
-
-
-
-	public VistaCabecera getVistaCabecera() {
-		return vistaCabecera;
-	}
-
-
-
-	public void setVistaCabecera(VistaCabecera vistaCabecera) {
-		this.vistaCabecera = vistaCabecera;
 	}
 
 
@@ -74,17 +57,6 @@ public class VistaVer_todas_listas_buscadas extends LitTemplate {
 
 
 
-	public VistaBarra_buscador getVistaBarra_buscador() {
-		return vistaBarra_buscador;
-	}
-
-
-
-	public void setVistaBarra_buscador(VistaBarra_buscador vistaBarra_buscador) {
-		this.vistaBarra_buscador = vistaBarra_buscador;
-	}
-
-
 
 	public Label getLabel_todasLasListasPara() {
 		return label_todasLasListasPara;
@@ -98,27 +70,14 @@ public class VistaVer_todas_listas_buscadas extends LitTemplate {
 
 
 
-	public VistaLista_de_reproduccion_ver_todo getVistaLista_de_reproduccion_ver_todo() {
-		return vistaLista_de_reproduccion_ver_todo;
+	public HorizontalLayout gethL_barraBuscador() {
+		return hL_barraBuscador;
 	}
 
 
 
-	public void setVistaLista_de_reproduccion_ver_todo(
-			VistaLista_de_reproduccion_ver_todo vistaLista_de_reproduccion_ver_todo) {
-		this.vistaLista_de_reproduccion_ver_todo = vistaLista_de_reproduccion_ver_todo;
-	}
-
-
-
-	public VistaReproductor_resumido getVistaReproductor_resumido() {
-		return vistaReproductor_resumido;
-	}
-
-
-
-	public void setVistaReproductor_resumido(VistaReproductor_resumido vistaReproductor_resumido) {
-		this.vistaReproductor_resumido = vistaReproductor_resumido;
+	public void sethL_barraBuscador(HorizontalLayout hL_barraBuscador) {
+		this.hL_barraBuscador = hL_barraBuscador;
 	}
 
 

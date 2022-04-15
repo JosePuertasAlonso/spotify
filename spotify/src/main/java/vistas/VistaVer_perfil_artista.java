@@ -28,8 +28,6 @@ public class VistaVer_perfil_artista extends LitTemplate {
 
     @Id("vL_fondo")
 	private Element vL_fondo;
-	@Id("vistaCabecera")
-	private VistaCabecera vistaCabecera;
 	@Id("vL_cuerpo")
 	private Element vL_cuerpo;
 	@Id("hL_datosArtista")
@@ -54,22 +52,20 @@ public class VistaVer_perfil_artista extends LitTemplate {
 	private NativeButton button_seguir;
 	@Id("button_siguiendo")
 	private NativeButton button_siguiendo;
-	@Id("vistaLista_canciones")
-	private VistaLista_canciones vistaLista_canciones;
 	@Id("label_albumes")
 	private Label label_albumes;
-	@Id("vistaAlbumes_del_artista")
-	private VistaAlbumes_del_artista vistaAlbumes_del_artista;
 	@Id("label_artistasSimilares")
 	private Label label_artistasSimilares;
-	@Id("vistaArtistas_similares")
-	private VistaArtistas_similares vistaArtistas_similares;
 	@Id("label_listasDelArtista")
 	private Label label_listasDelArtista;
-	@Id("vistaListas_de_reproduccion_del_artista")
-	private VistaListas_de_reproduccion_del_artista vistaListas_de_reproduccion_del_artista;
-	@Id("vistaReproductor_resumido")
-	private VistaReproductor_resumido vistaReproductor_resumido;
+	@Id("hL_hits")
+	private HorizontalLayout hL_hits;
+	@Id("hL_albumes")
+	private HorizontalLayout hL_albumes;
+	@Id("hL_artistasSimilares")
+	private HorizontalLayout hL_artistasSimilares;
+	@Id("hL_listasDelArtista")
+	private HorizontalLayout hL_listasDelArtista;
 	
 	
 
@@ -81,18 +77,6 @@ public class VistaVer_perfil_artista extends LitTemplate {
 
 	public void setvL_fondo(Element vL_fondo) {
 		this.vL_fondo = vL_fondo;
-	}
-
-
-
-	public VistaCabecera getVistaCabecera() {
-		return vistaCabecera;
-	}
-
-
-
-	public void setVistaCabecera(VistaCabecera vistaCabecera) {
-		this.vistaCabecera = vistaCabecera;
 	}
 
 
@@ -241,17 +225,6 @@ public class VistaVer_perfil_artista extends LitTemplate {
 
 
 
-	public VistaLista_canciones getVistaLista_canciones() {
-		return vistaLista_canciones;
-	}
-
-
-
-	public void setVistaLista_canciones(VistaLista_canciones vistaLista_canciones) {
-		this.vistaLista_canciones = vistaLista_canciones;
-	}
-
-
 
 	public Label getLabel_albumes() {
 		return label_albumes;
@@ -261,18 +234,6 @@ public class VistaVer_perfil_artista extends LitTemplate {
 
 	public void setLabel_albumes(Label label_albumes) {
 		this.label_albumes = label_albumes;
-	}
-
-
-
-	public VistaAlbumes_del_artista getVistaAlbumes_del_artista() {
-		return vistaAlbumes_del_artista;
-	}
-
-
-
-	public void setVistaAlbumes_del_artista(VistaAlbumes_del_artista vistaAlbumes_del_artista) {
-		this.vistaAlbumes_del_artista = vistaAlbumes_del_artista;
 	}
 
 
@@ -289,18 +250,6 @@ public class VistaVer_perfil_artista extends LitTemplate {
 
 
 
-	public VistaArtistas_similares getVistaArtistas_similares() {
-		return vistaArtistas_similares;
-	}
-
-
-
-	public void setVistaArtistas_similares(VistaArtistas_similares vistaArtistas_similares) {
-		this.vistaArtistas_similares = vistaArtistas_similares;
-	}
-
-
-
 	public Label getLabel_listasDelArtista() {
 		return label_listasDelArtista;
 	}
@@ -313,27 +262,50 @@ public class VistaVer_perfil_artista extends LitTemplate {
 
 
 
-	public VistaListas_de_reproduccion_del_artista getVistaListas_de_reproduccion_del_artista() {
-		return vistaListas_de_reproduccion_del_artista;
+	public HorizontalLayout gethL_hits() {
+		return hL_hits;
 	}
 
 
 
-	public void setVistaListas_de_reproduccion_del_artista(
-			VistaListas_de_reproduccion_del_artista vistaListas_de_reproduccion_del_artista) {
-		this.vistaListas_de_reproduccion_del_artista = vistaListas_de_reproduccion_del_artista;
+	public void sethL_hits(HorizontalLayout hL_hits) {
+		this.hL_hits = hL_hits;
 	}
 
 
 
-	public VistaReproductor_resumido getVistaReproductor_resumido() {
-		return vistaReproductor_resumido;
+	public HorizontalLayout gethL_albumes() {
+		return hL_albumes;
 	}
 
 
 
-	public void setVistaReproductor_resumido(VistaReproductor_resumido vistaReproductor_resumido) {
-		this.vistaReproductor_resumido = vistaReproductor_resumido;
+	public void sethL_albumes(HorizontalLayout hL_albumes) {
+		this.hL_albumes = hL_albumes;
+	}
+
+
+
+	public HorizontalLayout gethL_artistasSimilares() {
+		return hL_artistasSimilares;
+	}
+
+
+
+	public void sethL_artistasSimilares(HorizontalLayout hL_artistasSimilares) {
+		this.hL_artistasSimilares = hL_artistasSimilares;
+	}
+
+
+
+	public HorizontalLayout gethL_listasDelArtista() {
+		return hL_listasDelArtista;
+	}
+
+
+
+	public void sethL_listasDelArtista(HorizontalLayout hL_listasDelArtista) {
+		this.hL_listasDelArtista = hL_listasDelArtista;
 	}
 
 

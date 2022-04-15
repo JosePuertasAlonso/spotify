@@ -24,8 +24,6 @@ public class VistaRegistrarse extends LitTemplate {
 
     @Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
-	@Id("vistaCabecera")
-	private VistaCabecera vistaCabecera;
 	@Id("label_creaCuenta")
 	private Label label_creaCuenta;
 	@Id("hL_datosImagen")
@@ -93,18 +91,6 @@ public class VistaRegistrarse extends LitTemplate {
 
 	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
 		this.vaadinVerticalLayout = vaadinVerticalLayout;
-	}
-
-
-
-	public VistaCabecera getVistaCabecera() {
-		return vistaCabecera;
-	}
-
-
-
-	public void setVistaCabecera(VistaCabecera vistaCabecera) {
-		this.vistaCabecera = vistaCabecera;
 	}
 
 

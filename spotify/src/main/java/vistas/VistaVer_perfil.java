@@ -25,8 +25,6 @@ public class VistaVer_perfil extends LitTemplate {
 
     @Id("vL_fondo")
 	private Element vL_fondo;
-	@Id("vistaCabecera")
-	private VistaCabecera vistaCabecera;
 	@Id("vL_cuerpo")
 	private Element vL_cuerpo;
 	@Id("hL_datosUsuario")
@@ -45,8 +43,6 @@ public class VistaVer_perfil extends LitTemplate {
 	private Label label_nSeguidores;
 	@Id("hL_botones")
 	private HorizontalLayout hL_botones;
-	@Id("vaadinVerticalLayout")
-	private Element vaadinVerticalLayout;
 	@Id("button_estadisticas")
 	private NativeButton button_estadisticas;
 	@Id("button_modificarPerfil")
@@ -75,10 +71,8 @@ public class VistaVer_perfil extends LitTemplate {
 	private NativeButton button_crearLista;
 	@Id("vL_lisaDeReproduccionDelPerfil")
 	private Element vL_lisaDeReproduccionDelPerfil;
-	@Id("vistaLista_de_reproduccion_del_perfil")
-	private VistaLista_de_reproduccion_del_perfil vistaLista_de_reproduccion_del_perfil;
-	@Id("vistaReproductor_resumido")
-	private VistaReproductor_resumido vistaReproductor_resumido;
+	@Id("bL_botonesEstadisticasModificar")
+	private Element bL_botonesEstadisticasModificar;
 	
 	
 
@@ -90,18 +84,6 @@ public class VistaVer_perfil extends LitTemplate {
 
 	public void setvL_fondo(Element vL_fondo) {
 		this.vL_fondo = vL_fondo;
-	}
-
-
-
-	public VistaCabecera getVistaCabecera() {
-		return vistaCabecera;
-	}
-
-
-
-	public void setVistaCabecera(VistaCabecera vistaCabecera) {
-		this.vistaCabecera = vistaCabecera;
 	}
 
 
@@ -214,14 +196,14 @@ public class VistaVer_perfil extends LitTemplate {
 
 
 
-	public Element getVaadinVerticalLayout() {
-		return vaadinVerticalLayout;
+	public Element getbL_botonesEstadisticasModificar() {
+		return bL_botonesEstadisticasModificar;
 	}
 
 
 
-	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
-		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	public void setbL_botonesEstadisticasModificar(Element bL_botonesEstadisticasModificar) {
+		this.bL_botonesEstadisticasModificar = bL_botonesEstadisticasModificar;
 	}
 
 
@@ -392,30 +374,6 @@ public class VistaVer_perfil extends LitTemplate {
 		this.vL_lisaDeReproduccionDelPerfil = vL_lisaDeReproduccionDelPerfil;
 	}
 
-
-
-	public VistaLista_de_reproduccion_del_perfil getVistaLista_de_reproduccion_del_perfil() {
-		return vistaLista_de_reproduccion_del_perfil;
-	}
-
-
-
-	public void setVistaLista_de_reproduccion_del_perfil(
-			VistaLista_de_reproduccion_del_perfil vistaLista_de_reproduccion_del_perfil) {
-		this.vistaLista_de_reproduccion_del_perfil = vistaLista_de_reproduccion_del_perfil;
-	}
-
-
-
-	public VistaReproductor_resumido getVistaReproductor_resumido() {
-		return vistaReproductor_resumido;
-	}
-
-
-
-	public void setVistaReproductor_resumido(VistaReproductor_resumido vistaReproductor_resumido) {
-		this.vistaReproductor_resumido = vistaReproductor_resumido;
-	}
 
 
 

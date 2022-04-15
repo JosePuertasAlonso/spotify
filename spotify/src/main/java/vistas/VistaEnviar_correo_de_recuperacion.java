@@ -8,6 +8,7 @@ import com.vaadin.flow.component.template.Id;
 import vistas.VistaCabecera;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.html.NativeButton;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 
 /**
  * A Designer generated component for the vista-enviar_correo_de_recuperacion template.
@@ -21,8 +22,6 @@ public class VistaEnviar_correo_de_recuperacion extends LitTemplate {
 
     @Id("vL_fondo")
 	private Element vL_fondo;
-	@Id("vistaCabecera")
-	private VistaCabecera vistaCabecera;
 	@Id("label_restablecerContrasena")
 	private Label label_restablecerContrasena;
 	@Id("label_envioEmail")
@@ -42,17 +41,6 @@ public class VistaEnviar_correo_de_recuperacion extends LitTemplate {
 		this.vL_fondo = vL_fondo;
 	}
 
-
-
-	public VistaCabecera getVistaCabecera() {
-		return vistaCabecera;
-	}
-
-
-
-	public void setVistaCabecera(VistaCabecera vistaCabecera) {
-		this.vistaCabecera = vistaCabecera;
-	}
 
 
 
@@ -98,5 +86,6 @@ public class VistaEnviar_correo_de_recuperacion extends LitTemplate {
     public VistaEnviar_correo_de_recuperacion() {
         // You can initialise any data required for the connected UI components here.
     }
+
 
 }

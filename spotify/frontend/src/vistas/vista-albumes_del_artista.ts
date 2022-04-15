@@ -1,7 +1,6 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
-import './vista-album_bloques';
 
 @customElement('vista-albumes_del_artista')
 export class VistaAlbumes_del_artista extends LitElement {
@@ -17,14 +16,7 @@ export class VistaAlbumes_del_artista extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="background-color:#121212; align-items: flex-start; max-height: 100%; width: 100%; height: 100%;" theme="spacing" id="vL_fondo">
- <vaadin-horizontal-layout theme="spacing" id="hL_contenedorAlbumes">
-  <vista-album_bloques></vista-album_bloques>
-  <vista-album_bloques></vista-album_bloques>
-  <vista-album_bloques></vista-album_bloques>
-  <vista-album_bloques></vista-album_bloques>
-  <vista-album_bloques></vista-album_bloques>
-  <vista-album_bloques></vista-album_bloques>
- </vaadin-horizontal-layout>
+ <vaadin-horizontal-layout theme="spacing" id="hL_contenedorAlbumes"></vaadin-horizontal-layout>
 </vaadin-vertical-layout>
 `;
   }

@@ -25,8 +25,6 @@ public class VistaModificar_artista extends LitTemplate {
 
     @Id("vL_fondo")
 	private Element vL_fondo;
-	@Id("vistaCabecera")
-	private VistaCabecera vistaCabecera;
 	@Id("label_modificarArtista")
 	private Label label_modificarArtista;
 	@Id("vL_fotoBoton")
@@ -43,8 +41,6 @@ public class VistaModificar_artista extends LitTemplate {
 	private Label label_estilosArtista;
 	@Id("hL_estilos")
 	private HorizontalLayout hL_estilos;
-	@Id("vistaEstilos")
-	private VistaEstilos vistaEstilos;
 	@Id("button_modificarArtista")
 	private NativeButton button_modificarArtista;
 	
@@ -58,18 +54,6 @@ public class VistaModificar_artista extends LitTemplate {
 
 	public void setvL_fondo(Element vL_fondo) {
 		this.vL_fondo = vL_fondo;
-	}
-
-
-
-	public VistaCabecera getVistaCabecera() {
-		return vistaCabecera;
-	}
-
-
-
-	public void setVistaCabecera(VistaCabecera vistaCabecera) {
-		this.vistaCabecera = vistaCabecera;
 	}
 
 
@@ -166,18 +150,6 @@ public class VistaModificar_artista extends LitTemplate {
 
 	public void sethL_estilos(HorizontalLayout hL_estilos) {
 		this.hL_estilos = hL_estilos;
-	}
-
-
-
-	public VistaEstilos getVistaEstilos() {
-		return vistaEstilos;
-	}
-
-
-
-	public void setVistaEstilos(VistaEstilos vistaEstilos) {
-		this.vistaEstilos = vistaEstilos;
 	}
 
 
