@@ -57,7 +57,7 @@ export class VistaAnadir_cancion_a_una_lista extends LitElement {
    <label style="font-size: 1.5rem; line-height: 1.75rem; letter-spacing: -0.04em; text-transform: none; font-weight: 700; color:#FFFFFF; margin: 0px;" id="label_tusListas">Tus listas de reproducción</label>
    <button style="align-self: center; width: 100%; max-width: 12%;" id="button_crearLista">CREAR LISTA</button>
   </vaadin-horizontal-layout>
-  <vaadin-horizontal-layout theme="spacing" style="width: 100%; max-height: 12%; height: 100%;" id="hL_listasCreadas"></vaadin-horizontal-layout>
+  <vaadin-horizontal-layout theme="spacing" style="width: 100%; max-height: 17%; height: 100%;" id="hL_listasCreadas"></vaadin-horizontal-layout>
  </vaadin-vertical-layout>
 </vaadin-vertical-layout>
 `

@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 import vistas.VistaCrear_nuevo_estilo;
 
 public class Crear_nuevo_estilo extends VistaCrear_nuevo_estilo{
@@ -10,7 +12,7 @@ public class Crear_nuevo_estilo extends VistaCrear_nuevo_estilo{
 //	private Button _anadir_estiloB;
 	public Administrador _administrador;
 	
-	public Crear_nuevo_estilo() {
+	public Crear_nuevo_estilo(VerticalLayout cuerpo) {
 		this.getStyle().set("margin", "0px");
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");

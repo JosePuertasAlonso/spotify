@@ -104,7 +104,7 @@ audio::-webkit-media-controls-play-button, video::-webkit-media-controls-play-bu
 <vaadin-vertical-layout style="width: 100%; height: 100%; background-color:#121212; max-width: 100%; max-height: 100%;" theme="spacing-s" id="vL_fondo">
  <vaadin-horizontal-layout class="boton-superior" theme="spacing-s" style="width: 100%; max-height: 80%; max-width: 100%; align-self: center; align-items: center; justify-content: center; height: 100%;" id="hL_creditosImagenOpciones">
   <vaadin-horizontal-layout class="boton-creditos" theme="spacing" style="max-width: 15%; align-self: flex-start; margin-top: var(--lumo-space-m); width: 100%; justify-content: center; align-items: center;" id="hL_creditos">
-   <button style="align-self: center;" id="button_creditos">CREDITOS</button>
+   <button style="align-self: center; font-weight:400; letter-spacing:0px" id="button_creditos">CREDITOS</button>
   </vaadin-horizontal-layout>
   <img style="max-width: 100%; max-height: 100%; height: 100%;" src="https://i.scdn.co/image/ab67616d0000b273b808f59ccba69a0afcaa79bc" id="imagen">
   <vaadin-horizontal-layout theme="spacing" id="hL_opciones" style="max-width: 15%; min-width: 15%; align-self: flex-start; margin-top: var(--lumo-space-m); align-items: center; justify-content: center;">
@@ -115,9 +115,7 @@ audio::-webkit-media-controls-play-button, video::-webkit-media-controls-play-bu
   <label style="align-self: center; color:#FFFFFF; width: 100%; text-align:center" id="label_titulo">En tus planes</label>
   <label style="align-self: flex-start; color:#9D9D9D; font-weight: 400; width: 100%; text-align:center" id="label_artista">David Bisbal</label>
  </vaadin-vertical-layout>
- <vaadin-horizontal-layout theme="spacing" style="max-width: 100%; align-self: center; width: 100%; max-height: 10%;" id="hL_reproductor">
-  <audio src="https://mus5.about-in.tk/skm/ee4ed82c-0f20-45e9-a9bb-6219c1dfab36.mp3" controls="controls" type="audio/mpeg" preload="preload" style="background:none; align-self: center; width: 100%;" id="audio_reproductor"></audio>
- </vaadin-horizontal-layout>
+ <vaadin-horizontal-layout theme="spacing" style="max-width: 100%; align-self: center; width: 100%; max-height: 10%; margin-left: 0px; margin-right: 0px; padding-right: 0px; padding-left: 0px; margin-bottom: var(--lumo-space-xl);" id="hL_reproductor"></vaadin-horizontal-layout>
 </vaadin-vertical-layout>
 `;
   }

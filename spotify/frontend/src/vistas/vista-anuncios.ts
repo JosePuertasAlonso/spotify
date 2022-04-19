@@ -14,7 +14,7 @@ export class VistaAnuncios extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="background:#121212; width: 100%; height: 100%;" theme="spacing" id="vL_contenedorAnuncios"></vaadin-vertical-layout>
+<vaadin-vertical-layout style="background:#121212; width: 100%; height: 100%; padding: 0px;" theme="spacing" id="vL_contenedorAnuncios"></vaadin-vertical-layout>
 `;
   }
 

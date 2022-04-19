@@ -31,6 +31,8 @@ public class VistaComun extends LitTemplate {
 	private HorizontalLayout hL_minireproductor;
 	@Id("hL_buscador")
 	private HorizontalLayout hL_buscador;
+	@Id("vL_cuerpo")
+	private Element vL_cuerpo;
 	
 	public HorizontalLayout gethL_cabecera() {
 		return hL_cabecera;
@@ -89,6 +91,17 @@ public class VistaComun extends LitTemplate {
 		this.vL_contendorListasCanciones = vL_contendorListasCanciones;
 	}
 
+
+
+	public Element getvL_cuerpo() {
+		return vL_cuerpo;
+	}
+
+
+
+	public void setvL_cuerpo(Element vL_cuerpo) {
+		this.vL_cuerpo = vL_cuerpo;
+	}
 
 
 

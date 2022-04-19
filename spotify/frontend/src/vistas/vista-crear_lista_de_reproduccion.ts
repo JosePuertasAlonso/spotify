@@ -47,7 +47,7 @@ export class VistaCrear_lista_de_reproduccion extends LitElement {
   <label style="align-self: center; font-size: 2.5rem; text-align: center;" id="label_creaLista">Crea una lista de reproducción</label>
   <label style="flex-shrink: 0;" id="label_titulo">Ponle un título a la lista de reproducción</label>
   <input type="email" placeholder="Pon el título de la lista de reproducción" style="width: 100%; padding: 10px;" id="input_titulo">
-  <button style="color:#000000; background-color:#FFFFFF; max-height: 7%; max-width: 33%; margin-top: var(--lumo-space-l);" id="button_crearLista" class="registro">CREAR LISTA</button>
+  <button style="color:#000000; background-color:#FFFFFF; max-height: 8%; max-width: 33%; margin-top: var(--lumo-space-l);" id="button_crearLista" class="registro">CREAR LISTA</button>
  </vaadin-vertical-layout>
 </vaadin-vertical-layout>
 `;

@@ -12,7 +12,13 @@ public class Lista_de_artistas__ver_todo_ extends VistaLista_de_artistas_ver_tod
 	public Ver_todos_los_artistas_buscados _ver_todos_los_artistas_buscados;
 	public Vector<Artista__bloque_> _list_Artista__bloque_ = new Vector<Artista__bloque_>();
 	
-	public Lista_de_artistas__ver_todo_() {
+	private VerticalLayout cuerpo;
+	private HorizontalLayout minireproductor;
+	
+	public Lista_de_artistas__ver_todo_(VerticalLayout cuerpo, HorizontalLayout minireproductor) {
+		
+		this.cuerpo = cuerpo;
+		this.minireproductor = minireproductor;
 		
 		cargarArtistasVerTodo();
 		
@@ -40,7 +46,7 @@ public class Lista_de_artistas__ver_todo_ extends VistaLista_de_artistas_ver_tod
 	public void cargarArtistasVerTodo() {
 		Artista__bloque_ a;
 		for(int i = 0; i < 25; i++) {
-			a = new Artista__bloque_();
+			a = new Artista__bloque_(cuerpo, minireproductor);
 			a.getStyle().set("margin-right", "var(--lumo-space-m)");
 			a.getStyle().set("max-width", "15.5%");
 			_list_Artista__bloque_.add(a);

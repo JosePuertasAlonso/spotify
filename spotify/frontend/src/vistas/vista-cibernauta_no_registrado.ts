@@ -15,9 +15,11 @@ export class VistaCibernauta_no_registrado extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="background:#121212; max-width: 100%; max-height: 100%; align-items: flex-start; height: 100%;" id="vL_fondo">
+<vaadin-vertical-layout style="background:#121212; max-width: 100%; max-height: 100%; align-items: flex-start; height: 100%; margin: 0px; padding: 0px; width: 100%;" id="vL_fondo">
  <vaadin-horizontal-layout theme="spacing" id="hL_cabecera" style="max-height: 10%; width: 100%; margin: 0px;"></vaadin-horizontal-layout>
- <vaadin-horizontal-layout theme="spacing" style="max-height: 80%; padding-top: var(--lumo-space-l); padding-right: var(--lumo-space-l); padding-left: var(--lumo-space-l); max-width: 100%; height: 100%; width: 100%; overflow-y:scroll" id="hL_ultimosExitos"></vaadin-horizontal-layout>
+ <vaadin-vertical-layout theme="spacing" id="vL_cuerpo" style="padding-top: var(--lumo-space-l); padding-right: var(--lumo-space-l); padding-left: var(--lumo-space-l); max-width: 100%; width: 100%; margin: 0px; height: 100%; max-height: 80%;">
+  <vaadin-horizontal-layout theme="spacing" style="max-width: 100%; height: 100%; width: 100%; overflow-y:scroll; padding: 0px; margin-top: 0px; max-height: 100%; margin: 0px;" id="hL_ultimosExitos"></vaadin-horizontal-layout>
+ </vaadin-vertical-layout>
  <vaadin-horizontal-layout theme="spacing" id="hL_minireproductor" style="max-height: 10%; width: 100%; margin: 0px;"></vaadin-horizontal-layout>
 </vaadin-vertical-layout>
 `;

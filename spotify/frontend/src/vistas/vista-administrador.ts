@@ -42,9 +42,9 @@ export class VistaAdministrador extends LitElement {
     return html`
 <vaadin-vertical-layout style="background:#121212; max-width: 100%; max-height: 100%; align-items: flex-start; height: 100%;" id="vL_fondo">
  <vaadin-horizontal-layout theme="spacing" id="hL_cabecera" style="width: 100%; height: 100%; max-height: 10%; margin: 0px;"></vaadin-horizontal-layout>
- <vaadin-vertical-layout theme="spacing" style="width: 100%; align-self: center; justify-content: flex-start; height: 100%; max-height: 100%; padding: var(--lumo-space-xl);" id="vL_cuerpo" class="fuentes boton-rectangulo">
-  <label style="align-self: center; font-size: 2.5rem; flex-shrink: 1; margin-bottom: var(--lumo-space-s);" id="label_anadeElementos">Añade nuevos elementos</label>
-  <vaadin-horizontal-layout theme="spacing-xl" style="width: 100%; align-self: center; align-items: center; justify-content: center;" id="hL_botones">
+ <vaadin-vertical-layout theme="spacing" style="width: 100%; align-self: center; justify-content: flex-start; height: 100%; max-height: 90%; padding: 0px;" id="vL_cuerpo" class="fuentes">
+  <label style="align-self: center; font-size: 2.5rem; flex-shrink: 1; margin-bottom: var(--lumo-space-s); margin-top: var(--lumo-space-xl);" id="label_anadeElementos">Añade nuevos elementos</label>
+  <vaadin-horizontal-layout theme="spacing-xl" style="width: 100%; align-self: center; align-items: center; justify-content: center;" id="hL_botones" class=" boton-rectangulo">
    <button style="align-self: center; width: 100%; max-width: 15%; margin-left: var(--lumo-space-xl); margin-right: var(--lumo-space-xl);" id="button_anadirEstilo">AÑADIR ESTILO</button>
    <button style="align-self: center; width: 100%; max-width: 15%; margin-right: var(--lumo-space-xl); margin-left: var(--lumo-space-xl);" id="button_anadirCancion">AÑADIR CANCIÓN</button>
    <button style="align-self: center; width: 100%; max-width: 15%; margin-right: var(--lumo-space-xl); margin-left: var(--lumo-space-xl);" id="button_anadirAlbum">AÑADIR ÁLBUM</button>

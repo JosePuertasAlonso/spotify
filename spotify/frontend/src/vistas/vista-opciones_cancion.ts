@@ -39,8 +39,8 @@ export class VistaOpciones_cancion extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="background-color:#121212;  width: 100%; height: 100%; padding: var(--lumo-space-xl); align-items: center;" class="fuentes boton-rectangulo" theme="spacing-l" id="vL_fondo">
- <label style="flex-shrink: 0; width: 100%; align-self: center; text-align:center;" id="label_opciones">Opciones</label>
+<vaadin-vertical-layout style="background-color:#121212; width: 100%; height: 100%; align-items: center; border:none; border: 2px solid #A8A8A8; justify-content: center; margin-left: 0px; margin-right: 0px; padding: var(--lumo-space-l); padding-bottom: var(--lumo-space-xl);" class="fuentes boton-rectangulo" theme="spacing-l" id="vL_fondo">
+ <label style="flex-shrink: 0; width: 100%; align-self: center; text-align:center; margin-top: 0px;" id="label_opciones">Opciones</label>
  <vaadin-horizontal-layout theme="spacing-xl" style="align-self: center; align-items: center; justify-content: center;" id="hL_botonesImagen">
   <vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%; max-width: 25%; align-items: flex-end; justify-content: center;" id="vL_botones">
    <button style="width: 100%; max-width: 100%; align-self: center;" id="button_reproducir">REPRODUCIR CANCIÓN</button>

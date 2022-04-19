@@ -1,5 +1,10 @@
 package interfaz;
 
+import com.vaadin.flow.component.ComponentEvent;
+import com.vaadin.flow.component.ComponentEventListener;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 import vistas.VistaRegistrarse;
 
 public class Registrarse extends VistaRegistrarse{
@@ -26,12 +31,38 @@ public class Registrarse extends VistaRegistrarse{
 	public Facebook _facebook;
 	public Confirmar_registro _confirmar_registro;
 	
-	public Registrarse() {
+	public Registrarse(VerticalLayout cuerpo, HorizontalLayout minireproductor) {
     	getStyle().set("margin", "0px");
+    	getStyle().set("height", "100%");
+    	getStyle().set("width", "100%");
+    	
 		this.getLabel_errorConfirmarContrasena().setVisible(false);
 		this.getLabel_errorContrasena().setVisible(false);
 		this.getLabel_errorCorreo().setVisible(false);
 		this.getLabel_errorNombrePerfil().setVisible(false);
+
+		_iniciar_sesion = new Iniciar_sesion(cuerpo, minireproductor);
+		this.getButton_iniciarSesion().addClickListener(new ComponentEventListener() {
+			@Override
+			public void onComponentEvent(ComponentEvent event) {
+				cuerpo.removeAll();
+				cuerpo.getStyle().set("max-height", "90%");
+				minireproductor.setVisible(false);
+				cuerpo.add(_iniciar_sesion);
+			}
+		});
+		
+
+		_confirmar_registro = new Confirmar_registro(cuerpo, minireproductor);
+		this.getButton_registrarse().addClickListener(new ComponentEventListener() {
+			@Override
+			public void onComponentEvent(ComponentEvent event) {
+				cuerpo.removeAll();
+				cuerpo.getStyle().set("max-height", "90%");
+				minireproductor.setVisible(false);
+				cuerpo.add(_confirmar_registro);
+			}
+		});
 	}
 
 	public void Registrarse_con_Google() {

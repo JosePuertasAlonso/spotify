@@ -52,7 +52,7 @@ export class VistaModificar_cancion extends LitElement {
 <vaadin-vertical-layout style="width: 100%; height: 100%; background-color:#121212;" class="fuentes" id="vL_fondo">
  <vaadin-vertical-layout theme="spacing" style="max-height: 100%; padding-top: var(--lumo-space-l); padding-right: var(--lumo-space-l); padding-left: var(--lumo-space-l); height: 100%; width: 100%;" id="vL_cuerpo" class="botones-cabecera">
   <label style="align-self: center; font-size: 2.5rem; text-align: center;" id="label_anadeNuevaCancion">Añade una nueva canción</label>
-  <vaadin-horizontal-layout theme="spacing-xl" style="max-width: 55%; align-self: center; margin-top: var(--lumo-space-xl); margin-bottom: var(--lumo-space-m); width: 100%; justify-content: center;" id="hL_datosCancion">
+  <vaadin-horizontal-layout theme="spacing-xl" style="max-width: 60%; align-self: center; margin-top: var(--lumo-space-m); margin-bottom: var(--lumo-space-m); width: 100%; justify-content: center;" id="hL_datosCancion">
    <vaadin-vertical-layout style="max-width: 70%; width: 100%; margin-right: var(--lumo-space-xl);" theme="spacing" id="vL_cancion">
     <label style="flex-shrink: 0;" id="label_titulo">Título de la canción</label>
     <input type="email" placeholder="Pon un título a la cancion." style="padding: 10px; width: 100%;" id="input_titulo">
@@ -62,13 +62,13 @@ export class VistaModificar_cancion extends LitElement {
     <input type="email" placeholder="Pon el álbum de la canción." style="width: 100%; padding: 10px;" id="input_album">
    </vaadin-vertical-layout>
    <vaadin-vertical-layout theme="spacing-l" class="botonlabel" style="max-width: 30%; width: 100%; align-items: center; align-self: center; max-height: 100%;" id="vL_cancion1">
-    <label style="flex-shrink: 0; height: 100%; width: 100%; font-size:1.3rem; align-self: center;" id="label_cancion">Canción (mp3, mp4, ogg)</label>
+    <label style="flex-shrink: 0; height: 100%; width: 100%; font-size:1.3rem; align-self: center; text-align:center;" id="label_cancion">Canción (mp3, mp4, ogg)</label>
     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px" fill="#A8A8A8" style="max-width: 100%; max-height: 100%; border-radius:50%; border: 2px solid #FFFFFF; width: 80%; height: 100%;">
      <path d="M0 0h24v24H0V0z" fill="none"></path>
      <path d="M7 18h2V6H7v12zm4 4h2V2h-2v20zm-8-8h2v-4H3v4zm12 4h2V6h-2v12zm4-8v4h2v-4h-2z"></path>
     </svg>
     <input type="file" id="file" accept="image/*" style="display:none">
-    <label for="file" style="color:#121212; background-color:#FFFFFF; border-radius:500px; display: flex; align-items: center; cursor:pointer; padding: 8px 34px; letter-spacing: 1.76px; padding-top: 12px; padding-bottom: 12px; justify-content: center; width: 100%; max-width: 65%;" id="botonLabel_elegirCancion">
+    <label for="file" style="color:#121212; background-color:#FFFFFF; border-radius:500px; display: flex; align-items: center; cursor:pointer; padding: 8px 34px; letter-spacing: 1.76px; padding-top: 12px; padding-bottom: 12px; justify-content: center; width: 100%; max-width: 70%;" id="botonLabel_elegirCancion">
      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px" fill="#121212" style="padding-right: var(--lumo-space-s);">
       <path d="M0 0h24v24H0V0z" fill="none"></path>
       <path d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12zm-7.5-1c1.38 0 2.5-1.12 2.5-2.5V7h3V5h-4v5.51c-.42-.32-.93-.51-1.5-.51-1.38 0-2.5 1.12-2.5 2.5s1.12 2.5 2.5 2.5zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6z"></path>

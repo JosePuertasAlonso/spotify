@@ -11,7 +11,11 @@ public class Lista_de_perfiles_buscados__administrador_ extends VistaLista_de_pe
 	public Buscador_administrador _buscador_administrador;
 	public Vector<Perfil__bloque_administrador_> _list_Perfil__bloque_administrador_ = new Vector<Perfil__bloque_administrador_>();
 
+	private VerticalLayout cuerpo;
+	
 	public Lista_de_perfiles_buscados__administrador_() {
+		
+		this.cuerpo = cuerpo;
 		
 		cargarPerfilesBuscadosAdmin();
 		
@@ -30,7 +34,7 @@ public class Lista_de_perfiles_buscados__administrador_ extends VistaLista_de_pe
 		Perfil__bloque_administrador_ p;
 		
 		for(int i = 0; i < 6; i++) {
-			p = new Perfil__bloque_administrador_();
+			p = new Perfil__bloque_administrador_(cuerpo);
 			p.getStyle().set("margin-top", "var(--lumo-space-m)");
 			_list_Perfil__bloque_administrador_.add(p);
 		}

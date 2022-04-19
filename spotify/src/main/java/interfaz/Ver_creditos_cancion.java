@@ -1,5 +1,8 @@
 package interfaz;
 
+import com.vaadin.flow.component.dialog.Dialog;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 import vistas.VistaVer_creditos_cancion;
 
 public class Ver_creditos_cancion extends VistaVer_creditos_cancion{
@@ -15,7 +18,7 @@ public class Ver_creditos_cancion extends VistaVer_creditos_cancion{
 	public Productores _productores;
 	public Interpretes _interpretes;
 	
-	public Ver_creditos_cancion() {
+	public Ver_creditos_cancion(VerticalLayout cuerpo, Dialog popup) {
 		_compositores = new Compositores();
 		_productores = new Productores();
 		_interpretes = new Interpretes();

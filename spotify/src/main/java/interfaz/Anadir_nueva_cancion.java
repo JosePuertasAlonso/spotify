@@ -10,8 +10,8 @@ public class Anadir_nueva_cancion extends Modificar_cancion {
 	public Administrador _administrador;
 	public Anadir_cancion_al_album _anadir_cancion_al_album;
 	
-	public Anadir_nueva_cancion() {
-		super();
+	public Anadir_nueva_cancion(VerticalLayout cuerpo) {
+		super(cuerpo);
 		this.getLabel_anadeNuevaCancion().setText("Añade una nueva canción");
 		this.getvL_cancion1().as(VerticalLayout.class).setVisible(true);
 		this.getButton_modificarCancion().setText("AÑADIR CANCIÓN");

@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 import vistas.VistaModificar_artista;
 
 public class Modificar_artista extends VistaModificar_artista{
@@ -11,8 +13,9 @@ public class Modificar_artista extends VistaModificar_artista{
 	public Artista__Administrador_ _artista__Administrador_;
 	public Estilos _estilos;
 	
-	public Modificar_artista() {
+	public Modificar_artista(VerticalLayout cuerpo) {
 		this.getStyle().set("margin", "0px");
+		this.getStyle().set("margin-bottom", "var(--lumo-space-l)");
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
 		

@@ -1,5 +1,8 @@
 package interfaz;
 
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 import vistas.VistaCrear_lista_de_reproduccion;
 
 public class Crear_lista_de_reproduccion extends VistaCrear_lista_de_reproduccion{
@@ -11,8 +14,9 @@ public class Crear_lista_de_reproduccion extends VistaCrear_lista_de_reproduccio
 	public Anadir_cancion_a_una_lista _anadir_cancion_a_una_lista;
 	public Ver_perfil _ver_perfil;
 	
-	public Crear_lista_de_reproduccion() {
+	public Crear_lista_de_reproduccion(VerticalLayout cuerpo, HorizontalLayout minireproductor) {
 		this.getStyle().set("margin", "0px");
+		this.getStyle().set("padding", "0px");
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
 		

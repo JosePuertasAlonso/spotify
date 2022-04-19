@@ -62,7 +62,7 @@ export class VistaModificar_perfil extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%; background-color:#121212;" class="fuentes" id="vL_fondo">
- <vaadin-vertical-layout theme="spacing" style="max-height: 100%; padding-top: var(--lumo-space-l); height: 100%; width: 100%; margin: 0px;" id="vL_cuerpo" class="boton_modificar">
+ <vaadin-vertical-layout theme="spacing" style="max-height: 100%; height: 100%; width: 100%; margin: 0px; overflow-y:scroll;" id="vL_cuerpo" class="boton_modificar">
   <label style="align-self: center; font-size: 2.5rem; text-align: center;" id="label_modificarPerfil">Modificar perfil de Spotify</label>
   <label style="flex-shrink: 0; align-self: center;" id="label_nombreUsuario">Nombre de usuario</label>
   <vaadin-horizontal-layout theme="" style="max-width: 50%; align-self: center; margin-top: var(--lumo-space-xl); width: 100%; margin-right: 0px; margin-left: 0px; padding: 0px;" id="hL_datosImagen">
@@ -90,7 +90,7 @@ export class VistaModificar_perfil extends LitElement {
      </svg>ELEGIR FOTO</label>
    </vaadin-vertical-layout>
   </vaadin-horizontal-layout>
-  <button id="button_modificarPerfil">MODIFICAR PERFIL</button>
+  <button id="button_modificarPerfil" style="margin-bottom: var(--lumo-space-m); max-width: 15%;">MODIFICAR PERFIL</button>
  </vaadin-vertical-layout>
 </vaadin-vertical-layout>
 `;

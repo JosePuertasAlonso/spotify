@@ -1,5 +1,10 @@
 package interfaz;
 
+import com.vaadin.flow.component.ClickEvent;
+import com.vaadin.flow.component.ComponentEventListener;
+import com.vaadin.flow.component.html.NativeButton;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 import vistas.VistaAnadir_nuevo_album;
 
 public class Anadir_nuevo_album extends VistaAnadir_nuevo_album{
@@ -21,13 +26,24 @@ public class Anadir_nuevo_album extends VistaAnadir_nuevo_album{
 	public Anadir_cancion_al_album _anadir_cancion_al_album;
 	public Canciones_del_album__administrador_ _canciones_del_album__administrador_;
 	
-	public Anadir_nuevo_album() {
+	public Anadir_nuevo_album(VerticalLayout cuerpo) {
 		this.getStyle().set("margin", "0px");
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
 		
 		_canciones_del_album__administrador_ = new Canciones_del_album__administrador_();
 		this.gethL_cancionesDelAlbumAdministrador().add(_canciones_del_album__administrador_);
+		
+		this.getButton_anadirCancion().addClickListener(new ComponentEventListener<ClickEvent<NativeButton>>() {
+			
+			@Override
+			public void onComponentEvent(ClickEvent<NativeButton> event) {
+				_anadir_cancion_al_album = new Anadir_cancion_al_album(cuerpo);
+				_anadir_cancion_al_album.getvL_cancionesBuscadasAAnadir().getStyle().set("max-height", "19%");
+				cuerpo.removeAll();
+				cuerpo.add(_anadir_cancion_al_album);
+			}
+		});
 	}
 
 	public void Seleccionar_foto_perfil() {

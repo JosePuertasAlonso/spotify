@@ -37,12 +37,12 @@ public class VistaCancion_administrador extends LitTemplate {
 	private HorizontalLayout hL_botones;
 	@Id("button_eliminar")
 	private NativeButton button_eliminar;
-	@Id("button_anadir")
-	private NativeButton button_anadir;
 	@Id("input_checkbox")
 	private Input input_checkbox;
 	@Id("label_exito")
 	private Label label_exito;
+	@Id("button_editar")
+	private NativeButton button_editar;
 	
 	
 
@@ -142,17 +142,6 @@ public class VistaCancion_administrador extends LitTemplate {
 
 
 
-	public NativeButton getButton_anadir() {
-		return button_anadir;
-	}
-
-
-
-	public void setButton_anadir(NativeButton button_anadir) {
-		this.button_anadir = button_anadir;
-	}
-
-
 
 	public Input getInput_checkbox() {
 		return input_checkbox;
@@ -174,6 +163,18 @@ public class VistaCancion_administrador extends LitTemplate {
 
 	public void setLabel_exito(Label label_exito) {
 		this.label_exito = label_exito;
+	}
+
+
+
+	public NativeButton getButton_editar() {
+		return button_editar;
+	}
+
+
+
+	public void setButton_editar(NativeButton button_editar) {
+		this.button_editar = button_editar;
 	}
 
 

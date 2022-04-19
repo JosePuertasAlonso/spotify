@@ -11,5 +11,6 @@ public class Barra_buscador extends VistaBarra_buscador{
 	public Barra_buscador() {
 		this.getStyle().set("margin", "0px");
 		this.getStyle().set("width", "100%");
+		this.getStyle().set("height", "100%");
 	}
 }

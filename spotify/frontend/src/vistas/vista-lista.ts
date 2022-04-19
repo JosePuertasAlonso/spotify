@@ -63,7 +63,7 @@ export class VistaLista extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="background:#121212; max-width: 100%; max-height: 100%; align-items: flex-start; height: 100%;" class="fuentes boton-rectangulo" id="vL_fondo">
- <vaadin-vertical-layout theme="spacing-l" style="max-height: 100%; padding-top: var(--lumo-space-l); padding-right: var(--lumo-space-l); padding-left: var(--lumo-space-l); overflow-y:scroll; width: 100%;" id="vL_cuerpo">
+ <vaadin-vertical-layout theme="spacing-l" style="max-height: 100%; padding-top: 0px; padding-right: var(--lumo-space-l); padding-left: var(--lumo-space-l); overflow-y:scroll; width: 100%;" id="vL_cuerpo">
   <vaadin-horizontal-layout theme="spacing-l" style="max-height: 43%; width: 100%; padding: 0px;" id="hL_imagenTituloBotones">
    <img style="max-width: 100%; max-height: 100%; margin: 0px;" src="https://i.scdn.co/image/ab67706f00000003a0f40d75f093bb6814fcd53e
 " id="imagen">
@@ -74,11 +74,13 @@ export class VistaLista extends LitElement {
       <input type="text" placeholder="Pon un nombre a la lista de reproducción." style="width: 100%; padding: 10px; max-width: 33%; margin: 0px;" id="input_titulo">
       <button style="align-self: center; width: 100%; max-width: 12%;" id="button_aceptar">ACEPTAR</button>
      </vaadin-horizontal-layout>
-     <label style="color:#A8A8A8; font-weight:400; align-self: flex-start;" id="label_creador">Creador</label>
+     <vaadin-horizontal-layout theme="spacing" id="hL_labelCreador" style="padding: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px;">
+      <label style="color:#A8A8A8; font-weight:400; align-self: flex-start; margin-left: 0px;" id="label_creador">Creador</label>
+     </vaadin-horizontal-layout>
     </vaadin-vertical-layout>
     <vaadin-horizontal-layout theme="spacing" style="width: 100%; margin: 0px;" id="hL_botones">
+     <button style="align-self: center; width: 12%; margin-left: 0px;" id="button_compartir">COMPARTIR</button>
      <button style="align-self: center; width: 100%; max-width: 12%;" id="button_modificar">MODIFICAR</button>
-     <button style="align-self: center; width: 12%;" id="button_compartir">COMPARTIR</button>
      <button style="align-self: center; width: 12%;" id="button_guardar">GUARDAR</button>
      <button style="align-self: center; width: 13%;" id="button_eliminar">ELIMINAR LISTA</button>
      <label style="color:#A8A8A8; font-weight:400; align-self: center;" id="label_fechaPublicacion">Publicado el 20/3/2022</label>
@@ -89,7 +91,7 @@ export class VistaLista extends LitElement {
    <label style="color:#A8A8A8; font-weight:400; align-self: flex-start; margin: 0px;" id="label_nCanciones">5 de 100 canciones</label>
    <button style="align-self: center; width: 12%;" id="button_anadirCancion">AÑADIR CANCIÓN</button>
   </vaadin-horizontal-layout>
-  <vaadin-vertical-layout theme="spacing" style="width: 100%; max-height: 17%; height: 100%; margin-top: 0px;" id="vL_cancionesDeListaAlbumListaeliminar"></vaadin-vertical-layout>
+  <vaadin-vertical-layout theme="spacing" style="width: 100%; max-height: 17%; height: 100%; margin-top: 0px; padding: 0px;" id="vL_cancionesDeListaAlbumListaeliminar"></vaadin-vertical-layout>
  </vaadin-vertical-layout>
 </vaadin-vertical-layout>
 `;

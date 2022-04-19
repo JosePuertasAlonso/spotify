@@ -68,6 +68,8 @@ public class VistaLista extends LitTemplate {
 	private HorizontalLayout hL_tituloAceptar;
 	@Id("input_titulo")
 	private Input input_titulo;
+	@Id("hL_labelCreador")
+	private HorizontalLayout hL_labelCreador;
 	
 	
 
@@ -320,7 +322,18 @@ public class VistaLista extends LitTemplate {
 	public void setInput_titulo(Input input_titulo) {
 		this.input_titulo = input_titulo;
 	}
+	
 
+
+	public HorizontalLayout gethL_labelCreador() {
+		return hL_labelCreador;
+	}
+
+
+
+	public void sethL_labelCreador(HorizontalLayout hL_labelCreador) {
+		this.hL_labelCreador = hL_labelCreador;
+	}
 
 
 

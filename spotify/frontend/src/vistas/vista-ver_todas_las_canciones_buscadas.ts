@@ -34,7 +34,7 @@ export class VistaVer_todas_las_canciones_buscadas extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="background:#121212; max-width: 100%; max-height: 100%; align-items: flex-start; height: 100%;" class="fuentes" id="vL_fondo">
- <vaadin-vertical-layout theme="spacing" style="max-height: 80%; padding-top: var(--lumo-space-l); padding-right: var(--lumo-space-l); padding-left: var(--lumo-space-l); width: 100%; height: 100%;overflow-y:scroll" id="vL_cuerpo">
+ <vaadin-vertical-layout theme="spacing" style="max-height: 100%; padding-top: var(--lumo-space-l); padding-right: var(--lumo-space-l); padding-left: var(--lumo-space-l); width: 100%; height: 100%; overflow-y:scroll;" id="vL_cuerpo">
   <vaadin-horizontal-layout theme="spacing" id="hL_barraBuscador" style="max-width: 100%; max-height: 7%; width: 50%;"></vaadin-horizontal-layout>
   <label style="align-self: flex-start; font-size: 2.5rem; flex-shrink: 1;" id="label_todasLasCancionesPara">Todas las canciones para "busqueda"</label>
  </vaadin-vertical-layout>

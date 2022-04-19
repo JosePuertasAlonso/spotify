@@ -12,7 +12,13 @@ public class Albumes_del_artista extends VistaAlbumes_del_artista{
 	public Ver_perfil_artista _ver_perfil_artista;
 	public Vector<Album__bloques_> _list_Album__bloques_ = new Vector<Album__bloques_>();
 	
-	public Albumes_del_artista() {
+	private VerticalLayout cuerpo;
+	private HorizontalLayout minireproductor;
+	
+	public Albumes_del_artista(VerticalLayout cuerpo, HorizontalLayout minireproductor) {
+		
+		this.cuerpo = cuerpo;
+		this.minireproductor = minireproductor;
 		
 		cargarAlbumesArtista();
 		
@@ -40,7 +46,7 @@ public class Albumes_del_artista extends VistaAlbumes_del_artista{
 	public void cargarAlbumesArtista() {
 		Album__bloques_ a;
 		for(int i = 0; i < 6; i++) {
-			a = new Album__bloques_();
+			a = new Album__bloques_(cuerpo, minireproductor);
 			a.getStyle().set("margin-right", "var(--lumo-space-m)");
 			a.getStyle().set("max-width", "15.5%");
 			_list_Album__bloques_.add(a);

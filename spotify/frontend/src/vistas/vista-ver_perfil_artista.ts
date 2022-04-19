@@ -52,19 +52,19 @@ export class VistaVer_perfil_artista extends LitElement {
     return html`
 <vaadin-vertical-layout style="background:#121212; max-width: 100%; max-height: 100%; align-items: flex-start; height: 100%;" id="vL_fondo">
  <vaadin-vertical-layout theme="spacing-xl" class="fuentes " style="max-height: 100%; padding-top: var(--lumo-space-l); padding-right: var(--lumo-space-l); padding-left: var(--lumo-space-l); overflow-y:scroll; width: 100%; height: 100%;" id="vL_cuerpo">
-  <vaadin-horizontal-layout theme="spacing-l" style="max-height: 40%; width: 100%;" id="hL_datosArtista" class="boton-rectangulo">
-   <img style="max-width: 100%; max-height: 100%; border-radius:50%; border: 2px solid #FFFFFF;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/2048px-User-avatar.svg.png" id="imagen">
+  <vaadin-horizontal-layout theme="spacing-l" style="max-height: 40%; width: 100%; margin-top: 0px; padding-top: 0px; margin-left: 0px; padding-left: 0px;" id="hL_datosArtista" class="boton-rectangulo">
+   <img style="max-width: 100%; max-height: 100%; border-radius:50%; border: 2px solid #FFFFFF; margin-left: 0px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/2048px-User-avatar.svg.png" id="imagen">
    <vaadin-vertical-layout style="width: 100%; justify-content: space-between;" id="vL_nombreEstilosBotones">
-    <vaadin-vertical-layout id="vL_nombreEstilos">
-     <label style="align-self: flex-start; font-size: 2.5rem; flex-shrink: 1;" id="label_nombre">Nombre artista</label>
-     <vaadin-horizontal-layout theme="spacing-s" style="width: 100%; margin-bottom: var(--lumo-space-m);" id="hL_estilos">
-      <label style="flex-shrink: 0; align-self: flex-start;" id="label_estilos">Estilos:</label>
+    <vaadin-vertical-layout id="vL_nombreEstilos" style="margin-left: 0px; padding-left: 0px;">
+     <label style="align-self: flex-start; font-size: 2.5rem; flex-shrink: 1; margin-left: 0px; padding-left: 0px;" id="label_nombre">Nombre artista</label>
+     <vaadin-horizontal-layout theme="spacing-s" style="width: 100%; margin-bottom: var(--lumo-space-m); margin-left: 0px; padding-left: 0px;" id="hL_estilos">
+      <label style="flex-shrink: 0; align-self: flex-start; margin-left: 0px;" id="label_estilos">Estilos:</label>
       <label style="color:#A8A8A8; font-weight:400; align-self: flex-end;" id="label_estilos1">estilo1, estilo2</label>
      </vaadin-horizontal-layout>
     </vaadin-vertical-layout>
-    <vaadin-horizontal-layout theme="spacing" style="width: 100%;" id="hL_botones">
-     <button style="align-self: center; width: 100%; max-width: 12%;" id="button_seguir">SEGUIR</button>
-     <button style="align-self: center; width: 100%; max-width: 12%;" id="button_siguiendo">SIGUIENDO</button>
+    <vaadin-horizontal-layout theme="spacing" style="width: 100%; margin-left: 0px; padding-left: 0px;" id="hL_botones">
+     <button style="align-self: center; width: 100%; max-width: 12%; margin-left: 0px;" id="button_seguir">SEGUIR</button>
+     <button style="align-self: center; width: 100%; max-width: 12%; margin-left: 0px;" id="button_siguiendo">SIGUIENDO</button>
     </vaadin-horizontal-layout>
    </vaadin-vertical-layout>
   </vaadin-horizontal-layout>

@@ -10,7 +10,9 @@ public class Cabecera extends VistaCabecera{
 	
 	public Cabecera() {
 		_logo = new Logo();
-    	getStyle().set("margin", "0px");
+		this.getStyle().set("margin", "0px");
+		this.getStyle().set("width", "100%");
+		this.getStyle().set("height", "100%");
 		this.gethL_Logo().add(_logo);
 	}
 	

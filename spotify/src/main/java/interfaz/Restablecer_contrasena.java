@@ -1,5 +1,8 @@
 package interfaz;
 
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 import vistas.VistaRestablecer_contrasena;
 
 public class Restablecer_contrasena extends VistaRestablecer_contrasena{
@@ -16,7 +19,7 @@ public class Restablecer_contrasena extends VistaRestablecer_contrasena{
     	getStyle().set("margin", "0px");
     	this.getLabel_errorContrasenaCoincidir().setVisible(false);
     	this.getLabel_errorContrasenaRequisitos().setVisible(false);
-    	this.gethL_cabecera().add(new Cabecera_cibernauta());
+    	this.gethL_cabecera().add(new Cabecera_cibernauta(new VerticalLayout(), new HorizontalLayout()));
 	}
 
 	public void Validar_contrasena() {

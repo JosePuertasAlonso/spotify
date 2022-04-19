@@ -20,6 +20,7 @@ public class Canciones_del_album__administrador_ extends VistaCanciones_del_albu
 		}
 		
 		this.getStyle().set("margin", "0px");
+		this.getStyle().set("padding", "0px");
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
 		

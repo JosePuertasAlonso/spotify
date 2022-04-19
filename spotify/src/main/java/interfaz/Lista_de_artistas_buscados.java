@@ -2,6 +2,7 @@ package interfaz;
 
 import java.util.Vector;
 
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import interfaz.Artista__lista_;
@@ -11,7 +12,13 @@ public class Lista_de_artistas_buscados extends VistaLista_de_artistas_buscados{
 	public Buscador _buscador;
 	public Vector<Artista__lista_> _list_Artista__lista_ = new Vector<Artista__lista_>();
 	
-	public Lista_de_artistas_buscados() {
+	private VerticalLayout cuerpo;
+	private HorizontalLayout minireproductor;
+	
+	public Lista_de_artistas_buscados(VerticalLayout cuerpo, HorizontalLayout minireproductor) {
+		
+		this.cuerpo = cuerpo;
+		this.minireproductor = minireproductor;
 		
 		cargarArtistasBuscados();
 		
@@ -30,7 +37,7 @@ public class Lista_de_artistas_buscados extends VistaLista_de_artistas_buscados{
 		Artista__lista_ a;
 		
 		for(int i = 0; i < 6; i++) {
-			a = new Artista__lista_();
+			a = new Artista__lista_(cuerpo, minireproductor);
 			a.getStyle().set("margin-top", "var(--lumo-space-m)");
 			_list_Artista__lista_.add(a);
 		}

@@ -18,7 +18,7 @@ public class Modificar_cancion extends VistaModificar_cancion{
 //	private TextField _albumTF;
 	public Cancion_Administrador _cancion_Administrador;
 	
-	public Modificar_cancion() {
+	public Modificar_cancion(VerticalLayout cuerpo) {
 		this.getStyle().set("margin", "0px");
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");

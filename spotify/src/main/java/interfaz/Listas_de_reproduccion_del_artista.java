@@ -13,7 +13,13 @@ public class Listas_de_reproduccion_del_artista extends VistaListas_de_reproducc
 	//ANADIDO A MANO:
 	public Vector<Lista_del_artista> _list_Lista_del_artista = new Vector<Lista_del_artista>();
 	
-	public Listas_de_reproduccion_del_artista() {
+	private VerticalLayout cuerpo;
+	private HorizontalLayout minireproductor;
+	
+	public Listas_de_reproduccion_del_artista(VerticalLayout cuerpo, HorizontalLayout minireproductor) {
+		
+		this.cuerpo = cuerpo;
+		this.minireproductor = minireproductor;
 		
 		cargarListasArtista();
 		
@@ -41,7 +47,7 @@ public class Listas_de_reproduccion_del_artista extends VistaListas_de_reproducc
 	public void cargarListasArtista() {
 		Lista_del_artista l;
 		for(int i = 0; i < 6; i++) {
-			l = new Lista_del_artista();
+			l = new Lista_del_artista(cuerpo, minireproductor);
 			l.getStyle().set("margin-right", "var(--lumo-space-m)");
 			l.getStyle().set("max-width", "15.5%");
 			_list_Lista_del_artista.add(l);

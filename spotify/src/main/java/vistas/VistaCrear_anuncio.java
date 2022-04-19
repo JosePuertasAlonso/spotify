@@ -9,6 +9,7 @@ import vistas.VistaCabecera;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.html.Input;
 import vistas.VistaReproductor_resumido;
+import com.vaadin.flow.component.html.NativeButton;
 
 /**
  * A Designer generated component for the vista-crear_anuncio template.
@@ -34,6 +35,9 @@ public class VistaCrear_anuncio extends LitTemplate {
 	private Input input_titulo;
 	@Id("label_descripcion")
 	private Label label_descripcion;
+	@Id("button_publicarAnuncio")
+	private NativeButton button_publicarAnuncio;
+	
 	
 	
 	public Element getvL_fondo() {
@@ -105,6 +109,15 @@ public class VistaCrear_anuncio extends LitTemplate {
 		this.label_descripcion = label_descripcion;
 	}
 
+
+	public NativeButton getButton_publicarAnuncio() {
+		return button_publicarAnuncio;
+	}
+
+
+	public void setButton_publicarAnuncio(NativeButton button_publicarAnuncio) {
+		this.button_publicarAnuncio = button_publicarAnuncio;
+	}
 
 
 	/**

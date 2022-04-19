@@ -1,5 +1,6 @@
 package interfaz;
 
+import spotify.AudioPlayer;
 import vistas.VistaReproductor_resumido;
 
 public class Reproductor_resumido extends VistaReproductor_resumido{
@@ -12,11 +13,14 @@ public class Reproductor_resumido extends VistaReproductor_resumido{
 //	private Image _imagenI;
 //	private Slider _barraS;
 	
+	public AudioPlayer _audioPlayer;
+	
 	public Reproductor_resumido() {
 		this.getStyle().set("margin", "0px");
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
-
+		this._audioPlayer = new AudioPlayer();
+		this.gethL_reproductor().add(_audioPlayer);
 	}
 
 	public void Pausar_cancion() {

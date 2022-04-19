@@ -12,7 +12,13 @@ public class Listas_de_reproduccion_del_perfil extends VistaLista_de_reproduccio
 	public Ver_perfil _ver_perfil;
 	public Vector<Lista_de_reproduccion_propia> _list_Lista_de_reproduccion_propia = new Vector<Lista_de_reproduccion_propia>();
 
-	public Listas_de_reproduccion_del_perfil() {
+	private VerticalLayout cuerpo;
+	private HorizontalLayout minireproductor;
+	
+	public Listas_de_reproduccion_del_perfil(VerticalLayout cuerpo, HorizontalLayout minireproductor) {
+		
+		this.cuerpo = cuerpo;
+		this.minireproductor = minireproductor;
 		
 		cargarListasPropias();
 		
@@ -21,6 +27,7 @@ public class Listas_de_reproduccion_del_perfil extends VistaLista_de_reproduccio
 		}
 		
 		this.getStyle().set("margin", "0px");
+		this.getStyle().set("padding", "0px");
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
 		
@@ -29,7 +36,7 @@ public class Listas_de_reproduccion_del_perfil extends VistaLista_de_reproduccio
 	public void cargarListasPropias() {
 		Lista_de_reproduccion_propia l;
 		for(int i = 0; i < 10; i++) {
-			l = new Lista_de_reproduccion_propia();
+			l = new Lista_de_reproduccion_propia(cuerpo, minireproductor);
 			l.getStyle().set("margin-top", "var(--lumo-space-m)");
 			_list_Lista_de_reproduccion_propia.add(l);
 		}

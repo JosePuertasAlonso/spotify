@@ -27,8 +27,10 @@ export class VistaComun extends LitElement {
     return html`
 <vaadin-vertical-layout style="background:#121212; max-width: 100%; max-height: 100%; align-items: flex-start; height: 100%;" id="vL_fondo">
  <vaadin-horizontal-layout theme="spacing" id="hL_cabecera" style="max-height: 10%; width: 100%; margin: 0px;"></vaadin-horizontal-layout>
- <vaadin-vertical-layout theme="spacing" style="flex-shrink: 1; width: 100%; height: 100%; max-height: 80%; padding-top: var(--lumo-space-l); padding-right: var(--lumo-space-l); padding-left: var(--lumo-space-l); overflow-y:scroll;" id="vL_contendorListasCanciones">
-  <vaadin-horizontal-layout theme="spacing" id="hL_buscador" style="max-width: 100%; max-height: 7%; width: 50%;"></vaadin-horizontal-layout>
+ <vaadin-vertical-layout theme="spacing" id="vL_cuerpo" style="padding-top: var(--lumo-space-l); padding-right: var(--lumo-space-l); padding-left: var(--lumo-space-l); max-width: 100%; width: 100%; margin: 0px; height: 100%; max-height: 80%;">
+  <vaadin-vertical-layout theme="spacing" style="flex-shrink: 1; width: 100%; height: 100%; max-height: 100%; overflow-y:scroll; max-width: 100%; padding: 0px;" id="vL_contendorListasCanciones">
+   <vaadin-horizontal-layout theme="spacing" id="hL_buscador" style="max-width: 100%; max-height: 7%; width: 50%;"></vaadin-horizontal-layout>
+  </vaadin-vertical-layout>
  </vaadin-vertical-layout>
  <vaadin-horizontal-layout theme="spacing" id="hL_minireproductor" style="max-height: 10%; width: 100%;"></vaadin-horizontal-layout>
 </vaadin-vertical-layout>

@@ -11,7 +11,11 @@ public class Lista_de_albumbes_buscados__administrador_ extends VistaLista_de_al
 	public Buscador_administrador _buscador_administrador;
 	public Vector<Album__bloque_administrador_> _list_Album__bloque_administrador_ = new Vector<Album__bloque_administrador_>();
 
-	public Lista_de_albumbes_buscados__administrador_() {
+	private VerticalLayout cuerpo;
+	
+	public Lista_de_albumbes_buscados__administrador_(VerticalLayout cuerpo) {
+		
+		this.cuerpo = cuerpo;
 		
 		cargarAlbumesBuscadosAdmin();
 		
@@ -30,7 +34,7 @@ public class Lista_de_albumbes_buscados__administrador_ extends VistaLista_de_al
 		Album__bloque_administrador_ a;
 		
 		for(int i = 0; i < 6; i++) {
-			a = new Album__bloque_administrador_();
+			a = new Album__bloque_administrador_(cuerpo);
 			a.getStyle().set("margin-top", "var(--lumo-space-m)");
 			_list_Album__bloque_administrador_.add(a);
 		}

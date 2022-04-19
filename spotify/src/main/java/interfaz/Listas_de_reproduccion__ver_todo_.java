@@ -12,8 +12,13 @@ public class Listas_de_reproduccion__ver_todo_ extends VistaLista_de_reproduccio
 	public Ver_todas_listas_buscadas _ver_todas_listas_buscadas;
 	public Vector<Lista_de_reproduccion__bloque_> _list_Lista_de_reproduccion__bloque_ = new Vector<Lista_de_reproduccion__bloque_>();
 
+	private VerticalLayout cuerpo;
+	private HorizontalLayout minireproductor;
 
-	public Listas_de_reproduccion__ver_todo_() {
+	public Listas_de_reproduccion__ver_todo_(VerticalLayout cuerpo, HorizontalLayout minireproductor) {
+		
+		this.cuerpo = cuerpo;
+		this.minireproductor = minireproductor;
 		
 		cargarListasVerTodo();
 		
@@ -41,7 +46,7 @@ public class Listas_de_reproduccion__ver_todo_ extends VistaLista_de_reproduccio
 	public void cargarListasVerTodo() {
 		Lista_de_reproduccion__bloque_ l;
 		for(int i = 0; i < 25; i++) {
-			l = new Lista_de_reproduccion__bloque_();
+			l = new Lista_de_reproduccion__bloque_(cuerpo, minireproductor);
 			l.getStyle().set("margin-right", "var(--lumo-space-m)");
 			l.getStyle().set("max-width", "15.5%");
 			_list_Lista_de_reproduccion__bloque_.add(l);

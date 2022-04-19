@@ -11,7 +11,11 @@ public class Lista_de_canciones_buscadas__administrador_ extends VistaLista_de_c
 	public Buscador_administrador _buscador_administrador;
 	public Vector<Cancion__bloque_administrador_> _list_Cancion__bloque_administrador_ = new Vector<Cancion__bloque_administrador_>();
 
-	public Lista_de_canciones_buscadas__administrador_() {
+	private VerticalLayout cuerpo;
+	
+	public Lista_de_canciones_buscadas__administrador_(VerticalLayout cuerpo) {
+		
+		this.cuerpo = cuerpo;
 		
 		cargarCancionesBuscadasAdmin();
 		
@@ -30,7 +34,7 @@ public class Lista_de_canciones_buscadas__administrador_ extends VistaLista_de_c
 		Cancion__bloque_administrador_ c;
 		
 		for(int i = 0; i < 6; i++) {
-			c = new Cancion__bloque_administrador_();
+			c = new Cancion__bloque_administrador_(cuerpo);
 			c.getStyle().set("margin-top", "var(--lumo-space-m)");
 			_list_Cancion__bloque_administrador_.add(c);
 		}

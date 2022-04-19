@@ -1,5 +1,6 @@
 package interfaz;
 
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 public class Ver_album extends Lista {
@@ -8,7 +9,8 @@ public class Ver_album extends Lista {
 	public Album__bloques_ _album__bloques_;
 	public Canciones_del_album _canciones_del_album;
 	
-	public Ver_album() {
+	public Ver_album(VerticalLayout cuerpo, HorizontalLayout minireproductor) {
+		super(cuerpo, minireproductor);
 		_canciones_del_album = new Canciones_del_album();
 		this.getvL_cancionesDeListaAlbumListaeliminar().as(VerticalLayout.class).add(_canciones_del_album);
 		this.gethL_tituloAceptar().setVisible(false);

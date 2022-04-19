@@ -61,21 +61,21 @@ export class VistaBuscador extends LitElement {
      <label style="font-size: 1.5rem; line-height: 1.75rem; letter-spacing: -0.04em; text-transform: none; font-weight: 700; color:#FFFFFF; flex-shrink: 0;" id="label_canciones">Canciones</label>
      <button id="button_verTodoCanciones">Ver todo</button>
     </vaadin-horizontal-layout>
-    <vaadin-horizontal-layout theme="spacing" style="width: 100%; max-height: 17%; height: 100%; margin-top: var(--lumo-space-xs);" id="hL_listaDeCancionesBuscadas"></vaadin-horizontal-layout>
+    <vaadin-horizontal-layout theme="spacing" style="width: 100%; max-height: 22%; height: 100%; margin-top: 0px;" id="hL_listaDeCancionesBuscadas"></vaadin-horizontal-layout>
    </vaadin-vertical-layout>
    <vaadin-vertical-layout theme="spacing" style="overflow-y:scroll; width: 100%;" id="vL_artistas">
     <vaadin-horizontal-layout style="align-items: center; width: 100%; justify-content: space-between; padding-right: var(--lumo-space-m);" id="hL_artistasVertodo">
      <label style="font-size: 1.5rem; line-height: 1.75rem; letter-spacing: -0.04em; text-transform: none; font-weight: 700; color:#FFFFFF; flex-shrink: 0;" id="label_artistas">Artistas</label>
      <button id="button_verTodoArtistas">Ver todo</button>
     </vaadin-horizontal-layout>
-    <vaadin-horizontal-layout theme="spacing" style="width: 100%; max-height: 17%; height: 100%; margin-top: var(--lumo-space-xs);" id="hL_listaDeArtistasBuscados"></vaadin-horizontal-layout>
+    <vaadin-horizontal-layout theme="spacing" style="width: 100%; max-height: 22%; height: 100%; margin-top: 0px;" id="hL_listaDeArtistasBuscados"></vaadin-horizontal-layout>
    </vaadin-vertical-layout>
    <vaadin-vertical-layout theme="spacing" style="overflow-y:scroll; width: 100%;" id="vL_listasDeReproduccion">
     <vaadin-horizontal-layout style="align-items: center; width: 100%; justify-content: space-between; padding-right: var(--lumo-space-m);" id="hL_listasVertodo">
      <label style="font-size: 1.5rem; line-height: 1.75rem; letter-spacing: -0.04em; text-transform: none; font-weight: 700; color:#FFFFFF; flex-shrink: 0;" id="label_listasDeReproduccion">Listas de reproducción</label>
      <button id="button_verTodoListas">Ver todo</button>
     </vaadin-horizontal-layout>
-    <vaadin-horizontal-layout theme="spacing" style="width: 100%; max-height: 17%; height: 100%; margin-top: var(--lumo-space-xs);" id="hL_listasDeReproduccionBuscadas"></vaadin-horizontal-layout>
+    <vaadin-horizontal-layout theme="spacing" style="width: 100%; max-height: 22%; height: 100%; margin-top: 0px;" id="hL_listasDeReproduccionBuscadas"></vaadin-horizontal-layout>
    </vaadin-vertical-layout>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>

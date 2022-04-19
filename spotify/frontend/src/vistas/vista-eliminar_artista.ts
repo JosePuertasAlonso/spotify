@@ -41,7 +41,7 @@ export class VistaEliminar_artista extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="background-color:#121212; width: 100%; height: 100%; padding: var(--lumo-space-xl); align-items: center; border:none; border: 2px solid #A8A8A8; justify-content: center;" class="fuentes boton-rectangulo" theme="spacing" id="vL_fondo">
- <label style="flex-shrink: 0; align-self: center; text-align:center;" id="label_eliminar">Eliminar artista</label>
+ <label style="flex-shrink: 0; align-self: center; text-align:center; margin-top: 0px;" id="label_eliminar">Eliminar artista</label>
  <label style="flex-shrink: 0; align-self: center; font-weight: 300;" id="label_atencion">¡Atención! va a eliminar el artista "nombre artista"</label>
  <vaadin-horizontal-layout theme="spacing-xl" style="width: 100%; align-self: center; align-items: center; justify-content: center; margin-top: var(--lumo-space-l);" id="hL_botones">
   <button style="align-self: center; margin-left: 0px;" id="button_siEliminar">SÍ, ELIMINAR ARTISTA</button>

@@ -12,7 +12,13 @@ public class Artistas_similares extends VistaArtistas_similares{
 	public Ver_perfil_artista _ver_perfil_artista;
 	public Vector<Artista__bloque_> _list_Artista__bloque_ = new Vector<Artista__bloque_>();
 	
-	public Artistas_similares() {
+	private VerticalLayout cuerpo;
+	private HorizontalLayout minireproductor;
+	
+	public Artistas_similares(VerticalLayout cuerpo, HorizontalLayout minireproductor) {
+		
+		this.cuerpo = cuerpo;
+		this.minireproductor = minireproductor;
 		
 		cargarArtistasSimilares();
 		
@@ -40,7 +46,7 @@ public class Artistas_similares extends VistaArtistas_similares{
 	public void cargarArtistasSimilares() {
 		Artista__bloque_ a;
 		for(int i = 0; i < 6; i++) {
-			a = new Artista__bloque_();
+			a = new Artista__bloque_(cuerpo, minireproductor);
 			a.getStyle().set("margin-right", "var(--lumo-space-m)");
 			a.getStyle().set("max-width", "15.5%");
 			_list_Artista__bloque_.add(a);

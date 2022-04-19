@@ -61,7 +61,7 @@ export class VistaBuscar_canciones_a_anadir extends LitElement {
    <label style="font-size: 1.5rem; line-height: 1.75rem; letter-spacing: -0.04em; text-transform: none; font-weight: 700; color:#FFFFFF; width: 100%;" id="label_todasCancionesPara">Todas las canciones para "búsqueda"</label>
    <button style="align-self: center; width: 100%; max-width: 10%;" id="button_nuevaCancion">NUEVA CANCIÓN</button>
   </vaadin-horizontal-layout>
-  <vaadin-vertical-layout theme="spacing" style="width: 100%; max-height: 16%; height: 100%; margin: 0px;" id="vL_cancionesBuscadasAAnadir"></vaadin-vertical-layout>
+  <vaadin-vertical-layout theme="spacing" style="width: 100%; max-height: 22%; height: 100%; margin: 0px;" id="vL_cancionesBuscadasAAnadir"></vaadin-vertical-layout>
  </vaadin-vertical-layout>
 </vaadin-vertical-layout>
 `;

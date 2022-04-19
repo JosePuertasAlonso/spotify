@@ -28,6 +28,8 @@ public class VistaCibernauta_no_registrado extends LitTemplate {
 	private HorizontalLayout hL_cabecera;
 	@Id("hL_minireproductor")
 	private HorizontalLayout hL_minireproductor;
+	@Id("vL_cuerpo")
+	private Element vL_cuerpo;
 	
 	
 
@@ -75,6 +77,19 @@ public class VistaCibernauta_no_registrado extends LitTemplate {
 
 	public void sethL_ultimosExitos(HorizontalLayout hL_ultimosExitos) {
 		this.hL_ultimosExitos = hL_ultimosExitos;
+	}
+	
+
+
+
+	public Element getvL_cuerpo() {
+		return vL_cuerpo;
+	}
+
+
+
+	public void setvL_cuerpo(Element vL_cuerpo) {
+		this.vL_cuerpo = vL_cuerpo;
 	}
 
 

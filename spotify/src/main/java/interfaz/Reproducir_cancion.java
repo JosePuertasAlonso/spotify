@@ -1,5 +1,13 @@
 package interfaz;
 
+import com.vaadin.flow.component.ClickEvent;
+import com.vaadin.flow.component.ComponentEventListener;
+import com.vaadin.flow.component.dialog.Dialog;
+import com.vaadin.flow.component.html.NativeButton;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
+import spotify.AudioPlayer;
 import vistas.VistaReproducir_cancion;
 
 public class Reproducir_cancion extends VistaReproducir_cancion{
@@ -33,11 +41,31 @@ public class Reproducir_cancion extends VistaReproducir_cancion{
 	public Reproductor_resumido__cibernauta_no_registrado_ _reproductor_resumido__cibernauta_no_registrado_;
 	public Ver_creditos_cancion _ver_creditos_cancion;
 	
-	public Reproducir_cancion() {
+	public AudioPlayer _audioPlayer;
+	
+	public Reproducir_cancion(VerticalLayout cuerpo, HorizontalLayout minireproductor) {
 		this.getStyle().set("margin", "0px");
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
+		this._audioPlayer = new AudioPlayer();
+		this.gethL_reproductor().add(_audioPlayer);
 		this.getButton_opciones().setVisible(false);
+		
+		this.getButton_creditos().addClickListener(new ComponentEventListener<ClickEvent<NativeButton>>() {
+			
+			@Override
+			public void onComponentEvent(ClickEvent<NativeButton> event) {
+				Dialog popUp = new Dialog();
+				popUp.getElement().getStyle().set("widht", "100%");
+				popUp.getElement().getStyle().set("border", "none");
+				
+				_ver_creditos_cancion = new Ver_creditos_cancion(cuerpo, popUp);
+				
+				popUp.add(_ver_creditos_cancion);
+				popUp.open();
+				
+			}
+		});
 		
 	}
 

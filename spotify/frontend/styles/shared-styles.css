@@ -332,7 +332,10 @@ audio::-webkit-media-controls-play-button, video::-webkit-media-controls-play-bu
 	border: 1px solid #FFFFFF;
 }
 
-
+::part(content){
+	padding: 0px;
+	width: 100%
+}
 
 input[type="checkbox"] {
 	appearance: none;

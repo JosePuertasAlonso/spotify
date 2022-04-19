@@ -81,10 +81,10 @@ export class VistaAnadir_nuevo_album extends LitElement {
 <vaadin-vertical-layout style="width: 100%; height: 100%; background-color:#121212;" class="fuentes botones-cabecera" theme="spacing" id="vL_fondo">
  <label style="align-self: center; font-size: 2.5rem; text-align: center;" id="label_anadeNuevoAlbum">Añade un nuevo álbum</label>
  <vaadin-horizontal-layout theme="spacing-xl" style="width: 100%; max-width: 80%; align-self: center; max-height: 50%; height: 100%;" id="hL_cancionesDatosImagen">
-  <vaadin-vertical-layout theme="spacing" style="max-width: 20%; width: 100%; align-items: center; align-self: flex-start; height: 100%; margin-right: var(--lumo-space-s);" id="vL_cancionesAlbum">
+  <vaadin-vertical-layout theme="spacing" style="max-width: 20%; width: 100%; align-items: center; align-self: flex-start; height: 100%; margin-right: var(--lumo-space-s); margin: 0px;" id="vL_cancionesAlbum">
    <label style="flex-shrink: 0; align-self: flex-start;" id="label_cancionesAlbum">Canciones del álbum</label>
-   <vaadin-horizontal-layout theme="spacing" style="overflow-y:scroll; border: 1px solid #FFFFFF; height: 100%; max-height: 62%; width: 100%;" id="hL_cancionesDelAlbumAdministrador"></vaadin-horizontal-layout>
-   <vaadin-horizontal-layout theme="spacing" class="boton-rectangulo" style="width: 100%;">
+   <vaadin-horizontal-layout theme="spacing" style="overflow-y:scroll; border: 1px solid #FFFFFF; height: 100%; max-height: 70%; width: 100%;" id="hL_cancionesDelAlbumAdministrador"></vaadin-horizontal-layout>
+   <vaadin-horizontal-layout theme="spacing" class="boton-rectangulo" style="width: 100%; margin-bottom: 0px; padding-bottom: 0px;">
     <button style="align-self: center; width: 100%; margin: 0px; min-width: 100%; max-width: 100%; font-size: 0.875rem; font-weight:400;letter-spacing: 0.0em;" id="button_anadirCancion">AÑADIR CANCIÓN</button>
    </vaadin-horizontal-layout>
   </vaadin-vertical-layout>

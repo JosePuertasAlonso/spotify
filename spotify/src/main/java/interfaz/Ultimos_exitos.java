@@ -14,7 +14,13 @@ public class Ultimos_exitos extends VistaUltimos_exitos{
 	public Cibernauta_no_registrado _cibernauta_no_registrado;
 	public Vector<Cancion__bloque_sin_opciones_> _list_Cancion__bloque_sin_opciones_ = new Vector<Cancion__bloque_sin_opciones_>();
 	
-	public Ultimos_exitos() {
+	private VerticalLayout cuerpo;
+	private HorizontalLayout minireproductor;
+	
+	public Ultimos_exitos(VerticalLayout cuerpo, HorizontalLayout minireproductor) {
+		
+		this.cuerpo = cuerpo;
+		this.minireproductor = minireproductor;
 		
 		cargarUltimos_exitos();
 		
@@ -42,7 +48,7 @@ public class Ultimos_exitos extends VistaUltimos_exitos{
 	public void cargarUltimos_exitos() {
 		Cancion__bloque_sin_opciones_ c;
 		for(int i = 0; i < 25; i++) {
-			c = new Cancion__bloque_sin_opciones_();
+			c = new Cancion__bloque_sin_opciones_(cuerpo, minireproductor);
 			c.getStyle().set("margin-right", "var(--lumo-space-m)");
 			c.getStyle().set("max-width", "15.5%");
 			_list_Cancion__bloque_sin_opciones_.add(c);

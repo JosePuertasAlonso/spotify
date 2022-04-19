@@ -66,7 +66,7 @@ export class VistaRegistrarse extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout class="fuentes" style="width: 100%; height: 100%; background-color:#121212; overflow-y:scroll;" id="vaadinVerticalLayout" theme="spacing" dir="vL_fondo">
+<vaadin-vertical-layout class="fuentes " style="width: 100%; height: 100%; background-color:#121212; overflow-y:scroll;" id="vaadinVerticalLayout" theme="spacing" dir="vL_fondo">
  <label style="align-self: center; font-size: 2.5rem; text-align: center;" id="label_creaCuenta">Crea una cuenta de Spotify</label>
  <vaadin-horizontal-layout theme="spacing-xl" style="width: 100%; max-width: 50%; align-self: center; margin-top: var(--lumo-space-xl);" id="hL_datosImagen">
   <vaadin-vertical-layout style="max-width: 70%; width: 100%; margin-right: var(--lumo-space-xl);" theme="spacing" id="vL_datos">
@@ -98,14 +98,16 @@ export class VistaRegistrarse extends LitElement {
   <vaadin-vertical-layout theme="spacing-l" class="botonlabel" style="max-width: 30%; width: 100%; align-items: center; align-self: flex-start; margin-top: var(--lumo-space-xl);" id="vL_imagen">
    <img style="max-width: 100%; max-height: 100%; border-radius:50%; border: 2px solid #FFFFFF;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/2048px-User-avatar.svg.png" id="imagen">
    <input type="file" id="file" accept="image/*" style="display:none">
-   <label for="file" style="color:#121212; background-color:#FFFFFF; border-radius:500px; display: flex; align-items: center; cursor:pointer; font-size: 12px; padding: 8px 34px; letter-spacing: 1.76px; padding-top: 12px; padding-bottom: 12px; justify-content: center; width: 100%; max-width: 65%;" id="ButtonLabel_elegirFoto">
+   <label for="file" style="color:#121212; background-color:#FFFFFF; border-radius:500px; display: flex; align-items: center; cursor:pointer; padding: 8px 34px; letter-spacing: 1.76px; padding-top: 12px; padding-bottom: 12px; justify-content: center; width: 100%; max-width: 65%;" id="ButtonLabel_elegirFoto">
     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px" fill="#121212" style="padding-right: var(--lumo-space-s);">
      <path d="M0 0h24v24H0V0z" fill="none"></path>
      <path d="M18 20H4V6h9V4H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-9h-2v9zm-7.79-3.17l-1.96-2.36L5.5 18h11l-3.54-4.71zM20 4V1h-2v3h-3c.01.01 0 2 0 2h3v2.99c.01.01 2 0 2 0V6h3V4h-3z"></path>
     </svg>ELEGIR FOTO</label>
   </vaadin-vertical-layout>
  </vaadin-horizontal-layout>
- <button style="width:100%; max-width: 14%; max-height: 6.5%; border:none; cursor:pointer; border-radius: 500px; font-size:12px; color:#121212; padding: 8px 34px; font-weight:700; letter-spacing:1.76px; line-height:18px; align-self: center; margin-top: var(--lumo-space-l); height: 100%; min-height: 6.5%;" id="button_registrarse" class="registro">REGISTRARSE</button>
+ <vaadin-horizontal-layout theme="spacing" class="botones-cabecera" style="width: 100%; height: 7%; max-height: 7%; min-height: 7%; justify-content: center; margin-top: var(--lumo-space-l);">
+  <button style="color:#000000; background-color:#FFFFFF; max-width: 12%; height: 100%; min-width: 12%; width: 12%; margin: 0px;" id="button_registrarse" class="registro">REGISTRARSE</button>
+ </vaadin-horizontal-layout>
  <label style="align-self: center; margin-top: var(--lumo-space-l);" id="label_o">ó</label>
  <vaadin-horizontal-layout class="media-boton" theme="spacing-xl" style="align-self: center; margin-top: var(--lumo-space-l); flex-shrink: 0;" id="hL_GoogleAppleFacebook">
   <button style="min-width: 65px; min-height: 65px; max-width: 65px; max-height: 65px; flex-grow: 0; flex-shrink: 0; align-self: center; width: 65px; height: 65px; margin: 0px;" id="button_Google"><img style="width: 15; align-self: center;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1024px-Google_%22G%22_Logo.svg.png"></button>

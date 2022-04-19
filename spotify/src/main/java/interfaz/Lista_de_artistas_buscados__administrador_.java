@@ -11,7 +11,11 @@ public class Lista_de_artistas_buscados__administrador_ extends VistaLista_de_ar
 	public Buscador_administrador _buscador_administrador;
 	public Vector<Artista__bloque_administrador_> _list_Artista__bloque_administrador_ = new Vector<Artista__bloque_administrador_>();
 
-	public Lista_de_artistas_buscados__administrador_() {
+	private VerticalLayout cuerpo;
+	
+	public Lista_de_artistas_buscados__administrador_(VerticalLayout cuerpo) {
+		
+		this.cuerpo = cuerpo;
 		
 		cargarArtistasBuscadosAdmin();
 		
@@ -30,7 +34,7 @@ public class Lista_de_artistas_buscados__administrador_ extends VistaLista_de_ar
 		Artista__bloque_administrador_ a;
 		
 		for(int i = 0; i < 6; i++) {
-			a = new Artista__bloque_administrador_();
+			a = new Artista__bloque_administrador_(cuerpo);
 			a.getStyle().set("margin-top", "var(--lumo-space-m)");
 			_list_Artista__bloque_administrador_.add(a);
 		}

@@ -15,6 +15,7 @@ public class Buscar_canciones_a_anadir extends VistaBuscar_canciones_a_anadir {
 	
 	public Buscar_canciones_a_anadir() {
 		this.getStyle().set("margin", "0px");
+		this.getStyle().set("padding", "0px");
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
 		

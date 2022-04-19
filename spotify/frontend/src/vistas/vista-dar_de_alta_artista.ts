@@ -62,10 +62,10 @@ export class VistaDar_de_alta_artista extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%; background-color:#121212; overflow-y:scroll;" class="fuentes botones-cabecera" theme="spacing" id="vL_fondo">
+<vaadin-vertical-layout style="width: 100%; height: 100%; background-color:#121212; overflow-y:scroll; max-height: 100%;" class="fuentes botones-cabecera" theme="spacing" id="vL_fondo">
  <label style="align-self: center; font-size: 2.5rem; text-align: center;" id="label_anadeArtista">Añade un nuevo artista</label>
  <vaadin-horizontal-layout theme="spacing-xl" style="width: 100%; max-width: 50%; align-self: center; margin-top: var(--lumo-space-xl); max-height: 90%;" id="hL_datosImagen">
-  <vaadin-vertical-layout style="max-width: 70%; margin-right: var(--lumo-space-xl); margin-bottom: 0px; width: 100%;" theme="spacing" id="vL_datos">
+  <vaadin-vertical-layout style="max-width: 70%; margin-right: var(--lumo-space-xl); margin-bottom: 0px; width: 100%; max-height: 100%;" theme="spacing" id="vL_datos">
    <label style="flex-shrink: 0;" id="label_nombre">¿Cómo se llama el artista?</label>
    <label style="flex-shrink: 0; align-self: center; text-align:center; display: flex; align-items: center; background-color:#E91429; width: 100%; justify-content: center; min-width: 100%; max-width: 100%; padding-right: 10px; padding-left: 10px; margin-left: var(--lumo-space-l); padding-top: var(--lumo-space-xs); padding-bottom: var(--lumo-space-xs);font-weight:400; font-size:1.1rem" id="label_errorNombre">
     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px" fill="#FFFFFF" style="margin-right: var(--lumo-space-s);">
@@ -87,7 +87,7 @@ export class VistaDar_de_alta_artista extends LitElement {
    <label style="flex-shrink: 0; margin-top: var(--lumo-space-l);" id="label_estilos">Estilos del artista:</label>
    <vaadin-horizontal-layout theme="spacing" style="width: 105%; overflow-y:scroll; max-height: 30%; padding: 0px; border: 1px solid #FFFFFF; margin-bottom: 0px; height: 100%;" id="hL_estilos"></vaadin-horizontal-layout>
   </vaadin-vertical-layout>
-  <vaadin-vertical-layout theme="spacing-l" class="botonlabel" style="max-width: 30%; width: 100%; align-items: center; align-self: flex-start; margin-top: var(--lumo-space-xl);" id="vL_imagen">
+  <vaadin-vertical-layout theme="spacing-l" class="botonlabel" style="max-width: 30%; width: 100%; align-items: center; align-self: flex-start; margin-top: var(--lumo-space-xl); max-height: 100%;" id="vL_imagen">
    <img style="max-width: 100%; max-height: 100%; border-radius:50%; border: 2px solid #FFFFFF;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/2048px-User-avatar.svg.png" id="imagen">
    <input type="file" id="file" accept="image/*" style="display:none">
    <label for="file" style="color:#121212; background-color:#FFFFFF; border-radius:500px; display: flex; align-items: center; cursor:pointer; padding: 8px 34px; letter-spacing: 1.76px; padding-top: 12px; padding-bottom: 12px; justify-content: center; width: 100%; max-width: 65%;" id="buttonLabel_elegirFoto">
