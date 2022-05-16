@@ -36,5 +36,14 @@ public class Cabecera_cibernauta_registrado extends Cabecera {
 				GestorUsuarios.cibernauta();
 			}
 		});
+		
+		this._logo.getButton_logo().addClickListener(new ComponentEventListener<ClickEvent<NativeButton>>() {
+			
+			@Override
+			public void onComponentEvent(ClickEvent<NativeButton> event) {
+				GestorUsuarios.usuario();
+				
+			}
+		});
 	}
 }

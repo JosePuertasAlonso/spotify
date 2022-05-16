@@ -1,9 +1,13 @@
 package interfaz;
 
+import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
+import com.vaadin.flow.component.html.NativeButton;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
+import spotify.GestorUsuarios;
 
 public class Cabecera_cibernauta extends Cabecera {
 //	private Label _informacion_ContactoL;
@@ -38,6 +42,15 @@ public class Cabecera_cibernauta extends Cabecera {
 				cuerpo.getStyle().set("max-height", "90%");
 				minireproductor.setVisible(false);
 				cuerpo.add(_registrarse);
+			}
+		});
+		
+		this._logo.getButton_logo().addClickListener(new ComponentEventListener<ClickEvent<NativeButton>>() {
+			
+			@Override
+			public void onComponentEvent(ClickEvent<NativeButton> event) {
+				GestorUsuarios.cibernauta();
+				
 			}
 		});
 	}

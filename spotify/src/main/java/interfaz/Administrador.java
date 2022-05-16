@@ -5,6 +5,7 @@ import com.vaadin.flow.component.ComponentEventListener;
 import com.vaadin.flow.component.html.NativeButton;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import spotify.GestorUsuarios;
 import vistas.VistaAdministrador;
 
 //import basededatos.iAdministrador;
@@ -36,6 +37,14 @@ public class Administrador extends VistaAdministrador{
 		/*CAMBIO*/
 		_cabecera = new Cabecera_cibernauta_registrado(cuerpo, null);
 		_cabecera.gethL_fotoNombreUsuario().setVisible(false);
+		_cabecera._logo.getButton_logo().addClickListener(new ComponentEventListener<ClickEvent<NativeButton>>() {
+			
+			@Override
+			public void onComponentEvent(ClickEvent<NativeButton> event) {
+				GestorUsuarios.administrador();
+				
+			}
+		});
 		/*CAMBIO*/
 		
 		this.gethL_cabecera().add(_cabecera);

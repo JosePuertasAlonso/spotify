@@ -22,7 +22,7 @@ public class Ultimos_exitos extends VistaUltimos_exitos{
 		this.cuerpo = cuerpo;
 		this.minireproductor = minireproductor;
 		
-		cargarUltimos_exitos();
+		cargar_ultimos_exitos();
 		
 		int cont = 0;
 		HorizontalLayout layout = this.gethL_contenedorCanciones();
@@ -45,7 +45,7 @@ public class Ultimos_exitos extends VistaUltimos_exitos{
 		this.getStyle().set("margin", "0px");
 	}
 	
-	public void cargarUltimos_exitos() {
+	public void cargar_ultimos_exitos() {
 		Cancion__bloque_sin_opciones_ c;
 		for(int i = 0; i < 25; i++) {
 			c = new Cancion__bloque_sin_opciones_(cuerpo, minireproductor);

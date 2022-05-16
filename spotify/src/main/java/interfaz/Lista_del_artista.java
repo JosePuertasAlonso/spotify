@@ -11,7 +11,7 @@ import vistas.VistaLista_del_artista;
 public class Lista_del_artista extends VistaLista_del_artista {
 	public Listas_de_reproduccion_del_artista _lista_de_reproduccion_del_artista;
 	
-	public Lista_de_reproduccion _lista_de_reproduccion; //ANADIDO A MANO
+	public Ver_lista_de_reproduccion_ajena _ver_lista_de_reproduccion_ajena; //ANADIDO A MANO
 	
 	public Lista_del_artista(VerticalLayout cuerpo, HorizontalLayout minireproductor) {
 		this.getStyle().set("margin", "0px");
@@ -23,11 +23,11 @@ public class Lista_del_artista extends VistaLista_del_artista {
 			
 			@Override
 			public void onComponentEvent(ClickEvent<NativeButton> event) {
-				_lista_de_reproduccion = new Lista_de_reproduccion(cuerpo, minireproductor);
+				_ver_lista_de_reproduccion_ajena = new Ver_lista_de_reproduccion_ajena(cuerpo, minireproductor);
 				cuerpo.removeAll();
 				cuerpo.getStyle().set("max-height", "80%");
 				minireproductor.setVisible(true);
-				cuerpo.add(_lista_de_reproduccion);
+				cuerpo.add(_ver_lista_de_reproduccion_ajena);
 			}
 		});
 	}
