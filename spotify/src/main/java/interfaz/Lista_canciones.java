@@ -12,8 +12,8 @@ public class Lista_canciones extends VistaLista_canciones{
 //	private Label _tituloL;
 	public Vector<Cancion__bloque_con_opciones_> _list_Cancion__bloque_con_opciones_ = new Vector<Cancion__bloque_con_opciones_>();
 
-	private VerticalLayout cuerpo;
-	private HorizontalLayout minireproductor;
+	protected VerticalLayout cuerpo;
+	protected HorizontalLayout minireproductor;
 	
 	
 	public Lista_canciones(VerticalLayout cuerpo, HorizontalLayout minireproductor) {
@@ -21,25 +21,7 @@ public class Lista_canciones extends VistaLista_canciones{
 		this.cuerpo = cuerpo;
 		this.minireproductor = minireproductor;
 		
-		cargarCanciones();
-		
-		int cont = 0;
-		HorizontalLayout layout = this.gethL_contenedorCanciones();
-		for(int i = 0; i < _list_Cancion__bloque_con_opciones_.size(); i++) {
-			if(cont == 6) {
-				layout = new HorizontalLayout();
-				layout.getStyle().set("width", "100%");
-				layout.getStyle().set("max-height", "50%");
-				layout.getThemeList().set("spacing", true);
-				this.getvL_filaCanciones().as(VerticalLayout.class).add(layout);
-				cont = 0;
-			}
-			
-			layout.add(_list_Cancion__bloque_con_opciones_.get(i));
-			layout.getThemeList().set("spacing", true);
-			cont++;
-			
-		}
+//		cargarCanciones();
 		
 		this.getStyle().set("margin", "0px");
 		this.getStyle().set("width", "100%");
@@ -47,14 +29,14 @@ public class Lista_canciones extends VistaLista_canciones{
 		
 	}
 	
-	public void cargarCanciones() {
-		Cancion__bloque_con_opciones_ c;
-		for(int i = 0; i < 6; i++) {
-			c = new Cancion__bloque_con_opciones_(cuerpo, minireproductor);
-			c.getStyle().set("margin-right", "var(--lumo-space-m)");
-			c.getStyle().set("max-width", "15.5%");
-			_list_Cancion__bloque_con_opciones_.add(c);
-		}
-	}
+//	public void cargarCanciones() {
+//		Cancion__bloque_con_opciones_ c;
+//		for(int i = 0; i < 6; i++) {
+//			c = new Cancion__bloque_con_opciones_(cuerpo, minireproductor);
+//			c.getStyle().set("margin-right", "var(--lumo-space-m)");
+//			c.getStyle().set("max-width", "15.5%");
+//			_list_Cancion__bloque_con_opciones_.add(c);
+//		}
+//	}
 
 }

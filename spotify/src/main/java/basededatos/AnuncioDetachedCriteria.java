@@ -20,16 +20,16 @@ import org.orm.criteria.*;
 
 public class AnuncioDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final IntegerExpression id_Anuncio;
-	public final IntegerExpression es_publicado_porId;
-	public final AssociationExpression es_publicado_por;
+	public final IntegerExpression anunciadoId;
+	public final AssociationExpression anunciado;
 	public final StringExpression titulo;
 	public final StringExpression descripcion;
 	
 	public AnuncioDetachedCriteria() {
 		super(basededatos.Anuncio.class, basededatos.AnuncioCriteria.class);
 		id_Anuncio = new IntegerExpression("id_Anuncio", this.getDetachedCriteria());
-		es_publicado_porId = new IntegerExpression("es_publicado_por.", this.getDetachedCriteria());
-		es_publicado_por = new AssociationExpression("es_publicado_por", this.getDetachedCriteria());
+		anunciadoId = new IntegerExpression("anunciado.", this.getDetachedCriteria());
+		anunciado = new AssociationExpression("anunciado", this.getDetachedCriteria());
 		titulo = new StringExpression("titulo", this.getDetachedCriteria());
 		descripcion = new StringExpression("descripcion", this.getDetachedCriteria());
 	}
@@ -37,14 +37,14 @@ public class AnuncioDetachedCriteria extends AbstractORMDetachedCriteria {
 	public AnuncioDetachedCriteria(DetachedCriteria aDetachedCriteria) {
 		super(aDetachedCriteria, basededatos.AnuncioCriteria.class);
 		id_Anuncio = new IntegerExpression("id_Anuncio", this.getDetachedCriteria());
-		es_publicado_porId = new IntegerExpression("es_publicado_por.", this.getDetachedCriteria());
-		es_publicado_por = new AssociationExpression("es_publicado_por", this.getDetachedCriteria());
+		anunciadoId = new IntegerExpression("anunciado.", this.getDetachedCriteria());
+		anunciado = new AssociationExpression("anunciado", this.getDetachedCriteria());
 		titulo = new StringExpression("titulo", this.getDetachedCriteria());
 		descripcion = new StringExpression("descripcion", this.getDetachedCriteria());
 	}
 	
-	public ArtistaDetachedCriteria createEs_publicado_porCriteria() {
-		return new ArtistaDetachedCriteria(createCriteria("es_publicado_por"));
+	public Usuario_registradoDetachedCriteria createAnunciadoCriteria() {
+		return new Usuario_registradoDetachedCriteria(createCriteria("anunciado"));
 	}
 	
 	public Anuncio uniqueAnuncio(PersistentSession session) {

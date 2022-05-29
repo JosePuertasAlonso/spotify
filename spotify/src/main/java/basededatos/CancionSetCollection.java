@@ -72,6 +72,7 @@ public class CancionSetCollection extends org.orm.util.ORMSet {
 	 * @param propertyName Name of the property for sorting:<ul>
 	 * <li>id_Cancion</li>
 	 * <li>titulo</li>
+	 * <li>imagen</li>
 	 * <li>duracion</li>
 	 * <li>fichero_MP3</li>
 	 * <li>fichero_MP4</li>
@@ -94,6 +95,7 @@ public class CancionSetCollection extends org.orm.util.ORMSet {
 	 * @param propertyName Name of the property for sorting:<ul>
 	 * <li>id_Cancion</li>
 	 * <li>titulo</li>
+	 * <li>imagen</li>
 	 * <li>duracion</li>
 	 * <li>fichero_MP3</li>
 	 * <li>fichero_MP4</li>

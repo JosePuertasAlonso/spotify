@@ -58,10 +58,6 @@ public class VistaRegistrarse extends LitTemplate {
 	private Element vL_imagen;
 	@Id("imagen")
 	private Image imagen;
-	@Id("file")
-	private Input file;
-	@Id("ButtonLabel_elegirFoto")
-	private Label buttonLabel_elegirFoto;
 	@Id("button_registrarse")
 	private NativeButton button_registrarse;
 	@Id("label_o")
@@ -80,6 +76,10 @@ public class VistaRegistrarse extends LitTemplate {
 	private Label label_tienesCuenta;
 	@Id("button_iniciarSesion")
 	private NativeButton button_iniciarSesion;
+	@Id("input_file")
+	private Input input_file;
+	@Id("labelinput_file")
+	private Label labelinput_file;
 	
 	
 
@@ -298,27 +298,26 @@ public class VistaRegistrarse extends LitTemplate {
 	}
 
 
-
-	public Input getFile() {
-		return file;
+	public Input getInput_file() {
+		return input_file;
 	}
 
 
 
-	public void setFile(Input file) {
-		this.file = file;
+	public void setInput_file(Input input_file) {
+		this.input_file = input_file;
 	}
 
 
 
-	public Label getButtonLabel_elegirFoto() {
-		return buttonLabel_elegirFoto;
+	public Label getLabelinput_file() {
+		return labelinput_file;
 	}
 
 
 
-	public void setButtonLabel_elegirFoto(Label buttonLabel_elegirFoto) {
-		this.buttonLabel_elegirFoto = buttonLabel_elegirFoto;
+	public void setLabelinput_file(Label labelinput_file) {
+		this.labelinput_file = labelinput_file;
 	}
 
 

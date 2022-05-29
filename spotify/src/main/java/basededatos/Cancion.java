@@ -54,7 +54,10 @@ public class Cancion implements Serializable {
 	private int id_Cancion;
 	
 	@Column(name="Titulo", nullable=true, length=255)	
-	private String titulo;
+	private String titulo = "-";
+	
+	@Column(name="Imagen", nullable=true, length=255)	
+	private String imagen = "img/song.png";
 	
 	@Column(name="Duracion", nullable=false, length=10)	
 	private int duracion;
@@ -124,6 +127,14 @@ public class Cancion implements Serializable {
 	
 	public String getTitulo() {
 		return titulo;
+	}
+	
+	public void setImagen(String value) {
+		this.imagen = value;
+	}
+	
+	public String getImagen() {
+		return imagen;
 	}
 	
 	public void setDuracion(int value) {

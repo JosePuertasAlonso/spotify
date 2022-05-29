@@ -23,8 +23,8 @@ public class Anuncio implements Serializable {
 	}
 	
 	private void this_setOwner(Object owner, int key) {
-		if (key == ORMConstants.KEY_ANUNCIO_ES_PUBLICADO_POR) {
-			this.es_publicado_por = (basededatos.Artista) owner;
+		if (key == ORMConstants.KEY_ANUNCIO_ANUNCIADO) {
+			this.anunciado = (basededatos.Usuario_registrado) owner;
 		}
 	}
 	
@@ -42,10 +42,10 @@ public class Anuncio implements Serializable {
 	@org.hibernate.annotations.GenericGenerator(name="BASEDEDATOS_ANUNCIO_ID_ANUNCIO_GENERATOR", strategy="native")	
 	private int id_Anuncio;
 	
-	@ManyToOne(targetEntity=basededatos.Artista.class, fetch=FetchType.LAZY)	
+	@ManyToOne(targetEntity=basededatos.Usuario_registrado.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
-	@JoinColumns(value={ @JoinColumn(name="ArtistaUsuarioID", referencedColumnName="UsuarioID", nullable=false) }, foreignKey=@ForeignKey(name="FKAnuncio281086"))	
-	private basededatos.Artista es_publicado_por;
+	@JoinColumns(value={ @JoinColumn(name="`Usuario registradoUsuarioID`", referencedColumnName="UsuarioID", nullable=false) }, foreignKey=@ForeignKey(name="FKAnuncio826854"))	
+	private basededatos.Usuario_registrado anunciado;
 	
 	@Column(name="Titulo", nullable=true, length=255)	
 	private String titulo;
@@ -81,28 +81,28 @@ public class Anuncio implements Serializable {
 		return descripcion;
 	}
 	
-	public void setEs_publicado_por(basededatos.Artista value) {
-		if (es_publicado_por != null) {
-			es_publicado_por.publica.remove(this);
+	public void setAnunciado(basededatos.Usuario_registrado value) {
+		if (anunciado != null) {
+			anunciado.anuncia.remove(this);
 		}
 		if (value != null) {
-			value.publica.add(this);
+			value.anuncia.add(this);
 		}
 	}
 	
-	public basededatos.Artista getEs_publicado_por() {
-		return es_publicado_por;
+	public basededatos.Usuario_registrado getAnunciado() {
+		return anunciado;
 	}
 	
 	/**
 	 * This method is for internal use only.
 	 */
-	public void setORM_Es_publicado_por(basededatos.Artista value) {
-		this.es_publicado_por = value;
+	public void setORM_Anunciado(basededatos.Usuario_registrado value) {
+		this.anunciado = value;
 	}
 	
-	private basededatos.Artista getORM_Es_publicado_por() {
-		return es_publicado_por;
+	private basededatos.Usuario_registrado getORM_Anunciado() {
+		return anunciado;
 	}
 	
 	public String toString() {

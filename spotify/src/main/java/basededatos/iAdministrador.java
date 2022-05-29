@@ -37,4 +37,6 @@ public interface iAdministrador {
 	public Artista[] buscar_artistas_administrador(String aCadena_busqueda);
 
 	public Usuario_registrado[] buscar_perfiles_administrador(String aCadena_busqueda);
+	
+	public boolean existe_estilo(String aEstilo);
 }

@@ -43,6 +43,9 @@ public class Usuario_registrado extends basededatos.Usuario implements Serializa
 		else if (key == ORMConstants.KEY_USUARIO_REGISTRADO_GUARDA) {
 			return ORM_guarda;
 		}
+		else if (key == ORMConstants.KEY_USUARIO_REGISTRADO_ANUNCIA) {
+			return ORM_anuncia;
+		}
 		
 		return null;
 	}
@@ -77,14 +80,14 @@ public class Usuario_registrado extends basededatos.Usuario implements Serializa
 	@Column(name="Dias_baja", nullable=false, length=10)	
 	private int dias_baja;
 	
-	@OneToOne(optional=false, targetEntity=basededatos.Estadisticas.class, fetch=FetchType.LAZY)	
+	@OneToOne(targetEntity=basededatos.Estadisticas.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
-	@JoinColumns(value={ @JoinColumn(name="EstadisticasId_Estadisticas", referencedColumnName="Id_Estadisticas", nullable=false) }, foreignKey=@ForeignKey(name="FKUsuario re601075"))	
+	@JoinColumns(value={ @JoinColumn(name="EstadisticasId_Estadisticas", referencedColumnName="Id_Estadisticas") }, foreignKey=@ForeignKey(name="FKUsuario re601075"))	
 	private basededatos.Estadisticas tiene;
 	
 	@ManyToMany(targetEntity=basededatos.Cancion.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
-	@JoinTable(name="`Cancion_Usuario registrado`", joinColumns={ @JoinColumn(name="`Usuario registradoUsuarioID`") }, inverseJoinColumns={ @JoinColumn(name="CancionId_Cancion") })	
+	@JoinTable(name="`Cancion_Usuario registrado2`", joinColumns={ @JoinColumn(name="`Usuario registradoUsuarioID`") }, inverseJoinColumns={ @JoinColumn(name="CancionId_Cancion") })	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_marca_como_favorita = new java.util.HashSet();
 	
@@ -96,7 +99,7 @@ public class Usuario_registrado extends basededatos.Usuario implements Serializa
 	
 	@ManyToMany(targetEntity=basededatos.Cancion.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
-	@JoinTable(name="`Cancion_Usuario registrado2`", joinColumns={ @JoinColumn(name="`Usuario registradoUsuarioID`") }, inverseJoinColumns={ @JoinColumn(name="CancionId_Cancion") })	
+	@JoinTable(name="`Cancion_Usuario registrado`", joinColumns={ @JoinColumn(name="`Usuario registradoUsuarioID`") }, inverseJoinColumns={ @JoinColumn(name="CancionId_Cancion") })	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_reproduce = new java.util.HashSet();
 	
@@ -114,6 +117,11 @@ public class Usuario_registrado extends basededatos.Usuario implements Serializa
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_guarda = new java.util.HashSet();
+	
+	@OneToMany(mappedBy="anunciado", targetEntity=basededatos.Anuncio.class)	
+	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
+	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
+	private java.util.Set ORM_anuncia = new java.util.HashSet();
 	
 	public void setSeguidores(int value) {
 		this.seguidores = value;
@@ -229,6 +237,17 @@ public class Usuario_registrado extends basededatos.Usuario implements Serializa
 	
 	@Transient	
 	public final basededatos.Lista_de_reproduccionSetCollection guarda = new basededatos.Lista_de_reproduccionSetCollection(this, _ormAdapter, ORMConstants.KEY_USUARIO_REGISTRADO_GUARDA, ORMConstants.KEY_LISTA_DE_REPRODUCCION_ES_GUARDADA_POR, ORMConstants.KEY_MUL_MANY_TO_MANY);
+	
+	private void setORM_Anuncia(java.util.Set value) {
+		this.ORM_anuncia = value;
+	}
+	
+	private java.util.Set getORM_Anuncia() {
+		return ORM_anuncia;
+	}
+	
+	@Transient	
+	public final basededatos.AnuncioSetCollection anuncia = new basededatos.AnuncioSetCollection(this, _ormAdapter, ORMConstants.KEY_USUARIO_REGISTRADO_ANUNCIA, ORMConstants.KEY_ANUNCIO_ANUNCIADO, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return super.toString();

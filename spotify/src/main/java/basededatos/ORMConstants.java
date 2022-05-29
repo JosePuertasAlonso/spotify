@@ -16,7 +16,7 @@ package basededatos;
 public interface ORMConstants extends org.orm.util.ORMBaseConstants {
 	final int KEY_ALBUM_ES_CREADO_POR = 947380203;
 	
-	final int KEY_ANUNCIO_ES_PUBLICADO_POR = -1391065790;
+	final int KEY_ANUNCIO_ANUNCIADO = -526940956;
 	
 	final int KEY_ARTISTA_ES_AUTOR_DE = -1709948119;
 	
@@ -25,8 +25,6 @@ public interface ORMConstants extends org.orm.util.ORMBaseConstants {
 	final int KEY_ARTISTA_ES_SIMILAR_A = -1176915199;
 	
 	final int KEY_ARTISTA_ES_SIMILAR_DE = -2124632607;
-	
-	final int KEY_ARTISTA_PUBLICA = -516986445;
 	
 	final int KEY_ARTISTA_REALIZA = 799031693;
 	
@@ -47,6 +45,8 @@ public interface ORMConstants extends org.orm.util.ORMBaseConstants {
 	final int KEY_LISTA_DE_REPRODUCCION_ES_GESTIONADA_POR = 1594004890;
 	
 	final int KEY_LISTA_DE_REPRODUCCION_ES_GUARDADA_POR = -2044214370;
+	
+	final int KEY_USUARIO_REGISTRADO_ANUNCIA = -2030282121;
 	
 	final int KEY_USUARIO_REGISTRADO_ES_SEGUIDO_POR = 153965621;
 	

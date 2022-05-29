@@ -7,6 +7,12 @@ import com.vaadin.flow.component.html.NativeButton;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import basededatos.Administrador;
+import basededatos.Artista;
+import basededatos.BDPrincipal;
+import basededatos.Usuario;
+import basededatos.Usuario_registrado;
+import basededatos.iCibernauta_no_registrado;
 import spotify.GestorUsuarios;
 import vistas.VistaIniciar_sesion;
 
@@ -32,6 +38,9 @@ public class Iniciar_sesion extends VistaIniciar_sesion{
 	public Facebook _facebook;
 	public Recuperar_contrasena _recuperar_contrasena;
 	
+	iCibernauta_no_registrado _iCibernauta_no_registrado = new BDPrincipal();
+
+	
 	public Iniciar_sesion(VerticalLayout cuerpo, HorizontalLayout minireproductor) {
     	getStyle().set("margin", "0px");
     	getStyle().set("padding", "0px");
@@ -46,20 +55,25 @@ public class Iniciar_sesion extends VistaIniciar_sesion{
 			public void onComponentEvent(ClickEvent<NativeButton> event) {
 				String email = getInput_correoElectronico().getValue();
 				String contrasena = getInput_contrasena().getValue();
-					switch (email) {
-						case "usuario":
-							GestorUsuarios.usuario();
-							break;
-						case "artista":
-							GestorUsuarios.artista();
-							break;
-						case "administrador":
-							GestorUsuarios.administrador();
-							break;
-
-						default:
-							getLabel_errorInicioSesion().setVisible(true);
-					}
+				
+				Usuario u = new Usuario();
+				u.setLogin(email);
+				u.setPassword(contrasena);
+				
+				Usuario aux = _iCibernauta_no_registrado.existe_usuario(u);
+				
+				if(aux instanceof Usuario_registrado) {
+					GestorUsuarios.inicializarUsuario(aux);
+					GestorUsuarios.usuario();
+				} else if (aux instanceof basededatos.Artista) {
+					GestorUsuarios.inicializarUsuario(aux);
+					GestorUsuarios.artista();
+				} else if (aux instanceof Administrador) {
+					GestorUsuarios.inicializarUsuario(aux);
+					GestorUsuarios.administrador();
+				} else {
+					getLabel_errorInicioSesion().setVisible(true);
+				}
 			}
 		});
     	

@@ -31,7 +31,7 @@ public class Ver_todas_listas_buscadas extends VistaVer_todas_listas_buscadas {
 			
 			@Override
 			public void onComponentEvent(ClickEvent<NativeButton> event) {
-				_buscador = new Buscador(cuerpo, minireproductor);
+				_buscador = new Buscador(cuerpo, minireproductor, _barra_buscador.getInput_buscar().getValue());
 				cuerpo.removeAll();
 				cuerpo.getStyle().set("max-height", "80%");
 				minireproductor.setVisible(true);

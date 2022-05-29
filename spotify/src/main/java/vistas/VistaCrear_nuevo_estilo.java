@@ -32,6 +32,8 @@ public class VistaCrear_nuevo_estilo extends LitTemplate {
 	private Input input_nombreEstilo;
 	@Id("button_andirEstilo")
 	private NativeButton button_andirEstilo;
+	@Id("label_errorEstilo")
+	private Label label_errorEstilo;
 	
 	
 
@@ -103,6 +105,17 @@ public class VistaCrear_nuevo_estilo extends LitTemplate {
 
 	public void setButton_andirEstilo(NativeButton button_andirEstilo) {
 		this.button_andirEstilo = button_andirEstilo;
+	}
+
+
+	public Label getLabel_errorEstilo() {
+		return label_errorEstilo;
+	}
+
+
+
+	public void setLabel_errorEstilo(Label label_errorEstilo) {
+		this.label_errorEstilo = label_errorEstilo;
 	}
 
 

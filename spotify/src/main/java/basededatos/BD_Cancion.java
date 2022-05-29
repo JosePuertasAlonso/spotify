@@ -1,18 +1,34 @@
 package basededatos;
 
 import java.util.Vector;
+
+import org.orm.PersistentException;
+
 import basededatos.Cancion;
 
 public class BD_Cancion {
 	public BDPrincipal _bd_prin_can;
 	public Vector<Cancion> _contiene_cancion = new Vector<Cancion>();
 
-	public Cancion[] cargar_ultimos_exitos() {
-		throw new UnsupportedOperationException();
+	public Cancion[] cargar_ultimos_exitos() throws PersistentException {
+		CancionCriteria criteria = new CancionCriteria();
+		criteria.ultimo_Exito.eq(true);
+		Cancion[] result = CancionDAO.listCancionByCriteria(criteria);
+		return result;
+	}
+	
+	public Cancion[] cargar_recomendaciones() throws PersistentException {
+		CancionCriteria criteria = new CancionCriteria();
+		criteria.ultimo_Exito.eq(true);
+		Cancion[] result = CancionDAO.listCancionByCriteria(criteria);
+		return result;
 	}
 
-	public Cancion[] buscar_canciones(String aCadena_busqueda) {
-		throw new UnsupportedOperationException();
+	public Cancion[] buscar_canciones(String aCadena_busqueda) throws PersistentException {
+		CancionCriteria criteria = new CancionCriteria();
+		criteria.titulo.like(aCadena_busqueda);
+		Cancion[] result = CancionDAO.listCancionByCriteria(criteria);
+		return result;
 	}
 
 	public void anadir_cancion_historial(int aId_Cancion, String aLogin) {

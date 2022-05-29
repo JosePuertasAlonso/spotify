@@ -34,12 +34,12 @@ public class ArtistaDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final CollectionExpression gestiona;
 	public final CollectionExpression es_seguido_por;
 	public final CollectionExpression guarda;
+	public final CollectionExpression anuncia;
 	public final CollectionExpression realiza;
 	public final CollectionExpression es_similar_a;
 	public final CollectionExpression es_autor_de;
 	public final CollectionExpression es_identificado_por;
 	public final CollectionExpression es_similar_de;
-	public final CollectionExpression publica;
 	
 	public ArtistaDetachedCriteria() {
 		super(basededatos.Artista.class, basededatos.ArtistaCriteria.class);
@@ -58,12 +58,12 @@ public class ArtistaDetachedCriteria extends AbstractORMDetachedCriteria {
 		gestiona = new CollectionExpression("ORM_gestiona", this.getDetachedCriteria());
 		es_seguido_por = new CollectionExpression("ORM_es_seguido_por", this.getDetachedCriteria());
 		guarda = new CollectionExpression("ORM_guarda", this.getDetachedCriteria());
+		anuncia = new CollectionExpression("ORM_anuncia", this.getDetachedCriteria());
 		realiza = new CollectionExpression("ORM_realiza", this.getDetachedCriteria());
 		es_similar_a = new CollectionExpression("ORM_es_similar_a", this.getDetachedCriteria());
 		es_autor_de = new CollectionExpression("ORM_es_autor_de", this.getDetachedCriteria());
 		es_identificado_por = new CollectionExpression("ORM_es_identificado_por", this.getDetachedCriteria());
 		es_similar_de = new CollectionExpression("ORM_es_similar_de", this.getDetachedCriteria());
-		publica = new CollectionExpression("ORM_publica", this.getDetachedCriteria());
 	}
 	
 	public ArtistaDetachedCriteria(DetachedCriteria aDetachedCriteria) {
@@ -83,12 +83,12 @@ public class ArtistaDetachedCriteria extends AbstractORMDetachedCriteria {
 		gestiona = new CollectionExpression("ORM_gestiona", this.getDetachedCriteria());
 		es_seguido_por = new CollectionExpression("ORM_es_seguido_por", this.getDetachedCriteria());
 		guarda = new CollectionExpression("ORM_guarda", this.getDetachedCriteria());
+		anuncia = new CollectionExpression("ORM_anuncia", this.getDetachedCriteria());
 		realiza = new CollectionExpression("ORM_realiza", this.getDetachedCriteria());
 		es_similar_a = new CollectionExpression("ORM_es_similar_a", this.getDetachedCriteria());
 		es_autor_de = new CollectionExpression("ORM_es_autor_de", this.getDetachedCriteria());
 		es_identificado_por = new CollectionExpression("ORM_es_identificado_por", this.getDetachedCriteria());
 		es_similar_de = new CollectionExpression("ORM_es_similar_de", this.getDetachedCriteria());
-		publica = new CollectionExpression("ORM_publica", this.getDetachedCriteria());
 	}
 	
 	public CancionDetachedCriteria createRealizaCriteria() {
@@ -109,10 +109,6 @@ public class ArtistaDetachedCriteria extends AbstractORMDetachedCriteria {
 	
 	public ArtistaDetachedCriteria createEs_similar_deCriteria() {
 		return new ArtistaDetachedCriteria(createCriteria("ORM_es_similar_de"));
-	}
-	
-	public AnuncioDetachedCriteria createPublicaCriteria() {
-		return new AnuncioDetachedCriteria(createCriteria("ORM_publica"));
 	}
 	
 	public EstadisticasDetachedCriteria createTieneCriteria() {
@@ -141,6 +137,10 @@ public class ArtistaDetachedCriteria extends AbstractORMDetachedCriteria {
 	
 	public Lista_de_reproduccionDetachedCriteria createGuardaCriteria() {
 		return new Lista_de_reproduccionDetachedCriteria(createCriteria("ORM_guarda"));
+	}
+	
+	public AnuncioDetachedCriteria createAnunciaCriteria() {
+		return new AnuncioDetachedCriteria(createCriteria("ORM_anuncia"));
 	}
 	
 	public Artista uniqueArtista(PersistentSession session) {

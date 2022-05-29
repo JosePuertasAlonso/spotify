@@ -42,8 +42,22 @@ public class VistaReproducir_cancion extends LitTemplate {
 	private HorizontalLayout hL_reproductor;
 	@Id("hL_opciones")
 	private HorizontalLayout hL_opciones;
+	@Id("hL_imagen")
+	private HorizontalLayout hL_imagen;
 	
 	
+
+	public HorizontalLayout gethL_imagen() {
+		return hL_imagen;
+	}
+
+
+
+	public void sethL_imagen(HorizontalLayout hL_imagen) {
+		this.hL_imagen = hL_imagen;
+	}
+
+
 
 	public HorizontalLayout gethL_opciones() {
 		return hL_opciones;

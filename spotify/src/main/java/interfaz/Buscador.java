@@ -27,8 +27,9 @@ public class Buscador extends VistaBuscador {
 	
 	//ANADIDO A MANO
 	public Barra_buscador _barra_buscador;
+	public Buscador _buscador;
 	
-	public Buscador(VerticalLayout cuerpo, HorizontalLayout minireproductor) {
+	public Buscador(VerticalLayout cuerpo, HorizontalLayout minireproductor, String cadenaBusqueda) {
 		this.getStyle().set("margin", "0px");
 		this.getStyle().set("padding", "0px");
 		this.getStyle().set("width", "100%");
@@ -36,12 +37,23 @@ public class Buscador extends VistaBuscador {
 		
 		_barra_buscador = new Barra_buscador();
 		this.gethL_barraBuscador().add(_barra_buscador);
+		_barra_buscador.getButton_buscar().addClickListener(new ComponentEventListener<ClickEvent<NativeButton>>() {
+			
+			@Override
+			public void onComponentEvent(ClickEvent<NativeButton> event) {
+				_buscador = new Buscador(cuerpo, minireproductor, _barra_buscador.getInput_buscar().getValue());
+				cuerpo.removeAll();
+				cuerpo.getStyle().set("max-height", "80%");
+				minireproductor.setVisible(true);
+				cuerpo.add(_buscador);
+			}
+		});
 		
-		_lista_de_canciones_buscadas = new Lista_de_canciones_buscadas();
+		_lista_de_canciones_buscadas = new Lista_de_canciones_buscadas(cadenaBusqueda);
 		this.gethL_listaDeCancionesBuscadas().add(_lista_de_canciones_buscadas);
-		_lista_de_artistas_buscados = new Lista_de_artistas_buscados(cuerpo, minireproductor);
+		_lista_de_artistas_buscados = new Lista_de_artistas_buscados(cuerpo, minireproductor, cadenaBusqueda);
 		this.gethL_listaDeArtistasBuscados().add(_lista_de_artistas_buscados);
-		_listas_de_reproduccion_buscadas = new Listas_de_reproduccion_buscadas(cuerpo, minireproductor);
+		_listas_de_reproduccion_buscadas = new Listas_de_reproduccion_buscadas(cuerpo, minireproductor, cadenaBusqueda);
 		this.gethL_listasDeReproduccionBuscadas().add(_listas_de_reproduccion_buscadas);
 		
 		this.getButton_verTodoCanciones().addClickListener(new ComponentEventListener<ClickEvent<NativeButton>>() {

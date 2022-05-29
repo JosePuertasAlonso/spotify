@@ -60,8 +60,7 @@ public class MainView extends VerticalLayout {
     	vl_principal.getStyle().set("height", "100%");
     	
     	GestorUsuarios.incializar(vl_principal);
-    	GestorUsuarios.cibernauta();
-    	
+    	GestorUsuarios.cibernauta(true);
     	add(vl_principal);
    
     }

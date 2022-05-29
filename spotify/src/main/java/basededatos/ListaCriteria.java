@@ -21,12 +21,14 @@ import org.orm.criteria.*;
 public class ListaCriteria extends AbstractORMCriteria {
 	public final IntegerExpression id_Lista;
 	public final StringExpression nombre;
+	public final StringExpression imagen;
 	public final CollectionExpression contiene;
 	
 	public ListaCriteria(Criteria criteria) {
 		super(criteria);
 		id_Lista = new IntegerExpression("id_Lista", this);
 		nombre = new StringExpression("nombre", this);
+		imagen = new StringExpression("imagen", this);
 		contiene = new CollectionExpression("ORM_contiene", this);
 	}
 	

@@ -4,6 +4,9 @@ import interfaz.Cibernauta_no_registrado;
 import interfaz.Cibernauta_registrado;
 import interfaz.Comun;
 import interfaz.Artista;
+
+import org.orm.PersistentException;
+
 import interfaz.Administrador;
 import interfaz.Facebook;
 import interfaz.Apple;
@@ -12,92 +15,148 @@ import interfaz.Cibernauta_sin_contrasena;
 import interfaz.Gestor_correo_electronico;
 
 public class BDPrincipal implements iCibernauta_no_registrado, iCibernauta_registrado, iComun, iArtista, iAdministrador, iFacebook, iApple, iGoogle, iCibernauta_sin_contrasena, iGestor_correo_electronico {
-	public BD_Estadisticas _bd_est;
-	public BD_Cancion _bd_can;
-	public BD_Usuario_Registrado _bd_us_reg;
-	public BD_Lista _bd_list;
-	public BD_Anuncio _bd_anun;
-	public BD_Artista _bd_art;
-	public BD_Administrador _bd_adm;
-
-	public Cibernauta_no_registrado get_Cibernauta_no_registrado() {
-		throw new UnsupportedOperationException();
-	}
-
-	public Cibernauta_registrado get_Cibernauta_registrado() {
-		throw new UnsupportedOperationException();
-	}
-
-	public Comun get_Comun() {
-		throw new UnsupportedOperationException();
-	}
-
-	public Artista get_Artista() {
-		throw new UnsupportedOperationException();
-	}
-
-	public Administrador get_Administrador() {
-		throw new UnsupportedOperationException();
-	}
-
-	public Facebook get_Facebook() {
-		throw new UnsupportedOperationException();
-	}
-
-	public Apple get_Apple() {
-		throw new UnsupportedOperationException();
-	}
-
-	public Google get_Google() {
-		throw new UnsupportedOperationException();
-	}
-
-	public Cibernauta_sin_contrasena get_Cibernauta_sin_contrasena() {
-		throw new UnsupportedOperationException();
-	}
-
-	public Gestor_correo_electronico get_Gestor_correo_electronico() {
-		throw new UnsupportedOperationException();
-	}
+	public BD_Estadisticas _bd_est = new BD_Estadisticas();
+	public BD_Cancion _bd_can = new BD_Cancion();
+	public BD_Usuario_Registrado _bd_us_reg = new BD_Usuario_Registrado();
+	public BD_Lista _bd_list = new BD_Lista();
+	public BD_Anuncio _bd_anun = new BD_Anuncio();
+	public BD_Artista _bd_art = new BD_Artista();
+	public BD_Administrador _bd_adm = new BD_Administrador();
+	public BD_Estilo _bd_estilo = new BD_Estilo();
 
 	public Cancion[] cargar_ultimos_exitos() {
-		throw new UnsupportedOperationException();
+		Cancion[] result = null;
+		try {
+			result = _bd_can.cargar_ultimos_exitos();
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
 	}
 
 	public void registrar_usuario(Usuario_registrado aUsuario) {
-		throw new UnsupportedOperationException();
+		try {
+			_bd_us_reg.registrar_usuario(aUsuario);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public boolean nick_ya_registrado(String aNick) {
+		boolean result = false;
+		try {
+			result = _bd_us_reg.nick_ya_registrado(aNick);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
+	}
+	
+	public boolean login_ya_registrado(String aLogin) {
+		boolean result = false;
+		try {
+			result = _bd_us_reg.login_ya_registrado(aLogin);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
 	}
 
-	public boolean existe_usuario(Usuario aUsuario) {
-		throw new UnsupportedOperationException();
+
+	public Usuario existe_usuario(Usuario aUsuario) {
+		Usuario result = null;
+		try {
+			result = _bd_us_reg.existe_usuario(aUsuario);
+			if(result != null) {
+				return result;
+			} else {
+				result = _bd_art.existe_usuario(aUsuario);
+				if(result != null) {
+					return result;
+				} else {
+					result = _bd_adm.existe_usuario(aUsuario);
+					return result;
+				}
+			}
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
 	}
 
 	public void modificar_perfil_usuario(String aLogin, String aCorreo_antiguo, String aCorreo_nuevo) {
 		throw new UnsupportedOperationException();
 	}
 
-	public Cancion[] cargar_recomendaciones(String aLogin) {
-		throw new UnsupportedOperationException();
+	public Cancion[] cargar_recomendaciones() {
+		Cancion[] result = null;
+		try {
+			result = _bd_can.cargar_recomendaciones();
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
 	}
 
 	public Cancion[] cargar_escuchadas_recientemente(String aLogin) {
-		throw new UnsupportedOperationException();
+		Cancion[] result = null;
+		try {
+			result = _bd_us_reg.cargar_escuchadas_recientemente(aLogin);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
 	}
 
 	public Cancion[] cargar_favoritas(String aLogin) {
-		throw new UnsupportedOperationException();
+		Cancion[] result = null;
+		try {
+			result = _bd_us_reg.cargar_favoritas(aLogin);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
 	}
 
 	public Cancion[] buscar_canciones(String aCadena_busqueda) {
-		throw new UnsupportedOperationException();
+		Cancion[] result = null;
+		try {
+			result = _bd_can.buscar_canciones(aCadena_busqueda);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
 	}
 
 	public basededatos.Artista[] buscar_artistas(String aCadena_busqueda) {
-		throw new UnsupportedOperationException();
+		basededatos.Artista[] result = null;
+		try {
+			result = _bd_art.buscar_artistas(aCadena_busqueda);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
 	}
 
 	public Lista_de_reproduccion[] buscar_listas(String aCadena_busqueda) {
-		throw new UnsupportedOperationException();
+		Lista_de_reproduccion[] result = null;
+		try {
+			result = _bd_list.buscar_listas(aCadena_busqueda);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
 	}
 
 	public void guardar_lista(Lista_de_reproduccion aLista, String aLogin) {
@@ -193,7 +252,12 @@ public class BDPrincipal implements iCibernauta_no_registrado, iCibernauta_regis
 	}
 
 	public void anadir_estilo(String aEstilo) {
-		throw new UnsupportedOperationException();
+		try {
+			_bd_estilo.anadir_estilo(aEstilo);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public void anadir_cancion(Cancion aCancion) {
@@ -248,6 +312,46 @@ public class BDPrincipal implements iCibernauta_no_registrado, iCibernauta_regis
 		throw new UnsupportedOperationException();
 	}
 
+	public Cibernauta_no_registrado get_Cibernauta_no_registrado() {
+		throw new UnsupportedOperationException();
+	}
+
+	public Cibernauta_registrado get_Cibernauta_registrado() {
+		throw new UnsupportedOperationException();
+	}
+
+	public Comun get_Comun() {
+		throw new UnsupportedOperationException();
+	}
+
+	public Artista get_Artista() {
+		throw new UnsupportedOperationException();
+	}
+
+	public Administrador get_Administrador() {
+		throw new UnsupportedOperationException();
+	}
+
+	public Facebook get_Facebook() {
+		throw new UnsupportedOperationException();
+	}
+
+	public Apple get_Apple() {
+		throw new UnsupportedOperationException();
+	}
+
+	public Google get_Google() {
+		throw new UnsupportedOperationException();
+	}
+
+	public Cibernauta_sin_contrasena get_Cibernauta_sin_contrasena() {
+		throw new UnsupportedOperationException();
+	}
+
+	public Gestor_correo_electronico get_Gestor_correo_electronico() {
+		throw new UnsupportedOperationException();
+	}
+
 	public Cancion[] buscar_canciones_administrador(String aCadena_busqueda) {
 		throw new UnsupportedOperationException();
 	}
@@ -264,4 +368,15 @@ public class BDPrincipal implements iCibernauta_no_registrado, iCibernauta_regis
 		throw new UnsupportedOperationException();
 	}
 
+	@Override
+	public boolean existe_estilo(String aEstilo) {
+		boolean result = false;
+		try {
+			result = _bd_estilo.existe_estilo(aEstilo);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
+	}
 }

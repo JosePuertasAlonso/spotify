@@ -4,6 +4,9 @@ import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.littemplate.LitTemplate;
 import com.vaadin.flow.dom.Element;
+
+import spotify.Imagen;
+
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.NativeButton;
@@ -40,6 +43,8 @@ public class VistaCancion extends LitTemplate {
 	private HorizontalLayout hL_botones;
 	@Id("button_play")
 	private NativeButton button_play;
+	@Id("hL_imagen")
+	private HorizontalLayout hL_imagen;
 	
 	
 	public Element getvL_fondo() {
@@ -129,6 +134,18 @@ public class VistaCancion extends LitTemplate {
 
 	public void setButton_play(NativeButton button_play) {
 		this.button_play = button_play;
+	}
+	
+	
+
+
+	public HorizontalLayout gethL_imagen() {
+		return hL_imagen;
+	}
+
+
+	public void sethL_imagen(HorizontalLayout hL_imagen) {
+		this.hL_imagen = hL_imagen;
 	}
 
 

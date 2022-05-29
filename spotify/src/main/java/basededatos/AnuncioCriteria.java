@@ -20,16 +20,16 @@ import org.orm.criteria.*;
 
 public class AnuncioCriteria extends AbstractORMCriteria {
 	public final IntegerExpression id_Anuncio;
-	public final IntegerExpression es_publicado_porId;
-	public final AssociationExpression es_publicado_por;
+	public final IntegerExpression anunciadoId;
+	public final AssociationExpression anunciado;
 	public final StringExpression titulo;
 	public final StringExpression descripcion;
 	
 	public AnuncioCriteria(Criteria criteria) {
 		super(criteria);
 		id_Anuncio = new IntegerExpression("id_Anuncio", this);
-		es_publicado_porId = new IntegerExpression("es_publicado_por.", this);
-		es_publicado_por = new AssociationExpression("es_publicado_por", this);
+		anunciadoId = new IntegerExpression("anunciado.", this);
+		anunciado = new AssociationExpression("anunciado", this);
 		titulo = new StringExpression("titulo", this);
 		descripcion = new StringExpression("descripcion", this);
 	}
@@ -42,8 +42,8 @@ public class AnuncioCriteria extends AbstractORMCriteria {
 		this(MDS12022PFCastellsTorresPersistentManager.instance().getSession());
 	}
 	
-	public ArtistaCriteria createEs_publicado_porCriteria() {
-		return new ArtistaCriteria(createCriteria("es_publicado_por"));
+	public Usuario_registradoCriteria createAnunciadoCriteria() {
+		return new Usuario_registradoCriteria(createCriteria("anunciado"));
 	}
 	
 	public Anuncio uniqueAnuncio() {

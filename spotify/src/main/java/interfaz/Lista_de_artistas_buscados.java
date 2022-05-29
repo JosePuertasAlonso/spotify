@@ -5,6 +5,8 @@ import java.util.Vector;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import basededatos.BDPrincipal;
+import basededatos.iComun;
 import interfaz.Artista__lista_;
 import vistas.VistaLista_de_artistas_buscados;
 
@@ -14,13 +16,17 @@ public class Lista_de_artistas_buscados extends VistaLista_de_artistas_buscados{
 	
 	private VerticalLayout cuerpo;
 	private HorizontalLayout minireproductor;
+	private String cadena_busqueda;
 	
-	public Lista_de_artistas_buscados(VerticalLayout cuerpo, HorizontalLayout minireproductor) {
+	iComun _iComun = new BDPrincipal();
+	
+	public Lista_de_artistas_buscados(VerticalLayout cuerpo, HorizontalLayout minireproductor, String cadena_busqueda) {
 		
 		this.cuerpo = cuerpo;
 		this.minireproductor = minireproductor;
+		this.cadena_busqueda = cadena_busqueda;
 		
-		cargarArtistasBuscados();
+		buscar_artistas();
 		
 		for(int i = 0; i < _list_Artista__lista_.size(); i++) {
 			this.getvL_contenedorArtistaLista().as(VerticalLayout.class).add(_list_Artista__lista_.get(i));
@@ -32,13 +38,19 @@ public class Lista_de_artistas_buscados extends VistaLista_de_artistas_buscados{
 		
 	}
 	
-	public void cargarArtistasBuscados() {
-		
+	public void buscar_artistas() {
+		basededatos.Artista[] artistas = _iComun.buscar_artistas(cadena_busqueda);
 		Artista__lista_ a;
 		
-		for(int i = 0; i < 6; i++) {
+		for(int i = 0; i < artistas.length; i++) {
 			a = new Artista__lista_(cuerpo, minireproductor);
 			a.getStyle().set("margin-top", "var(--lumo-space-m)");
+			
+			//Nick
+			a.getLabel_nombre().setText(artistas[i].getNick());
+			//Foto artista
+			a.getImagen().setSrc(artistas[i].getFoto());
+			
 			_list_Artista__lista_.add(a);
 		}
 		

@@ -21,6 +21,7 @@ import org.orm.criteria.*;
 public class CancionDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final IntegerExpression id_Cancion;
 	public final StringExpression titulo;
+	public final StringExpression imagen;
 	public final IntegerExpression duracion;
 	public final StringExpression fichero_MP3;
 	public final StringExpression fichero_MP4;
@@ -40,6 +41,7 @@ public class CancionDetachedCriteria extends AbstractORMDetachedCriteria {
 		super(basededatos.Cancion.class, basededatos.CancionCriteria.class);
 		id_Cancion = new IntegerExpression("id_Cancion", this.getDetachedCriteria());
 		titulo = new StringExpression("titulo", this.getDetachedCriteria());
+		imagen = new StringExpression("imagen", this.getDetachedCriteria());
 		duracion = new IntegerExpression("duracion", this.getDetachedCriteria());
 		fichero_MP3 = new StringExpression("fichero_MP3", this.getDetachedCriteria());
 		fichero_MP4 = new StringExpression("fichero_MP4", this.getDetachedCriteria());
@@ -60,6 +62,7 @@ public class CancionDetachedCriteria extends AbstractORMDetachedCriteria {
 		super(aDetachedCriteria, basededatos.CancionCriteria.class);
 		id_Cancion = new IntegerExpression("id_Cancion", this.getDetachedCriteria());
 		titulo = new StringExpression("titulo", this.getDetachedCriteria());
+		imagen = new StringExpression("imagen", this.getDetachedCriteria());
 		duracion = new IntegerExpression("duracion", this.getDetachedCriteria());
 		fichero_MP3 = new StringExpression("fichero_MP3", this.getDetachedCriteria());
 		fichero_MP4 = new StringExpression("fichero_MP4", this.getDetachedCriteria());

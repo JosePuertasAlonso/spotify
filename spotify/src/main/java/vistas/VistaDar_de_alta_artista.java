@@ -57,14 +57,38 @@ public class VistaDar_de_alta_artista extends LitTemplate {
 	private Element vL_imagen;
 	@Id("imagen")
 	private Image imagen;
-	@Id("file")
-	private Input file;
-	@Id("buttonLabel_elegirFoto")
-	private Label buttonLabel_elegirFoto;
 	@Id("button_anadirArtista")
 	private NativeButton button_anadirArtista;
+	@Id("input_file")
+	private Input input_file;
+	@Id("labelinput_file")
+	private Label labelinput_file;
 	
 	
+
+	public Input getInput_file() {
+		return input_file;
+	}
+
+
+
+	public void setInput_file(Input input_file) {
+		this.input_file = input_file;
+	}
+
+
+
+	public Label getLabelinput_file() {
+		return labelinput_file;
+	}
+
+
+
+	public void setLabelinput_file(Label labelinput_file) {
+		this.labelinput_file = labelinput_file;
+	}
+
+
 
 	public Element getvL_fondo() {
 		return vL_fondo;
@@ -266,30 +290,6 @@ public class VistaDar_de_alta_artista extends LitTemplate {
 
 	public void setImagen(Image imagen) {
 		this.imagen = imagen;
-	}
-
-
-
-	public Input getFile() {
-		return file;
-	}
-
-
-
-	public void setFile(Input file) {
-		this.file = file;
-	}
-
-
-
-	public Label getButtonLabel_elegirFoto() {
-		return buttonLabel_elegirFoto;
-	}
-
-
-
-	public void setButtonLabel_elegirFoto(Label buttonLabel_elegirFoto) {
-		this.buttonLabel_elegirFoto = buttonLabel_elegirFoto;
 	}
 
 

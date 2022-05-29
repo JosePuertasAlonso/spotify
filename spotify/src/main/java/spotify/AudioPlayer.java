@@ -14,7 +14,7 @@ public class AudioPlayer extends Component {
     	//getElement().getStyle().set("height", "100%");
     	
         getElement().setAttribute("controls",true);
-        getElement().setProperty("src","https://mus5.about-in.tk/skm/ee4ed82c-0f20-45e9-a9bb-6219c1dfab36.mp3");
+        getElement().setProperty("src",null);
     }
 
     public  void setSource(String path){

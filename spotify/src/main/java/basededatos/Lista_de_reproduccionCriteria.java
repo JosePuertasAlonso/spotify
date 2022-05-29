@@ -21,6 +21,7 @@ import org.orm.criteria.*;
 public class Lista_de_reproduccionCriteria extends AbstractORMCriteria {
 	public final IntegerExpression id_Lista;
 	public final StringExpression nombre;
+	public final StringExpression imagen;
 	public final CollectionExpression contiene;
 	public final IntegerExpression es_gestionada_porId;
 	public final AssociationExpression es_gestionada_por;
@@ -30,6 +31,7 @@ public class Lista_de_reproduccionCriteria extends AbstractORMCriteria {
 		super(criteria);
 		id_Lista = new IntegerExpression("id_Lista", this);
 		nombre = new StringExpression("nombre", this);
+		imagen = new StringExpression("imagen", this);
 		contiene = new CollectionExpression("ORM_contiene", this);
 		es_gestionada_porId = new IntegerExpression("es_gestionada_por.", this);
 		es_gestionada_por = new AssociationExpression("es_gestionada_por", this);

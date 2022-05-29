@@ -343,10 +343,6 @@ public class ArtistaDAO {
 			for(int i = 0; i < lEs_similar_des.length; i++) {
 				lEs_similar_des[i].es_similar_a.remove(artista);
 			}
-			basededatos.Anuncio[] lPublicas = artista.publica.toArray();
-			for(int i = 0; i < lPublicas.length; i++) {
-				lPublicas[i].setEs_publicado_por(null);
-			}
 			if (artista.getTiene() != null) {
 				artista.getTiene().setPertenecen_a(null);
 			}
@@ -374,6 +370,10 @@ public class ArtistaDAO {
 			basededatos.Lista_de_reproduccion[] lGuardas = artista.guarda.toArray();
 			for(int i = 0; i < lGuardas.length; i++) {
 				lGuardas[i].es_guardada_por.remove(artista);
+			}
+			basededatos.Anuncio[] lAnuncias = artista.anuncia.toArray();
+			for(int i = 0; i < lAnuncias.length; i++) {
+				lAnuncias[i].setAnunciado(null);
 			}
 			return delete(artista);
 		}
@@ -405,10 +405,6 @@ public class ArtistaDAO {
 			for(int i = 0; i < lEs_similar_des.length; i++) {
 				lEs_similar_des[i].es_similar_a.remove(artista);
 			}
-			basededatos.Anuncio[] lPublicas = artista.publica.toArray();
-			for(int i = 0; i < lPublicas.length; i++) {
-				lPublicas[i].setEs_publicado_por(null);
-			}
 			if (artista.getTiene() != null) {
 				artista.getTiene().setPertenecen_a(null);
 			}
@@ -436,6 +432,10 @@ public class ArtistaDAO {
 			basededatos.Lista_de_reproduccion[] lGuardas = artista.guarda.toArray();
 			for(int i = 0; i < lGuardas.length; i++) {
 				lGuardas[i].es_guardada_por.remove(artista);
+			}
+			basededatos.Anuncio[] lAnuncias = artista.anuncia.toArray();
+			for(int i = 0; i < lAnuncias.length; i++) {
+				lAnuncias[i].setAnunciado(null);
 			}
 			try {
 				session.delete(artista);

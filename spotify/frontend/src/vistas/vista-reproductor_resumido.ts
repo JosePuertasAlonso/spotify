@@ -63,10 +63,11 @@ audio::-webkit-media-controls-play-button, video::-webkit-media-controls-play-bu
     return html`
 <vaadin-horizontal-layout class="content" style="background-color:#121212; width: 100%; height: 100%; align-items: center; justify-content: space-between; max-width: 100%; max-height: 100%; padding: 0px; margin: 0px;" id="hL_fondo">
  <vaadin-horizontal-layout theme="spacing" style="max-width: 30%; width: 100%; height: 100%; align-items: center; margin: 0px; padding: 0px;" id="hL_imagenTitulo">
-  <img style="max-height: 100%; max-width: 100%; margin: 0px; cursor:pointer;" src="https://i.scdn.co/image/ab67616d0000b273b808f59ccba69a0afcaa79bc" id="imagen">
+  <vaadin-horizontal-layout id="hL_imagen" style="margin: 0px; padding: 0px; cursor:pointer; height: 100%; width: 20%;"></vaadin-horizontal-layout>
+  <img style="max-height: 100%; max-width: 100%; margin: 0px; cursor:pointer; display:none" src="img/song.png" id="imagen">
   <vaadin-vertical-layout class="label-cancion" style="align-self: center; width: 100%; height: 100%; align-items: center; flex-direction: column; justify-content: center;" id="vL_tituloArtista">
-   <label style="align-self: flex-start; color:#FFFFFF; width: 100%;" id="label_titulo">En tus planes</label>
-   <label style="align-self: flex-start; color:#9D9D9D; font-weight: 400; width: 100%;" id="labetl_artista">David Bisbal</label>
+   <label style="align-self: flex-start; color:#FFFFFF; width: 100%;" id="label_titulo">-</label>
+   <label style="align-self: flex-start; color:#9D9D9D; font-weight: 400; width: 100%;" id="labetl_artista">-</label>
   </vaadin-vertical-layout>
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout theme="spacing" style="max-width: 70%; align-self: center; width: 100%; height: 100%; margin-right: var(--lumo-space-s);" id="hL_reproductor"></vaadin-horizontal-layout>

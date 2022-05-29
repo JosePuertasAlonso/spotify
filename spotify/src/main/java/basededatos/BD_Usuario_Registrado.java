@@ -1,30 +1,73 @@
 package basededatos;
 
 import java.util.Vector;
+
+import org.orm.PersistentException;
+import org.orm.PersistentTransaction;
+
 import basededatos.Usuario_registrado;
 
 public class BD_Usuario_Registrado {
 	public BDPrincipal _bd_prin_us_reg;
 	public Vector<Usuario_registrado> _contiene_usuario_registrado = new Vector<Usuario_registrado>();
 
-	public void registrar_usuario(Usuario_registrado aUsuario) {
-		throw new UnsupportedOperationException();
+	public void registrar_usuario(Usuario_registrado aUsuario) throws PersistentException {
+		PersistentTransaction t = MDS12022PFCastellsTorresPersistentManager.instance().getSession().beginTransaction();
+		try {
+			Usuario_registradoDAO.save(aUsuario);
+			t.commit();
+		} catch (Exception e) {
+			t.rollback();
+		}
+	}
+	
+	public boolean nick_ya_registrado(String aNick) throws PersistentException {
+		Usuario_registradoCriteria c = new Usuario_registradoCriteria();
+		c.nick.eq(aNick);
+		Usuario_registrado[] u = c.listUsuario_registrado();
+		if(u.length > 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	public boolean login_ya_registrado(String aLogin) throws PersistentException {
+		Usuario_registradoCriteria c = new Usuario_registradoCriteria();
+		c.login.eq(aLogin);
+		Usuario_registrado[] u = c.listUsuario_registrado();
+		if(u.length > 0) {
+			return true;
+		}else {
+			return false;
+		}
 	}
 
-	public boolean existe_usuario(Usuario aUsuario) {
-		throw new UnsupportedOperationException();
+
+	public Usuario_registrado existe_usuario(Usuario aUsuario) throws PersistentException {
+		Usuario_registradoCriteria c = new Usuario_registradoCriteria();
+		c.login.eq(aUsuario.getLogin());
+		c.password.eq(aUsuario.getPassword());
+		Usuario_registrado[] u = c.listUsuario_registrado();
+		if(u.length > 0) {
+			return u[0];
+		} else {
+			return null;
+		}
 	}
 
-	public Cancion[] cargar_recomendaciones(String aLogin) {
-		throw new UnsupportedOperationException();
+	public Cancion[] cargar_escuchadas_recientemente(String aLogin) throws PersistentException {
+		Usuario_registradoCriteria c = new Usuario_registradoCriteria();
+		c.login.eq(aLogin);
+		Usuario_registrado u = c.listUsuario_registrado()[0];
+		return u.reproduce.toArray();
 	}
 
-	public Cancion[] cargar_escuchadas_recientemente(String aLogin) {
-		throw new UnsupportedOperationException();
-	}
-
-	public Cancion[] cargar_favoritas(String aLogin) {
-		throw new UnsupportedOperationException();
+	public Cancion[] cargar_favoritas(String aLogin) throws PersistentException {
+		Usuario_registradoCriteria c = new Usuario_registradoCriteria();
+		c.login.eq(aLogin);
+		Usuario_registrado u = c.listUsuario_registrado()[0];
+		return u.marca_como_favorita.toArray();
 	}
 
 	public boolean seguir_usuario(String aLogin_usuario, String aLogin_usuario_a_seguir) {

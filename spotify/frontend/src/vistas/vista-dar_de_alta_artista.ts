@@ -10,24 +10,20 @@ export class VistaDar_de_alta_artista extends LitElement {
           display: block;
           height: 100%;
       }
-
     ::-webkit-scrollbar {
 		width: 8px;
     }
-
     ::-webkit-scrollbar-thumb {
 		background: #414141;
 		background: #A8A8A8;
 		border-radius: 5px;
     }
-
     .fuentes label {
     	font-size: 1.3rem;
     	letter-spacing: -0.04em;
     	font-weight: 700; 
     	color:#FFFFFF;
     	}
-
     .fuentes input {
     	color: #FFFFFF;
     	font-size: 1.1rem;
@@ -35,28 +31,21 @@ export class VistaDar_de_alta_artista extends LitElement {
     	background-color:#121212;
     	outline-color: #FFFFFF;
     }
-
     .botonlabel label {
     	font-size:12px;
     }
-
     .botonlabel label:hover {
     	font-size:13px;
     }
-
     .fuentes input::placeholder {
     	color:#A8A8A8;
     }
-
     button {
     	font-size:12px;
     }
-
     button:hover {
     	font-size:13px;
     }
-
-
       `;
   }
 
@@ -89,12 +78,12 @@ export class VistaDar_de_alta_artista extends LitElement {
   </vaadin-vertical-layout>
   <vaadin-vertical-layout theme="spacing-l" class="botonlabel" style="max-width: 30%; width: 100%; align-items: center; align-self: flex-start; margin-top: var(--lumo-space-xl); max-height: 100%;" id="vL_imagen">
    <img style="max-width: 100%; max-height: 100%; border-radius:50%; border: 2px solid #FFFFFF;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/2048px-User-avatar.svg.png" id="imagen">
-   <input type="file" id="file" accept="image/*" style="display:none">
-   <label for="file" style="color:#121212; background-color:#FFFFFF; border-radius:500px; display: flex; align-items: center; cursor:pointer; padding: 8px 34px; letter-spacing: 1.76px; padding-top: 12px; padding-bottom: 12px; justify-content: center; width: 100%; max-width: 65%;" id="buttonLabel_elegirFoto">
+   <span class="input_file"><input type="file" name="input_file" id="input_file" style="display:none" accept="image/*"></span>
+   <label for="input_file" id="labelinput_file" style="color:#121212; background-color:#FFFFFF; border-radius:500px; display: flex; align-items: center; cursor:pointer; padding: 8px 34px; letter-spacing: 1.76px; padding-top: 12px; padding-bottom: 12px; justify-content: center; width: 100%; max-width: 65%;">
     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px" fill="#121212" style="padding-right: var(--lumo-space-s);">
      <path d="M0 0h24v24H0V0z" fill="none"></path>
      <path d="M18 20H4V6h9V4H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-9h-2v9zm-7.79-3.17l-1.96-2.36L5.5 18h11l-3.54-4.71zM20 4V1h-2v3h-3c.01.01 0 2 0 2h3v2.99c.01.01 2 0 2 0V6h3V4h-3z"></path>
-    </svg>ELEGIR FOTO</label>
+    </svg><span>ELEGIR FOTO</span></label>
   </vaadin-vertical-layout>
  </vaadin-horizontal-layout>
  <button style="color:#000000; background-color:#FFFFFF; margin-bottom: var(--lumo-space-xl); max-width: 15%; height: 7%; min-height: 7%; max-height: 7%;" id="button_anadirArtista" class="registro">AÑADIR ARTISTA</button>

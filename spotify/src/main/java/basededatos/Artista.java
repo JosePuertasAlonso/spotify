@@ -39,9 +39,6 @@ public class Artista extends basededatos.Usuario_registrado implements Serializa
 		else if (key == ORMConstants.KEY_ARTISTA_ES_SIMILAR_DE) {
 			return ORM_es_similar_de;
 		}
-		else if (key == ORMConstants.KEY_ARTISTA_PUBLICA) {
-			return ORM_publica;
-		}
 		
 		return null;
 	}
@@ -80,11 +77,6 @@ public class Artista extends basededatos.Usuario_registrado implements Serializa
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_es_similar_de = new java.util.HashSet();
-	
-	@OneToMany(mappedBy="es_publicado_por", targetEntity=basededatos.Anuncio.class)	
-	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
-	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
-	private java.util.Set ORM_publica = new java.util.HashSet();
 	
 	private void setORM_Realiza(java.util.Set value) {
 		this.ORM_realiza = value;
@@ -140,17 +132,6 @@ public class Artista extends basededatos.Usuario_registrado implements Serializa
 	
 	@Transient	
 	public final basededatos.ArtistaSetCollection es_similar_de = new basededatos.ArtistaSetCollection(this, _ormAdapter, ORMConstants.KEY_ARTISTA_ES_SIMILAR_DE, ORMConstants.KEY_ARTISTA_ES_SIMILAR_A, ORMConstants.KEY_MUL_MANY_TO_MANY);
-	
-	private void setORM_Publica(java.util.Set value) {
-		this.ORM_publica = value;
-	}
-	
-	private java.util.Set getORM_Publica() {
-		return ORM_publica;
-	}
-	
-	@Transient	
-	public final basededatos.AnuncioSetCollection publica = new basededatos.AnuncioSetCollection(this, _ormAdapter, ORMConstants.KEY_ARTISTA_PUBLICA, ORMConstants.KEY_ANUNCIO_ES_PUBLICADO_POR, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return super.toString();

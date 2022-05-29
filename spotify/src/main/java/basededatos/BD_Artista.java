@@ -1,14 +1,20 @@
 package basededatos;
 
 import java.util.Vector;
+
+import org.orm.PersistentException;
+
 import basededatos.Artista;
 
 public class BD_Artista {
 	public BDPrincipal _bd_prin_art;
 	public Vector<Artista> _contiene_artista = new Vector<Artista>();
 
-	public Artista[] buscar_artistas(String aCadena_busqueda) {
-		throw new UnsupportedOperationException();
+	public Artista[] buscar_artistas(String aCadena_busqueda) throws PersistentException {
+		ArtistaCriteria criteria = new ArtistaCriteria();
+		criteria.nick.like(aCadena_busqueda);
+		Artista[] result = ArtistaDAO.listArtistaByCriteria(criteria);
+		return result;
 	}
 
 	public boolean seguir_artista(String aLogin_usuario, String aLogin_artista) {
@@ -51,8 +57,17 @@ public class BD_Artista {
 		throw new UnsupportedOperationException();
 	}
 
-	public boolean existe_usuario(Usuario aUsuario) {
-		throw new UnsupportedOperationException();
+	public Artista existe_usuario(Usuario aUsuario) throws PersistentException {
+		ArtistaCriteria c = new ArtistaCriteria();
+		c.login.eq(aUsuario.getLogin());
+		c.password.eq(aUsuario.getPassword());
+		Artista[] a = c.listArtista();
+		if(a.length > 0) {
+			System.out.println("HAY UNO");
+			return a[0];
+		} else {
+			return null;
+		}
 	}
 
 	public void eliminar_perfil_artista(String aLogin) {

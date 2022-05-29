@@ -21,8 +21,8 @@ import org.orm.criteria.*;
 public class AlbumCriteria extends AbstractORMCriteria {
 	public final IntegerExpression id_Lista;
 	public final StringExpression nombre;
-	public final CollectionExpression contiene;
 	public final StringExpression imagen;
+	public final CollectionExpression contiene;
 	public final StringExpression fecha_Edicion;
 	public final CollectionExpression es_creado_por;
 	
@@ -30,8 +30,8 @@ public class AlbumCriteria extends AbstractORMCriteria {
 		super(criteria);
 		id_Lista = new IntegerExpression("id_Lista", this);
 		nombre = new StringExpression("nombre", this);
-		contiene = new CollectionExpression("ORM_contiene", this);
 		imagen = new StringExpression("imagen", this);
+		contiene = new CollectionExpression("ORM_contiene", this);
 		fecha_Edicion = new StringExpression("fecha_Edicion", this);
 		es_creado_por = new CollectionExpression("ORM_es_creado_por", this);
 	}

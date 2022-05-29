@@ -48,6 +48,9 @@ public class Lista implements Serializable {
 	@Column(name="Nombre", nullable=true, length=255)	
 	private String nombre;
 	
+	@Column(name="Imagen", nullable=true, length=255)	
+	private String imagen;
+	
 	@ManyToMany(targetEntity=basededatos.Cancion.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinTable(name="Cancion_Lista", joinColumns={ @JoinColumn(name="ListaId_Lista") }, inverseJoinColumns={ @JoinColumn(name="CancionId_Cancion") })	
@@ -72,6 +75,14 @@ public class Lista implements Serializable {
 	
 	public String getNombre() {
 		return nombre;
+	}
+	
+	public void setImagen(String value) {
+		this.imagen = value;
+	}
+	
+	public String getImagen() {
+		return imagen;
 	}
 	
 	private void setORM_Contiene(java.util.Set value) {

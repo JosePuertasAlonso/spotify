@@ -21,12 +21,14 @@ import org.orm.criteria.*;
 public class ListaDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final IntegerExpression id_Lista;
 	public final StringExpression nombre;
+	public final StringExpression imagen;
 	public final CollectionExpression contiene;
 	
 	public ListaDetachedCriteria() {
 		super(basededatos.Lista.class, basededatos.ListaCriteria.class);
 		id_Lista = new IntegerExpression("id_Lista", this.getDetachedCriteria());
 		nombre = new StringExpression("nombre", this.getDetachedCriteria());
+		imagen = new StringExpression("imagen", this.getDetachedCriteria());
 		contiene = new CollectionExpression("ORM_contiene", this.getDetachedCriteria());
 	}
 	
@@ -34,6 +36,7 @@ public class ListaDetachedCriteria extends AbstractORMDetachedCriteria {
 		super(aDetachedCriteria, basededatos.ListaCriteria.class);
 		id_Lista = new IntegerExpression("id_Lista", this.getDetachedCriteria());
 		nombre = new StringExpression("nombre", this.getDetachedCriteria());
+		imagen = new StringExpression("imagen", this.getDetachedCriteria());
 		contiene = new CollectionExpression("ORM_contiene", this.getDetachedCriteria());
 	}
 	

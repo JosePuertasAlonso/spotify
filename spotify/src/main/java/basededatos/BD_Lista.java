@@ -1,14 +1,20 @@
 package basededatos;
 
 import java.util.Vector;
+
+import org.orm.PersistentException;
+
 import basededatos.Lista;
 
 public class BD_Lista {
 	public BDPrincipal _bd_prin_list;
 	public Vector<Lista> _contiene_lista = new Vector<Lista>();
 
-	public Lista_de_reproduccion[] buscar_listas(String aCadena_busqueda) {
-		throw new UnsupportedOperationException();
+	public Lista_de_reproduccion[] buscar_listas(String aCadena_busqueda) throws PersistentException {
+		Lista_de_reproduccionCriteria criteria = new Lista_de_reproduccionCriteria();
+		criteria.nombre.like(aCadena_busqueda);
+		Lista_de_reproduccion[] result = Lista_de_reproduccionDAO.listLista_de_reproduccionByCriteria(criteria);
+		return result;
 	}
 
 	public void guardar_lista(Lista_de_reproduccion aLista, String aLogin) {

@@ -106,7 +106,8 @@ audio::-webkit-media-controls-play-button, video::-webkit-media-controls-play-bu
   <vaadin-horizontal-layout class="boton-creditos" theme="spacing" style="max-width: 15%; align-self: flex-start; margin-top: var(--lumo-space-m); width: 100%; justify-content: center; align-items: center;" id="hL_creditos">
    <button style="align-self: center; font-weight:400; letter-spacing:0px" id="button_creditos">CREDITOS</button>
   </vaadin-horizontal-layout>
-  <img style="max-width: 100%; max-height: 100%; height: 100%;" src="https://i.scdn.co/image/ab67616d0000b273b808f59ccba69a0afcaa79bc" id="imagen">
+  <img style="max-width: 100%; max-height: 100%; height: 100%;display:none" src="https://i.scdn.co/image/ab67616d0000b273b808f59ccba69a0afcaa79bc" id="imagen">
+  <vaadin-horizontal-layout theme="max-width: 100%; max-height: 100%; height: 100%;" id="hL_imagen" style="height: 100%; max-height: 100%; max-width: 100%; margin: 0px; padding: 0px;"></vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing" id="hL_opciones" style="max-width: 15%; min-width: 15%; align-self: flex-start; margin-top: var(--lumo-space-m); align-items: center; justify-content: center;">
    <button id="button_opciones">· · ·</button>
   </vaadin-horizontal-layout>

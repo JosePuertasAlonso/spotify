@@ -3,6 +3,7 @@ package interfaz;
 import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import spotify.GestorUsuarios;
 import vistas.VistaVer_creditos_cancion;
 
 public class Ver_creditos_cancion extends VistaVer_creditos_cancion{
@@ -26,6 +27,8 @@ public class Ver_creditos_cancion extends VistaVer_creditos_cancion{
 		this.getStyle().set("margin", "0px");
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
+		
+		this.getLabel_titulo1().setText(GestorUsuarios._cancion.getTitulo());
 		
 		this.gethL_compositores().add(_compositores);
 		this.gethL_productores().add(_productores);

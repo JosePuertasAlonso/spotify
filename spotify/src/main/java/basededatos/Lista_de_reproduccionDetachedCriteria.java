@@ -21,6 +21,7 @@ import org.orm.criteria.*;
 public class Lista_de_reproduccionDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final IntegerExpression id_Lista;
 	public final StringExpression nombre;
+	public final StringExpression imagen;
 	public final CollectionExpression contiene;
 	public final IntegerExpression es_gestionada_porId;
 	public final AssociationExpression es_gestionada_por;
@@ -30,6 +31,7 @@ public class Lista_de_reproduccionDetachedCriteria extends AbstractORMDetachedCr
 		super(basededatos.Lista_de_reproduccion.class, basededatos.Lista_de_reproduccionCriteria.class);
 		id_Lista = new IntegerExpression("id_Lista", this.getDetachedCriteria());
 		nombre = new StringExpression("nombre", this.getDetachedCriteria());
+		imagen = new StringExpression("imagen", this.getDetachedCriteria());
 		contiene = new CollectionExpression("ORM_contiene", this.getDetachedCriteria());
 		es_gestionada_porId = new IntegerExpression("es_gestionada_por.", this.getDetachedCriteria());
 		es_gestionada_por = new AssociationExpression("es_gestionada_por", this.getDetachedCriteria());
@@ -40,6 +42,7 @@ public class Lista_de_reproduccionDetachedCriteria extends AbstractORMDetachedCr
 		super(aDetachedCriteria, basededatos.Lista_de_reproduccionCriteria.class);
 		id_Lista = new IntegerExpression("id_Lista", this.getDetachedCriteria());
 		nombre = new StringExpression("nombre", this.getDetachedCriteria());
+		imagen = new StringExpression("imagen", this.getDetachedCriteria());
 		contiene = new CollectionExpression("ORM_contiene", this.getDetachedCriteria());
 		es_gestionada_porId = new IntegerExpression("es_gestionada_por.", this.getDetachedCriteria());
 		es_gestionada_por = new AssociationExpression("es_gestionada_por", this.getDetachedCriteria());

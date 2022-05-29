@@ -9,5 +9,6 @@ public class Lista_de_canciones__ver_todo_ extends Lista_canciones {
 	public Lista_de_canciones__ver_todo_(VerticalLayout cuerpo, HorizontalLayout minireproductor) {
 		super(cuerpo, minireproductor);
 		this.getLabel_titulo().setVisible(false);
+	
 	}
 }

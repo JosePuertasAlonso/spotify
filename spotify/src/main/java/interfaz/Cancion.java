@@ -7,6 +7,7 @@ import com.vaadin.flow.component.html.NativeButton;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import spotify.Imagen;
 import vistas.VistaCancion;
 
 public class Cancion extends VistaCancion{
@@ -16,12 +17,12 @@ public class Cancion extends VistaCancion{
 	
 	//Anadido a Mano
 	public Opciones_cancion _opciones_cancion;
+	public Imagen _img;
 	
 	public Cancion(VerticalLayout cuerpo, HorizontalLayout minireproductor) {
 		this.getStyle().set("margin", "0px");
 		this.getStyle().set("padding", "0px");
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
-		
 	}
 }

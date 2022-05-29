@@ -63,7 +63,8 @@ export class VistaCancion extends LitElement {
     return html`
 <vaadin-vertical-layout class="boton-ajustes" style="align-items: center; background-color:#181818; border-radius: 0.7rem; padding: var(--lumo-space-m); width: 100%; height: 100%; max-height: 100%;" id="vL_fondo" theme="spacing">
  <button style="align-self: flex-end; margin-right: var(--lumo-space-s); margin: 0px;" id="button_opciones">· · ·</button>
- <img style="border-radius: 0.7rem; max-height: 80%; max-width: 100%;" src="https://i.scdn.co/image/ab67616d0000b273b808f59ccba69a0afcaa79bc" theme="" id="imagen">
+ <vaadin-horizontal-layout id="hL_imagen" style="width: 100%; height: 100%; padding: 0px; margin: 0px;"></vaadin-horizontal-layout>
+ <img style="border-radius: 0.7rem; max-height: 80%; max-width: 100%; display:none" src="" theme="" id="imagen">
  <vaadin-horizontal-layout theme="spacing" style="width: 100%; height: 100%; max-height: 20%; align-self: center; justify-content: space-between; align-items: center;" id="hL_tituloBotones">
   <vaadin-vertical-layout class="label-cancion" style="width: 100%; max-height: 100%; align-self: center; flex-shrink: 1; flex-grow: 0; margin: 0px;" id="vL_tituloArtista">
    <label style="align-self: flex-start; color:#FFFFFF; width: 100%;" id="label_titulo">En tus planes</label>

@@ -11,7 +11,7 @@ public class Reproductor_resumido__cibernauta_no_registrado_ extends Reproductor
 	
 	public Reproductor_resumido__cibernauta_no_registrado_(VerticalLayout cuerpo, HorizontalLayout minireproductor) {
 		super();
-		this.getImagen().addClickListener(new ComponentEventListener() {
+		this.gethL_imagen().addClickListener(new ComponentEventListener() {
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
 				_reproducir_cancion = new Reproducir_cancion(cuerpo, minireproductor);

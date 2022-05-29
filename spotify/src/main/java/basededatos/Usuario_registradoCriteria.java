@@ -34,6 +34,7 @@ public class Usuario_registradoCriteria extends AbstractORMCriteria {
 	public final CollectionExpression gestiona;
 	public final CollectionExpression es_seguido_por;
 	public final CollectionExpression guarda;
+	public final CollectionExpression anuncia;
 	
 	public Usuario_registradoCriteria(Criteria criteria) {
 		super(criteria);
@@ -52,6 +53,7 @@ public class Usuario_registradoCriteria extends AbstractORMCriteria {
 		gestiona = new CollectionExpression("ORM_gestiona", this);
 		es_seguido_por = new CollectionExpression("ORM_es_seguido_por", this);
 		guarda = new CollectionExpression("ORM_guarda", this);
+		anuncia = new CollectionExpression("ORM_anuncia", this);
 	}
 	
 	public Usuario_registradoCriteria(PersistentSession session) {
@@ -88,6 +90,10 @@ public class Usuario_registradoCriteria extends AbstractORMCriteria {
 	
 	public Lista_de_reproduccionCriteria createGuardaCriteria() {
 		return new Lista_de_reproduccionCriteria(createCriteria("ORM_guarda"));
+	}
+	
+	public AnuncioCriteria createAnunciaCriteria() {
+		return new AnuncioCriteria(createCriteria("ORM_anuncia"));
 	}
 	
 	public Usuario_registrado uniqueUsuario_registrado() {

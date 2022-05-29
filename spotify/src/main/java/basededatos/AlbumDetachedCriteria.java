@@ -21,8 +21,8 @@ import org.orm.criteria.*;
 public class AlbumDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final IntegerExpression id_Lista;
 	public final StringExpression nombre;
-	public final CollectionExpression contiene;
 	public final StringExpression imagen;
+	public final CollectionExpression contiene;
 	public final StringExpression fecha_Edicion;
 	public final CollectionExpression es_creado_por;
 	
@@ -30,8 +30,8 @@ public class AlbumDetachedCriteria extends AbstractORMDetachedCriteria {
 		super(basededatos.Album.class, basededatos.AlbumCriteria.class);
 		id_Lista = new IntegerExpression("id_Lista", this.getDetachedCriteria());
 		nombre = new StringExpression("nombre", this.getDetachedCriteria());
-		contiene = new CollectionExpression("ORM_contiene", this.getDetachedCriteria());
 		imagen = new StringExpression("imagen", this.getDetachedCriteria());
+		contiene = new CollectionExpression("ORM_contiene", this.getDetachedCriteria());
 		fecha_Edicion = new StringExpression("fecha_Edicion", this.getDetachedCriteria());
 		es_creado_por = new CollectionExpression("ORM_es_creado_por", this.getDetachedCriteria());
 	}
@@ -40,8 +40,8 @@ public class AlbumDetachedCriteria extends AbstractORMDetachedCriteria {
 		super(aDetachedCriteria, basededatos.AlbumCriteria.class);
 		id_Lista = new IntegerExpression("id_Lista", this.getDetachedCriteria());
 		nombre = new StringExpression("nombre", this.getDetachedCriteria());
-		contiene = new CollectionExpression("ORM_contiene", this.getDetachedCriteria());
 		imagen = new StringExpression("imagen", this.getDetachedCriteria());
+		contiene = new CollectionExpression("ORM_contiene", this.getDetachedCriteria());
 		fecha_Edicion = new StringExpression("fecha_Edicion", this.getDetachedCriteria());
 		es_creado_por = new CollectionExpression("ORM_es_creado_por", this.getDetachedCriteria());
 	}

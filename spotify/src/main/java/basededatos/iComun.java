@@ -2,7 +2,7 @@ package basededatos;
 
 public interface iComun {
 
-	public Cancion[] cargar_recomendaciones(String aLogin);
+	public Cancion[] cargar_recomendaciones();
 
 	public Cancion[] cargar_escuchadas_recientemente(String aLogin);
 

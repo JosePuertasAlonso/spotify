@@ -34,6 +34,7 @@ public class Usuario_registradoDetachedCriteria extends AbstractORMDetachedCrite
 	public final CollectionExpression gestiona;
 	public final CollectionExpression es_seguido_por;
 	public final CollectionExpression guarda;
+	public final CollectionExpression anuncia;
 	
 	public Usuario_registradoDetachedCriteria() {
 		super(basededatos.Usuario_registrado.class, basededatos.Usuario_registradoCriteria.class);
@@ -52,6 +53,7 @@ public class Usuario_registradoDetachedCriteria extends AbstractORMDetachedCrite
 		gestiona = new CollectionExpression("ORM_gestiona", this.getDetachedCriteria());
 		es_seguido_por = new CollectionExpression("ORM_es_seguido_por", this.getDetachedCriteria());
 		guarda = new CollectionExpression("ORM_guarda", this.getDetachedCriteria());
+		anuncia = new CollectionExpression("ORM_anuncia", this.getDetachedCriteria());
 	}
 	
 	public Usuario_registradoDetachedCriteria(DetachedCriteria aDetachedCriteria) {
@@ -71,6 +73,7 @@ public class Usuario_registradoDetachedCriteria extends AbstractORMDetachedCrite
 		gestiona = new CollectionExpression("ORM_gestiona", this.getDetachedCriteria());
 		es_seguido_por = new CollectionExpression("ORM_es_seguido_por", this.getDetachedCriteria());
 		guarda = new CollectionExpression("ORM_guarda", this.getDetachedCriteria());
+		anuncia = new CollectionExpression("ORM_anuncia", this.getDetachedCriteria());
 	}
 	
 	public EstadisticasDetachedCriteria createTieneCriteria() {
@@ -99,6 +102,10 @@ public class Usuario_registradoDetachedCriteria extends AbstractORMDetachedCrite
 	
 	public Lista_de_reproduccionDetachedCriteria createGuardaCriteria() {
 		return new Lista_de_reproduccionDetachedCriteria(createCriteria("ORM_guarda"));
+	}
+	
+	public AnuncioDetachedCriteria createAnunciaCriteria() {
+		return new AnuncioDetachedCriteria(createCriteria("ORM_anuncia"));
 	}
 	
 	public Usuario_registrado uniqueUsuario_registrado(PersistentSession session) {

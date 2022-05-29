@@ -21,6 +21,7 @@ import org.orm.criteria.*;
 public class CancionCriteria extends AbstractORMCriteria {
 	public final IntegerExpression id_Cancion;
 	public final StringExpression titulo;
+	public final StringExpression imagen;
 	public final IntegerExpression duracion;
 	public final StringExpression fichero_MP3;
 	public final StringExpression fichero_MP4;
@@ -40,6 +41,7 @@ public class CancionCriteria extends AbstractORMCriteria {
 		super(criteria);
 		id_Cancion = new IntegerExpression("id_Cancion", this);
 		titulo = new StringExpression("titulo", this);
+		imagen = new StringExpression("imagen", this);
 		duracion = new IntegerExpression("duracion", this);
 		fichero_MP3 = new StringExpression("fichero_MP3", this);
 		fichero_MP4 = new StringExpression("fichero_MP4", this);

@@ -33,8 +33,22 @@ public class VistaReproductor_resumido extends LitTemplate {
 	private Label labetl_artista;
 	@Id("hL_reproductor")
 	private HorizontalLayout hL_reproductor;
+	@Id("hL_imagen")
+	private HorizontalLayout hL_imagen;
 	
 	
+
+	public HorizontalLayout gethL_imagen() {
+		return hL_imagen;
+	}
+
+
+
+	public void sethL_imagen(HorizontalLayout hL_imagen) {
+		this.hL_imagen = hL_imagen;
+	}
+
+
 
 	public HorizontalLayout gethL_fondo() {
 		return hL_fondo;

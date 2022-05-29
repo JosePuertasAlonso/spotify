@@ -40,9 +40,6 @@ public class Album extends basededatos.Lista implements Serializable {
 		
 	};
 	
-	@Column(name="Imagen", nullable=true, length=255)	
-	private String imagen;
-	
 	@Column(name="Fecha_Edicion", nullable=true, length=255)	
 	private String fecha_Edicion;
 	
@@ -51,14 +48,6 @@ public class Album extends basededatos.Lista implements Serializable {
 	@JoinTable(name="Artista_Album", joinColumns={ @JoinColumn(name="AlbumListaId_Lista") }, inverseJoinColumns={ @JoinColumn(name="ArtistaUsuarioID") })	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_es_creado_por = new java.util.HashSet();
-	
-	public void setImagen(String value) {
-		this.imagen = value;
-	}
-	
-	public String getImagen() {
-		return imagen;
-	}
 	
 	public void setFecha_Edicion(String value) {
 		this.fecha_Edicion = value;
