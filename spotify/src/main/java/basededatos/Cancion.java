@@ -54,10 +54,10 @@ public class Cancion implements Serializable {
 	private int id_Cancion;
 	
 	@Column(name="Titulo", nullable=true, length=255)	
-	private String titulo = "-";
+	private String titulo;
 	
 	@Column(name="Imagen", nullable=true, length=255)	
-	private String imagen = "img/song.png";
+	private String imagen;
 	
 	@Column(name="Duracion", nullable=false, length=10)	
 	private int duracion;

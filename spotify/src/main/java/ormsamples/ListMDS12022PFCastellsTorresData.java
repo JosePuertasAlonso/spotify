@@ -25,14 +25,6 @@ public class ListMDS12022PFCastellsTorresData {
 		}
 		System.out.println(length + " record(s) retrieved.");
 		
-		System.out.println("Listing Usuario...");
-		basededatos.Usuario[] basededatosUsuarios = basededatos.UsuarioDAO.listUsuarioByQuery(null, null);
-		length = Math.min(basededatosUsuarios.length, ROW_COUNT);
-		for (int i = 0; i < length; i++) {
-			System.out.println(basededatosUsuarios[i]);
-		}
-		System.out.println(length + " record(s) retrieved.");
-		
 		System.out.println("Listing Usuario_registrado...");
 		basededatos.Usuario_registrado[] basededatosUsuario_registrados = basededatos.Usuario_registradoDAO.listUsuario_registradoByQuery(null, null);
 		length = Math.min(basededatosUsuario_registrados.length, ROW_COUNT);
@@ -123,18 +115,6 @@ public class ListMDS12022PFCastellsTorresData {
 			 System.out.println(basededatosAlbums[i]);
 		}
 		System.out.println(length + " Album record(s) retrieved."); 
-		
-		System.out.println("Listing Usuario by Criteria...");
-		basededatos.UsuarioCriteria lbasededatosUsuarioCriteria = new basededatos.UsuarioCriteria();
-		// Please uncomment the follow line and fill in parameter(s) 
-		//lbasededatosUsuarioCriteria.ID.eq();
-		lbasededatosUsuarioCriteria.setMaxResults(ROW_COUNT);
-		basededatos.Usuario[] basededatosUsuarios = lbasededatosUsuarioCriteria.listUsuario();
-		length =basededatosUsuarios== null ? 0 : Math.min(basededatosUsuarios.length, ROW_COUNT); 
-		for (int i = 0; i < length; i++) {
-			 System.out.println(basededatosUsuarios[i]);
-		}
-		System.out.println(length + " Usuario record(s) retrieved."); 
 		
 		System.out.println("Listing Usuario_registrado by Criteria...");
 		basededatos.Usuario_registradoCriteria lbasededatosUsuario_registradoCriteria = new basededatos.Usuario_registradoCriteria();

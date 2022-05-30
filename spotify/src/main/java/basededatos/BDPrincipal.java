@@ -67,18 +67,15 @@ public class BDPrincipal implements iCibernauta_no_registrado, iCibernauta_regis
 	}
 
 
-	public Usuario existe_usuario(Usuario aUsuario) {
-		Usuario result = null;
+	public Usuario_registrado existe_usuario(Usuario_registrado aUsuario) {
+		Usuario_registrado result = null;
 		try {
-			result = _bd_us_reg.existe_usuario(aUsuario);
+			result = _bd_art.existe_usuario(aUsuario);
 			if(result != null) {
 				return result;
 			} else {
-				result = _bd_art.existe_usuario(aUsuario);
+				result = _bd_us_reg.existe_usuario(aUsuario);
 				if(result != null) {
-					return result;
-				} else {
-					result = _bd_adm.existe_usuario(aUsuario);
 					return result;
 				}
 			}
@@ -88,6 +85,18 @@ public class BDPrincipal implements iCibernauta_no_registrado, iCibernauta_regis
 		}
 		return result;
 	}
+	
+	public boolean existe_usuarioAdmin(String login, String password) {
+		boolean result = false;
+		try {
+			result = _bd_adm.existe_usuarioAdmin(login, password);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
+	}
+
 
 	public void modificar_perfil_usuario(String aLogin, String aCorreo_antiguo, String aCorreo_nuevo) {
 		throw new UnsupportedOperationException();
@@ -168,7 +177,14 @@ public class BDPrincipal implements iCibernauta_no_registrado, iCibernauta_regis
 	}
 
 	public boolean anadir_a_favoritos(int aId_Cancion, String aLogin) {
-		throw new UnsupportedOperationException();
+		boolean result = false;
+		try {
+			result = _bd_can.anadir_a_favoritos(aId_Cancion, aLogin);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
 	}
 
 	public Lista_de_reproduccion[] cargar_listas_perfil(String aLogin) {

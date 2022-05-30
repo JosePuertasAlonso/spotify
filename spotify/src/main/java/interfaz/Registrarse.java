@@ -13,7 +13,6 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.BDPrincipal;
-import basededatos.Usuario;
 import basededatos.Usuario_registrado;
 import basededatos.iCibernauta_no_registrado;
 import vistas.VistaRegistrarse;

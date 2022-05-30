@@ -33,7 +33,7 @@ public class Lista_de_reproduccionCriteria extends AbstractORMCriteria {
 		nombre = new StringExpression("nombre", this);
 		imagen = new StringExpression("imagen", this);
 		contiene = new CollectionExpression("ORM_contiene", this);
-		es_gestionada_porId = new IntegerExpression("es_gestionada_por.", this);
+		es_gestionada_porId = new IntegerExpression("es_gestionada_por.ID", this);
 		es_gestionada_por = new AssociationExpression("es_gestionada_por", this);
 		es_guardada_por = new CollectionExpression("ORM_es_guardada_por", this);
 	}

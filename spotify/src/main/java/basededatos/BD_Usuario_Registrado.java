@@ -44,7 +44,7 @@ public class BD_Usuario_Registrado {
 	}
 
 
-	public Usuario_registrado existe_usuario(Usuario aUsuario) throws PersistentException {
+	public Usuario_registrado existe_usuario(Usuario_registrado aUsuario) throws PersistentException {
 		Usuario_registradoCriteria c = new Usuario_registradoCriteria();
 		c.login.eq(aUsuario.getLogin());
 		c.password.eq(aUsuario.getPassword());

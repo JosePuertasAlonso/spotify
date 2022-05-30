@@ -42,7 +42,7 @@ public class Cabecera_artista_registrado extends Cabecera {
 			
 			@Override
 			public void onComponentEvent(ClickEvent<NativeButton> event) {
-				GestorUsuarios.artista();
+				GestorUsuarios.artista(false);
 				
 			}
 		});

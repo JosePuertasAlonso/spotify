@@ -15,9 +15,6 @@ public class RetrieveAndUpdateMDS12022PFCastellsTorresData {
 			basededatos.Album lbasededatosAlbum = basededatos.AlbumDAO.loadAlbumByQuery(null, null);
 			// Update the properties of the persistent object
 			basededatos.AlbumDAO.save(lbasededatosAlbum);
-			basededatos.Usuario lbasededatosUsuario = basededatos.UsuarioDAO.loadUsuarioByQuery(null, null);
-			// Update the properties of the persistent object
-			basededatos.UsuarioDAO.save(lbasededatosUsuario);
 			basededatos.Usuario_registrado lbasededatosUsuario_registrado = basededatos.Usuario_registradoDAO.loadUsuario_registradoByQuery(null, null);
 			// Update the properties of the persistent object
 			basededatos.Usuario_registradoDAO.save(lbasededatosUsuario_registrado);
@@ -62,12 +59,6 @@ public class RetrieveAndUpdateMDS12022PFCastellsTorresData {
 		// Please uncomment the follow line and fill in parameter(s)
 		//lbasededatosAlbumCriteria.id_Lista.eq();
 		System.out.println(lbasededatosAlbumCriteria.uniqueAlbum());
-		
-		System.out.println("Retrieving Usuario by UsuarioCriteria");
-		basededatos.UsuarioCriteria lbasededatosUsuarioCriteria = new basededatos.UsuarioCriteria();
-		// Please uncomment the follow line and fill in parameter(s)
-		//lbasededatosUsuarioCriteria.ID.eq();
-		System.out.println(lbasededatosUsuarioCriteria.uniqueUsuario());
 		
 		System.out.println("Retrieving Usuario_registrado by Usuario_registradoCriteria");
 		basededatos.Usuario_registradoCriteria lbasededatosUsuario_registradoCriteria = new basededatos.Usuario_registradoCriteria();

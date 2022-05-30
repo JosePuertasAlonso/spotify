@@ -15,9 +15,6 @@ public class DeleteMDS12022PFCastellsTorresData {
 			basededatos.Album lbasededatosAlbum = basededatos.AlbumDAO.loadAlbumByQuery(null, null);
 			// Delete the persistent object
 			basededatos.AlbumDAO.delete(lbasededatosAlbum);
-			basededatos.Usuario lbasededatosUsuario = basededatos.UsuarioDAO.loadUsuarioByQuery(null, null);
-			// Delete the persistent object
-			basededatos.UsuarioDAO.delete(lbasededatosUsuario);
 			basededatos.Usuario_registrado lbasededatosUsuario_registrado = basededatos.Usuario_registradoDAO.loadUsuario_registradoByQuery(null, null);
 			// Delete the persistent object
 			basededatos.Usuario_registradoDAO.delete(lbasededatosUsuario_registrado);

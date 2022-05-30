@@ -19,8 +19,7 @@ import javax.persistence.*;
 @org.hibernate.annotations.Proxy(lazy=false)
 @Table(name="`Usuario registrado`")
 @Inheritance(strategy=InheritanceType.JOINED)
-@PrimaryKeyJoinColumn(name="UsuarioID", referencedColumnName="ID")
-public class Usuario_registrado extends basededatos.Usuario implements Serializable {
+public class Usuario_registrado implements Serializable {
 	public Usuario_registrado() {
 	}
 	
@@ -42,9 +41,6 @@ public class Usuario_registrado extends basededatos.Usuario implements Serializa
 		}
 		else if (key == ORMConstants.KEY_USUARIO_REGISTRADO_GUARDA) {
 			return ORM_guarda;
-		}
-		else if (key == ORMConstants.KEY_USUARIO_REGISTRADO_ANUNCIA) {
-			return ORM_anuncia;
 		}
 		
 		return null;
@@ -68,38 +64,50 @@ public class Usuario_registrado extends basededatos.Usuario implements Serializa
 		
 	};
 	
-	@Column(name="Seguidores", nullable=false, length=10)	
-	private int seguidores;
-	
-	@Column(name="Foto", nullable=true, length=255)	
-	private String foto;
-	
-	@Column(name="Nick", nullable=true, length=255)	
-	private String nick;
-	
-	@Column(name="Dias_baja", nullable=false, length=10)	
-	private int dias_baja;
+	@Column(name="ID", nullable=false, length=10)	
+	@Id	
+	@GeneratedValue(generator="BASEDEDATOS_USUARIO_REGISTRADO_ID_GENERATOR")	
+	@org.hibernate.annotations.GenericGenerator(name="BASEDEDATOS_USUARIO_REGISTRADO_ID_GENERATOR", strategy="native")	
+	private int ID;
 	
 	@OneToOne(targetEntity=basededatos.Estadisticas.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinColumns(value={ @JoinColumn(name="EstadisticasId_Estadisticas", referencedColumnName="Id_Estadisticas") }, foreignKey=@ForeignKey(name="FKUsuario re601075"))	
 	private basededatos.Estadisticas tiene;
 	
+	@Column(name="Login", nullable=true, length=255)	
+	private String login;
+	
+	@Column(name="Password", nullable=true, length=255)	
+	private String password;
+	
+	@Column(name="Nick", nullable=true, length=255)	
+	private String nick;
+	
+	@Column(name="Foto", nullable=true, length=255)	
+	private String foto;
+	
+	@Column(name="Seguidores", nullable=false, length=10)	
+	private int seguidores;
+	
+	@Column(name="Dias_baja", nullable=false, length=10)	
+	private int dias_baja;
+	
 	@ManyToMany(targetEntity=basededatos.Cancion.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
-	@JoinTable(name="`Cancion_Usuario registrado2`", joinColumns={ @JoinColumn(name="`Usuario registradoUsuarioID`") }, inverseJoinColumns={ @JoinColumn(name="CancionId_Cancion") })	
+	@JoinTable(name="`Cancion_Usuario registrado2`", joinColumns={ @JoinColumn(name="`Usuario registradoID`") }, inverseJoinColumns={ @JoinColumn(name="CancionId_Cancion") })	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_marca_como_favorita = new java.util.HashSet();
 	
 	@ManyToMany(targetEntity=basededatos.Usuario_registrado.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
-	@JoinTable(name="`Usuario registrado_Usuario registrado`", joinColumns={ @JoinColumn(name="`Usuario registradoUsuarioID2`") }, inverseJoinColumns={ @JoinColumn(name="`Usuario registradoUsuarioID`") })	
+	@JoinTable(name="`Usuario registrado_Usuario registrado`", joinColumns={ @JoinColumn(name="`Usuario registradoID2`") }, inverseJoinColumns={ @JoinColumn(name="`Usuario registradoID`") })	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_sigue = new java.util.HashSet();
 	
 	@ManyToMany(targetEntity=basededatos.Cancion.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
-	@JoinTable(name="`Cancion_Usuario registrado`", joinColumns={ @JoinColumn(name="`Usuario registradoUsuarioID`") }, inverseJoinColumns={ @JoinColumn(name="CancionId_Cancion") })	
+	@JoinTable(name="`Cancion_Usuario registrado`", joinColumns={ @JoinColumn(name="`Usuario registradoID`") }, inverseJoinColumns={ @JoinColumn(name="CancionId_Cancion") })	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_reproduce = new java.util.HashSet();
 	
@@ -118,17 +126,40 @@ public class Usuario_registrado extends basededatos.Usuario implements Serializa
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_guarda = new java.util.HashSet();
 	
-	@OneToMany(mappedBy="anunciado", targetEntity=basededatos.Anuncio.class)	
-	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
-	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
-	private java.util.Set ORM_anuncia = new java.util.HashSet();
-	
-	public void setSeguidores(int value) {
-		this.seguidores = value;
+	private void setID(int value) {
+		this.ID = value;
 	}
 	
-	public int getSeguidores() {
-		return seguidores;
+	public int getID() {
+		return ID;
+	}
+	
+	public int getORMID() {
+		return getID();
+	}
+	
+	public void setLogin(String value) {
+		this.login = value;
+	}
+	
+	public String getLogin() {
+		return login;
+	}
+	
+	public void setPassword(String value) {
+		this.password = value;
+	}
+	
+	public String getPassword() {
+		return password;
+	}
+	
+	public void setNick(String value) {
+		this.nick = value;
+	}
+	
+	public String getNick() {
+		return nick;
 	}
 	
 	public void setFoto(String value) {
@@ -139,12 +170,12 @@ public class Usuario_registrado extends basededatos.Usuario implements Serializa
 		return foto;
 	}
 	
-	public void setNick(String value) {
-		this.nick = value;
+	public void setSeguidores(int value) {
+		this.seguidores = value;
 	}
 	
-	public String getNick() {
-		return nick;
+	public int getSeguidores() {
+		return seguidores;
 	}
 	
 	public void setDias_baja(int value) {
@@ -238,19 +269,8 @@ public class Usuario_registrado extends basededatos.Usuario implements Serializa
 	@Transient	
 	public final basededatos.Lista_de_reproduccionSetCollection guarda = new basededatos.Lista_de_reproduccionSetCollection(this, _ormAdapter, ORMConstants.KEY_USUARIO_REGISTRADO_GUARDA, ORMConstants.KEY_LISTA_DE_REPRODUCCION_ES_GUARDADA_POR, ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
-	private void setORM_Anuncia(java.util.Set value) {
-		this.ORM_anuncia = value;
-	}
-	
-	private java.util.Set getORM_Anuncia() {
-		return ORM_anuncia;
-	}
-	
-	@Transient	
-	public final basededatos.AnuncioSetCollection anuncia = new basededatos.AnuncioSetCollection(this, _ormAdapter, ORMConstants.KEY_USUARIO_REGISTRADO_ANUNCIA, ORMConstants.KEY_ANUNCIO_ANUNCIADO, ORMConstants.KEY_MUL_ONE_TO_MANY);
-	
 	public String toString() {
-		return super.toString();
+		return String.valueOf(getID());
 	}
 	
 }

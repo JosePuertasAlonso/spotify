@@ -20,40 +20,38 @@ import org.orm.criteria.*;
 
 public class Usuario_registradoCriteria extends AbstractORMCriteria {
 	public final IntegerExpression ID;
-	public final StringExpression login;
-	public final StringExpression password;
-	public final IntegerExpression seguidores;
-	public final StringExpression foto;
-	public final StringExpression nick;
-	public final IntegerExpression dias_baja;
 	public final IntegerExpression tieneId;
 	public final AssociationExpression tiene;
+	public final StringExpression login;
+	public final StringExpression password;
+	public final StringExpression nick;
+	public final StringExpression foto;
+	public final IntegerExpression seguidores;
+	public final IntegerExpression dias_baja;
 	public final CollectionExpression marca_como_favorita;
 	public final CollectionExpression sigue;
 	public final CollectionExpression reproduce;
 	public final CollectionExpression gestiona;
 	public final CollectionExpression es_seguido_por;
 	public final CollectionExpression guarda;
-	public final CollectionExpression anuncia;
 	
 	public Usuario_registradoCriteria(Criteria criteria) {
 		super(criteria);
 		ID = new IntegerExpression("ID", this);
-		login = new StringExpression("login", this);
-		password = new StringExpression("password", this);
-		seguidores = new IntegerExpression("seguidores", this);
-		foto = new StringExpression("foto", this);
-		nick = new StringExpression("nick", this);
-		dias_baja = new IntegerExpression("dias_baja", this);
 		tieneId = new IntegerExpression("tiene.id_Estadisticas", this);
 		tiene = new AssociationExpression("tiene", this);
+		login = new StringExpression("login", this);
+		password = new StringExpression("password", this);
+		nick = new StringExpression("nick", this);
+		foto = new StringExpression("foto", this);
+		seguidores = new IntegerExpression("seguidores", this);
+		dias_baja = new IntegerExpression("dias_baja", this);
 		marca_como_favorita = new CollectionExpression("ORM_marca_como_favorita", this);
 		sigue = new CollectionExpression("ORM_sigue", this);
 		reproduce = new CollectionExpression("ORM_reproduce", this);
 		gestiona = new CollectionExpression("ORM_gestiona", this);
 		es_seguido_por = new CollectionExpression("ORM_es_seguido_por", this);
 		guarda = new CollectionExpression("ORM_guarda", this);
-		anuncia = new CollectionExpression("ORM_anuncia", this);
 	}
 	
 	public Usuario_registradoCriteria(PersistentSession session) {
@@ -90,10 +88,6 @@ public class Usuario_registradoCriteria extends AbstractORMCriteria {
 	
 	public Lista_de_reproduccionCriteria createGuardaCriteria() {
 		return new Lista_de_reproduccionCriteria(createCriteria("ORM_guarda"));
-	}
-	
-	public AnuncioCriteria createAnunciaCriteria() {
-		return new AnuncioCriteria(createCriteria("ORM_anuncia"));
 	}
 	
 	public Usuario_registrado uniqueUsuario_registrado() {

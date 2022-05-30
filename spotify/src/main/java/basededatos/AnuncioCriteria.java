@@ -42,8 +42,8 @@ public class AnuncioCriteria extends AbstractORMCriteria {
 		this(MDS12022PFCastellsTorresPersistentManager.instance().getSession());
 	}
 	
-	public Usuario_registradoCriteria createAnunciadoCriteria() {
-		return new Usuario_registradoCriteria(createCriteria("anunciado"));
+	public ArtistaCriteria createAnunciadoCriteria() {
+		return new ArtistaCriteria(createCriteria("anunciado"));
 	}
 	
 	public Anuncio uniqueAnuncio() {

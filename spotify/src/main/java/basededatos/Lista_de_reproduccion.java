@@ -52,12 +52,12 @@ public class Lista_de_reproduccion extends basededatos.Lista implements Serializ
 	
 	@ManyToOne(targetEntity=basededatos.Usuario_registrado.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
-	@JoinColumns(value={ @JoinColumn(name="`Usuario registradoUsuarioID`", referencedColumnName="UsuarioID", nullable=false) }, foreignKey=@ForeignKey(name="FKLista de r939433"))	
+	@JoinColumns(value={ @JoinColumn(name="`Usuario registradoID`", referencedColumnName="ID", nullable=false) }, foreignKey=@ForeignKey(name="FKLista de r548125"))	
 	private basededatos.Usuario_registrado es_gestionada_por;
 	
 	@ManyToMany(targetEntity=basededatos.Usuario_registrado.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
-	@JoinTable(name="`Usuario registrado_Lista de reproduccion`", joinColumns={ @JoinColumn(name="`Lista de reproduccionListaId_Lista`") }, inverseJoinColumns={ @JoinColumn(name="`Usuario registradoUsuarioID`") })	
+	@JoinTable(name="`Usuario registrado_Lista de reproduccion`", joinColumns={ @JoinColumn(name="`Lista de reproduccionListaId_Lista`") }, inverseJoinColumns={ @JoinColumn(name="`Usuario registradoID`") })	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_es_guardada_por = new java.util.HashSet();
 	

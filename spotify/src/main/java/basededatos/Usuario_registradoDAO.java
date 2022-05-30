@@ -355,10 +355,6 @@ public class Usuario_registradoDAO {
 			for(int i = 0; i < lGuardas.length; i++) {
 				lGuardas[i].es_guardada_por.remove(usuario_registrado);
 			}
-			basededatos.Anuncio[] lAnuncias = usuario_registrado.anuncia.toArray();
-			for(int i = 0; i < lAnuncias.length; i++) {
-				lAnuncias[i].setAnunciado(null);
-			}
 			return delete(usuario_registrado);
 		}
 		catch(Exception e) {
@@ -400,10 +396,6 @@ public class Usuario_registradoDAO {
 			basededatos.Lista_de_reproduccion[] lGuardas = usuario_registrado.guarda.toArray();
 			for(int i = 0; i < lGuardas.length; i++) {
 				lGuardas[i].es_guardada_por.remove(usuario_registrado);
-			}
-			basededatos.Anuncio[] lAnuncias = usuario_registrado.anuncia.toArray();
-			for(int i = 0; i < lAnuncias.length; i++) {
-				lAnuncias[i].setAnunciado(null);
 			}
 			try {
 				session.delete(usuario_registrado);

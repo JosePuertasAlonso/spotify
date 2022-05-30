@@ -41,7 +41,7 @@ public class Cabecera_cibernauta_registrado extends Cabecera {
 			
 			@Override
 			public void onComponentEvent(ClickEvent<NativeButton> event) {
-				GestorUsuarios.usuario();
+				GestorUsuarios.usuario(false);
 				
 			}
 		});

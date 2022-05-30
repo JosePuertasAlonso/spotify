@@ -70,9 +70,12 @@ public class Usuario_registradoSetCollection extends org.orm.util.ORMSet {
 	/**
 	 * Return an sorted array containing all of the persistent objects in ORMSet
 	 * @param propertyName Name of the property for sorting:<ul>
-	 * <li>seguidores</li>
-	 * <li>foto</li>
+	 * <li>ID</li>
+	 * <li>login</li>
+	 * <li>password</li>
 	 * <li>nick</li>
+	 * <li>foto</li>
+	 * <li>seguidores</li>
 	 * <li>dias_baja</li>
 	 * </ul>
 	 * @return The persistent objects sorted array
@@ -84,9 +87,12 @@ public class Usuario_registradoSetCollection extends org.orm.util.ORMSet {
 	/**
 	 * Return an sorted array containing all of the persistent objects in ORMSet
 	 * @param propertyName Name of the property for sorting:<ul>
-	 * <li>seguidores</li>
-	 * <li>foto</li>
+	 * <li>ID</li>
+	 * <li>login</li>
+	 * <li>password</li>
 	 * <li>nick</li>
+	 * <li>foto</li>
+	 * <li>seguidores</li>
 	 * <li>dias_baja</li>
 	 * </ul>
 	 * @param ascending true for ascending, false for descending

@@ -26,46 +26,11 @@
       <UserTypes/>
     </Column>
   </Entity>
-  <Entity name="Usuario" Unlogged="false" PKClustered="0">
-    <Column name="ID">
-      <PrimaryKey>true</PrimaryKey>
-      <ForeignKey>false</ForeignKey>
-      <Type>9</Type>
-      <Length>10</Length>
-      <Nullable>false</Nullable>
-      <IDGenerator>native</IDGenerator>
-      <Unique>false</Unique>
-      <Index>false</Index>
-      <UserTypes/>
-    </Column>
-    <Column name="Login">
-      <PrimaryKey>false</PrimaryKey>
-      <ForeignKey>false</ForeignKey>
-      <Type>27</Type>
-      <Length>255</Length>
-      <Nullable>true</Nullable>
-      <IDGenerator>native</IDGenerator>
-      <Unique>false</Unique>
-      <Index>false</Index>
-      <UserTypes/>
-    </Column>
-    <Column name="Password">
-      <PrimaryKey>false</PrimaryKey>
-      <ForeignKey>false</ForeignKey>
-      <Type>27</Type>
-      <Length>255</Length>
-      <Nullable>true</Nullable>
-      <IDGenerator>native</IDGenerator>
-      <Unique>false</Unique>
-      <Index>false</Index>
-      <UserTypes/>
-    </Column>
-  </Entity>
   <Entity name="Artista" Unlogged="false" PKClustered="0">
-    <Column name="UsuarioID">
+    <Column name="Usuario registradoID">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>basededatos.Usuario.ID</ReferencedColumn>
+      <ReferencedColumn>basededatos.Usuario registrado.ID</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -135,8 +100,8 @@
     </Column>
   </Entity>
   <Entity name="Usuario registrado" Unlogged="false" PKClustered="0">
-    <Column name="Seguidores">
-      <PrimaryKey>false</PrimaryKey>
+    <Column name="ID">
+      <PrimaryKey>true</PrimaryKey>
       <ForeignKey>false</ForeignKey>
       <Type>9</Type>
       <Length>10</Length>
@@ -146,7 +111,30 @@
       <Index>false</Index>
       <UserTypes/>
     </Column>
-    <Column name="Foto">
+    <Column name="EstadisticasId_Estadisticas">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>basededatos.Estadisticas.Id_Estadisticas</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="Login">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>255</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="Password">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>false</ForeignKey>
       <Type>27</Type>
@@ -168,7 +156,18 @@
       <Index>false</Index>
       <UserTypes/>
     </Column>
-    <Column name="Dias_baja">
+    <Column name="Foto">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>255</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="Seguidores">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>false</ForeignKey>
       <Type>9</Type>
@@ -179,25 +178,12 @@
       <Index>false</Index>
       <UserTypes/>
     </Column>
-    <Column name="UsuarioID">
-      <PrimaryKey>true</PrimaryKey>
-      <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>basededatos.Usuario.ID</ReferencedColumn>
+    <Column name="Dias_baja">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
-      <IDGenerator>native</IDGenerator>
-      <Unique>false</Unique>
-      <Index>false</Index>
-      <UserTypes/>
-    </Column>
-    <Column name="EstadisticasId_Estadisticas">
-      <PrimaryKey>false</PrimaryKey>
-      <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>basededatos.Estadisticas.Id_Estadisticas</ReferencedColumn>
-      <Type>9</Type>
-      <Length>10</Length>
-      <Nullable>true</Nullable>
       <IDGenerator>native</IDGenerator>
       <Unique>false</Unique>
       <Index>false</Index>
@@ -386,10 +372,10 @@
       <Index>false</Index>
       <UserTypes/>
     </Column>
-    <Column name="Usuario registradoUsuarioID">
+    <Column name="Usuario registradoID">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>basededatos.Usuario registrado.UsuarioID</ReferencedColumn>
+      <ReferencedColumn>basededatos.Usuario registrado.ID</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -400,13 +386,34 @@
     </Column>
   </Entity>
   <Entity name="Administrador" Unlogged="false" PKClustered="0">
-    <Column name="UsuarioID">
+    <Column name="ID">
       <PrimaryKey>true</PrimaryKey>
-      <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>basededatos.Usuario.ID</ReferencedColumn>
+      <ForeignKey>false</ForeignKey>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="Login">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>255</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="Password">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>255</Length>
+      <Nullable>true</Nullable>
       <IDGenerator>native</IDGenerator>
       <Unique>false</Unique>
       <Index>false</Index>
@@ -425,10 +432,10 @@
       <Index>false</Index>
       <UserTypes/>
     </Column>
-    <Column name="Usuario registradoUsuarioID">
+    <Column name="ArtistaUsuario registradoID">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>basededatos.Usuario registrado.UsuarioID</ReferencedColumn>
+      <ReferencedColumn>basededatos.Artista.Usuario registradoID</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -473,10 +480,10 @@
       <Index>false</Index>
       <UserTypes/>
     </Column>
-    <Column name="Usuario registradoUsuarioID">
+    <Column name="Usuario registradoID">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>basededatos.Usuario registrado.UsuarioID</ReferencedColumn>
+      <ReferencedColumn>basededatos.Usuario registrado.ID</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -499,10 +506,10 @@
       <Index>false</Index>
       <UserTypes/>
     </Column>
-    <Column name="ArtistaUsuarioID">
+    <Column name="ArtistaUsuario registradoID">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>basededatos.Artista.UsuarioID</ReferencedColumn>
+      <ReferencedColumn>basededatos.Artista.Usuario registradoID</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -513,10 +520,10 @@
     </Column>
   </Entity>
   <Entity name="Artista_Album" Unlogged="false" PKClustered="0">
-    <Column name="ArtistaUsuarioID">
+    <Column name="ArtistaUsuario registradoID">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>basededatos.Artista.UsuarioID</ReferencedColumn>
+      <ReferencedColumn>basededatos.Artista.Usuario registradoID</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -539,10 +546,10 @@
     </Column>
   </Entity>
   <Entity name="Artista_Estilo" Unlogged="false" PKClustered="0">
-    <Column name="ArtistaUsuarioID">
+    <Column name="ArtistaUsuario registradoID">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>basededatos.Artista.UsuarioID</ReferencedColumn>
+      <ReferencedColumn>basededatos.Artista.Usuario registradoID</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -565,10 +572,10 @@
     </Column>
   </Entity>
   <Entity name="Artista_Artista" Unlogged="false" PKClustered="0">
-    <Column name="ArtistaUsuarioID">
+    <Column name="ArtistaUsuario registradoID">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>basededatos.Artista.UsuarioID</ReferencedColumn>
+      <ReferencedColumn>basededatos.Artista.Usuario registradoID</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -577,10 +584,10 @@
       <Index>false</Index>
       <UserTypes/>
     </Column>
-    <Column name="ArtistaUsuarioID2">
+    <Column name="ArtistaUsuario registradoID2">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>basededatos.Artista.UsuarioID</ReferencedColumn>
+      <ReferencedColumn>basededatos.Artista.Usuario registradoID</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -591,10 +598,10 @@
     </Column>
   </Entity>
   <Entity name="Usuario registrado_Lista de reproduccion" Unlogged="false" PKClustered="0">
-    <Column name="Usuario registradoUsuarioID">
+    <Column name="Usuario registradoID">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>basededatos.Usuario registrado.UsuarioID</ReferencedColumn>
+      <ReferencedColumn>basededatos.Usuario registrado.ID</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -629,10 +636,10 @@
       <Index>false</Index>
       <UserTypes/>
     </Column>
-    <Column name="Usuario registradoUsuarioID">
+    <Column name="Usuario registradoID">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>basededatos.Usuario registrado.UsuarioID</ReferencedColumn>
+      <ReferencedColumn>basededatos.Usuario registrado.ID</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -669,10 +676,10 @@
     </Column>
   </Entity>
   <Entity name="Usuario registrado_Usuario registrado" Unlogged="false" PKClustered="0">
-    <Column name="Usuario registradoUsuarioID">
+    <Column name="Usuario registradoID">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>basededatos.Usuario registrado.UsuarioID</ReferencedColumn>
+      <ReferencedColumn>basededatos.Usuario registrado.ID</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -681,10 +688,10 @@
       <Index>false</Index>
       <UserTypes/>
     </Column>
-    <Column name="Usuario registradoUsuarioID2">
+    <Column name="Usuario registradoID2">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>basededatos.Usuario registrado.UsuarioID</ReferencedColumn>
+      <ReferencedColumn>basededatos.Usuario registrado.ID</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -704,21 +711,11 @@
       <Column>Id_Lista</Column>
     </RefColumns>
   </ForeignKey>
-  <ForeignKey name="FKArtista316538">
+  <ForeignKey name="FKArtista117121">
     <ReferenceTable>Artista</ReferenceTable>
-    <ReferencedTable>Usuario</ReferencedTable>
+    <ReferencedTable>Usuario registrado</ReferencedTable>
     <Columns>
-      <Column>UsuarioID</Column>
-    </Columns>
-    <RefColumns>
-      <Column>ID</Column>
-    </RefColumns>
-  </ForeignKey>
-  <ForeignKey name="FKUsuario re109781">
-    <ReferenceTable>Usuario registrado</ReferenceTable>
-    <ReferencedTable>Usuario</ReferencedTable>
-    <Columns>
-      <Column>UsuarioID</Column>
+      <Column>Usuario registradoID</Column>
     </Columns>
     <RefColumns>
       <Column>ID</Column>
@@ -734,16 +731,6 @@
       <Column>Id_Lista</Column>
     </RefColumns>
   </ForeignKey>
-  <ForeignKey name="FKAdministra741035">
-    <ReferenceTable>Administrador</ReferenceTable>
-    <ReferencedTable>Usuario</ReferencedTable>
-    <Columns>
-      <Column>UsuarioID</Column>
-    </Columns>
-    <RefColumns>
-      <Column>ID</Column>
-    </RefColumns>
-  </ForeignKey>
   <ForeignKey name="FKCancion_Us751327">
     <ReferenceTable>Cancion_Usuario registrado</ReferenceTable>
     <ReferencedTable>Cancion</ReferencedTable>
@@ -754,14 +741,14 @@
       <Column>Id_Cancion</Column>
     </RefColumns>
   </ForeignKey>
-  <ForeignKey name="FKCancion_Us647129">
+  <ForeignKey name="FKCancion_Us840429">
     <ReferenceTable>Cancion_Usuario registrado</ReferenceTable>
     <ReferencedTable>Usuario registrado</ReferencedTable>
     <Columns>
-      <Column>Usuario registradoUsuarioID</Column>
+      <Column>Usuario registradoID</Column>
     </Columns>
     <RefColumns>
-      <Column>UsuarioID</Column>
+      <Column>ID</Column>
     </RefColumns>
   </ForeignKey>
   <ForeignKey name="FKCancion_Ar123895">
@@ -774,24 +761,24 @@
       <Column>Id_Cancion</Column>
     </RefColumns>
   </ForeignKey>
-  <ForeignKey name="FKCancion_Ar682324">
+  <ForeignKey name="FKCancion_Ar664734">
     <ReferenceTable>Cancion_Artista</ReferenceTable>
     <ReferencedTable>Artista</ReferencedTable>
     <Columns>
-      <Column>ArtistaUsuarioID</Column>
+      <Column>ArtistaUsuario registradoID</Column>
     </Columns>
     <RefColumns>
-      <Column>UsuarioID</Column>
+      <Column>Usuario registradoID</Column>
     </RefColumns>
   </ForeignKey>
-  <ForeignKey name="FKArtista_Al592614">
+  <ForeignKey name="FKArtista_Al575024">
     <ReferenceTable>Artista_Album</ReferenceTable>
     <ReferencedTable>Artista</ReferencedTable>
     <Columns>
-      <Column>ArtistaUsuarioID</Column>
+      <Column>ArtistaUsuario registradoID</Column>
     </Columns>
     <RefColumns>
-      <Column>UsuarioID</Column>
+      <Column>Usuario registradoID</Column>
     </RefColumns>
   </ForeignKey>
   <ForeignKey name="FKArtista_Al422223">
@@ -804,14 +791,14 @@
       <Column>ListaId_Lista</Column>
     </RefColumns>
   </ForeignKey>
-  <ForeignKey name="FKArtista_Es528349">
+  <ForeignKey name="FKArtista_Es545939">
     <ReferenceTable>Artista_Estilo</ReferenceTable>
     <ReferencedTable>Artista</ReferencedTable>
     <Columns>
-      <Column>ArtistaUsuarioID</Column>
+      <Column>ArtistaUsuario registradoID</Column>
     </Columns>
     <RefColumns>
-      <Column>UsuarioID</Column>
+      <Column>Usuario registradoID</Column>
     </RefColumns>
   </ForeignKey>
   <ForeignKey name="FKArtista_Es303765">
@@ -824,24 +811,24 @@
       <Column>ID</Column>
     </RefColumns>
   </ForeignKey>
-  <ForeignKey name="FKArtista_Ar442260">
+  <ForeignKey name="FKArtista_Ar424670">
     <ReferenceTable>Artista_Artista</ReferenceTable>
     <ReferencedTable>Artista</ReferencedTable>
     <Columns>
-      <Column>ArtistaUsuarioID</Column>
+      <Column>ArtistaUsuario registradoID</Column>
     </Columns>
     <RefColumns>
-      <Column>UsuarioID</Column>
+      <Column>Usuario registradoID</Column>
     </RefColumns>
   </ForeignKey>
-  <ForeignKey name="FKArtista_Ar755970">
+  <ForeignKey name="FKArtista_Ar503095">
     <ReferenceTable>Artista_Artista</ReferenceTable>
     <ReferencedTable>Artista</ReferencedTable>
     <Columns>
-      <Column>ArtistaUsuarioID2</Column>
+      <Column>ArtistaUsuario registradoID2</Column>
     </Columns>
     <RefColumns>
-      <Column>UsuarioID</Column>
+      <Column>Usuario registradoID</Column>
     </RefColumns>
   </ForeignKey>
   <ForeignKey name="FKUsuario re601075">
@@ -854,14 +841,14 @@
       <Column>Id_Estadisticas</Column>
     </RefColumns>
   </ForeignKey>
-  <ForeignKey name="FKUsuario re128380">
+  <ForeignKey name="FKUsuario re359179">
     <ReferenceTable>Usuario registrado_Lista de reproduccion</ReferenceTable>
     <ReferencedTable>Usuario registrado</ReferencedTable>
     <Columns>
-      <Column>Usuario registradoUsuarioID</Column>
+      <Column>Usuario registradoID</Column>
     </Columns>
     <RefColumns>
-      <Column>UsuarioID</Column>
+      <Column>ID</Column>
     </RefColumns>
   </ForeignKey>
   <ForeignKey name="FKUsuario re429880">
@@ -884,14 +871,14 @@
       <Column>Id_Cancion</Column>
     </RefColumns>
   </ForeignKey>
-  <ForeignKey name="FKCancion_Us338731">
+  <ForeignKey name="FKCancion_Us148828">
     <ReferenceTable>Cancion_Usuario registrado2</ReferenceTable>
     <ReferencedTable>Usuario registrado</ReferencedTable>
     <Columns>
-      <Column>Usuario registradoUsuarioID</Column>
+      <Column>Usuario registradoID</Column>
     </Columns>
     <RefColumns>
-      <Column>UsuarioID</Column>
+      <Column>ID</Column>
     </RefColumns>
   </ForeignKey>
   <ForeignKey name="FKCancion_Li869763">
@@ -914,44 +901,44 @@
       <Column>Id_Lista</Column>
     </RefColumns>
   </ForeignKey>
-  <ForeignKey name="FKLista de r939433">
+  <ForeignKey name="FKLista de r548125">
     <ReferenceTable>Lista de reproduccion</ReferenceTable>
     <ReferencedTable>Usuario registrado</ReferencedTable>
     <Columns>
-      <Column>Usuario registradoUsuarioID</Column>
+      <Column>Usuario registradoID</Column>
     </Columns>
     <RefColumns>
-      <Column>UsuarioID</Column>
+      <Column>ID</Column>
     </RefColumns>
   </ForeignKey>
-  <ForeignKey name="FKUsuario re841993">
+  <ForeignKey name="FKUsuario re354434">
     <ReferenceTable>Usuario registrado_Usuario registrado</ReferenceTable>
     <ReferencedTable>Usuario registrado</ReferencedTable>
     <Columns>
-      <Column>Usuario registradoUsuarioID</Column>
+      <Column>Usuario registradoID</Column>
     </Columns>
     <RefColumns>
-      <Column>UsuarioID</Column>
+      <Column>ID</Column>
     </RefColumns>
   </ForeignKey>
-  <ForeignKey name="FKUsuario re88704">
+  <ForeignKey name="FKUsuario re439110">
     <ReferenceTable>Usuario registrado_Usuario registrado</ReferenceTable>
     <ReferencedTable>Usuario registrado</ReferencedTable>
     <Columns>
-      <Column>Usuario registradoUsuarioID2</Column>
+      <Column>Usuario registradoID2</Column>
     </Columns>
     <RefColumns>
-      <Column>UsuarioID</Column>
+      <Column>ID</Column>
     </RefColumns>
   </ForeignKey>
-  <ForeignKey name="FKAnuncio826854">
+  <ForeignKey name="FKAnuncio263496">
     <ReferenceTable>Anuncio</ReferenceTable>
-    <ReferencedTable>Usuario registrado</ReferencedTable>
+    <ReferencedTable>Artista</ReferencedTable>
     <Columns>
-      <Column>Usuario registradoUsuarioID</Column>
+      <Column>ArtistaUsuario registradoID</Column>
     </Columns>
     <RefColumns>
-      <Column>UsuarioID</Column>
+      <Column>Usuario registradoID</Column>
     </RefColumns>
   </ForeignKey>
 </Model>

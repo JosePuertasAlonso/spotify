@@ -42,26 +42,7 @@ public class Recomendaciones extends Lista_canciones {
 		Cancion__bloque_con_opciones_ c;
 		
 		for(int i = 0; i < canciones.length; i++) {
-			c = new Cancion__bloque_con_opciones_(cuerpo, minireproductor);
-			c.getStyle().set("margin-right", "var(--lumo-space-m)");
-			c.getStyle().set("max-width", "15.5%");
-			
-			//Titulo cancion
-			c.getLabel_titulo().setText(canciones[i].getTitulo());
-			//Artistas cancion
-			basededatos.Artista[] artistasCancion = canciones[i].realizada_por.toArray();
-			String cadenaArtistas = "";
-			for(int j = 0; j < artistasCancion.length; j++) {
-				if(j == artistasCancion.length-1) {
-					cadenaArtistas += artistasCancion[i].getNick();
-				} else {
-					cadenaArtistas += artistasCancion[i].getNick() + ", ";
-				}
-			}
-			c.getLabel_artista().setText(cadenaArtistas);
-			//Foto cancion
-			c.getImagen().setSrc(canciones[i].getImagen());
-			
+			c = new Cancion__bloque_con_opciones_(cuerpo, minireproductor, canciones[i]);
 			_list_Cancion__bloque_con_opciones_.add(c);
 		}
 	}

@@ -10,7 +10,6 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import basededatos.Administrador;
 import basededatos.Artista;
 import basededatos.BDPrincipal;
-import basededatos.Usuario;
 import basededatos.Usuario_registrado;
 import basededatos.iCibernauta_no_registrado;
 import spotify.GestorUsuarios;
@@ -56,23 +55,25 @@ public class Iniciar_sesion extends VistaIniciar_sesion{
 				String email = getInput_correoElectronico().getValue();
 				String contrasena = getInput_contrasena().getValue();
 				
-				Usuario u = new Usuario();
+				Usuario_registrado u = new Usuario_registrado();
 				u.setLogin(email);
 				u.setPassword(contrasena);
 				
-				Usuario aux = _iCibernauta_no_registrado.existe_usuario(u);
+				Usuario_registrado aux = _iCibernauta_no_registrado.existe_usuario(u);
 				
-				if(aux instanceof Usuario_registrado) {
+				if(aux instanceof Artista) {
 					GestorUsuarios.inicializarUsuario(aux);
-					GestorUsuarios.usuario();
-				} else if (aux instanceof basededatos.Artista) {
+					GestorUsuarios.artista(true);
+				} else if (aux instanceof Usuario_registrado) {
 					GestorUsuarios.inicializarUsuario(aux);
-					GestorUsuarios.artista();
-				} else if (aux instanceof Administrador) {
-					GestorUsuarios.inicializarUsuario(aux);
-					GestorUsuarios.administrador();
+					GestorUsuarios.usuario(true);
 				} else {
-					getLabel_errorInicioSesion().setVisible(true);
+					if(_iCibernauta_no_registrado.existe_usuarioAdmin(email, contrasena)) {
+						GestorUsuarios.inicializarUsuario(null);
+						GestorUsuarios.administrador();
+					}else {
+						getLabel_errorInicioSesion().setVisible(true);
+					}
 				}
 			}
 		});

@@ -50,7 +50,7 @@ export class VistaOpciones_cancion extends LitElement {
    <button style="align-self: center; width: 100%;" id="button_verAlbum">VER ÁLBUM</button>
   </vaadin-vertical-layout>
   <vaadin-vertical-layout theme="spacing-xs" style="max-width: 27%; width: 100%;" id="vL_imagen">
-   <img style="border-radius: 0.7rem; align-self: center; max-width: 100%;" src="https://i.scdn.co/image/ab67616d0000b273b808f59ccba69a0afcaa79bc" theme="" id="imagen">
+   <img style="border-radius: 0.7rem; align-self: center; max-width: 100%; display:none" src="https://i.scdn.co/image/ab67616d0000b273b808f59ccba69a0afcaa79bc" theme="" id="imagen">
   </vaadin-vertical-layout>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>

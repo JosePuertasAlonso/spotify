@@ -39,7 +39,6 @@ public class MDS12022PFCastellsTorresPersistentManager extends PersistentManager
 		super.configureMetadataSources(aMetadataSources);
 		aMetadataSources.addAnnotatedClass(basededatos.Lista.class);
 		aMetadataSources.addAnnotatedClass(basededatos.Album.class);
-		aMetadataSources.addAnnotatedClass(basededatos.Usuario.class);
 		aMetadataSources.addAnnotatedClass(basededatos.Usuario_registrado.class);
 		aMetadataSources.addAnnotatedClass(basededatos.Artista.class);
 		aMetadataSources.addAnnotatedClass(basededatos.Estadisticas.class);

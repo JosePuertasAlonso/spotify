@@ -15,14 +15,11 @@ public class CreateMDS12022PFCastellsTorresData {
 			basededatos.Album lbasededatosAlbum = basededatos.AlbumDAO.createAlbum();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : es_creado_por
 			basededatos.AlbumDAO.save(lbasededatosAlbum);
-			basededatos.Usuario lbasededatosUsuario = basededatos.UsuarioDAO.createUsuario();
-			// Initialize the properties of the persistent object here
-			basededatos.UsuarioDAO.save(lbasededatosUsuario);
 			basededatos.Usuario_registrado lbasededatosUsuario_registrado = basededatos.Usuario_registradoDAO.createUsuario_registrado();
-			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : anuncia, guarda, es_seguido_por, gestiona, reproduce, sigue, marca_como_favorita, dias_baja, seguidores
+			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : guarda, es_seguido_por, gestiona, reproduce, sigue, marca_como_favorita, dias_baja, seguidores
 			basededatos.Usuario_registradoDAO.save(lbasededatosUsuario_registrado);
 			basededatos.Artista lbasededatosArtista = basededatos.ArtistaDAO.createArtista();
-			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : es_similar_de, es_identificado_por, es_autor_de, es_similar_a, realiza
+			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : anuncia, es_similar_de, es_identificado_por, es_autor_de, es_similar_a, realiza
 			basededatos.ArtistaDAO.save(lbasededatosArtista);
 			basededatos.Estadisticas lbasededatosEstadisticas = basededatos.EstadisticasDAO.createEstadisticas();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : actividad_Semanal

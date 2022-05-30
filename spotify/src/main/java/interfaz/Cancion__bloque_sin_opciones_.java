@@ -15,33 +15,8 @@ public class Cancion__bloque_sin_opciones_ extends Cancion {
 	public Reproducir_cancion _reproducir_cancion;
 	
 	public Cancion__bloque_sin_opciones_(VerticalLayout cuerpo, HorizontalLayout minireproductor, basededatos.Cancion cancion) {
-		super(cuerpo, minireproductor);
+		super(cuerpo, minireproductor, cancion);
 		this.getButton_opciones().setVisible(false);
-		this.getStyle().set("margin-right", "var(--lumo-space-m)");
-		this.getStyle().set("max-width", "15.5%");
-		//this.getStyle().set("max-width", "30%");
-		//Titulo cancion
-		this.getLabel_titulo().setText(cancion.getTitulo());
-		//Artistas cancion
-		basededatos.Artista[] artistasCancion = cancion.realizada_por.toArray();
-		String cadenaArtistas = "";
-		for(int j = 0; j < artistasCancion.length; j++) {
-			if(j == artistasCancion.length - 1) {
-				cadenaArtistas += artistasCancion[j].getNick();
-			} else {
-				cadenaArtistas += artistasCancion[j].getNick() + ", "; 
-			}
-		}
-		GestorUsuarios.artistasCancion = cadenaArtistas;
-		this.getLabel_artista().setText(cadenaArtistas);
-		
-		//Foto cancion
-		//border-radius: 0.7rem; max-height: 80%; max-width: 100%;
-		Imagen img = new Imagen(cancion.getImagen());
-		img.setMaxHeight("80%");
-		img.setMaxWidth("100%");
-		img.setRadius("0.7rem");
-		this.gethL_imagen().add(img);
 		
 		this.getButton_play().addClickListener(new ComponentEventListener<ClickEvent<NativeButton>>() {
 			

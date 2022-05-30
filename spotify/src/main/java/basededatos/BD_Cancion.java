@@ -3,6 +3,7 @@ package basededatos;
 import java.util.Vector;
 
 import org.orm.PersistentException;
+import org.orm.PersistentTransaction;
 
 import basededatos.Cancion;
 
@@ -35,8 +36,37 @@ public class BD_Cancion {
 		throw new UnsupportedOperationException();
 	}
 
-	public boolean anadir_a_favoritos(int aId_Cancion, String aLogin) {
-		throw new UnsupportedOperationException();
+	public boolean anadir_a_favoritos(int aId_Cancion, String aLogin) throws PersistentException {
+		PersistentTransaction t = MDS12022PFCastellsTorresPersistentManager.instance().getSession().beginTransaction();
+		Usuario_registradoCriteria criteria = new Usuario_registradoCriteria();
+		criteria.login.eq(aLogin);
+		
+		Usuario_registrado u = Usuario_registradoDAO.listUsuario_registradoByCriteria(criteria)[0];
+		CancionCriteria criteria2 = new CancionCriteria();
+		criteria2.id_Cancion.eq(aId_Cancion);
+		Cancion c = CancionDAO.listCancionByCriteria(criteria2)[0];
+		
+		if (u.marca_como_favorita.contains(c)) {
+			try {
+				u.marca_como_favorita.remove(c);
+				Usuario_registradoDAO.save(u);
+				t.commit();
+				return true;
+			} catch (Exception e) {
+				t.rollback();
+			}
+		} else {
+			try {
+				u.marca_como_favorita.add(c);
+				Usuario_registradoDAO.save(u);
+				t.commit();
+				return true;
+			} catch (Exception e) {
+				t.rollback();
+			}
+		}
+		
+		return false;
 	}
 
 	public Cancion cargar_cancion_mas_escuchada(String aLogin) {

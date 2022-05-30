@@ -44,5 +44,9 @@ public class Imagen extends Component implements HasSize {
 	   getElement().getStyle().set("border-radius", r);
    }
    
+   public void alinearVerticalmente() {
+	   getElement().getStyle().set("align-self", "center");
+   }
+   
   
 }

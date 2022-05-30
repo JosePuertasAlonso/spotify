@@ -43,8 +43,8 @@ public class AnuncioDetachedCriteria extends AbstractORMDetachedCriteria {
 		descripcion = new StringExpression("descripcion", this.getDetachedCriteria());
 	}
 	
-	public Usuario_registradoDetachedCriteria createAnunciadoCriteria() {
-		return new Usuario_registradoDetachedCriteria(createCriteria("anunciado"));
+	public ArtistaDetachedCriteria createAnunciadoCriteria() {
+		return new ArtistaDetachedCriteria(createCriteria("anunciado"));
 	}
 	
 	public Anuncio uniqueAnuncio(PersistentSession session) {

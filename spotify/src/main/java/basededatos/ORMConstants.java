@@ -18,6 +18,8 @@ public interface ORMConstants extends org.orm.util.ORMBaseConstants {
 	
 	final int KEY_ANUNCIO_ANUNCIADO = -526940956;
 	
+	final int KEY_ARTISTA_ANUNCIA = -1127442928;
+	
 	final int KEY_ARTISTA_ES_AUTOR_DE = -1709948119;
 	
 	final int KEY_ARTISTA_ES_IDENTIFICADO_POR = -624462075;
@@ -45,8 +47,6 @@ public interface ORMConstants extends org.orm.util.ORMBaseConstants {
 	final int KEY_LISTA_DE_REPRODUCCION_ES_GESTIONADA_POR = 1594004890;
 	
 	final int KEY_LISTA_DE_REPRODUCCION_ES_GUARDADA_POR = -2044214370;
-	
-	final int KEY_USUARIO_REGISTRADO_ANUNCIA = -2030282121;
 	
 	final int KEY_USUARIO_REGISTRADO_ES_SEGUIDO_POR = 153965621;
 	

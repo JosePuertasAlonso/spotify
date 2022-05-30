@@ -20,50 +20,52 @@ import org.orm.criteria.*;
 
 public class ArtistaCriteria extends AbstractORMCriteria {
 	public final IntegerExpression ID;
-	public final StringExpression login;
-	public final StringExpression password;
-	public final IntegerExpression seguidores;
-	public final StringExpression foto;
-	public final StringExpression nick;
-	public final IntegerExpression dias_baja;
 	public final IntegerExpression tieneId;
 	public final AssociationExpression tiene;
+	public final StringExpression login;
+	public final StringExpression password;
+	public final StringExpression nick;
+	public final StringExpression foto;
+	public final IntegerExpression seguidores;
+	public final IntegerExpression dias_baja;
 	public final CollectionExpression marca_como_favorita;
 	public final CollectionExpression sigue;
 	public final CollectionExpression reproduce;
 	public final CollectionExpression gestiona;
 	public final CollectionExpression es_seguido_por;
 	public final CollectionExpression guarda;
-	public final CollectionExpression anuncia;
 	public final CollectionExpression realiza;
 	public final CollectionExpression es_similar_a;
 	public final CollectionExpression es_autor_de;
 	public final CollectionExpression es_identificado_por;
 	public final CollectionExpression es_similar_de;
+	public final IntegerExpression anunciaId;
+	public final AssociationExpression anuncia;
 	
 	public ArtistaCriteria(Criteria criteria) {
 		super(criteria);
 		ID = new IntegerExpression("ID", this);
-		login = new StringExpression("login", this);
-		password = new StringExpression("password", this);
-		seguidores = new IntegerExpression("seguidores", this);
-		foto = new StringExpression("foto", this);
-		nick = new StringExpression("nick", this);
-		dias_baja = new IntegerExpression("dias_baja", this);
 		tieneId = new IntegerExpression("tiene.id_Estadisticas", this);
 		tiene = new AssociationExpression("tiene", this);
+		login = new StringExpression("login", this);
+		password = new StringExpression("password", this);
+		nick = new StringExpression("nick", this);
+		foto = new StringExpression("foto", this);
+		seguidores = new IntegerExpression("seguidores", this);
+		dias_baja = new IntegerExpression("dias_baja", this);
 		marca_como_favorita = new CollectionExpression("ORM_marca_como_favorita", this);
 		sigue = new CollectionExpression("ORM_sigue", this);
 		reproduce = new CollectionExpression("ORM_reproduce", this);
 		gestiona = new CollectionExpression("ORM_gestiona", this);
 		es_seguido_por = new CollectionExpression("ORM_es_seguido_por", this);
 		guarda = new CollectionExpression("ORM_guarda", this);
-		anuncia = new CollectionExpression("ORM_anuncia", this);
 		realiza = new CollectionExpression("ORM_realiza", this);
 		es_similar_a = new CollectionExpression("ORM_es_similar_a", this);
 		es_autor_de = new CollectionExpression("ORM_es_autor_de", this);
 		es_identificado_por = new CollectionExpression("ORM_es_identificado_por", this);
 		es_similar_de = new CollectionExpression("ORM_es_similar_de", this);
+		anunciaId = new IntegerExpression("anuncia.", this);
+		anuncia = new AssociationExpression("anuncia", this);
 	}
 	
 	public ArtistaCriteria(PersistentSession session) {
@@ -94,6 +96,10 @@ public class ArtistaCriteria extends AbstractORMCriteria {
 		return new ArtistaCriteria(createCriteria("ORM_es_similar_de"));
 	}
 	
+	public AnuncioCriteria createAnunciaCriteria() {
+		return new AnuncioCriteria(createCriteria("anuncia"));
+	}
+	
 	public EstadisticasCriteria createTieneCriteria() {
 		return new EstadisticasCriteria(createCriteria("tiene"));
 	}
@@ -120,10 +126,6 @@ public class ArtistaCriteria extends AbstractORMCriteria {
 	
 	public Lista_de_reproduccionCriteria createGuardaCriteria() {
 		return new Lista_de_reproduccionCriteria(createCriteria("ORM_guarda"));
-	}
-	
-	public AnuncioCriteria createAnunciaCriteria() {
-		return new AnuncioCriteria(createCriteria("ORM_anuncia"));
 	}
 	
 	public Artista uniqueArtista() {

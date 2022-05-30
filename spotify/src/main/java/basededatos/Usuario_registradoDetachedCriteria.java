@@ -20,60 +20,57 @@ import org.orm.criteria.*;
 
 public class Usuario_registradoDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final IntegerExpression ID;
-	public final StringExpression login;
-	public final StringExpression password;
-	public final IntegerExpression seguidores;
-	public final StringExpression foto;
-	public final StringExpression nick;
-	public final IntegerExpression dias_baja;
 	public final IntegerExpression tieneId;
 	public final AssociationExpression tiene;
+	public final StringExpression login;
+	public final StringExpression password;
+	public final StringExpression nick;
+	public final StringExpression foto;
+	public final IntegerExpression seguidores;
+	public final IntegerExpression dias_baja;
 	public final CollectionExpression marca_como_favorita;
 	public final CollectionExpression sigue;
 	public final CollectionExpression reproduce;
 	public final CollectionExpression gestiona;
 	public final CollectionExpression es_seguido_por;
 	public final CollectionExpression guarda;
-	public final CollectionExpression anuncia;
 	
 	public Usuario_registradoDetachedCriteria() {
 		super(basededatos.Usuario_registrado.class, basededatos.Usuario_registradoCriteria.class);
 		ID = new IntegerExpression("ID", this.getDetachedCriteria());
-		login = new StringExpression("login", this.getDetachedCriteria());
-		password = new StringExpression("password", this.getDetachedCriteria());
-		seguidores = new IntegerExpression("seguidores", this.getDetachedCriteria());
-		foto = new StringExpression("foto", this.getDetachedCriteria());
-		nick = new StringExpression("nick", this.getDetachedCriteria());
-		dias_baja = new IntegerExpression("dias_baja", this.getDetachedCriteria());
 		tieneId = new IntegerExpression("tiene.id_Estadisticas", this.getDetachedCriteria());
 		tiene = new AssociationExpression("tiene", this.getDetachedCriteria());
+		login = new StringExpression("login", this.getDetachedCriteria());
+		password = new StringExpression("password", this.getDetachedCriteria());
+		nick = new StringExpression("nick", this.getDetachedCriteria());
+		foto = new StringExpression("foto", this.getDetachedCriteria());
+		seguidores = new IntegerExpression("seguidores", this.getDetachedCriteria());
+		dias_baja = new IntegerExpression("dias_baja", this.getDetachedCriteria());
 		marca_como_favorita = new CollectionExpression("ORM_marca_como_favorita", this.getDetachedCriteria());
 		sigue = new CollectionExpression("ORM_sigue", this.getDetachedCriteria());
 		reproduce = new CollectionExpression("ORM_reproduce", this.getDetachedCriteria());
 		gestiona = new CollectionExpression("ORM_gestiona", this.getDetachedCriteria());
 		es_seguido_por = new CollectionExpression("ORM_es_seguido_por", this.getDetachedCriteria());
 		guarda = new CollectionExpression("ORM_guarda", this.getDetachedCriteria());
-		anuncia = new CollectionExpression("ORM_anuncia", this.getDetachedCriteria());
 	}
 	
 	public Usuario_registradoDetachedCriteria(DetachedCriteria aDetachedCriteria) {
 		super(aDetachedCriteria, basededatos.Usuario_registradoCriteria.class);
 		ID = new IntegerExpression("ID", this.getDetachedCriteria());
-		login = new StringExpression("login", this.getDetachedCriteria());
-		password = new StringExpression("password", this.getDetachedCriteria());
-		seguidores = new IntegerExpression("seguidores", this.getDetachedCriteria());
-		foto = new StringExpression("foto", this.getDetachedCriteria());
-		nick = new StringExpression("nick", this.getDetachedCriteria());
-		dias_baja = new IntegerExpression("dias_baja", this.getDetachedCriteria());
 		tieneId = new IntegerExpression("tiene.id_Estadisticas", this.getDetachedCriteria());
 		tiene = new AssociationExpression("tiene", this.getDetachedCriteria());
+		login = new StringExpression("login", this.getDetachedCriteria());
+		password = new StringExpression("password", this.getDetachedCriteria());
+		nick = new StringExpression("nick", this.getDetachedCriteria());
+		foto = new StringExpression("foto", this.getDetachedCriteria());
+		seguidores = new IntegerExpression("seguidores", this.getDetachedCriteria());
+		dias_baja = new IntegerExpression("dias_baja", this.getDetachedCriteria());
 		marca_como_favorita = new CollectionExpression("ORM_marca_como_favorita", this.getDetachedCriteria());
 		sigue = new CollectionExpression("ORM_sigue", this.getDetachedCriteria());
 		reproduce = new CollectionExpression("ORM_reproduce", this.getDetachedCriteria());
 		gestiona = new CollectionExpression("ORM_gestiona", this.getDetachedCriteria());
 		es_seguido_por = new CollectionExpression("ORM_es_seguido_por", this.getDetachedCriteria());
 		guarda = new CollectionExpression("ORM_guarda", this.getDetachedCriteria());
-		anuncia = new CollectionExpression("ORM_anuncia", this.getDetachedCriteria());
 	}
 	
 	public EstadisticasDetachedCriteria createTieneCriteria() {
@@ -102,10 +99,6 @@ public class Usuario_registradoDetachedCriteria extends AbstractORMDetachedCrite
 	
 	public Lista_de_reproduccionDetachedCriteria createGuardaCriteria() {
 		return new Lista_de_reproduccionDetachedCriteria(createCriteria("ORM_guarda"));
-	}
-	
-	public AnuncioDetachedCriteria createAnunciaCriteria() {
-		return new AnuncioDetachedCriteria(createCriteria("ORM_anuncia"));
 	}
 	
 	public Usuario_registrado uniqueUsuario_registrado(PersistentSession session) {

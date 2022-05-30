@@ -18,14 +18,52 @@ import javax.persistence.*;
 @Entity
 @org.hibernate.annotations.Proxy(lazy=false)
 @Table(name="Administrador")
-@Inheritance(strategy=InheritanceType.JOINED)
-@PrimaryKeyJoinColumn(name="UsuarioID", referencedColumnName="ID")
-public class Administrador extends basededatos.Usuario implements Serializable {
+public class Administrador implements Serializable {
 	public Administrador() {
 	}
 	
+	@Column(name="ID", nullable=false, length=10)	
+	@Id	
+	@GeneratedValue(generator="BASEDEDATOS_ADMINISTRADOR_ID_GENERATOR")	
+	@org.hibernate.annotations.GenericGenerator(name="BASEDEDATOS_ADMINISTRADOR_ID_GENERATOR", strategy="native")	
+	private int ID;
+	
+	@Column(name="Login", nullable=true, length=255)	
+	private String login;
+	
+	@Column(name="Password", nullable=true, length=255)	
+	private String password;
+	
+	private void setID(int value) {
+		this.ID = value;
+	}
+	
+	public int getID() {
+		return ID;
+	}
+	
+	public int getORMID() {
+		return getID();
+	}
+	
+	public void setLogin(String value) {
+		this.login = value;
+	}
+	
+	public String getLogin() {
+		return login;
+	}
+	
+	public void setPassword(String value) {
+		this.password = value;
+	}
+	
+	public String getPassword() {
+		return password;
+	}
+	
 	public String toString() {
-		return super.toString();
+		return String.valueOf(getID());
 	}
 	
 }

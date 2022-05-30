@@ -13,7 +13,7 @@ public class Reproductor_resumido__usuario_registrado_ extends Reproductor_resum
 	
 	public Reproductor_resumido__usuario_registrado_(VerticalLayout cuerpo, HorizontalLayout minireproductor) {
 		super();
-		this.getImagen().addClickListener(new ComponentEventListener() {
+		this.gethL_imagen().addClickListener(new ComponentEventListener() {
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
 				_reproducir_cancion_cibernauta_registrado = new Reproducir_cancion_cibernauta_registrado(cuerpo, minireproductor);

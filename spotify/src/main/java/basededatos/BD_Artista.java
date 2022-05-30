@@ -57,7 +57,7 @@ public class BD_Artista {
 		throw new UnsupportedOperationException();
 	}
 
-	public Artista existe_usuario(Usuario aUsuario) throws PersistentException {
+	public Artista existe_usuario(Usuario_registrado aUsuario) throws PersistentException {
 		ArtistaCriteria c = new ArtistaCriteria();
 		c.login.eq(aUsuario.getLogin());
 		c.password.eq(aUsuario.getPassword());

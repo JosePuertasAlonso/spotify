@@ -45,7 +45,7 @@ public class Album extends basededatos.Lista implements Serializable {
 	
 	@ManyToMany(targetEntity=basededatos.Artista.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
-	@JoinTable(name="Artista_Album", joinColumns={ @JoinColumn(name="AlbumListaId_Lista") }, inverseJoinColumns={ @JoinColumn(name="ArtistaUsuarioID") })	
+	@JoinTable(name="Artista_Album", joinColumns={ @JoinColumn(name="AlbumListaId_Lista") }, inverseJoinColumns={ @JoinColumn(name="`ArtistaUsuario registradoID`") })	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_es_creado_por = new java.util.HashSet();
 	

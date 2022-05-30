@@ -324,7 +324,7 @@ public class AnuncioDAO {
 	public static boolean deleteAndDissociate(basededatos.Anuncio anuncio)throws PersistentException {
 		try {
 			if (anuncio.getAnunciado() != null) {
-				anuncio.getAnunciado().anuncia.remove(anuncio);
+				anuncio.getAnunciado().setAnuncia(null);
 			}
 			
 			return delete(anuncio);
@@ -338,7 +338,7 @@ public class AnuncioDAO {
 	public static boolean deleteAndDissociate(basededatos.Anuncio anuncio, org.orm.PersistentSession session)throws PersistentException {
 		try {
 			if (anuncio.getAnunciado() != null) {
-				anuncio.getAnunciado().anuncia.remove(anuncio);
+				anuncio.getAnunciado().setAnuncia(null);
 			}
 			
 			try {

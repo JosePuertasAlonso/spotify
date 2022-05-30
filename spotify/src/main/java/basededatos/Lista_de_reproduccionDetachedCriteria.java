@@ -33,7 +33,7 @@ public class Lista_de_reproduccionDetachedCriteria extends AbstractORMDetachedCr
 		nombre = new StringExpression("nombre", this.getDetachedCriteria());
 		imagen = new StringExpression("imagen", this.getDetachedCriteria());
 		contiene = new CollectionExpression("ORM_contiene", this.getDetachedCriteria());
-		es_gestionada_porId = new IntegerExpression("es_gestionada_por.", this.getDetachedCriteria());
+		es_gestionada_porId = new IntegerExpression("es_gestionada_por.ID", this.getDetachedCriteria());
 		es_gestionada_por = new AssociationExpression("es_gestionada_por", this.getDetachedCriteria());
 		es_guardada_por = new CollectionExpression("ORM_es_guardada_por", this.getDetachedCriteria());
 	}
@@ -44,7 +44,7 @@ public class Lista_de_reproduccionDetachedCriteria extends AbstractORMDetachedCr
 		nombre = new StringExpression("nombre", this.getDetachedCriteria());
 		imagen = new StringExpression("imagen", this.getDetachedCriteria());
 		contiene = new CollectionExpression("ORM_contiene", this.getDetachedCriteria());
-		es_gestionada_porId = new IntegerExpression("es_gestionada_por.", this.getDetachedCriteria());
+		es_gestionada_porId = new IntegerExpression("es_gestionada_por.ID", this.getDetachedCriteria());
 		es_gestionada_por = new AssociationExpression("es_gestionada_por", this.getDetachedCriteria());
 		es_guardada_por = new CollectionExpression("ORM_es_guardada_por", this.getDetachedCriteria());
 	}

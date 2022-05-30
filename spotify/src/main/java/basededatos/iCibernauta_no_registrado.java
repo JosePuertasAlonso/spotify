@@ -6,7 +6,9 @@ public interface iCibernauta_no_registrado {
 
 	public void registrar_usuario(Usuario_registrado aUsuario);
 
-	public Usuario existe_usuario(Usuario aUsuario);
+	public Usuario_registrado existe_usuario(Usuario_registrado aUsuario);
+	
+	public boolean existe_usuarioAdmin(String login, String password);
 	
 	public boolean nick_ya_registrado(String aNick);
 	

@@ -25,8 +25,8 @@ public class Ver_estadisticas extends VistaVer_estadisticas{
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
 		
-		_cancion_mas_escuchada = new Cancion__bloque_con_opciones_(cuerpo, minireproductor);
-		_ultima_reproduccion = new Cancion__bloque_con_opciones_(cuerpo, minireproductor);
+		_cancion_mas_escuchada = new Cancion__bloque_con_opciones_(cuerpo, minireproductor, null);
+		_ultima_reproduccion = new Cancion__bloque_con_opciones_(cuerpo, minireproductor, null);
 		
 		this.getvL_cancionMasEscuchada().as(VerticalLayout.class).add(_cancion_mas_escuchada);
 		this.getvL_ultimaReproduccion().as(VerticalLayout.class).add(_ultima_reproduccion);

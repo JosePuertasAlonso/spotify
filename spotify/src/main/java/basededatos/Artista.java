@@ -19,6 +19,7 @@ import javax.persistence.*;
 @org.hibernate.annotations.Proxy(lazy=false)
 @Table(name="Artista")
 @Inheritance(strategy=InheritanceType.JOINED)
+@PrimaryKeyJoinColumn(name="`Usuario registradoID`", referencedColumnName="ID")
 public class Artista extends basededatos.Usuario_registrado implements Serializable {
 	public Artista() {
 	}
@@ -43,23 +44,33 @@ public class Artista extends basededatos.Usuario_registrado implements Serializa
 		return null;
 	}
 	
+	private void this_setOwner(Object owner, int key) {
+		if (key == ORMConstants.KEY_ARTISTA_ANUNCIA) {
+			this.anuncia = (basededatos.Anuncio) owner;
+		}
+	}
+	
 	@Transient	
 	org.orm.util.ORMAdapter _ormAdapter = new org.orm.util.AbstractORMAdapter() {
 		public java.util.Set getSet(int key) {
 			return this_getSet(key);
 		}
 		
+		public void setOwner(Object owner, int key) {
+			this_setOwner(owner, key);
+		}
+		
 	};
 	
 	@ManyToMany(targetEntity=basededatos.Cancion.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
-	@JoinTable(name="Cancion_Artista", joinColumns={ @JoinColumn(name="ArtistaUsuarioID") }, inverseJoinColumns={ @JoinColumn(name="CancionId_Cancion") })	
+	@JoinTable(name="Cancion_Artista", joinColumns={ @JoinColumn(name="`ArtistaUsuario registradoID`") }, inverseJoinColumns={ @JoinColumn(name="CancionId_Cancion") })	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_realiza = new java.util.HashSet();
 	
 	@ManyToMany(targetEntity=basededatos.Artista.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
-	@JoinTable(name="Artista_Artista", joinColumns={ @JoinColumn(name="ArtistaUsuarioID2") }, inverseJoinColumns={ @JoinColumn(name="ArtistaUsuarioID") })	
+	@JoinTable(name="Artista_Artista", joinColumns={ @JoinColumn(name="`ArtistaUsuario registradoID2`") }, inverseJoinColumns={ @JoinColumn(name="`ArtistaUsuario registradoID`") })	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_es_similar_a = new java.util.HashSet();
 	
@@ -77,6 +88,10 @@ public class Artista extends basededatos.Usuario_registrado implements Serializa
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_es_similar_de = new java.util.HashSet();
+	
+	@OneToOne(mappedBy="anunciado", targetEntity=basededatos.Anuncio.class, fetch=FetchType.LAZY)	
+	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
+	private basededatos.Anuncio anuncia;
 	
 	private void setORM_Realiza(java.util.Set value) {
 		this.ORM_realiza = value;
@@ -132,6 +147,23 @@ public class Artista extends basededatos.Usuario_registrado implements Serializa
 	
 	@Transient	
 	public final basededatos.ArtistaSetCollection es_similar_de = new basededatos.ArtistaSetCollection(this, _ormAdapter, ORMConstants.KEY_ARTISTA_ES_SIMILAR_DE, ORMConstants.KEY_ARTISTA_ES_SIMILAR_A, ORMConstants.KEY_MUL_MANY_TO_MANY);
+	
+	public void setAnuncia(basededatos.Anuncio value) {
+		if (this.anuncia != value) {
+			basededatos.Anuncio lanuncia = this.anuncia;
+			this.anuncia = value;
+			if (value != null) {
+				anuncia.setAnunciado(this);
+			}
+			if (lanuncia != null && lanuncia.getAnunciado() == this) {
+				lanuncia.setAnunciado(null);
+			}
+		}
+	}
+	
+	public basededatos.Anuncio getAnuncia() {
+		return anuncia;
+	}
 	
 	public String toString() {
 		return super.toString();
