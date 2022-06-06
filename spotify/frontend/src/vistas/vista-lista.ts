@@ -65,8 +65,7 @@ export class VistaLista extends LitElement {
 <vaadin-vertical-layout style="background:#121212; max-width: 100%; max-height: 100%; align-items: flex-start; height: 100%;" class="fuentes boton-rectangulo" id="vL_fondo">
  <vaadin-vertical-layout theme="spacing-l" style="max-height: 100%; padding-top: 0px; padding-right: var(--lumo-space-l); padding-left: var(--lumo-space-l); overflow-y:scroll; width: 100%;" id="vL_cuerpo">
   <vaadin-horizontal-layout theme="spacing-l" style="max-height: 43%; width: 100%; padding: 0px;" id="hL_imagenTituloBotones">
-   <img style="max-width: 100%; max-height: 100%; margin: 0px;" src="https://i.scdn.co/image/ab67706f00000003a0f40d75f093bb6814fcd53e
-" id="imagen">
+   <img style="max-width: 100%; max-height: 100%; margin: 0px;" id="imagen">
    <vaadin-vertical-layout style="width: 100%; justify-content: space-between;" id="vL_tituloCreadorBotones">
     <vaadin-vertical-layout theme="spacing" style="width: 100%; margin: 0px;" id="vL_tituloCreador">
      <label style="align-self: flex-start; font-size: 2.5rem; flex-shrink: 1; margin-top: 0px;" id="label_titulo">Pop con Ñ Clásicos</label>

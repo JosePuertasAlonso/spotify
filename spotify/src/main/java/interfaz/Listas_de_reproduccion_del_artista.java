@@ -45,13 +45,13 @@ public class Listas_de_reproduccion_del_artista extends VistaListas_de_reproducc
 	}
 	
 	public void cargarListasArtista() {
-		Lista_del_artista l;
-		for(int i = 0; i < 6; i++) {
-			l = new Lista_del_artista(cuerpo, minireproductor);
-			l.getStyle().set("margin-right", "var(--lumo-space-m)");
-			l.getStyle().set("max-width", "15.5%");
-			_list_Lista_del_artista.add(l);
-		}
+//		Lista_del_artista l;
+//		for(int i = 0; i < 6; i++) {
+//			l = new Lista_del_artista(cuerpo, minireproductor);
+//			l.getStyle().set("margin-right", "var(--lumo-space-m)");
+//			l.getStyle().set("max-width", "15.5%");
+//			_list_Lista_del_artista.add(l);
+//		}
 	}
 	
 

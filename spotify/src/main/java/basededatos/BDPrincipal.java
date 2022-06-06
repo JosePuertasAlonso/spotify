@@ -99,7 +99,12 @@ public class BDPrincipal implements iCibernauta_no_registrado, iCibernauta_regis
 
 
 	public void modificar_perfil_usuario(String aLogin, String aCorreo_antiguo, String aCorreo_nuevo) {
-		throw new UnsupportedOperationException();
+		try {
+			_bd_us_reg.modificar_perfil_usuario(aLogin, aCorreo_antiguo, aCorreo_nuevo);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public Cancion[] cargar_recomendaciones() {
@@ -173,7 +178,12 @@ public class BDPrincipal implements iCibernauta_no_registrado, iCibernauta_regis
 	}
 
 	public void anadir_cancion_historial(int aId_Cancion, String aLogin) {
-		throw new UnsupportedOperationException();
+		try {
+			_bd_can.anadir_cancion_historial(aId_Cancion, aLogin);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public boolean anadir_a_favoritos(int aId_Cancion, String aLogin) {
@@ -192,7 +202,12 @@ public class BDPrincipal implements iCibernauta_no_registrado, iCibernauta_regis
 	}
 
 	public void anadir_cancion_a_la_lista(String aLogin, int aId_Cancion, int aId_Lista) {
-		throw new UnsupportedOperationException();
+		try {
+			_bd_list.anadir_cancion_a_la_lista(aLogin, aId_Cancion, aId_Lista);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public void crear_lista(String aLogin, String aNombre_lista) {
@@ -231,8 +246,15 @@ public class BDPrincipal implements iCibernauta_no_registrado, iCibernauta_regis
 		throw new UnsupportedOperationException();
 	}
 
-	public Cancion cargar_cancion_mas_escuchada(String aLogin) {
-		throw new UnsupportedOperationException();
+	public Cancion cargar_cancion_mas_escuchada() {
+		Cancion result = null;
+		try {
+			result = _bd_can.cargar_cancion_mas_escuchada();
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
 	}
 
 	public Cancion cargar_ultima_reproduccion(String aLogin) {
@@ -240,7 +262,14 @@ public class BDPrincipal implements iCibernauta_no_registrado, iCibernauta_regis
 	}
 
 	public Anuncio[] cargar_anuncios(String aLogin) {
-		throw new UnsupportedOperationException();
+		Anuncio[] result = null;
+		try {
+			result = _bd_art.cargar_anuncios(aLogin);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
 	}
 
 	public void eliminar_perfil(String aLogin) {
@@ -248,7 +277,12 @@ public class BDPrincipal implements iCibernauta_no_registrado, iCibernauta_regis
 	}
 
 	public void eliminar_lista(int aId_Lista) {
-		throw new UnsupportedOperationException();
+		try {
+			_bd_list.eliminar_lista(aId_Lista);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public void eliminar_cancion_lista(int aId_Lista, int aId_Cancion) {
@@ -256,7 +290,12 @@ public class BDPrincipal implements iCibernauta_no_registrado, iCibernauta_regis
 	}
 
 	public void cambiar_nombre_lista(int aId_Lista, String aNombre_nuevo_lista) {
-		throw new UnsupportedOperationException();
+		try {
+			_bd_list.cambiar_nombre_lista(aId_Lista, aNombre_nuevo_lista);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public void publicar_anuncio(String aLogin_artista, Anuncio aAnuncio) {
@@ -389,6 +428,18 @@ public class BDPrincipal implements iCibernauta_no_registrado, iCibernauta_regis
 		boolean result = false;
 		try {
 			result = _bd_estilo.existe_estilo(aEstilo);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
+	}
+
+	@Override
+	public boolean login_ya_registrado_modificacion(String aLogin) {
+		boolean result = false;
+		try {
+			result = _bd_us_reg.login_ya_registrado(aLogin);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

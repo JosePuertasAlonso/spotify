@@ -44,13 +44,13 @@ public class Albumes_del_artista extends VistaAlbumes_del_artista{
 	}
 	
 	public void cargarAlbumesArtista() {
-		Album__bloques_ a;
-		for(int i = 0; i < 6; i++) {
-			a = new Album__bloques_(cuerpo, minireproductor);
-			a.getStyle().set("margin-right", "var(--lumo-space-m)");
-			a.getStyle().set("max-width", "15.5%");
-			_list_Album__bloques_.add(a);
-		}
+//		Album__bloques_ a;
+//		for(int i = 0; i < 6; i++) {
+//			a = new Album__bloques_(cuerpo, minireproductor);
+//			a.getStyle().set("margin-right", "var(--lumo-space-m)");
+//			a.getStyle().set("max-width", "15.5%");
+//			_list_Album__bloques_.add(a);
+//		}
 	}
 	
 }

@@ -66,7 +66,7 @@ export class VistaModificar_perfil extends LitElement {
   <label style="align-self: center; font-size: 2.5rem; text-align: center;" id="label_modificarPerfil">Modificar perfil de Spotify</label>
   <label style="flex-shrink: 0; align-self: center;" id="label_nombreUsuario">Nombre de usuario</label>
   <vaadin-horizontal-layout theme="" style="max-width: 50%; align-self: center; margin-top: var(--lumo-space-xl); width: 100%; margin-right: 0px; margin-left: 0px; padding: 0px;" id="hL_datosImagen">
-   <vaadin-vertical-layout style="max-width: 70%; width: 100%; margin: 0px;" theme="spacing" id="vL_datos">
+   <vaadin-vertical-layout style="max-width: 100%; width: 100%; margin: 0px;" theme="spacing" id="vL_datos">
     <label style="flex-shrink: 0;" id="label_correoActual">Correo electrónico actual</label>
     <label style="flex-shrink: 0; align-self: center; text-align:center; display: flex; align-items: center; background-color:#E91429; width: 100%; justify-content: center; min-width: 100%; max-width: 100%; padding-right: 10px; padding-left: 10px; margin-left: var(--lumo-space-l); padding-top: var(--lumo-space-xs); padding-bottom: var(--lumo-space-xs);font-weight:400; font-size:1.1rem" id="label_errorCorreoActual">
      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px" fill="#FFFFFF" style="margin-right: var(--lumo-space-s);">

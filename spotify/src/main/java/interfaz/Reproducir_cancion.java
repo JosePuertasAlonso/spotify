@@ -52,10 +52,10 @@ public class Reproducir_cancion extends VistaReproducir_cancion{
 		this._audioPlayer = GestorUsuarios._audioPlayer;
 		this.gethL_reproductor().add(_audioPlayer);
 		this.getButton_opciones().setVisible(false);
-		this.getLabel_titulo().setText(GestorUsuarios._cancion.getTitulo());
+		this.getLabel_titulo().setText(GestorUsuarios._cancionReproduciendose.getTitulo());
 		this.getLabel_artista().setText(GestorUsuarios.artistasCancion);
 		
-		Imagen img = new Imagen(GestorUsuarios._cancion.getImagen());
+		Imagen img = new Imagen(GestorUsuarios._cancionReproduciendose.getImagen());
 		img.setMaxWidth("100%"); img.setMaxHeight("100%"); img.setHeight("100%");
 		this.gethL_imagen().add(img);
 		

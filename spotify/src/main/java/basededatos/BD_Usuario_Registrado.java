@@ -74,8 +74,20 @@ public class BD_Usuario_Registrado {
 		throw new UnsupportedOperationException();
 	}
 
-	public void modificar_perfil_usuario(String aLogin, String aCorreo_antiguo, String aCorreo_nuevo) {
-		throw new UnsupportedOperationException();
+	public void modificar_perfil_usuario(String aLogin, String aCorreo_antiguo, String aCorreo_nuevo) throws PersistentException {
+		Usuario_registradoCriteria c = new Usuario_registradoCriteria();
+		c.login.eq(aLogin);
+		Usuario_registrado u = c.listUsuario_registrado()[0];
+		
+		PersistentTransaction t = MDS12022PFCastellsTorresPersistentManager.instance().getSession().beginTransaction();
+		try {
+			u.setLogin(aCorreo_nuevo);
+			Usuario_registradoDAO.save(u);
+			t.commit();
+		} catch (Exception e) {
+			t.rollback();
+		}
+		MDS12022PFCastellsTorresPersistentManager.instance().disposePersistentManager();
 	}
 
 	public void eliminar_perfil(String aLogin) {

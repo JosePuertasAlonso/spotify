@@ -22,14 +22,28 @@ public class Anuncio implements Serializable {
 	public Anuncio() {
 	}
 	
+	private void this_setOwner(Object owner, int key) {
+		if (key == ORMConstants.KEY_ANUNCIO_ANUNCIADO) {
+			this.anunciado = (basededatos.Artista) owner;
+		}
+	}
+	
+	@Transient	
+	org.orm.util.ORMAdapter _ormAdapter = new org.orm.util.AbstractORMAdapter() {
+		public void setOwner(Object owner, int key) {
+			this_setOwner(owner, key);
+		}
+		
+	};
+	
 	@Column(name="Id_Anuncio", nullable=false, length=10)	
 	@Id	
 	@GeneratedValue(generator="BASEDEDATOS_ANUNCIO_ID_ANUNCIO_GENERATOR")	
 	@org.hibernate.annotations.GenericGenerator(name="BASEDEDATOS_ANUNCIO_ID_ANUNCIO_GENERATOR", strategy="native")	
 	private int id_Anuncio;
 	
-	@OneToOne(targetEntity=basededatos.Artista.class, fetch=FetchType.LAZY)	
-	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
+	@ManyToOne(targetEntity=basededatos.Artista.class, fetch=FetchType.LAZY)	
+	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinColumns(value={ @JoinColumn(name="`ArtistaUsuario registradoID`", referencedColumnName="`Usuario registradoID`", nullable=false) }, foreignKey=@ForeignKey(name="FKAnuncio263496"))	
 	private basededatos.Artista anunciado;
 	
@@ -68,19 +82,26 @@ public class Anuncio implements Serializable {
 	}
 	
 	public void setAnunciado(basededatos.Artista value) {
-		if (this.anunciado != value) {
-			basededatos.Artista lanunciado = this.anunciado;
-			this.anunciado = value;
-			if (value != null) {
-				anunciado.setAnuncia(this);
-			}
-			if (lanunciado != null && lanunciado.getAnuncia() == this) {
-				lanunciado.setAnuncia(null);
-			}
+		if (anunciado != null) {
+			anunciado.anuncia.remove(this);
+		}
+		if (value != null) {
+			value.anuncia.add(this);
 		}
 	}
 	
 	public basededatos.Artista getAnunciado() {
+		return anunciado;
+	}
+	
+	/**
+	 * This method is for internal use only.
+	 */
+	public void setORM_Anunciado(basededatos.Artista value) {
+		this.anunciado = value;
+	}
+	
+	private basededatos.Artista getORM_Anunciado() {
 		return anunciado;
 	}
 	

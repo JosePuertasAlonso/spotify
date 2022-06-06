@@ -29,7 +29,7 @@ export class VistaCancion_de_lista_a_eliminar extends LitElement {
     return html`
 <vaadin-horizontal-layout class="content label-cancion" style="background-color:#181818; width: 100%; height: 100%; align-items: center; justify-content: space-between; max-width: 100%; max-height: 100%;" id="hL_fondo">
  <vaadin-horizontal-layout theme="spacing" style="width: 100%; height: 100%; align-items: center; margin: 0px;" id="hL_imagenTitulo">
-  <img style="max-height: 100%; max-width: 100%; margin: 0px;" src="https://i.scdn.co/image/ab67616d0000b273b808f59ccba69a0afcaa79bc" id="imagen">
+  <img style="max-height: 100%; max-width: 100%; margin: 0px;" id="imagen">
   <vaadin-vertical-layout class="label-lista" style="align-self: center; width: 100%; height: 100%; align-items: center; justify-content: center; flex-direction: column; display: flex; align-items: center;" id="vL_tituloArtista">
    <label style="align-self: flex-start; color:#FFFFFF; width: 100%;" id="label_titulo">En tus planes</label>
    <label style="align-self: flex-start; color:#9D9D9D; font-weight: 400; width: 100%;" id="label_artista">David Bisbal</label>

@@ -10,6 +10,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import basededatos.BDPrincipal;
 import basededatos.iCibernauta_no_registrado;
 import basededatos.iCibernauta_registrado;
+import basededatos.iComun;
 import spotify.GestorUsuarios;
 import spotify.Imagen;
 import vistas.VistaOpciones_cancion;
@@ -19,7 +20,7 @@ public class Opciones_cancion extends VistaOpciones_cancion {
 //	private Button _anadir_A_ListaB;
 	public Anadir_cancion_a_una_lista _anadir_cancion_a_una_lista;
 	
-	iCibernauta_registrado _iCibernauta_registrado = new BDPrincipal();
+	iComun _iComun = new BDPrincipal();
 
 	
 	public Opciones_cancion(VerticalLayout cuerpo, HorizontalLayout minireproductor, Dialog popUp) {
@@ -54,7 +55,8 @@ public class Opciones_cancion extends VistaOpciones_cancion {
 				} else {
 					getButton_anadirFavoritos().setText("AÑADIR A FAVORITOS");
 				}
-				Anadir_a_favoritos();
+				Anadir_a_favoritos(); //Metodo BD
+				popUp.close();
 				
 			}
 		});
@@ -72,10 +74,30 @@ public class Opciones_cancion extends VistaOpciones_cancion {
 				
 			}
 		});
+		
+		this.getButton_reproducir().addClickListener(new ComponentEventListener<ClickEvent<NativeButton>>() {
+			
+			@Override
+			public void onComponentEvent(ClickEvent<NativeButton> event) {
+				GestorUsuarios.reproducirCancion(GestorUsuarios._cancion);
+				Comun._reproductor_resumido__usuario_registrado_.getLabel_titulo().setText(GestorUsuarios._cancion.getTitulo());
+				Comun._reproductor_resumido__usuario_registrado_.getLabetl_artista().setText(GestorUsuarios.artistasCancion);
+				Imagen img = new Imagen(GestorUsuarios._cancion.getImagen());
+				img.setMaxWidth("100%");
+				Comun._reproductor_resumido__usuario_registrado_.gethL_imagen().removeAll();
+				Comun._reproductor_resumido__usuario_registrado_.gethL_imagen().add(img);
+				anadir_cancion_historial(); //Metodo BD
+				popUp.close();
+			}
+		});
 	}
 	
 
 	public void Anadir_a_favoritos() {
-		_iCibernauta_registrado.anadir_a_favoritos(GestorUsuarios._cancion.getId_Cancion(), GestorUsuarios._u.getLogin());
+		_iComun.anadir_a_favoritos(GestorUsuarios._cancion.getId_Cancion(), GestorUsuarios._u.getLogin());
+	}
+	
+	public void anadir_cancion_historial() {
+		_iComun.anadir_cancion_historial(GestorUsuarios._cancion.getId_Cancion(), GestorUsuarios._u.getLogin());
 	}
 }

@@ -11,15 +11,15 @@ public class Ver_lista_de_reproduccion_propia extends Lista_de_reproduccion {
 	public Lista_de_reproduccion_propia _lista_de_reproduccion_propia;
 	public Modificar_lista _modificar_lista;
 	
-	public Ver_lista_de_reproduccion_propia(VerticalLayout cuerpo, HorizontalLayout minireproductor) {
-		super(cuerpo, minireproductor);
+	public Ver_lista_de_reproduccion_propia(VerticalLayout cuerpo, HorizontalLayout minireproductor, basededatos.Lista lista) {
+		super(cuerpo, minireproductor, lista);
 		this.getButton_modificar().setVisible(true);
 		
 		this.getButton_modificar().addClickListener(new ComponentEventListener<ClickEvent<NativeButton>>() {
 			
 			@Override
 			public void onComponentEvent(ClickEvent<NativeButton> event) {
-				_modificar_lista = new Modificar_lista(cuerpo, minireproductor);
+				_modificar_lista = new Modificar_lista(cuerpo, minireproductor, lista);
 				cuerpo.removeAll();
 				cuerpo.getStyle().set("max-height", "80%");
 				minireproductor.setVisible(true);

@@ -7,6 +7,7 @@ import com.vaadin.flow.component.html.NativeButton;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import spotify.GestorUsuarios;
 import vistas.VistaVer_perfil;
 
 public class Ver_perfil extends VistaVer_perfil{
@@ -30,6 +31,7 @@ public class Ver_perfil extends VistaVer_perfil{
 	public Modificar_perfil _modificar_perfil;
 	
 	public Ver_perfil(VerticalLayout cuerpo, HorizontalLayout minireproductor) {
+		GestorUsuarios.recargarUsuario();
 		_listas_de_reproduccion_del_perfil = new Listas_de_reproduccion_del_perfil(cuerpo, minireproductor);
 		this.getStyle().set("margin", "0px");
 		this.getStyle().set("padding", "0px");
@@ -39,6 +41,11 @@ public class Ver_perfil extends VistaVer_perfil{
 
 		this.getButton_crearAnuncio().setVisible(false);
 		this.getButton_recuperarPerfil().setVisible(false);
+		
+		this.getLabel_nombreUsuario().setText(GestorUsuarios._u.getNick());
+		this.getImagen().setSrc(GestorUsuarios._u.getFoto());
+		this.getLabel_nSeguidores().setText(Integer.toString(GestorUsuarios._u.getSeguidores()));
+		this.getLabel_nListas().setText(GestorUsuarios._u.gestiona.size() + " de 100 listas");
 		
 		this.getButton_verAnuncios().addClickListener(new ComponentEventListener<ClickEvent<NativeButton>>() {
 			

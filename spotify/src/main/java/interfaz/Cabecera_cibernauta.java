@@ -54,7 +54,7 @@ public class Cabecera_cibernauta extends Cabecera {
 				GestorUsuarios.cibernauta(false);
 				//Cancion del minireproductor:
 				Cibernauta_no_registrado._reproductor_resumido__cibernauta_no_registrado_.gethL_imagen().removeAll();
-				Imagen img = new Imagen(GestorUsuarios._cancion.getImagen());
+				Imagen img = new Imagen(GestorUsuarios._cancionReproduciendose.getImagen());
 				img.setMaxWidth("100%");
 				Cibernauta_no_registrado._reproductor_resumido__cibernauta_no_registrado_.gethL_imagen().add(img);				
 			}

@@ -39,8 +39,7 @@ public class ArtistaCriteria extends AbstractORMCriteria {
 	public final CollectionExpression es_autor_de;
 	public final CollectionExpression es_identificado_por;
 	public final CollectionExpression es_similar_de;
-	public final IntegerExpression anunciaId;
-	public final AssociationExpression anuncia;
+	public final CollectionExpression anuncia;
 	
 	public ArtistaCriteria(Criteria criteria) {
 		super(criteria);
@@ -64,8 +63,7 @@ public class ArtistaCriteria extends AbstractORMCriteria {
 		es_autor_de = new CollectionExpression("ORM_es_autor_de", this);
 		es_identificado_por = new CollectionExpression("ORM_es_identificado_por", this);
 		es_similar_de = new CollectionExpression("ORM_es_similar_de", this);
-		anunciaId = new IntegerExpression("anuncia.", this);
-		anuncia = new AssociationExpression("anuncia", this);
+		anuncia = new CollectionExpression("ORM_anuncia", this);
 	}
 	
 	public ArtistaCriteria(PersistentSession session) {
@@ -97,7 +95,7 @@ public class ArtistaCriteria extends AbstractORMCriteria {
 	}
 	
 	public AnuncioCriteria createAnunciaCriteria() {
-		return new AnuncioCriteria(createCriteria("anuncia"));
+		return new AnuncioCriteria(createCriteria("ORM_anuncia"));
 	}
 	
 	public EstadisticasCriteria createTieneCriteria() {

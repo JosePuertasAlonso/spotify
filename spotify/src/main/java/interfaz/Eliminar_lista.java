@@ -7,6 +7,8 @@ import com.vaadin.flow.component.html.NativeButton;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import basededatos.BDPrincipal;
+import basededatos.iComun;
 import vistas.VistaEliminar_lista;
 
 public class Eliminar_lista extends VistaEliminar_lista{
@@ -17,7 +19,11 @@ public class Eliminar_lista extends VistaEliminar_lista{
 	public Lista_de_reproduccion_propia _lista_de_reproduccion_propia;
 	public Modificar_lista _modificar_lista;
 	
-	public Eliminar_lista(VerticalLayout cuerpo, Dialog popUp) {
+	private iComun _iComun = new BDPrincipal();
+	private int idLista;
+	
+	public Eliminar_lista(VerticalLayout cuerpo, Dialog popUp, int idLista) {
+		this.idLista = idLista;
 		this.getStyle().set("margin", "0px");
 		this.getStyle().set("padding", "0px");
 		this.getStyle().set("width", "100%");
@@ -28,6 +34,15 @@ public class Eliminar_lista extends VistaEliminar_lista{
 			@Override
 			public void onComponentEvent(ClickEvent<NativeButton> event) {
 				popUp.close();
+			}
+		});
+		
+		this.getButton_siEliminar().addClickListener(new ComponentEventListener<ClickEvent<NativeButton>>() {
+			
+			@Override
+			public void onComponentEvent(ClickEvent<NativeButton> event) {
+				Confirmar_eliminar_lista();
+				popUp.close();
 				
 			}
 		});
@@ -35,6 +50,6 @@ public class Eliminar_lista extends VistaEliminar_lista{
 	}
 
 	public void Confirmar_eliminar_lista() {
-		throw new UnsupportedOperationException();
+		_iComun.eliminar_lista(idLista);
 	}
 }

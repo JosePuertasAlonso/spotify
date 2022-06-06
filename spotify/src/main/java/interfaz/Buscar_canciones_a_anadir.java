@@ -1,5 +1,8 @@
 package interfaz;
 
+import com.vaadin.flow.component.ClickEvent;
+import com.vaadin.flow.component.ComponentEventListener;
+import com.vaadin.flow.component.html.NativeButton;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import vistas.VistaBuscar_canciones_a_anadir;
@@ -13,7 +16,7 @@ public class Buscar_canciones_a_anadir extends VistaBuscar_canciones_a_anadir {
 	//ANADIDO A MANO
 	public Barra_buscador _barra_buscador;
 	
-	public Buscar_canciones_a_anadir() {
+	public Buscar_canciones_a_anadir(String cadenaBusqueda, basededatos.Lista lista) {
 		this.getStyle().set("margin", "0px");
 		this.getStyle().set("padding", "0px");
 		this.getStyle().set("width", "100%");
@@ -22,10 +25,11 @@ public class Buscar_canciones_a_anadir extends VistaBuscar_canciones_a_anadir {
 		_barra_buscador = new Barra_buscador();
 		this.gethL_barraBuscador().add(_barra_buscador);
 		
-		_canciones_buscadas_a_anadir = new Canciones_buscadas_a_anadir();
+		_canciones_buscadas_a_anadir = new Canciones_buscadas_a_anadir(cadenaBusqueda, lista);
 		this.getvL_cancionesBuscadasAAnadir().as(VerticalLayout.class).add(_canciones_buscadas_a_anadir);
 		
 		this.getLabel_anadeCancion().setVisible(false);
 		this.getButton_nuevaCancion().setVisible(false);
+		
 	}
 }

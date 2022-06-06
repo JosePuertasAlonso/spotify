@@ -28,7 +28,7 @@ public class Ver_creditos_cancion extends VistaVer_creditos_cancion{
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
 		
-		this.getLabel_titulo1().setText(GestorUsuarios._cancion.getTitulo());
+		this.getLabel_titulo1().setText(GestorUsuarios._cancionReproduciendose.getTitulo());
 		
 		this.gethL_compositores().add(_compositores);
 		this.gethL_productores().add(_productores);

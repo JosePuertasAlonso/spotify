@@ -35,8 +35,7 @@ export class VistaAnuncio extends LitElement {
   render() {
     return html`
 <vaadin-horizontal-layout class="content" style="background-color:#181818; width: 100%; height: 100%; align-items: center; justify-content: space-between; max-width: 100%; max-height: 100%;" theme="spacing" id="hL_fondo">
- <img style="max-height: 100%; max-width: 100%; margin: 0px;" src="https://i.scdn.co/image/51488d1b1de7f592bcea6c66291dd274b95a9fc4
-" id="imagen">
+ <img style="max-height: 100%; max-width: 100%; margin: 0px;" id="imagen">
  <vaadin-vertical-layout style="align-self: center; height: 100%; align-items: center; justify-content: center; flex-direction: column; display: flex; align-items: center; width: 25%;" id="vL_tituloArtista">
   <label style="align-self: flex-start; color:#FFFFFF; width: 100%; font-size: 1rem;" id="label_titulo">Título del anuncio</label>
   <label style="align-self: flex-start; color:#9D9D9D; font-weight: 400; width: 100%; font-size: 1rem;" id="label_artista">artista</label>

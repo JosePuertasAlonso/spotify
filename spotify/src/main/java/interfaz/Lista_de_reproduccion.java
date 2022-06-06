@@ -7,8 +7,8 @@ public class Lista_de_reproduccion extends Lista {
 //	private Button _compartir_enlace_de_listaB;
 	public Canciones_de_lista _canciones_de_lista;
 	
-	public Lista_de_reproduccion(VerticalLayout cuerpo, HorizontalLayout minireproductor) {
-		super(cuerpo, minireproductor);
+	public Lista_de_reproduccion(VerticalLayout cuerpo, HorizontalLayout minireproductor, basededatos.Lista lista) {
+		super(cuerpo, minireproductor, lista);
 		_canciones_de_lista = new Canciones_de_lista();
 		this.getvL_cancionesDeListaAlbumListaeliminar().as(VerticalLayout.class).add(_canciones_de_lista);
 		this.gethL_tituloAceptar().setVisible(false);

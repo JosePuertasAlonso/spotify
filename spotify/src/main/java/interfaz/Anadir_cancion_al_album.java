@@ -11,8 +11,8 @@ public class Anadir_cancion_al_album extends Buscar_canciones_a_anadir {
 	public Anadir_nuevo_album _anadir_nuevo_album;
 	public Anadir_nueva_cancion _anadir_nueva_cancion;
 	
-	public Anadir_cancion_al_album(VerticalLayout cuerpo) {
-		super();
+	public Anadir_cancion_al_album(VerticalLayout cuerpo, String cadenaBusqueda, basededatos.Lista lista) {
+		super(cadenaBusqueda, lista);
 		this.getLabel_anadeCancion().setText("Añade una canción al album \"nombre album\"");
 		this.getLabel_anadeCancion().setVisible(true);
 		this.getButton_nuevaCancion().setVisible(true);

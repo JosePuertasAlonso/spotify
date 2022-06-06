@@ -11,7 +11,11 @@ public class Canciones_de_lista_a_eliminar extends VistaCanciones_de_lista_a_eli
 	public Modificar_lista _modificar_lista;
 	public Vector<Cancion_de_lista_a_eliminar> _list_Cancion_de_lista_a_eliminar = new Vector<Cancion_de_lista_a_eliminar>();
 
-	public Canciones_de_lista_a_eliminar() {
+	private basededatos.Lista lista;
+	
+	public Canciones_de_lista_a_eliminar(basededatos.Lista lista) {
+		
+		this.lista = lista;
 		
 		cargarCancionesListaEliminar();
 		
@@ -26,12 +30,11 @@ public class Canciones_de_lista_a_eliminar extends VistaCanciones_de_lista_a_eli
 	}
 	
 	public void cargarCancionesListaEliminar() {
-		
+		basededatos.Cancion[] canciones = lista.contiene.toArray();
 		Cancion_de_lista_a_eliminar c;
 		
-		for(int i = 0; i < 6; i++) {
-			c = new Cancion_de_lista_a_eliminar();
-			c.getStyle().set("margin-top", "var(--lumo-space-m)");
+		for(int i = 0; i < canciones.length; i++) {
+			c = new Cancion_de_lista_a_eliminar(canciones[i]);
 			_list_Cancion_de_lista_a_eliminar.add(c);
 		}
 		

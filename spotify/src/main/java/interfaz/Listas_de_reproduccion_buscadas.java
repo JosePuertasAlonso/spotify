@@ -24,7 +24,7 @@ public class Listas_de_reproduccion_buscadas extends VistaListas_de_reproduccion
 		
 		this.cuerpo = cuerpo;
 		this.minireproductor = minireproductor;
-		this.cadena_busqueda = cadena_busqueda;
+		this.cadena_busqueda = cadenaBusqueda;
 		
 		buscar_listas();
 		
@@ -43,16 +43,7 @@ public class Listas_de_reproduccion_buscadas extends VistaListas_de_reproduccion
 		Lista_de_reproduccion__lista_ l;
 		
 		for(int i = 0; i < listas.length; i++) {
-			l = new Lista_de_reproduccion__lista_(cuerpo, minireproductor);
-			l.getStyle().set("margin-top", "var(--lumo-space-m)");
-			
-			//Nombre lista
-			l.getLabel_titulo().setText(listas[i].getNombre());
-			//Creador lista
-			l.getLabel_creador().setText(listas[i].getEs_gestionada_por().getNick());
-			//Foto lista
-			l.getImagen().setSrc(listas[i].getImagen());
-			
+			l = new Lista_de_reproduccion__lista_(cuerpo, minireproductor, listas[i]);
 			_list_Lista_de_reproduccion__lista_.add(l);
 		}
 	}

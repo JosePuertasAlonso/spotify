@@ -39,8 +39,7 @@ public class ArtistaDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final CollectionExpression es_autor_de;
 	public final CollectionExpression es_identificado_por;
 	public final CollectionExpression es_similar_de;
-	public final IntegerExpression anunciaId;
-	public final AssociationExpression anuncia;
+	public final CollectionExpression anuncia;
 	
 	public ArtistaDetachedCriteria() {
 		super(basededatos.Artista.class, basededatos.ArtistaCriteria.class);
@@ -64,8 +63,7 @@ public class ArtistaDetachedCriteria extends AbstractORMDetachedCriteria {
 		es_autor_de = new CollectionExpression("ORM_es_autor_de", this.getDetachedCriteria());
 		es_identificado_por = new CollectionExpression("ORM_es_identificado_por", this.getDetachedCriteria());
 		es_similar_de = new CollectionExpression("ORM_es_similar_de", this.getDetachedCriteria());
-		anunciaId = new IntegerExpression("anuncia.", this.getDetachedCriteria());
-		anuncia = new AssociationExpression("anuncia", this.getDetachedCriteria());
+		anuncia = new CollectionExpression("ORM_anuncia", this.getDetachedCriteria());
 	}
 	
 	public ArtistaDetachedCriteria(DetachedCriteria aDetachedCriteria) {
@@ -90,8 +88,7 @@ public class ArtistaDetachedCriteria extends AbstractORMDetachedCriteria {
 		es_autor_de = new CollectionExpression("ORM_es_autor_de", this.getDetachedCriteria());
 		es_identificado_por = new CollectionExpression("ORM_es_identificado_por", this.getDetachedCriteria());
 		es_similar_de = new CollectionExpression("ORM_es_similar_de", this.getDetachedCriteria());
-		anunciaId = new IntegerExpression("anuncia.", this.getDetachedCriteria());
-		anuncia = new AssociationExpression("anuncia", this.getDetachedCriteria());
+		anuncia = new CollectionExpression("ORM_anuncia", this.getDetachedCriteria());
 	}
 	
 	public CancionDetachedCriteria createRealizaCriteria() {
@@ -115,7 +112,7 @@ public class ArtistaDetachedCriteria extends AbstractORMDetachedCriteria {
 	}
 	
 	public AnuncioDetachedCriteria createAnunciaCriteria() {
-		return new AnuncioDetachedCriteria(createCriteria("anuncia"));
+		return new AnuncioDetachedCriteria(createCriteria("ORM_anuncia"));
 	}
 	
 	public EstadisticasDetachedCriteria createTieneCriteria() {

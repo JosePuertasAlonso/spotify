@@ -7,6 +7,9 @@ import com.vaadin.flow.component.html.NativeButton;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import basededatos.BDPrincipal;
+import basededatos.iCibernauta_registrado;
+import basededatos.iComun;
 import spotify.GestorUsuarios;
 import spotify.Imagen;
 
@@ -17,9 +20,13 @@ public class Cancion__bloque_con_opciones_ extends Cancion {
 	public Reproducir_cancion_cibernauta_registrado _reproducir_cancion_cibernauta_registrado;
 	public Reproductor_resumido__usuario_registrado_ _reproductor_resumido__usuario_registrado_;
 	
+	iComun _iComun = new BDPrincipal();
+	
+	private basededatos.Cancion cancion;
+	
 	public Cancion__bloque_con_opciones_(VerticalLayout cuerpo, HorizontalLayout minireproductor, basededatos.Cancion cancion) {
 		super(cuerpo, minireproductor, cancion);
-		
+		this.cancion = cancion; 
 		this.getButton_play().addClickListener(new ComponentEventListener<ClickEvent<NativeButton>>() {
 			
 			@Override
@@ -31,6 +38,7 @@ public class Cancion__bloque_con_opciones_ extends Cancion {
 				img.setMaxWidth("100%");
 				Comun._reproductor_resumido__usuario_registrado_.gethL_imagen().removeAll();
 				Comun._reproductor_resumido__usuario_registrado_.gethL_imagen().add(img);
+				anadir_cancion_historial(); //Metodo BD
 				
 			}
 		});
@@ -48,5 +56,9 @@ public class Cancion__bloque_con_opciones_ extends Cancion {
 			}
 		});
 		
+	}
+	
+	public void anadir_cancion_historial() {
+		_iComun.anadir_cancion_historial(cancion.getId_Cancion(), GestorUsuarios._u.getLogin());
 	}
 }

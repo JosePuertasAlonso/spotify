@@ -11,8 +11,8 @@ public class Ver_lista_de_reproduccion_ajena extends Lista_de_reproduccion {
 	public Lista_de_reproduccion__bloque_ _lista_de_reproduccion__bloque_;
 	public Ver_perfil_usuario _ver_perfil_usuario;
 	
-	public Ver_lista_de_reproduccion_ajena(VerticalLayout cuerpo, HorizontalLayout minireproductor) {
-		super(cuerpo, minireproductor);
+	public Ver_lista_de_reproduccion_ajena(VerticalLayout cuerpo, HorizontalLayout minireproductor, basededatos.Lista lista) {
+		super(cuerpo, minireproductor, lista);
 		this.getLabel_creador().getStyle().set("cursor", "pointer");
 		this.getButton_guardar().setVisible(true);
 		

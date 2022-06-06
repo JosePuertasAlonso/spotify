@@ -1,8 +1,12 @@
 package interfaz;
 
+import com.vaadin.flow.component.ClickEvent;
+import com.vaadin.flow.component.ComponentEventListener;
+import com.vaadin.flow.component.html.NativeButton;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import spotify.GestorUsuarios;
 import vistas.VistaEnviar_correo_de_modificacion;
 
 public class Enviar_correo_de_modificacion extends VistaEnviar_correo_de_modificacion{
@@ -19,7 +23,15 @@ public class Enviar_correo_de_modificacion extends VistaEnviar_correo_de_modific
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
 		
+		this.getButton_iniciarSesion().addClickListener(new ComponentEventListener<ClickEvent<NativeButton>>() {
+			
+			@Override
+			public void onComponentEvent(ClickEvent<NativeButton> event) {
+				GestorUsuarios.cibernauta(true);
+			}
+		});
 	}
+	
 
 	public void Enviar_correo() {
 		throw new UnsupportedOperationException();

@@ -6,6 +6,7 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import interfaz.Lista_de_reproduccion_propia;
+import spotify.GestorUsuarios;
 import vistas.VistaLista_de_reproduccion_del_perfil;
 
 public class Listas_de_reproduccion_del_perfil extends VistaLista_de_reproduccion_del_perfil{
@@ -34,10 +35,11 @@ public class Listas_de_reproduccion_del_perfil extends VistaLista_de_reproduccio
 	}
 	
 	public void cargarListasPropias() {
+		
+		basededatos.Lista_de_reproduccion[] listas = GestorUsuarios._u.gestiona.toArray();
 		Lista_de_reproduccion_propia l;
-		for(int i = 0; i < 10; i++) {
-			l = new Lista_de_reproduccion_propia(cuerpo, minireproductor);
-			l.getStyle().set("margin-top", "var(--lumo-space-m)");
+		for(int i = 0; i < listas.length; i++) {
+			l = new Lista_de_reproduccion_propia(cuerpo, minireproductor, listas[i]);
 			_list_Lista_de_reproduccion_propia.add(l);
 		}
 	}

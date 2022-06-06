@@ -43,17 +43,13 @@ public class Registrarse extends VistaRegistrarse{
 	
 	iCibernauta_no_registrado _iCibernauta_no_registrado = new BDPrincipal();
 	
-	/*BORRAR*/
-	VerticalLayout cuerpo;
-	HorizontalLayout minireproductor;
-	/*BORRAR*/
+	private VerticalLayout cuerpo;
+	private HorizontalLayout minireproductor;
 
 	
 	public Registrarse(VerticalLayout cuerpo, HorizontalLayout minireproductor) {
-		/*BORRAR*/
 		this.cuerpo =  cuerpo;
 		this.minireproductor = minireproductor;
-		/*BORRAR*/
 		
 		
     	getStyle().set("margin", "0px");

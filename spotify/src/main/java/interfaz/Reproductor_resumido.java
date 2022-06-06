@@ -23,11 +23,11 @@ public class Reproductor_resumido extends VistaReproductor_resumido{
 		this.getStyle().set("height", "100%");
 		this._audioPlayer = GestorUsuarios._audioPlayer;
 		this.gethL_reproductor().add(_audioPlayer);
-		this.getLabel_titulo().setText(GestorUsuarios._cancion.getTitulo());
+		this.getLabel_titulo().setText(GestorUsuarios._cancionReproduciendose.getTitulo());
 		this.getLabetl_artista().setText(GestorUsuarios.artistasCancion);
 		//Cancion del minireproductor:
 		this.gethL_imagen().removeAll();
-		Imagen img = new Imagen(GestorUsuarios._cancion.getImagen());
+		Imagen img = new Imagen(GestorUsuarios._cancionReproduciendose.getImagen());
 		img.setMaxWidth("100%");
 		this.gethL_imagen().add(img);
 	}

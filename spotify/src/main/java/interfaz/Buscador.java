@@ -35,6 +35,8 @@ public class Buscador extends VistaBuscador {
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
 		
+		this.getLabel_resultadosPara().setText("Resultados para:  \" " + cadenaBusqueda + " \"");
+		
 		_barra_buscador = new Barra_buscador();
 		this.gethL_barraBuscador().add(_barra_buscador);
 		_barra_buscador.getButton_buscar().addClickListener(new ComponentEventListener<ClickEvent<NativeButton>>() {

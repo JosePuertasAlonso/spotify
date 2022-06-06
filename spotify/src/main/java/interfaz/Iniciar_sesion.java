@@ -3,6 +3,7 @@ package interfaz;
 import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
+import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.html.NativeButton;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -100,6 +101,8 @@ public class Iniciar_sesion extends VistaIniciar_sesion{
 				cuerpo.add(_recuperar_contrasena);
 			}
 		});
+		
+		this.getButton_iniciarSesion().addClickShortcut(Key.ENTER);
 		
 	
 	}

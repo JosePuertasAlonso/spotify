@@ -38,7 +38,7 @@ public class Anadir_nuevo_album extends VistaAnadir_nuevo_album{
 			
 			@Override
 			public void onComponentEvent(ClickEvent<NativeButton> event) {
-				_anadir_cancion_al_album = new Anadir_cancion_al_album(cuerpo);
+				_anadir_cancion_al_album = new Anadir_cancion_al_album(cuerpo, null, null); //CAMBIAR;
 				_anadir_cancion_al_album.getvL_cancionesBuscadasAAnadir().getStyle().set("max-height", "19%");
 				cuerpo.removeAll();
 				cuerpo.add(_anadir_cancion_al_album);

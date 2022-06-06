@@ -7,6 +7,9 @@ import com.vaadin.flow.component.html.NativeButton;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import basededatos.Album;
+import spotify.GestorUsuarios;
+
 public class Opciones_cancion__reproductor_ extends Opciones_cancion {
 //	private Button _ver_ArtistaB;
 //	private Button _ver_AlbumB;
@@ -24,12 +27,21 @@ public class Opciones_cancion__reproductor_ extends Opciones_cancion {
 			@Override
 			public void onComponentEvent(ClickEvent<NativeButton> event) {
 				popUp.close();
-				_ver_album = new Ver_album(cuerpo, minireproductor);
-				cuerpo.removeAll();
-				cuerpo.getStyle().set("max-height", "80%");
-				minireproductor.setVisible(true);
-				cuerpo.add(_ver_album);
-				
+				basededatos.Lista[] l_aux = GestorUsuarios._cancionReproduciendose.esta_en.toArray();
+				basededatos.Album a = null;
+				for(int i = 0; i < l_aux.length; i++) {
+					if(l_aux[i] instanceof basededatos.Album) {
+						a = (basededatos.Album) l_aux[i];
+						break;
+					}
+				}
+				if(a != null) {
+					_ver_album = new Ver_album(cuerpo, minireproductor, a);
+					cuerpo.removeAll();
+					cuerpo.getStyle().set("max-height", "80%");
+					minireproductor.setVisible(true);
+					cuerpo.add(_ver_album);
+				}
 			}
 		});
 		

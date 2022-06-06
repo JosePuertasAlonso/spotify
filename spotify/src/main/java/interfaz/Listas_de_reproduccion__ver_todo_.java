@@ -44,13 +44,13 @@ public class Listas_de_reproduccion__ver_todo_ extends VistaLista_de_reproduccio
 	}
 	
 	public void cargarListasVerTodo() {
-		Lista_de_reproduccion__bloque_ l;
-		for(int i = 0; i < 25; i++) {
-			l = new Lista_de_reproduccion__bloque_(cuerpo, minireproductor);
-			l.getStyle().set("margin-right", "var(--lumo-space-m)");
-			l.getStyle().set("max-width", "15.5%");
-			_list_Lista_de_reproduccion__bloque_.add(l);
-		}
+//		Lista_de_reproduccion__bloque_ l;
+//		for(int i = 0; i < 25; i++) {
+//			l = new Lista_de_reproduccion__bloque_(cuerpo, minireproductor);
+//			l.getStyle().set("margin-right", "var(--lumo-space-m)");
+//			l.getStyle().set("max-width", "15.5%");
+//			_list_Lista_de_reproduccion__bloque_.add(l);
+//		}
 	}
 
 

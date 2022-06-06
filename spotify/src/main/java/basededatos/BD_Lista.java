@@ -3,6 +3,7 @@ package basededatos;
 import java.util.Vector;
 
 import org.orm.PersistentException;
+import org.orm.PersistentTransaction;
 
 import basededatos.Lista;
 
@@ -12,7 +13,7 @@ public class BD_Lista {
 
 	public Lista_de_reproduccion[] buscar_listas(String aCadena_busqueda) throws PersistentException {
 		Lista_de_reproduccionCriteria criteria = new Lista_de_reproduccionCriteria();
-		criteria.nombre.like(aCadena_busqueda);
+		criteria.nombre.like("%" + aCadena_busqueda + "%");
 		Lista_de_reproduccion[] result = Lista_de_reproduccionDAO.listLista_de_reproduccionByCriteria(criteria);
 		return result;
 	}
@@ -25,8 +26,28 @@ public class BD_Lista {
 		throw new UnsupportedOperationException();
 	}
 
-	public void anadir_cancion_a_la_lista(String aLogin, int aId_Cancion, int aId_Lista) {
-		throw new UnsupportedOperationException();
+	public void anadir_cancion_a_la_lista(String aLogin, int aId_Cancion, int aId_Lista) throws PersistentException {
+		ListaCriteria criteria = new ListaCriteria();
+		criteria.id_Lista.eq(aId_Lista);
+		Lista lista = ListaDAO.loadListaByCriteria(criteria);
+		
+		CancionCriteria criteria2 = new CancionCriteria();
+		criteria2.id_Cancion.eq(aId_Cancion);
+		Cancion cancion = CancionDAO.loadCancionByCriteria(criteria2);
+		
+		PersistentTransaction t = MDS12022PFCastellsTorresPersistentManager.instance().getSession().beginTransaction();
+		try {
+			if(lista.contiene.contains(cancion)) {
+				lista.contiene.remove(cancion);
+			} else {
+				lista.contiene.add(cancion);
+			}
+			ListaDAO.save(lista);
+			t.commit();
+		} catch (Exception e) {
+			t.rollback();
+		}
+		MDS12022PFCastellsTorresPersistentManager.instance().disposePersistentManager();
 	}
 
 	public void crear_lista(String aLogin, String aNombre_lista) {
@@ -41,16 +62,37 @@ public class BD_Lista {
 		throw new UnsupportedOperationException();
 	}
 
-	public void eliminar_lista(int aId_Lista) {
-		throw new UnsupportedOperationException();
+	public void eliminar_lista(int aId_Lista) throws PersistentException {
+		ListaCriteria criteria = new ListaCriteria();
+		criteria.id_Lista.eq(aId_Lista);
+		Lista result = ListaDAO.loadListaByCriteria(criteria);
+		PersistentTransaction t = MDS12022PFCastellsTorresPersistentManager.instance().getSession().beginTransaction();
+		try {
+			ListaDAO.delete(result);
+			t.commit();
+		} catch (Exception e) {
+			t.rollback();
+		}
+		MDS12022PFCastellsTorresPersistentManager.instance().disposePersistentManager();
 	}
 
 	public void eliminar_cancion_lista(int aId_Lista, int aId_Cancion) {
 		throw new UnsupportedOperationException();
 	}
 
-	public void cambiar_nombre_lista(int aId_Lista, String aNombre_nuevo_lista) {
-		throw new UnsupportedOperationException();
+	public void cambiar_nombre_lista(int aId_Lista, String aNombre_nuevo_lista) throws PersistentException {
+		ListaCriteria criteria = new ListaCriteria();
+		criteria.id_Lista.eq(aId_Lista);
+		Lista lista = ListaDAO.loadListaByCriteria(criteria);
+		PersistentTransaction t = MDS12022PFCastellsTorresPersistentManager.instance().getSession().beginTransaction();
+		try {
+			lista.setNombre(aNombre_nuevo_lista);
+			ListaDAO.save(lista);
+			t.commit();
+		} catch (Exception e) {
+			t.rollback();
+		}
+		MDS12022PFCastellsTorresPersistentManager.instance().disposePersistentManager();
 	}
 
 	public void anadir_album(Album aAlbum) {

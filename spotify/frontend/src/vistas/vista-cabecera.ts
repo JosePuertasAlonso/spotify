@@ -44,7 +44,7 @@ export class VistaCabecera extends LitElement {
  <vaadin-horizontal-layout id="hL_Logo" style="height: 100%; flex-shrink: 1; flex-grow: 0; max-width: 13%; width: 100%; align-items: center; justify-content: flex-start; margin: 0px;"></vaadin-horizontal-layout>
  <vaadin-horizontal-layout class="botones-cabecera" style="flex-shrink: 0; flex-grow: 0; width: 100%; height: 100%; align-items: center; justify-content: flex-end; max-width: 32%; align: left; align-self: center;" id="hL_usuarioCerrarSesion">
   <vaadin-horizontal-layout style="width: 100%; height: 100%; border:none; background:none; cursor: pointer; border-radius: 500px; color: #FFFFFF; max-width: 50%; padding: 8px 34px; align-self: center; background-color: #000000; align-items: center; justify-content: center; flex-shrink: 0; flex-direction: row;" id="hL_fotoNombreUsuario" theme="spacing">
-   <img style="max-height: 100%; align-self: center; cursor: pointer; max-width: 100%; flex-shrink: 0;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/2048px-User-avatar.svg.png" id="foto">
+   <img style="max-height: 100%; align-self: center; cursor: pointer; max-width: 100%; flex-shrink: 0;border-radius:50%;" id="foto">
    <label id="label_nombreUsuario" style="color: white; font-size:0.875rem; line-height:1rem; letter-spacing: normal; font-weight: 700; cursor: pointer; flex-shrink: 1; align-self: center; display: flex; flex-grow: 0; flex-direction: column; align-items: flex-start; justify-content: center; max-width: 100%; max-height: 100%;">usuario</label>
   </vaadin-horizontal-layout>
   <button style="background-color:#FFFFFF; color: black; max-width: 50%; width: 100%;" id="button_cerrarSesion">CERRAR SESIÓN</button>

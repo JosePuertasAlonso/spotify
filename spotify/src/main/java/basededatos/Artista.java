@@ -40,24 +40,17 @@ public class Artista extends basededatos.Usuario_registrado implements Serializa
 		else if (key == ORMConstants.KEY_ARTISTA_ES_SIMILAR_DE) {
 			return ORM_es_similar_de;
 		}
+		else if (key == ORMConstants.KEY_ARTISTA_ANUNCIA) {
+			return ORM_anuncia;
+		}
 		
 		return null;
-	}
-	
-	private void this_setOwner(Object owner, int key) {
-		if (key == ORMConstants.KEY_ARTISTA_ANUNCIA) {
-			this.anuncia = (basededatos.Anuncio) owner;
-		}
 	}
 	
 	@Transient	
 	org.orm.util.ORMAdapter _ormAdapter = new org.orm.util.AbstractORMAdapter() {
 		public java.util.Set getSet(int key) {
 			return this_getSet(key);
-		}
-		
-		public void setOwner(Object owner, int key) {
-			this_setOwner(owner, key);
 		}
 		
 	};
@@ -89,9 +82,10 @@ public class Artista extends basededatos.Usuario_registrado implements Serializa
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_es_similar_de = new java.util.HashSet();
 	
-	@OneToOne(mappedBy="anunciado", targetEntity=basededatos.Anuncio.class, fetch=FetchType.LAZY)	
+	@OneToMany(mappedBy="anunciado", targetEntity=basededatos.Anuncio.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
-	private basededatos.Anuncio anuncia;
+	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
+	private java.util.Set ORM_anuncia = new java.util.HashSet();
 	
 	private void setORM_Realiza(java.util.Set value) {
 		this.ORM_realiza = value;
@@ -148,22 +142,16 @@ public class Artista extends basededatos.Usuario_registrado implements Serializa
 	@Transient	
 	public final basededatos.ArtistaSetCollection es_similar_de = new basededatos.ArtistaSetCollection(this, _ormAdapter, ORMConstants.KEY_ARTISTA_ES_SIMILAR_DE, ORMConstants.KEY_ARTISTA_ES_SIMILAR_A, ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
-	public void setAnuncia(basededatos.Anuncio value) {
-		if (this.anuncia != value) {
-			basededatos.Anuncio lanuncia = this.anuncia;
-			this.anuncia = value;
-			if (value != null) {
-				anuncia.setAnunciado(this);
-			}
-			if (lanuncia != null && lanuncia.getAnunciado() == this) {
-				lanuncia.setAnunciado(null);
-			}
-		}
+	private void setORM_Anuncia(java.util.Set value) {
+		this.ORM_anuncia = value;
 	}
 	
-	public basededatos.Anuncio getAnuncia() {
-		return anuncia;
+	private java.util.Set getORM_Anuncia() {
+		return ORM_anuncia;
 	}
+	
+	@Transient	
+	public final basededatos.AnuncioSetCollection anuncia = new basededatos.AnuncioSetCollection(this, _ormAdapter, ORMConstants.KEY_ARTISTA_ANUNCIA, ORMConstants.KEY_ANUNCIO_ANUNCIADO, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return super.toString();

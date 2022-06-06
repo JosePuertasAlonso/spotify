@@ -1,5 +1,7 @@
 package basededatos;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Vector;
 
 import org.orm.PersistentException;
@@ -12,7 +14,7 @@ public class BD_Artista {
 
 	public Artista[] buscar_artistas(String aCadena_busqueda) throws PersistentException {
 		ArtistaCriteria criteria = new ArtistaCriteria();
-		criteria.nick.like(aCadena_busqueda);
+		criteria.nick.like("%" + aCadena_busqueda + "%");
 		Artista[] result = ArtistaDAO.listArtistaByCriteria(criteria);
 		return result;
 	}
@@ -37,8 +39,23 @@ public class BD_Artista {
 		throw new UnsupportedOperationException();
 	}
 
-	public Anuncio[] cargar_anuncios(String aLogin) {
-		throw new UnsupportedOperationException();
+	public Anuncio[] cargar_anuncios(String aLogin) throws PersistentException {
+		Usuario_registradoCriteria criteria = new Usuario_registradoCriteria();
+		criteria.login.eq(aLogin);
+		Usuario_registrado u = Usuario_registradoDAO.listUsuario_registradoByCriteria(criteria)[0];
+		Usuario_registrado[] usuarios = u.sigue.toArray();
+		ArrayList<Anuncio> anuncios = new ArrayList<Anuncio>();
+		for (int i = 0; i < usuarios.length; i++) {
+			if(usuarios[i] instanceof basededatos.Artista) {
+				Artista aux = (basededatos.Artista) usuarios[i];
+				anuncios.addAll(Arrays.asList(aux.anuncia.toArray()));
+			}
+		}
+		Anuncio[] result = new Anuncio[anuncios.size()];
+		for (int i = 0; i < result.length; i++) {
+			result[i] = anuncios.get(i);
+		}
+		return result;
 	}
 
 	public void modificar_perfil_artista(String aLogin_artista, String aCorreo_nuevo, String aFoto) {

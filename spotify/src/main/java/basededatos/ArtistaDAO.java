@@ -343,10 +343,10 @@ public class ArtistaDAO {
 			for(int i = 0; i < lEs_similar_des.length; i++) {
 				lEs_similar_des[i].es_similar_a.remove(artista);
 			}
-			if (artista.getAnuncia() != null) {
-				artista.getAnuncia().setAnunciado(null);
+			basededatos.Anuncio[] lAnuncias = artista.anuncia.toArray();
+			for(int i = 0; i < lAnuncias.length; i++) {
+				lAnuncias[i].setAnunciado(null);
 			}
-			
 			if (artista.getTiene() != null) {
 				artista.getTiene().setPertenecen_a(null);
 			}
@@ -405,10 +405,10 @@ public class ArtistaDAO {
 			for(int i = 0; i < lEs_similar_des.length; i++) {
 				lEs_similar_des[i].es_similar_a.remove(artista);
 			}
-			if (artista.getAnuncia() != null) {
-				artista.getAnuncia().setAnunciado(null);
+			basededatos.Anuncio[] lAnuncias = artista.anuncia.toArray();
+			for(int i = 0; i < lAnuncias.length; i++) {
+				lAnuncias[i].setAnunciado(null);
 			}
-			
 			if (artista.getTiene() != null) {
 				artista.getTiene().setPertenecen_a(null);
 			}

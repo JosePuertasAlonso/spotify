@@ -15,7 +15,7 @@ public class Album__bloques_ extends VistaAlbum_bloques{
 	public Albumes_del_artista _albumes_del_artista;
 	public Ver_album _ver_album;
 	
-	public Album__bloques_(VerticalLayout cuerpo, HorizontalLayout minireproductor) {
+	public Album__bloques_(VerticalLayout cuerpo, HorizontalLayout minireproductor, basededatos.Album album) {
 		this.getStyle().set("margin", "0px");
 		this.getStyle().set("padding", "0px");
 		this.getStyle().set("width", "100%");
@@ -25,7 +25,7 @@ public class Album__bloques_ extends VistaAlbum_bloques{
 			
 			@Override
 			public void onComponentEvent(ClickEvent<NativeButton> event) {
-				_ver_album = new Ver_album(cuerpo, minireproductor);
+				_ver_album = new Ver_album(cuerpo, minireproductor, album);
 				cuerpo.removeAll();
 				cuerpo.getStyle().set("max-height", "80%");
 				minireproductor.setVisible(true);

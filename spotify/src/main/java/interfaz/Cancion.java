@@ -16,17 +16,22 @@ public class Cancion extends VistaCancion{
 //	private Label _artista_s_L;
 //	private Image _imagenI;
 	
+	private basededatos.Cancion cancion;
+	
 	//Anadido a Mano
 	public Opciones_cancion _opciones_cancion;
 	public Imagen _img;
 	
 	public Cancion(VerticalLayout cuerpo, HorizontalLayout minireproductor, basededatos.Cancion cancion) {
+		this.cancion = cancion;
+		
 		this.getStyle().set("margin", "0px");
 		this.getStyle().set("padding", "0px");
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
 		
 		this.getStyle().set("margin-right", "var(--lumo-space-m)");
+		this.getStyle().set("min-width", "213px");
 		this.getStyle().set("max-width", "15.5%");
 		//this.getStyle().set("max-width", "30%");
 		//Titulo cancion
@@ -41,7 +46,6 @@ public class Cancion extends VistaCancion{
 				cadenaArtistas += artistasCancion[j].getNick() + ", "; 
 			}
 		}
-		GestorUsuarios.artistasCancion = cadenaArtistas;
 		this.getLabel_artista().setText(cadenaArtistas);
 		
 		//Foto cancion

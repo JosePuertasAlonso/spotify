@@ -13,7 +13,7 @@ public class Lista_del_artista extends VistaLista_del_artista {
 	
 	public Ver_lista_de_reproduccion_ajena _ver_lista_de_reproduccion_ajena; //ANADIDO A MANO
 	
-	public Lista_del_artista(VerticalLayout cuerpo, HorizontalLayout minireproductor) {
+	public Lista_del_artista(VerticalLayout cuerpo, HorizontalLayout minireproductor, basededatos.Lista lista) {
 		this.getStyle().set("margin", "0px");
 		this.getStyle().set("padding", "0px");
 		this.getStyle().set("width", "100%");
@@ -23,7 +23,7 @@ public class Lista_del_artista extends VistaLista_del_artista {
 			
 			@Override
 			public void onComponentEvent(ClickEvent<NativeButton> event) {
-				_ver_lista_de_reproduccion_ajena = new Ver_lista_de_reproduccion_ajena(cuerpo, minireproductor);
+				_ver_lista_de_reproduccion_ajena = new Ver_lista_de_reproduccion_ajena(cuerpo, minireproductor, lista);
 				cuerpo.removeAll();
 				cuerpo.getStyle().set("max-height", "80%");
 				minireproductor.setVisible(true);

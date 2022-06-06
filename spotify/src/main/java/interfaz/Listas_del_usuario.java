@@ -34,13 +34,13 @@ public class Listas_del_usuario extends VistaListas_del_usuario{
 	
 	public void cargarListasUsuario() {
 		
-		Lista_de_reproduccion__lista_ l;
-		
-		for(int i = 0; i < 6; i++) {
-			l = new Lista_de_reproduccion__lista_(cuerpo, minireproductor);
-			l.getStyle().set("margin-top", "var(--lumo-space-m)");
-			_list_Lista_de_reproduccion__lista_.add(l);
-		}
+//		Lista_de_reproduccion__lista_ l;
+//		
+//		for(int i = 0; i < 6; i++) {
+//			l = new Lista_de_reproduccion__lista_(cuerpo, minireproductor);
+//			l.getStyle().set("margin-top", "var(--lumo-space-m)");
+//			_list_Lista_de_reproduccion__lista_.add(l);
+//		}
 		
 	}
 

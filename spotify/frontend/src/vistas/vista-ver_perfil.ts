@@ -50,9 +50,9 @@ export class VistaVer_perfil extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="background:#121212; max-width: 100%; max-height: 100%; align-items: flex-start; height: 100%;" class="fuentes boton-rectangulo" id="vL_fondo">
- <vaadin-vertical-layout theme="spacing-xl" style="max-height: 100%; overflow-y:scroll; margin: 0px; padding: 0px;" id="vL_cuerpo">
+ <vaadin-vertical-layout theme="spacing-xl" style="max-height: 100%; overflow-y:scroll; margin: 0px; padding: 0px; width: 100%;" id="vL_cuerpo">
   <vaadin-horizontal-layout theme="spacing-l" style="max-height: 43%; width: 100%;" id="hL_datosUsuario">
-   <img style="max-width: 100%; max-height: 100%; border-radius:50%; border: 2px solid #FFFFFF;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/2048px-User-avatar.svg.png" id="imagen">
+   <img style="max-width: 100%; max-height: 100%; border-radius:50%; border: 2px solid #FFFFFF;" id="imagen">
    <vaadin-vertical-layout style="width: 100%;" theme="spacing-s" id="vL_datosBotones">
     <label style="align-self: flex-start; font-size: 2.5rem; flex-shrink: 1;" id="label_nombreUsuario">Nombre usuario</label>
     <vaadin-horizontal-layout theme="spacing-s" style="width: 100%; margin-bottom: var(--lumo-space-m);" id="hL_seguidores">

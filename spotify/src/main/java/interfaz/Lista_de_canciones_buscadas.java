@@ -37,25 +37,7 @@ public class Lista_de_canciones_buscadas extends VistaLista_de_canciones_buscada
 		Cancion__lista_ c;
 		
 		for(int i = 0; i < canciones.length; i++) {
-			c = new Cancion__lista_();
-			c.getStyle().set("margin-top", "var(--lumo-space-m)");
-			
-			//Titulo cancion
-			c.getLabel_titulo().setText(canciones[i].getTitulo());
-			//Artistas cancion
-			basededatos.Artista[] artistasCancion = canciones[i].realizada_por.toArray();
-			String cadenaArtistas = "";
-			for(int j = 0; j < artistasCancion.length; j++) {
-				if(j == artistasCancion.length-1) {
-					cadenaArtistas += artistasCancion[i].getNick();
-				} else {
-					cadenaArtistas += artistasCancion[i].getNick() + ", ";
-				}
-			}
-			c.getLabel_artista().setText(cadenaArtistas);
-			//Foto cancion
-			c.getImagen().setSrc(canciones[i].getImagen());
-			
+			c = new Cancion__lista_(canciones[i]);
 			_list_Cancion__lista_.add(c);
 		}
 	}

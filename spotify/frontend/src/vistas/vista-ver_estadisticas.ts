@@ -26,19 +26,19 @@ export class VistaVer_estadisticas extends LitElement {
  <vaadin-vertical-layout theme="spacing-xl" style="max-height: 100%; padding-right: var(--lumo-space-l); padding-left: var(--lumo-space-l); width: 100%; height: 100%; padding-top: 0px; padding: 0px; margin: 0px;" id="vL_cuerpo">
   <label style="align-self: center; font-size: 2.5rem; flex-shrink: 1; margin-top: 0px;" id="label_misEstadisticas">Mis estadísticas</label>
   <vaadin-horizontal-layout theme="spacing-xl" style="max-height: 80%; width: 100%; align-self: center; justify-content: center; align-items: flex-start;" id="hL_estadisticas">
-   <vaadin-vertical-layout theme="spacing" style="max-width: 20%; margin-top: 0px;" id="vL_cancionMasEscuchada">
+   <vaadin-vertical-layout theme="spacing" style="max-width: 20%; margin-top: 0px; width: 100%;" id="vL_cancionMasEscuchada">
     <label style="width: 100%; margin-bottom: var(--lumo-space-m);" id="label_cancionMasEscuchada">Canción más escuchada:</label>
    </vaadin-vertical-layout>
    <vaadin-vertical-layout theme="spacing" style="margin-left: 100px; width: 100%; max-width: 20%; margin-top: 0px;" id="vL_datosUsuario">
     <label style="align-self: center;" id="label_nombreUsuario">Nombre usuario</label>
-    <img style="border-radius:50%; border: 2px solid #FFFFFF; max-width: 100%;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/2048px-User-avatar.svg.png" id="imagen">
+    <img style="border-radius:50%; border: 2px solid #FFFFFF; max-width: 100%;" id="imagen">
     <vaadin-horizontal-layout theme="spacing" style="align-self: center;" id="hL_seguidores">
      <label style="flex-shrink: 0; align-self: flex-start;" id="label_seguidores">Seguidores:</label>
      <label style="color:#A8A8A8; font-weight:400; align-self: flex-end;" id="label_nSeguidores">123</label>
     </vaadin-horizontal-layout>
    </vaadin-vertical-layout>
-   <vaadin-vertical-layout theme="spacing" style="max-width: 20%; margin-left: 100px; margin-top: 0px;" id="vL_ultimaReproduccion">
-    <label style="margin-bottom: var(--lumo-space-m);" id="label_ultimaReproduccion">Última reproducción:</label>
+   <vaadin-vertical-layout theme="spacing" style="max-width: 20%; margin-left: 100px; margin-top: 0px; width: 100%;" id="vL_ultimaReproduccion">
+    <label style="margin-bottom: var(--lumo-space-m);" id="label_ultimaReproduccion">Canción favorita</label>
    </vaadin-vertical-layout>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>

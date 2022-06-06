@@ -20,17 +20,23 @@ public class Lista_de_reproduccion_propia extends VistaLista_de_reproduccion_pro
 	public Ver_lista_de_reproduccion_propia _ver_lista_de_reproduccion_propia;
 	public Eliminar_lista _eliminar_lista;
 	
-	public Lista_de_reproduccion_propia(VerticalLayout cuerpo, HorizontalLayout minireproductor) {
+	public Lista_de_reproduccion_propia(VerticalLayout cuerpo, HorizontalLayout minireproductor, basededatos.Lista_de_reproduccion lista) {
 		this.getStyle().set("margin", "0px");
 		this.getStyle().set("padding", "0px");
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
 		
+		this.getStyle().set("margin-top", "var(--lumo-space-m)");
+		
+		this.getLabel_titulo().setText(lista.getNombre());
+		this.getLabel_creador().setText(lista.getEs_gestionada_por().getNick());
+		this.getImagen().setSrc(lista.getImagen());
+		
 		this.getButton_editar().addClickListener(new ComponentEventListener<ClickEvent<NativeButton>>() {
 			
 			@Override
 			public void onComponentEvent(ClickEvent<NativeButton> event) {
-				_modificar_lista = new Modificar_lista(cuerpo, minireproductor);
+				_modificar_lista = new Modificar_lista(cuerpo, minireproductor, lista);
 				cuerpo.removeAll();
 				cuerpo.getStyle().set("max-height", "80%");
 				minireproductor.setVisible(true);
@@ -42,7 +48,7 @@ public class Lista_de_reproduccion_propia extends VistaLista_de_reproduccion_pro
 			
 			@Override
 			public void onComponentEvent(ClickEvent<NativeButton> event) {
-				_ver_lista_de_reproduccion_propia = new Ver_lista_de_reproduccion_propia(cuerpo, minireproductor);
+				_ver_lista_de_reproduccion_propia = new Ver_lista_de_reproduccion_propia(cuerpo, minireproductor, lista);
 				cuerpo.removeAll();
 				cuerpo.getStyle().set("max-height", "80%");
 				minireproductor.setVisible(true);
@@ -56,7 +62,7 @@ public class Lista_de_reproduccion_propia extends VistaLista_de_reproduccion_pro
 			@Override
 			public void onComponentEvent(ClickEvent<NativeButton> event) {
 				Dialog popUp = new Dialog();
-				_eliminar_lista = new Eliminar_lista(cuerpo, popUp);
+				_eliminar_lista = new Eliminar_lista(cuerpo, popUp, lista.getId_Lista());
 				popUp.add(_eliminar_lista);
 				popUp.open();				
 			}

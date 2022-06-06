@@ -9,8 +9,8 @@ public class Ver_album extends Lista {
 	public Album__bloques_ _album__bloques_;
 	public Canciones_del_album _canciones_del_album;
 	
-	public Ver_album(VerticalLayout cuerpo, HorizontalLayout minireproductor) {
-		super(cuerpo, minireproductor);
+	public Ver_album(VerticalLayout cuerpo, HorizontalLayout minireproductor, basededatos.Album album) {
+		super(cuerpo, minireproductor, album);
 		_canciones_del_album = new Canciones_del_album();
 		this.getvL_cancionesDeListaAlbumListaeliminar().as(VerticalLayout.class).add(_canciones_del_album);
 		this.gethL_tituloAceptar().setVisible(false);

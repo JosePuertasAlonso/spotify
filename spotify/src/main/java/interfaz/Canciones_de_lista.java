@@ -13,7 +13,7 @@ public class Canciones_de_lista extends VistaCanciones_de_lista{
 	
 	public Canciones_de_lista() {
 		
-		cargarCancionesLista();
+//		cargarCancionesLista();
 		
 		for(int i = 0; i < _list_Cancion__lista_.size(); i++) {
 			this.getvL_contendorCancionesLista().as(VerticalLayout.class).add(_list_Cancion__lista_.get(i));
@@ -25,17 +25,17 @@ public class Canciones_de_lista extends VistaCanciones_de_lista{
 		
 	}
 	
-	public void cargarCancionesLista() {
-		
-		Cancion__lista_ c;
-		
-		for(int i = 0; i < 6; i++) {
-			c = new Cancion__lista_();
-			c.getStyle().set("margin-top", "var(--lumo-space-m)");
-			_list_Cancion__lista_.add(c);
-		}
-		
-	}
+//	public void cargarCancionesLista() {
+//		
+//		Cancion__lista_ c;
+//		
+//		for(int i = 0; i < 6; i++) {
+//			c = new Cancion__lista_();
+//			c.getStyle().set("margin-top", "var(--lumo-space-m)");
+//			_list_Cancion__lista_.add(c);
+//		}
+//		
+//	}
 	
 	
 }

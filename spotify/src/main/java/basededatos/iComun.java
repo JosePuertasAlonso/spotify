@@ -42,7 +42,7 @@ public interface iComun {
 
 	public Cancion[] cargar_canciones_lista(int aId_Lista);
 
-	public Cancion cargar_cancion_mas_escuchada(String aLogin);
+	public Cancion cargar_cancion_mas_escuchada();
 
 	public Cancion cargar_ultima_reproduccion(String aLogin);
 

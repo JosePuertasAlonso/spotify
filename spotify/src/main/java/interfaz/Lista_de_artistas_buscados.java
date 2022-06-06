@@ -43,14 +43,7 @@ public class Lista_de_artistas_buscados extends VistaLista_de_artistas_buscados{
 		Artista__lista_ a;
 		
 		for(int i = 0; i < artistas.length; i++) {
-			a = new Artista__lista_(cuerpo, minireproductor);
-			a.getStyle().set("margin-top", "var(--lumo-space-m)");
-			
-			//Nick
-			a.getLabel_nombre().setText(artistas[i].getNick());
-			//Foto artista
-			a.getImagen().setSrc(artistas[i].getFoto());
-			
+			a = new Artista__lista_(cuerpo, minireproductor, artistas[i]);
 			_list_Artista__lista_.add(a);
 		}
 		
