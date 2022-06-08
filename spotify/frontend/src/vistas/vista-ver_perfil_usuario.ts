@@ -49,10 +49,10 @@ export class VistaVer_perfil_usuario extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="background:#121212; max-width: 100%; max-height: 100%; align-items: flex-start; height: 100%;" id="vL_fondo">
+<vaadin-vertical-layout style="background:#121212; max-width: 100%; max-height: 100%; align-items: flex-start; height: 100%; width: 100%;" id="vL_fondo">
  <vaadin-vertical-layout theme="spacing-xl" class="fuentes boton-rectangulo" style="max-height: 100%; overflow-y:scroll; width: 100%; height: 100%; margin: 0px; padding: 0px;" id="vL_cuerpo">
   <vaadin-horizontal-layout theme="spacing-l" style="max-height: 40%; width: 100%;" id="hL_datosUsuario">
-   <img style="max-width: 100%; max-height: 100%; border-radius:50%; border: 2px solid #FFFFFF;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/2048px-User-avatar.svg.png" id="imagen">
+   <img style="max-width: 100%; max-height: 100%; border-radius:50%; border: 2px solid #FFFFFF; margin-left: 0px;" id="imagen">
    <vaadin-vertical-layout style="width: 100%; justify-content: space-between;" id="vL_datosBotones">
     <vaadin-vertical-layout id="vL_nombreSeguidores">
      <label style="align-self: flex-start; font-size: 2.5rem; flex-shrink: 1;" id="label_nombreUsuario">Nombre usuario</label>

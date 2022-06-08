@@ -32,7 +32,7 @@ public class Estadisticas implements Serializable {
 	private int actividad_Semanal;
 	
 	@OneToOne(mappedBy="tiene", targetEntity=basededatos.Usuario_registrado.class, fetch=FetchType.LAZY)	
-	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
+	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.ALL})	
 	private basededatos.Usuario_registrado pertenecen_a;
 	
 	private void setId_Estadisticas(int value) {

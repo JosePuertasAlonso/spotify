@@ -16,7 +16,7 @@ public class Ver_todas_listas_buscadas extends VistaVer_todas_listas_buscadas {
 	//ANADIDO A MANO
 	public Barra_buscador _barra_buscador;
 	
-	public Ver_todas_listas_buscadas(VerticalLayout cuerpo, HorizontalLayout minireproductor) {
+	public Ver_todas_listas_buscadas(VerticalLayout cuerpo, HorizontalLayout minireproductor, String cadenaBusqueda, basededatos.Lista_de_reproduccion[] listasBuscadas) {
 		this.getStyle().set("margin", "0px");
 		this.getStyle().set("padding", "0px");
 		this.getStyle().set("width", "100%");
@@ -24,8 +24,10 @@ public class Ver_todas_listas_buscadas extends VistaVer_todas_listas_buscadas {
 		
 		_barra_buscador = new Barra_buscador();
 		this.gethL_barraBuscador().add(_barra_buscador);
-		_listas_de_reproduccion__ver_todo_ = new Listas_de_reproduccion__ver_todo_(cuerpo, minireproductor);
+		_listas_de_reproduccion__ver_todo_ = new Listas_de_reproduccion__ver_todo_(cuerpo, minireproductor, listasBuscadas);
 		this.getvL_cuerpo().as(VerticalLayout.class).add(_listas_de_reproduccion__ver_todo_);
+		
+		this.getLabel_todasLasListasPara().setText("Todas las listas para:  \" " + cadenaBusqueda + " \"");
 		
 		_barra_buscador.getButton_buscar().addClickListener(new ComponentEventListener<ClickEvent<NativeButton>>() {
 			

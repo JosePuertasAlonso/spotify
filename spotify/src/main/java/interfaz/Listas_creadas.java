@@ -4,14 +4,21 @@ import java.util.Vector;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import basededatos.BDPrincipal;
+import basededatos.iComun;
 import interfaz.Lista_a_anadir;
+import spotify.GestorUsuarios;
 import vistas.VistaListas_creadas;
 
 public class Listas_creadas extends VistaListas_creadas{
 	public Anadir_cancion_a_una_lista _anadir_cancion_a_una_lista;
 	public Vector<Lista_a_anadir> _list_Lista_a_anadir = new Vector<Lista_a_anadir>();
 	
-	public Listas_creadas() {
+	private basededatos.Cancion cancion;
+	
+	public Listas_creadas(basededatos.Cancion cancion) {
+		
+		this.cancion = cancion;
 		
 		cargarListasCreadas();
 		
@@ -27,11 +34,11 @@ public class Listas_creadas extends VistaListas_creadas{
 	
 	public void cargarListasCreadas() {
 		
+		basededatos.Lista[] listas = GestorUsuarios._u.gestiona.toArray();
 		Lista_a_anadir l;
 		
-		for(int i = 0; i < 6; i++) {
-			l = new Lista_a_anadir();
-			l.getStyle().set("margin-top", "var(--lumo-space-m)");
+		for(int i = 0; i < listas.length; i++) {
+			l = new Lista_a_anadir(listas[i], cancion);
 			_list_Lista_a_anadir.add(l);
 		}
 		

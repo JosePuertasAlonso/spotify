@@ -24,9 +24,7 @@ public interface iComun {
 
 	public void anadir_cancion_a_la_lista(String aLogin, int aId_Cancion, int aId_Lista);
 
-	public void crear_lista(String aLogin, String aNombre_lista);
-
-	public boolean seguir_artista(String aLogin_usuario, String aLogin_artista);
+	public void crear_lista(String aLogin, String aNombre_lista, String aFoto);
 
 	public Cancion[] cargar_hits(String aLogin_artista);
 
@@ -55,4 +53,8 @@ public interface iComun {
 	public void eliminar_cancion_lista(int aId_Lista, int aId_Cancion);
 
 	public void cambiar_nombre_lista(int aId_Lista, String aNombre_nuevo_lista);
+	
+	public Artista recargar_artista(String aLogin);
+
+	public Usuario_registrado recargar_usuario(String login_u);
 }

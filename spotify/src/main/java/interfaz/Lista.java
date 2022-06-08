@@ -17,6 +17,7 @@ public class Lista extends VistaLista{
 		this.getStyle().set("height", "100%");
 		
 		this.getLabel_titulo().setText(lista.getNombre());
+		//this.getImagen().getStyle().set("min-width", "242px");
 		this.getImagen().setSrc(lista.getImagen());
 		if(lista instanceof basededatos.Lista_de_reproduccion) {
 			this.getLabel_creador().setText(((basededatos.Lista_de_reproduccion)lista).getEs_gestionada_por().getNick());

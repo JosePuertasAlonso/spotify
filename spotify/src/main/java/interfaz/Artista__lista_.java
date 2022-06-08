@@ -29,7 +29,7 @@ public class Artista__lista_ extends VistaArtista_lista {
 			
 			@Override
 			public void onComponentEvent(ClickEvent<NativeButton> event) {
-				_ver_perfil_artista = new Ver_perfil_artista(cuerpo, minireproductor);
+				_ver_perfil_artista = new Ver_perfil_artista(cuerpo, minireproductor, artista);
 				cuerpo.removeAll();
 				cuerpo.getStyle().set("max-height", "80%");
 				minireproductor.setVisible(true);

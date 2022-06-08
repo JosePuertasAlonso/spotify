@@ -1,5 +1,11 @@
 package interfaz;
 
+import com.vaadin.flow.component.ClickEvent;
+import com.vaadin.flow.component.ComponentEventListener;
+import com.vaadin.flow.component.html.NativeButton;
+
+import basededatos.BDPrincipal;
+import basededatos.iComun;
 import spotify.GestorUsuarios;
 import vistas.VistaCancion_de_lista_a_eliminar;
 
@@ -10,7 +16,14 @@ public class Cancion_de_lista_a_eliminar extends VistaCancion_de_lista_a_elimina
 //	private Label _artista_s_L;
 	public Canciones_de_lista_a_eliminar _canciones_de_lista_a_eliminar;
 	
-	public Cancion_de_lista_a_eliminar(basededatos.Cancion cancion) {
+	private iComun _iComun = new BDPrincipal();
+	private basededatos.Lista lista;
+	private basededatos.Cancion cancion;
+	
+	public Cancion_de_lista_a_eliminar(basededatos.Cancion cancion, basededatos.Lista lista) {
+		this.cancion = cancion;
+		this.lista = lista;
+		
 		this.getStyle().set("margin", "0px");
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
@@ -32,9 +45,18 @@ public class Cancion_de_lista_a_eliminar extends VistaCancion_de_lista_a_elimina
 		//Foto cancion
 		this.getImagen().setSrc(cancion.getImagen());
 		
+		this.getButton_eliminar().addClickListener(new ComponentEventListener<ClickEvent<NativeButton>>() {
+			
+			@Override
+			public void onComponentEvent(ClickEvent<NativeButton> event) {
+				Eliminar_cancion_de_lista();
+				GestorUsuarios.usuario(false);
+			}
+		});
+		
 	}
 
 	public void Eliminar_cancion_de_lista() {
-		throw new UnsupportedOperationException();
+		_iComun.eliminar_cancion_lista(lista.getId_Lista(), cancion.getId_Cancion());
 	}
 }

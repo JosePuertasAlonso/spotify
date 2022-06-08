@@ -16,7 +16,8 @@ public class Ver_todas_las_canciones_buscadas extends VistaVer_todas_las_cancion
 	//ANADIDO A MANO
 	public Barra_buscador _barra_buscador;
 	
-	public Ver_todas_las_canciones_buscadas(VerticalLayout cuerpo, HorizontalLayout minireproductor) {
+	public Ver_todas_las_canciones_buscadas(VerticalLayout cuerpo, HorizontalLayout minireproductor, String cadenaBusqueda, basededatos.Cancion[] cancionesBuscadas) {
+		
 		this.getStyle().set("margin", "0px");
 		this.getStyle().set("padding", "0px");
 		this.getStyle().set("width", "100%");
@@ -24,8 +25,10 @@ public class Ver_todas_las_canciones_buscadas extends VistaVer_todas_las_cancion
 		
 		_barra_buscador = new Barra_buscador();
 		this.gethL_barraBuscador().add(_barra_buscador);
-		_lista_de_canciones__ver_todo_ = new Lista_de_canciones__ver_todo_(cuerpo, minireproductor);
+		_lista_de_canciones__ver_todo_ = new Lista_de_canciones__ver_todo_(cuerpo, minireproductor, cancionesBuscadas);
 		this.getvL_cuerpo().as(VerticalLayout.class).add(_lista_de_canciones__ver_todo_);
+		
+		this.getLabel_todasLasCancionesPara().setText("Todas las canciones para:  \" " + cadenaBusqueda + " \"");
 		
 		_barra_buscador.getButton_buscar().addClickListener(new ComponentEventListener<ClickEvent<NativeButton>>() {
 			

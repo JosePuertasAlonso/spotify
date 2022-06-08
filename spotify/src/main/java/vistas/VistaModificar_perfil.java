@@ -11,6 +11,7 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.html.Input;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.NativeButton;
+import com.vaadin.flow.component.html.Span;
 
 /**
  * A Designer generated component for the vista-modificar_perfil template.
@@ -46,16 +47,18 @@ public class VistaModificar_perfil extends LitTemplate {
 	private Label label_errorNuevoCorreo;
 	@Id("input_correoNuevo")
 	private Input input_correoNuevo;
+	@Id("button_modificarPerfil")
+	private NativeButton button_modificarPerfil;
 	@Id("vL_imagen")
 	private Element vL_imagen;
 	@Id("imagen")
 	private Image imagen;
-	@Id("file")
-	private Input file;
-	@Id("botonLabel_elegirFoto")
-	private Label botonLabel_elegirFoto;
-	@Id("button_modificarPerfil")
-	private NativeButton button_modificarPerfil;
+	@Id("span")
+	private Span span;
+	@Id("labelinput_file")
+	private Label labelinput_file;
+	@Id("input_file")
+	private Input input_file;
 	
 	
 
@@ -215,6 +218,31 @@ public class VistaModificar_perfil extends LitTemplate {
 
 
 
+	public NativeButton getButton_modificarPerfil() {
+		return button_modificarPerfil;
+	}
+
+
+
+	public void setButton_modificarPerfil(NativeButton button_modificarPerfil) {
+		this.button_modificarPerfil = button_modificarPerfil;
+	}
+
+	
+
+
+	public Input getInput_file() {
+		return input_file;
+	}
+
+
+
+	public void setInput_file(Input input_file) {
+		this.input_file = input_file;
+	}
+
+
+
 	public Image getImagen() {
 		return imagen;
 	}
@@ -227,38 +255,26 @@ public class VistaModificar_perfil extends LitTemplate {
 
 
 
-	public Input getFile() {
-		return file;
+	public Span getSpan() {
+		return span;
 	}
 
 
 
-	public void setFile(Input file) {
-		this.file = file;
+	public void setSpan(Span span) {
+		this.span = span;
 	}
 
 
 
-	public Label getBotonLabel_elegirFoto() {
-		return botonLabel_elegirFoto;
+	public Label getLabelinput_file() {
+		return labelinput_file;
 	}
 
 
 
-	public void setBotonLabel_elegirFoto(Label botonLabel_elegirFoto) {
-		this.botonLabel_elegirFoto = botonLabel_elegirFoto;
-	}
-
-
-
-	public NativeButton getButton_modificarPerfil() {
-		return button_modificarPerfil;
-	}
-
-
-
-	public void setButton_modificarPerfil(NativeButton button_modificarPerfil) {
-		this.button_modificarPerfil = button_modificarPerfil;
+	public void setLabelinput_file(Label labelinput_file) {
+		this.labelinput_file = labelinput_file;
 	}
 
 

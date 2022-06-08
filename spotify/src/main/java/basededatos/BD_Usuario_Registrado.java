@@ -70,8 +70,33 @@ public class BD_Usuario_Registrado {
 		return u.marca_como_favorita.toArray();
 	}
 
-	public boolean seguir_usuario(String aLogin_usuario, String aLogin_usuario_a_seguir) {
-		throw new UnsupportedOperationException();
+	public boolean seguir_usuario(String aLogin_usuario, String aLogin_usuario_a_seguir) throws PersistentException {
+		Usuario_registradoCriteria criteria = new Usuario_registradoCriteria();
+		criteria.login.eq(aLogin_usuario);
+		Usuario_registrado usuario = Usuario_registradoDAO.loadUsuario_registradoByCriteria(criteria);
+		
+		Usuario_registradoCriteria criteria2 = new Usuario_registradoCriteria();
+		criteria2.login.eq(aLogin_usuario_a_seguir);
+		Usuario_registrado usuario_a_seguir = Usuario_registradoDAO.loadUsuario_registradoByCriteria(criteria2);
+		
+		PersistentTransaction t = MDS12022PFCastellsTorresPersistentManager.instance().getSession().beginTransaction();
+		try {
+			if(usuario.sigue.contains(usuario_a_seguir)) {
+				usuario.sigue.remove(usuario_a_seguir);
+				usuario_a_seguir.setSeguidores(usuario_a_seguir.getSeguidores() - 1);
+			} else {
+				usuario.sigue.add(usuario_a_seguir);
+				usuario_a_seguir.setSeguidores(usuario_a_seguir.getSeguidores() + 1);
+			}
+			Usuario_registradoDAO.save(usuario);
+			t.commit();
+			return true;
+		} catch (Exception e) {
+			t.rollback();
+		}
+		MDS12022PFCastellsTorresPersistentManager.instance().disposePersistentManager();
+		return false;
+		
 	}
 
 	public void modificar_perfil_usuario(String aLogin, String aCorreo_antiguo, String aCorreo_nuevo) throws PersistentException {
@@ -104,5 +129,11 @@ public class BD_Usuario_Registrado {
 
 	public Usuario_registrado[] buscar_perfiles_administrador(String aCadena_busqueda) {
 		throw new UnsupportedOperationException();
+	}
+
+	public Usuario_registrado recargar_usuario(String login_u) throws PersistentException {
+		Usuario_registradoCriteria criteria = new Usuario_registradoCriteria();
+		criteria.login.eq(login_u);
+		return Usuario_registradoDAO.loadUsuario_registradoByCriteria(criteria);
 	}
 }

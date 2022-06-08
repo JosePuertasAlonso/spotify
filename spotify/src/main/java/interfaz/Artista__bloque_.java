@@ -11,14 +11,18 @@ public class Artista__bloque_ extends Artista_ {
 	public Artistas_similares _artistas_similares;
 	public Ver_perfil_artista _ver_perfil_artista;
 	
-	public Artista__bloque_(VerticalLayout cuerpo, HorizontalLayout minireproductor) {
-		super(cuerpo, minireproductor);
+	public Artista__bloque_(VerticalLayout cuerpo, HorizontalLayout minireproductor, basededatos.Artista artista) {
+		super(cuerpo, minireproductor, artista);
+		
+		this.getStyle().set("margin-right", "var(--lumo-space-m)");
+		this.getStyle().set("min-width", "213px");
+		this.getStyle().set("max-width", "15.5%");
 		
 		this.getButton_imagen().addClickListener(new ComponentEventListener<ClickEvent<NativeButton>>() {
 			
 			@Override
 			public void onComponentEvent(ClickEvent<NativeButton> event) {
-				_ver_perfil_artista = new Ver_perfil_artista(cuerpo, minireproductor);
+				_ver_perfil_artista = new Ver_perfil_artista(cuerpo, minireproductor, artista);
 				cuerpo.removeAll();
 				cuerpo.getStyle().set("max-height", "80%");
 				minireproductor.setVisible(true);

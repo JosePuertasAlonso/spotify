@@ -11,9 +11,13 @@ public class Canciones_de_lista extends VistaCanciones_de_lista{
 	public Lista_de_reproduccion _lista_de_reproduccion;
 	public Vector<Cancion__lista_> _list_Cancion__lista_ = new Vector<Cancion__lista_>();
 	
-	public Canciones_de_lista() {
+	private basededatos.Lista lista;
+	
+	public Canciones_de_lista(basededatos.Lista lista) {
 		
-//		cargarCancionesLista();
+		this.lista = lista;
+		
+		cargarCancionesLista();
 		
 		for(int i = 0; i < _list_Cancion__lista_.size(); i++) {
 			this.getvL_contendorCancionesLista().as(VerticalLayout.class).add(_list_Cancion__lista_.get(i));
@@ -25,17 +29,16 @@ public class Canciones_de_lista extends VistaCanciones_de_lista{
 		
 	}
 	
-//	public void cargarCancionesLista() {
-//		
-//		Cancion__lista_ c;
-//		
-//		for(int i = 0; i < 6; i++) {
-//			c = new Cancion__lista_();
-//			c.getStyle().set("margin-top", "var(--lumo-space-m)");
-//			_list_Cancion__lista_.add(c);
-//		}
-//		
-//	}
+	public void cargarCancionesLista() {
+		basededatos.Cancion[] canciones = lista.contiene.toArray();
+		Cancion__lista_ c;
+		
+		for(int i = 0; i < canciones.length; i++) {
+			c = new Cancion__lista_(canciones[i]);
+			_list_Cancion__lista_.add(c);
+		}
+		
+	}
 	
 	
 }

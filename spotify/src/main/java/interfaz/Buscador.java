@@ -62,7 +62,7 @@ public class Buscador extends VistaBuscador {
 			
 			@Override
 			public void onComponentEvent(ClickEvent<NativeButton> event) {
-				_ver_todas_las_canciones_buscadas = new Ver_todas_las_canciones_buscadas(cuerpo, minireproductor);
+				_ver_todas_las_canciones_buscadas = new Ver_todas_las_canciones_buscadas(cuerpo, minireproductor, cadenaBusqueda,_lista_de_canciones_buscadas.canciones_buscadas);
 				cuerpo.removeAll();
 				cuerpo.getStyle().set("max-height", "80%");
 				minireproductor.setVisible(true);
@@ -74,7 +74,7 @@ public class Buscador extends VistaBuscador {
 			
 			@Override
 			public void onComponentEvent(ClickEvent<NativeButton> event) {
-				_ver_todos_los_artistas_buscados = new Ver_todos_los_artistas_buscados(cuerpo, minireproductor);
+				_ver_todos_los_artistas_buscados = new Ver_todos_los_artistas_buscados(cuerpo, minireproductor, cadenaBusqueda, _lista_de_artistas_buscados.artistas_buscados);
 				cuerpo.removeAll();
 				cuerpo.getStyle().set("max-height", "80%");
 				minireproductor.setVisible(true);
@@ -88,7 +88,7 @@ public class Buscador extends VistaBuscador {
 			
 			@Override
 			public void onComponentEvent(ClickEvent<NativeButton> event) {
-				_ver_todas_listas_buscadas = new Ver_todas_listas_buscadas(cuerpo, minireproductor);
+				_ver_todas_listas_buscadas = new Ver_todas_listas_buscadas(cuerpo, minireproductor, cadenaBusqueda, _listas_de_reproduccion_buscadas.listas_buscadas);
 				cuerpo.removeAll();
 				cuerpo.getStyle().set("max-height", "80%");
 				minireproductor.setVisible(true);

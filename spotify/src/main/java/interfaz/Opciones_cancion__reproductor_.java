@@ -8,6 +8,9 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.Album;
+import basededatos.BDPrincipal;
+import basededatos.iAdministrador;
+import basededatos.iComun;
 import spotify.GestorUsuarios;
 
 public class Opciones_cancion__reproductor_ extends Opciones_cancion {
@@ -17,8 +20,8 @@ public class Opciones_cancion__reproductor_ extends Opciones_cancion {
 	public Ver_album _ver_album;
 	public Ver_perfil_artista _ver_perfil_artista;
 	
-	public Opciones_cancion__reproductor_(VerticalLayout cuerpo, HorizontalLayout minireproductor, Dialog popUp) {
-		super(cuerpo, minireproductor, popUp);
+	public Opciones_cancion__reproductor_(VerticalLayout cuerpo, HorizontalLayout minireproductor, Dialog popUp, basededatos.Cancion cancion) {
+		super(cuerpo, minireproductor, popUp, cancion);
 		this.getButton_verAlbum().setVisible(true);
 		this.getButton_verArtista().setVisible(true);
 		
@@ -51,11 +54,16 @@ public class Opciones_cancion__reproductor_ extends Opciones_cancion {
 			@Override
 			public void onComponentEvent(ClickEvent<NativeButton> event) {
 				popUp.close();
-				_ver_perfil_artista = new Ver_perfil_artista(cuerpo, minireproductor);
+				_ver_perfil_artista = new Ver_perfil_artista(cuerpo, minireproductor, GestorUsuarios._cancionReproduciendose.realizada_por.toArray()[0]);
 				cuerpo.removeAll();
 				cuerpo.getStyle().set("max-height", "80%");
 				minireproductor.setVisible(true);
 				cuerpo.add(_ver_perfil_artista);
+				
+//				ELIMINAR TRES LINEAS:
+//				iAdministrador iadmin = new BDPrincipal();
+//				iadmin.eliminar_cancion(cancion.getId_Cancion());
+//				popUp.close();
 				
 			}
 		});

@@ -33,6 +33,14 @@ public class VistaCrear_lista_de_reproduccion extends LitTemplate {
 	private Input input_titulo;
 	@Id("button_crearLista")
 	private NativeButton button_crearLista;
+	@Id("vL_imagen")
+	private Element vL_imagen;
+	@Id("imagen")
+	private Element imagen;
+	@Id("input_file")
+	private Input input_file;
+	@Id("labelinput_file")
+	private Label labelinput_file;
 	
 	
 
@@ -104,6 +112,54 @@ public class VistaCrear_lista_de_reproduccion extends LitTemplate {
 
 	public void setButton_crearLista(NativeButton button_crearLista) {
 		this.button_crearLista = button_crearLista;
+	}
+
+
+
+	public Element getvL_imagen() {
+		return vL_imagen;
+	}
+
+
+
+	public void setvL_imagen(Element vL_imagen) {
+		this.vL_imagen = vL_imagen;
+	}
+
+
+
+	public Element getImagen() {
+		return imagen;
+	}
+
+
+
+	public void setImagen(Element imagen) {
+		this.imagen = imagen;
+	}
+
+
+
+	public Input getInput_file() {
+		return input_file;
+	}
+
+
+
+	public void setInput_file(Input input_file) {
+		this.input_file = input_file;
+	}
+
+
+
+	public Label getLabelinput_file() {
+		return labelinput_file;
+	}
+
+
+
+	public void setLabelinput_file(Label labelinput_file) {
+		this.labelinput_file = labelinput_file;
 	}
 
 

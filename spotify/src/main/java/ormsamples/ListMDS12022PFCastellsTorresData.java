@@ -9,19 +9,11 @@ public class ListMDS12022PFCastellsTorresData {
 	private static final int ROW_COUNT = 100;
 	
 	public void listTestData() throws PersistentException {
-		System.out.println("Listing Lista...");
-		basededatos.Lista[] basededatosListas = basededatos.ListaDAO.listListaByQuery(null, null);
-		int length = Math.min(basededatosListas.length, ROW_COUNT);
+		System.out.println("Listing Administrador...");
+		basededatos.Administrador[] basededatosAdministradors = basededatos.AdministradorDAO.listAdministradorByQuery(null, null);
+		int length = Math.min(basededatosAdministradors.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
-			System.out.println(basededatosListas[i]);
-		}
-		System.out.println(length + " record(s) retrieved.");
-		
-		System.out.println("Listing Album...");
-		basededatos.Album[] basededatosAlbums = basededatos.AlbumDAO.listAlbumByQuery(null, null);
-		length = Math.min(basededatosAlbums.length, ROW_COUNT);
-		for (int i = 0; i < length; i++) {
-			System.out.println(basededatosAlbums[i]);
+			System.out.println(basededatosAdministradors[i]);
 		}
 		System.out.println(length + " record(s) retrieved.");
 		
@@ -41,11 +33,11 @@ public class ListMDS12022PFCastellsTorresData {
 		}
 		System.out.println(length + " record(s) retrieved.");
 		
-		System.out.println("Listing Estadisticas...");
-		basededatos.Estadisticas[] basededatosEstadisticases = basededatos.EstadisticasDAO.listEstadisticasByQuery(null, null);
-		length = Math.min(basededatosEstadisticases.length, ROW_COUNT);
+		System.out.println("Listing Estilo...");
+		basededatos.Estilo[] basededatosEstilos = basededatos.EstiloDAO.listEstiloByQuery(null, null);
+		length = Math.min(basededatosEstilos.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
-			System.out.println(basededatosEstadisticases[i]);
+			System.out.println(basededatosEstilos[i]);
 		}
 		System.out.println(length + " record(s) retrieved.");
 		
@@ -57,11 +49,27 @@ public class ListMDS12022PFCastellsTorresData {
 		}
 		System.out.println(length + " record(s) retrieved.");
 		
-		System.out.println("Listing Estilo...");
-		basededatos.Estilo[] basededatosEstilos = basededatos.EstiloDAO.listEstiloByQuery(null, null);
-		length = Math.min(basededatosEstilos.length, ROW_COUNT);
+		System.out.println("Listing Lista...");
+		basededatos.Lista[] basededatosListas = basededatos.ListaDAO.listListaByQuery(null, null);
+		length = Math.min(basededatosListas.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
-			System.out.println(basededatosEstilos[i]);
+			System.out.println(basededatosListas[i]);
+		}
+		System.out.println(length + " record(s) retrieved.");
+		
+		System.out.println("Listing Album...");
+		basededatos.Album[] basededatosAlbums = basededatos.AlbumDAO.listAlbumByQuery(null, null);
+		length = Math.min(basededatosAlbums.length, ROW_COUNT);
+		for (int i = 0; i < length; i++) {
+			System.out.println(basededatosAlbums[i]);
+		}
+		System.out.println(length + " record(s) retrieved.");
+		
+		System.out.println("Listing Estadisticas...");
+		basededatos.Estadisticas[] basededatosEstadisticases = basededatos.EstadisticasDAO.listEstadisticasByQuery(null, null);
+		length = Math.min(basededatosEstadisticases.length, ROW_COUNT);
+		for (int i = 0; i < length; i++) {
+			System.out.println(basededatosEstadisticases[i]);
 		}
 		System.out.println(length + " record(s) retrieved.");
 		
@@ -70,14 +78,6 @@ public class ListMDS12022PFCastellsTorresData {
 		length = Math.min(basededatosLista_de_reproduccions.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
 			System.out.println(basededatosLista_de_reproduccions[i]);
-		}
-		System.out.println(length + " record(s) retrieved.");
-		
-		System.out.println("Listing Administrador...");
-		basededatos.Administrador[] basededatosAdministradors = basededatos.AdministradorDAO.listAdministradorByQuery(null, null);
-		length = Math.min(basededatosAdministradors.length, ROW_COUNT);
-		for (int i = 0; i < length; i++) {
-			System.out.println(basededatosAdministradors[i]);
 		}
 		System.out.println(length + " record(s) retrieved.");
 		
@@ -92,29 +92,17 @@ public class ListMDS12022PFCastellsTorresData {
 	}
 	
 	public void listByCriteria() throws PersistentException {
-		System.out.println("Listing Lista by Criteria...");
-		basededatos.ListaCriteria lbasededatosListaCriteria = new basededatos.ListaCriteria();
+		System.out.println("Listing Administrador by Criteria...");
+		basededatos.AdministradorCriteria lbasededatosAdministradorCriteria = new basededatos.AdministradorCriteria();
 		// Please uncomment the follow line and fill in parameter(s) 
-		//lbasededatosListaCriteria.id_Lista.eq();
-		lbasededatosListaCriteria.setMaxResults(ROW_COUNT);
-		basededatos.Lista[] basededatosListas = lbasededatosListaCriteria.listLista();
-		int length =basededatosListas== null ? 0 : Math.min(basededatosListas.length, ROW_COUNT); 
+		//lbasededatosAdministradorCriteria.ID.eq();
+		lbasededatosAdministradorCriteria.setMaxResults(ROW_COUNT);
+		basededatos.Administrador[] basededatosAdministradors = lbasededatosAdministradorCriteria.listAdministrador();
+		int length =basededatosAdministradors== null ? 0 : Math.min(basededatosAdministradors.length, ROW_COUNT); 
 		for (int i = 0; i < length; i++) {
-			 System.out.println(basededatosListas[i]);
+			 System.out.println(basededatosAdministradors[i]);
 		}
-		System.out.println(length + " Lista record(s) retrieved."); 
-		
-		System.out.println("Listing Album by Criteria...");
-		basededatos.AlbumCriteria lbasededatosAlbumCriteria = new basededatos.AlbumCriteria();
-		// Please uncomment the follow line and fill in parameter(s) 
-		//lbasededatosAlbumCriteria.id_Lista.eq();
-		lbasededatosAlbumCriteria.setMaxResults(ROW_COUNT);
-		basededatos.Album[] basededatosAlbums = lbasededatosAlbumCriteria.listAlbum();
-		length =basededatosAlbums== null ? 0 : Math.min(basededatosAlbums.length, ROW_COUNT); 
-		for (int i = 0; i < length; i++) {
-			 System.out.println(basededatosAlbums[i]);
-		}
-		System.out.println(length + " Album record(s) retrieved."); 
+		System.out.println(length + " Administrador record(s) retrieved."); 
 		
 		System.out.println("Listing Usuario_registrado by Criteria...");
 		basededatos.Usuario_registradoCriteria lbasededatosUsuario_registradoCriteria = new basededatos.Usuario_registradoCriteria();
@@ -140,17 +128,17 @@ public class ListMDS12022PFCastellsTorresData {
 		}
 		System.out.println(length + " Artista record(s) retrieved."); 
 		
-		System.out.println("Listing Estadisticas by Criteria...");
-		basededatos.EstadisticasCriteria lbasededatosEstadisticasCriteria = new basededatos.EstadisticasCriteria();
+		System.out.println("Listing Estilo by Criteria...");
+		basededatos.EstiloCriteria lbasededatosEstiloCriteria = new basededatos.EstiloCriteria();
 		// Please uncomment the follow line and fill in parameter(s) 
-		//lbasededatosEstadisticasCriteria.id_Estadisticas.eq();
-		lbasededatosEstadisticasCriteria.setMaxResults(ROW_COUNT);
-		basededatos.Estadisticas[] basededatosEstadisticases = lbasededatosEstadisticasCriteria.listEstadisticas();
-		length =basededatosEstadisticases== null ? 0 : Math.min(basededatosEstadisticases.length, ROW_COUNT); 
+		//lbasededatosEstiloCriteria.ID.eq();
+		lbasededatosEstiloCriteria.setMaxResults(ROW_COUNT);
+		basededatos.Estilo[] basededatosEstilos = lbasededatosEstiloCriteria.listEstilo();
+		length =basededatosEstilos== null ? 0 : Math.min(basededatosEstilos.length, ROW_COUNT); 
 		for (int i = 0; i < length; i++) {
-			 System.out.println(basededatosEstadisticases[i]);
+			 System.out.println(basededatosEstilos[i]);
 		}
-		System.out.println(length + " Estadisticas record(s) retrieved."); 
+		System.out.println(length + " Estilo record(s) retrieved."); 
 		
 		System.out.println("Listing Cancion by Criteria...");
 		basededatos.CancionCriteria lbasededatosCancionCriteria = new basededatos.CancionCriteria();
@@ -164,17 +152,41 @@ public class ListMDS12022PFCastellsTorresData {
 		}
 		System.out.println(length + " Cancion record(s) retrieved."); 
 		
-		System.out.println("Listing Estilo by Criteria...");
-		basededatos.EstiloCriteria lbasededatosEstiloCriteria = new basededatos.EstiloCriteria();
+		System.out.println("Listing Lista by Criteria...");
+		basededatos.ListaCriteria lbasededatosListaCriteria = new basededatos.ListaCriteria();
 		// Please uncomment the follow line and fill in parameter(s) 
-		//lbasededatosEstiloCriteria.ID.eq();
-		lbasededatosEstiloCriteria.setMaxResults(ROW_COUNT);
-		basededatos.Estilo[] basededatosEstilos = lbasededatosEstiloCriteria.listEstilo();
-		length =basededatosEstilos== null ? 0 : Math.min(basededatosEstilos.length, ROW_COUNT); 
+		//lbasededatosListaCriteria.id_Lista.eq();
+		lbasededatosListaCriteria.setMaxResults(ROW_COUNT);
+		basededatos.Lista[] basededatosListas = lbasededatosListaCriteria.listLista();
+		length =basededatosListas== null ? 0 : Math.min(basededatosListas.length, ROW_COUNT); 
 		for (int i = 0; i < length; i++) {
-			 System.out.println(basededatosEstilos[i]);
+			 System.out.println(basededatosListas[i]);
 		}
-		System.out.println(length + " Estilo record(s) retrieved."); 
+		System.out.println(length + " Lista record(s) retrieved."); 
+		
+		System.out.println("Listing Album by Criteria...");
+		basededatos.AlbumCriteria lbasededatosAlbumCriteria = new basededatos.AlbumCriteria();
+		// Please uncomment the follow line and fill in parameter(s) 
+		//lbasededatosAlbumCriteria.id_Lista.eq();
+		lbasededatosAlbumCriteria.setMaxResults(ROW_COUNT);
+		basededatos.Album[] basededatosAlbums = lbasededatosAlbumCriteria.listAlbum();
+		length =basededatosAlbums== null ? 0 : Math.min(basededatosAlbums.length, ROW_COUNT); 
+		for (int i = 0; i < length; i++) {
+			 System.out.println(basededatosAlbums[i]);
+		}
+		System.out.println(length + " Album record(s) retrieved."); 
+		
+		System.out.println("Listing Estadisticas by Criteria...");
+		basededatos.EstadisticasCriteria lbasededatosEstadisticasCriteria = new basededatos.EstadisticasCriteria();
+		// Please uncomment the follow line and fill in parameter(s) 
+		//lbasededatosEstadisticasCriteria.id_Estadisticas.eq();
+		lbasededatosEstadisticasCriteria.setMaxResults(ROW_COUNT);
+		basededatos.Estadisticas[] basededatosEstadisticases = lbasededatosEstadisticasCriteria.listEstadisticas();
+		length =basededatosEstadisticases== null ? 0 : Math.min(basededatosEstadisticases.length, ROW_COUNT); 
+		for (int i = 0; i < length; i++) {
+			 System.out.println(basededatosEstadisticases[i]);
+		}
+		System.out.println(length + " Estadisticas record(s) retrieved."); 
 		
 		System.out.println("Listing Lista_de_reproduccion by Criteria...");
 		basededatos.Lista_de_reproduccionCriteria lbasededatosLista_de_reproduccionCriteria = new basededatos.Lista_de_reproduccionCriteria();
@@ -187,18 +199,6 @@ public class ListMDS12022PFCastellsTorresData {
 			 System.out.println(basededatosLista_de_reproduccions[i]);
 		}
 		System.out.println(length + " Lista_de_reproduccion record(s) retrieved."); 
-		
-		System.out.println("Listing Administrador by Criteria...");
-		basededatos.AdministradorCriteria lbasededatosAdministradorCriteria = new basededatos.AdministradorCriteria();
-		// Please uncomment the follow line and fill in parameter(s) 
-		//lbasededatosAdministradorCriteria.ID.eq();
-		lbasededatosAdministradorCriteria.setMaxResults(ROW_COUNT);
-		basededatos.Administrador[] basededatosAdministradors = lbasededatosAdministradorCriteria.listAdministrador();
-		length =basededatosAdministradors== null ? 0 : Math.min(basededatosAdministradors.length, ROW_COUNT); 
-		for (int i = 0; i < length; i++) {
-			 System.out.println(basededatosAdministradors[i]);
-		}
-		System.out.println(length + " Administrador record(s) retrieved."); 
 		
 		System.out.println("Listing Anuncio by Criteria...");
 		basededatos.AnuncioCriteria lbasededatosAnuncioCriteria = new basededatos.AnuncioCriteria();

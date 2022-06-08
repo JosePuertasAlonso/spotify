@@ -61,8 +61,7 @@ export class VistaLista_a_anadir extends LitElement {
     return html`
 <vaadin-horizontal-layout class="content" style="background-color:#181818; width: 100%; height: 100%; align-items: center; justify-content: space-between; max-width: 100%; max-height: 100%;" id="hL_fondo">
  <vaadin-horizontal-layout theme="spacing" style="width: 100%; height: 100%; align-items: center; margin: 0px;" id="hL_imagenTitulo">
-  <img style="max-height: 100%; max-width: 100%; margin: 0px;" src="https://i.scdn.co/image/ab67706f00000003a0f40d75f093bb6814fcd53e
-" id="imagen">
+  <img style="max-height: 100%; max-width: 100%; margin: 0px;" id="imagen">
   <vaadin-vertical-layout class="label-lista" style="align-self: center; width: 100%; height: 100%; align-items: center; justify-content: center; flex-direction: column; display: flex; align-items: center;" id="vL_tituloCreador">
    <label style="align-self: flex-start; color:#FFFFFF; width: 100%;" id="label_titulo">Pop con Ñ Clásicos</label>
    <label style="align-self: flex-start; color:#9D9D9D; font-weight: 400; width: 100%;" id="label_creador">Creador</label>

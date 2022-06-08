@@ -46,8 +46,6 @@ public class Modificar_perfil extends VistaModificar_perfil{
 			
 			@Override
 			public void onComponentEvent(ClickEvent<NativeButton> event) {
-				String correo_actual = getInput_correoActual().getValue();
-				String correo_nuevo = getInput_correoNuevo().getValue();
 				modificar_perfil_usuario();
 			}
 		});

@@ -100,19 +100,51 @@ public class BD_Cancion {
 		throw new UnsupportedOperationException();
 	}
 
-	public void anadir_cancion(Cancion aCancion) {
-		throw new UnsupportedOperationException();
+	public void anadir_cancion(Cancion aCancion) throws PersistentException {
+		PersistentTransaction t = MDS12022PFCastellsTorresPersistentManager.instance().getSession().beginTransaction();
+		try {
+			CancionDAO.save(aCancion);
+			t.commit();
+		} catch (Exception e) {
+			t.rollback();
+		}
+		MDS12022PFCastellsTorresPersistentManager.instance().disposePersistentManager();
 	}
 
-	public void eliminar_cancion(int aId_Cancion) {
-		throw new UnsupportedOperationException();
+	public void eliminar_cancion(int aId_Cancion) throws PersistentException {
+		CancionCriteria criteria = new CancionCriteria();
+		criteria.id_Cancion.eq(aId_Cancion);
+		Cancion c = CancionDAO.loadCancionByCriteria(criteria);
+		PersistentTransaction t = MDS12022PFCastellsTorresPersistentManager.instance().getSession().beginTransaction();
+		try {
+			CancionDAO.delete(c);
+			t.commit();
+		} catch (Exception e) {
+			t.rollback();
+		}
+		MDS12022PFCastellsTorresPersistentManager.instance().disposePersistentManager();
 	}
 
 	public void modificar_cancion(int aId_Cancion, String aTitulo_cancion, String aArtistas, String aAlbum) {
 		throw new UnsupportedOperationException();
 	}
 
-	public void establecer_ultimo_exito(int aId_Cancion) {
-		throw new UnsupportedOperationException();
+	public void establecer_ultimo_exito(int aId_Cancion) throws PersistentException {
+		CancionCriteria criteria = new CancionCriteria();
+		criteria.id_Cancion.eq(aId_Cancion);
+		Cancion c = CancionDAO.loadCancionByCriteria(criteria);
+		PersistentTransaction t = MDS12022PFCastellsTorresPersistentManager.instance().getSession().beginTransaction();
+		try {
+			if(c.getUltimo_Exito()) {
+				c.setUltimo_Exito(false);
+			}else {
+				c.setUltimo_Exito(true);
+			}
+			CancionDAO.save(c);
+			t.commit();
+		} catch (Exception e) {
+			t.rollback();
+		}
+		MDS12022PFCastellsTorresPersistentManager.instance().disposePersistentManager();
 	}
 }

@@ -19,6 +19,22 @@ public class Lista_del_artista extends VistaLista_del_artista {
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
 		
+		this.getStyle().set("margin-right", "var(--lumo-space-m)");
+		this.getStyle().set("min-width", "213px");
+		this.getStyle().set("max-width", "15.5%");
+		
+		//Nombre de la lista
+		this.getLabel_titulo().setText(lista.getNombre());
+		
+		//Creador de la lista de reproduccion
+		if(lista instanceof basededatos.Lista_de_reproduccion) {
+			this.getLabel_creador().setText(((basededatos.Lista_de_reproduccion)lista).getEs_gestionada_por().getNick());
+		}
+		
+		//Imagen de la lista
+		this.getImagen().setSrc(lista.getImagen());
+		
+		
 		this.getButton_play().addClickListener(new ComponentEventListener<ClickEvent<NativeButton>>() {
 			
 			@Override

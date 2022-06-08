@@ -74,6 +74,8 @@ public class Modificar_lista extends Lista {
 			}
 		});
 		
+		this.getButton_guardar().setVisible(false);
+		
 	}
 
 	public void Cambiar_nombre_de_lista() {

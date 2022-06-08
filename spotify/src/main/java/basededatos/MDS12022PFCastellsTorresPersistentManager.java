@@ -37,15 +37,15 @@ public class MDS12022PFCastellsTorresPersistentManager extends PersistentManager
 	@Override
 	protected void configureMetadataSources(MetadataSources aMetadataSources) {
 		super.configureMetadataSources(aMetadataSources);
-		aMetadataSources.addAnnotatedClass(basededatos.Lista.class);
-		aMetadataSources.addAnnotatedClass(basededatos.Album.class);
+		aMetadataSources.addAnnotatedClass(basededatos.Administrador.class);
 		aMetadataSources.addAnnotatedClass(basededatos.Usuario_registrado.class);
 		aMetadataSources.addAnnotatedClass(basededatos.Artista.class);
-		aMetadataSources.addAnnotatedClass(basededatos.Estadisticas.class);
-		aMetadataSources.addAnnotatedClass(basededatos.Cancion.class);
 		aMetadataSources.addAnnotatedClass(basededatos.Estilo.class);
+		aMetadataSources.addAnnotatedClass(basededatos.Cancion.class);
+		aMetadataSources.addAnnotatedClass(basededatos.Lista.class);
+		aMetadataSources.addAnnotatedClass(basededatos.Album.class);
+		aMetadataSources.addAnnotatedClass(basededatos.Estadisticas.class);
 		aMetadataSources.addAnnotatedClass(basededatos.Lista_de_reproduccion.class);
-		aMetadataSources.addAnnotatedClass(basededatos.Administrador.class);
 		aMetadataSources.addAnnotatedClass(basededatos.Anuncio.class);
 	}
 	

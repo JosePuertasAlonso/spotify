@@ -14,11 +14,13 @@ public class Albumes_del_artista extends VistaAlbumes_del_artista{
 	
 	private VerticalLayout cuerpo;
 	private HorizontalLayout minireproductor;
+	private basededatos.Artista artista;
 	
-	public Albumes_del_artista(VerticalLayout cuerpo, HorizontalLayout minireproductor) {
+	public Albumes_del_artista(VerticalLayout cuerpo, HorizontalLayout minireproductor, basededatos.Artista artista) {
 		
 		this.cuerpo = cuerpo;
 		this.minireproductor = minireproductor;
+		this.artista = artista;
 		
 		cargarAlbumesArtista();
 		
@@ -44,13 +46,12 @@ public class Albumes_del_artista extends VistaAlbumes_del_artista{
 	}
 	
 	public void cargarAlbumesArtista() {
-//		Album__bloques_ a;
-//		for(int i = 0; i < 6; i++) {
-//			a = new Album__bloques_(cuerpo, minireproductor);
-//			a.getStyle().set("margin-right", "var(--lumo-space-m)");
-//			a.getStyle().set("max-width", "15.5%");
-//			_list_Album__bloques_.add(a);
-//		}
+		basededatos.Album[] albumes = artista.es_autor_de.toArray();
+		Album__bloques_ a;
+		for(int i = 0; i < albumes.length; i++) {
+			a = new Album__bloques_(cuerpo, minireproductor, albumes[i]);
+			_list_Album__bloques_.add(a);
+		}
 	}
 	
 }

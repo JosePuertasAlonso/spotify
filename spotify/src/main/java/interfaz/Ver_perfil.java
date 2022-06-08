@@ -44,7 +44,7 @@ public class Ver_perfil extends VistaVer_perfil{
 		
 		this.getLabel_nombreUsuario().setText(GestorUsuarios._u.getNick());
 		this.getImagen().setSrc(GestorUsuarios._u.getFoto());
-		this.getLabel_nSeguidores().setText(Integer.toString(GestorUsuarios._u.getSeguidores()));
+		this.getLabel_nSeguidores().setText(Integer.toString(GestorUsuarios._u.es_seguido_por.toArray().length));
 		this.getLabel_nListas().setText(GestorUsuarios._u.gestiona.size() + " de 100 listas");
 		
 		this.getButton_verAnuncios().addClickListener(new ComponentEventListener<ClickEvent<NativeButton>>() {

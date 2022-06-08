@@ -15,8 +15,8 @@ public class Anadir_cancion_a_una_lista extends VistaAnadir_cancion_a_una_lista{
 	public Listas_creadas _listas_creadas;
 	public Crear_lista_de_reproduccion _crear_lista_de_reproduccion;
 	
-	public Anadir_cancion_a_una_lista(VerticalLayout cuerpo, HorizontalLayout minireproductor) {
-		_listas_creadas = new Listas_creadas();
+	public Anadir_cancion_a_una_lista(VerticalLayout cuerpo, HorizontalLayout minireproductor, basededatos.Cancion cancion) {
+		_listas_creadas = new Listas_creadas(cancion);
 		
 		this.getStyle().set("margin", "0px");
 		this.getStyle().set("padding", "0px");

@@ -21,6 +21,9 @@ public class Album__bloques_ extends VistaAlbum_bloques{
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
 		
+		this.getStyle().set("margin-right", "var(--lumo-space-m)");
+		this.getStyle().set("max-width", "15.5%");
+		
 		this.getButton_play().addClickListener(new ComponentEventListener<ClickEvent<NativeButton>>() {
 			
 			@Override

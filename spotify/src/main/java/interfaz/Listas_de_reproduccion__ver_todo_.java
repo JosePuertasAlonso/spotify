@@ -15,12 +15,16 @@ public class Listas_de_reproduccion__ver_todo_ extends VistaLista_de_reproduccio
 	private VerticalLayout cuerpo;
 	private HorizontalLayout minireproductor;
 
-	public Listas_de_reproduccion__ver_todo_(VerticalLayout cuerpo, HorizontalLayout minireproductor) {
+	public Listas_de_reproduccion__ver_todo_(VerticalLayout cuerpo, HorizontalLayout minireproductor, basededatos.Lista_de_reproduccion[] listasBuscadas) {
 		
 		this.cuerpo = cuerpo;
 		this.minireproductor = minireproductor;
 		
-		cargarListasVerTodo();
+		Lista_de_reproduccion__bloque_ l;
+		for(int i = 0; i < listasBuscadas.length; i++) {
+			l = new Lista_de_reproduccion__bloque_(cuerpo, minireproductor, listasBuscadas[i]);
+			_list_Lista_de_reproduccion__bloque_.add(l);
+		}
 		
 		int cont = 0;
 		HorizontalLayout layout = this.gethL_contenedorListaReproduccionBloque();
@@ -41,16 +45,6 @@ public class Listas_de_reproduccion__ver_todo_ extends VistaLista_de_reproduccio
 		}
 		
 		this.getStyle().set("margin", "0px");
-	}
-	
-	public void cargarListasVerTodo() {
-//		Lista_de_reproduccion__bloque_ l;
-//		for(int i = 0; i < 25; i++) {
-//			l = new Lista_de_reproduccion__bloque_(cuerpo, minireproductor);
-//			l.getStyle().set("margin-right", "var(--lumo-space-m)");
-//			l.getStyle().set("max-width", "15.5%");
-//			_list_Lista_de_reproduccion__bloque_.add(l);
-//		}
 	}
 
 

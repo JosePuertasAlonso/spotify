@@ -34,7 +34,7 @@ public class Canciones_de_lista_a_eliminar extends VistaCanciones_de_lista_a_eli
 		Cancion_de_lista_a_eliminar c;
 		
 		for(int i = 0; i < canciones.length; i++) {
-			c = new Cancion_de_lista_a_eliminar(canciones[i]);
+			c = new Cancion_de_lista_a_eliminar(canciones[i], lista);
 			_list_Cancion_de_lista_a_eliminar.add(c);
 		}
 		

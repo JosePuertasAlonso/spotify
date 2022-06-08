@@ -7,6 +7,8 @@ import com.vaadin.flow.component.html.NativeButton;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import spotify.GestorUsuarios;
+
 public class Reproducir_cancion_cibernauta_registrado extends Reproducir_cancion {
 //	private Button _opcionesB;
 	public Opciones_cancion__cancion_ _opciones_cancion__cancion_;
@@ -30,7 +32,7 @@ public class Reproducir_cancion_cibernauta_registrado extends Reproducir_cancion
 			@Override
 			public void onComponentEvent(ClickEvent<NativeButton> event) {
 				Dialog popUp = new Dialog();
-				_opciones_cancion__reproductor_ = new Opciones_cancion__reproductor_(cuerpo, minireproductor, popUp);
+				_opciones_cancion__reproductor_ = new Opciones_cancion__reproductor_(cuerpo, minireproductor, popUp, GestorUsuarios._cancionReproduciendose);
 				popUp.add(_opciones_cancion__reproductor_);
 				popUp.open();	
 				

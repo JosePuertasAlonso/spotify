@@ -49,7 +49,7 @@ public class Cancion__bloque_con_opciones_ extends Cancion {
 			public void onComponentEvent(ClickEvent<NativeButton> event) {
 				GestorUsuarios._cancion = cancion;
 				Dialog popUp = new Dialog();
-				_opciones_cancion__cancion_ = new Opciones_cancion__cancion_(cuerpo, minireproductor, popUp);
+				_opciones_cancion__cancion_ = new Opciones_cancion__cancion_(cuerpo, minireproductor, popUp, cancion);
 				popUp.add(_opciones_cancion__cancion_);
 				popUp.open();	
 				

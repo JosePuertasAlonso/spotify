@@ -18,6 +18,8 @@ public class Lista_de_artistas_buscados extends VistaLista_de_artistas_buscados{
 	private HorizontalLayout minireproductor;
 	private String cadena_busqueda;
 	
+	public basededatos.Artista[] artistas_buscados;
+	
 	iComun _iComun = new BDPrincipal();
 	
 	public Lista_de_artistas_buscados(VerticalLayout cuerpo, HorizontalLayout minireproductor, String cadena_busqueda) {
@@ -40,6 +42,7 @@ public class Lista_de_artistas_buscados extends VistaLista_de_artistas_buscados{
 	
 	public void buscar_artistas() {
 		basededatos.Artista[] artistas = _iComun.buscar_artistas(cadena_busqueda);
+		this.artistas_buscados = artistas;
 		Artista__lista_ a;
 		
 		for(int i = 0; i < artistas.length; i++) {

@@ -15,6 +15,8 @@ public class Lista_de_canciones_buscadas extends VistaLista_de_canciones_buscada
 	
 	private String cadena_busqueda; 
 	
+	public basededatos.Cancion[] canciones_buscadas;
+	
 	iComun _iComun = new BDPrincipal();
 	
 	public Lista_de_canciones_buscadas(String cadena_busqueda) {
@@ -30,10 +32,12 @@ public class Lista_de_canciones_buscadas extends VistaLista_de_canciones_buscada
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
 		
+		
 	}
 	
 	public void buscar_canciones() {
 		basededatos.Cancion[] canciones = _iComun.buscar_canciones(cadena_busqueda);
+		this.canciones_buscadas = canciones;
 		Cancion__lista_ c;
 		
 		for(int i = 0; i < canciones.length; i++) {

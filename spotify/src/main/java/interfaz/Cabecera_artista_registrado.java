@@ -16,6 +16,9 @@ public class Cabecera_artista_registrado extends Cabecera {
 		super();
 		this.gethL_registrarseIniciarSesion().setVisible(false);
 		
+		this.getFoto().setSrc(GestorUsuarios._u.getFoto());
+		this.getLabel_nombreUsuario().setText(GestorUsuarios._u.getNick());
+		
 		this.gethL_fotoNombreUsuario().addClickListener(new ComponentEventListener<ClickEvent<HorizontalLayout>>() {
 			
 			@Override

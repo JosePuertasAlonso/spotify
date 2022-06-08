@@ -15,11 +15,13 @@ public class Listas_de_reproduccion_del_artista extends VistaListas_de_reproducc
 	
 	private VerticalLayout cuerpo;
 	private HorizontalLayout minireproductor;
+	private basededatos.Artista artista;
 	
-	public Listas_de_reproduccion_del_artista(VerticalLayout cuerpo, HorizontalLayout minireproductor) {
+	public Listas_de_reproduccion_del_artista(VerticalLayout cuerpo, HorizontalLayout minireproductor, basededatos.Artista artista) {
 		
 		this.cuerpo = cuerpo;
 		this.minireproductor = minireproductor;
+		this.artista = artista;
 		
 		cargarListasArtista();
 		
@@ -45,13 +47,12 @@ public class Listas_de_reproduccion_del_artista extends VistaListas_de_reproducc
 	}
 	
 	public void cargarListasArtista() {
-//		Lista_del_artista l;
-//		for(int i = 0; i < 6; i++) {
-//			l = new Lista_del_artista(cuerpo, minireproductor);
-//			l.getStyle().set("margin-right", "var(--lumo-space-m)");
-//			l.getStyle().set("max-width", "15.5%");
-//			_list_Lista_del_artista.add(l);
-//		}
+		basededatos.Lista_de_reproduccion[] listaDelArtista = artista.gestiona.toArray();
+		Lista_del_artista l;
+		for(int i = 0; i < listaDelArtista.length; i++) {
+			l = new Lista_del_artista(cuerpo, minireproductor, listaDelArtista[i]);
+			_list_Lista_del_artista.add(l);
+		}
 	}
 	
 

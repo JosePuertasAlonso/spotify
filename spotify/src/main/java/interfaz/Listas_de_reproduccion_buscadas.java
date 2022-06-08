@@ -18,6 +18,8 @@ public class Listas_de_reproduccion_buscadas extends VistaListas_de_reproduccion
 	private HorizontalLayout minireproductor;
 	private String cadena_busqueda;
 	
+	public basededatos.Lista_de_reproduccion[] listas_buscadas;
+	
 	iComun _iComun = new BDPrincipal();
 	
 	public Listas_de_reproduccion_buscadas(VerticalLayout cuerpo, HorizontalLayout minireproductor, String cadenaBusqueda) {
@@ -40,6 +42,8 @@ public class Listas_de_reproduccion_buscadas extends VistaListas_de_reproduccion
 	
 	public void buscar_listas() {
 		basededatos.Lista_de_reproduccion[] listas = _iComun.buscar_listas(cadena_busqueda);
+		this.listas_buscadas = listas;
+		
 		Lista_de_reproduccion__lista_ l;
 		
 		for(int i = 0; i < listas.length; i++) {

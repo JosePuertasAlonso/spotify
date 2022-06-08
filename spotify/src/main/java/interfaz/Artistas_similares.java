@@ -5,6 +5,8 @@ import java.util.Vector;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import basededatos.BDPrincipal;
+import basededatos.iComun;
 import interfaz.Artista__bloque_;
 import vistas.VistaArtistas_similares;
 
@@ -14,11 +16,15 @@ public class Artistas_similares extends VistaArtistas_similares{
 	
 	private VerticalLayout cuerpo;
 	private HorizontalLayout minireproductor;
+	private basededatos.Artista artista;
 	
-	public Artistas_similares(VerticalLayout cuerpo, HorizontalLayout minireproductor) {
+	private iComun _iComun = new BDPrincipal();
+	
+	public Artistas_similares(VerticalLayout cuerpo, HorizontalLayout minireproductor, basededatos.Artista artista) {
 		
 		this.cuerpo = cuerpo;
 		this.minireproductor = minireproductor;
+		this.artista = artista;
 		
 		cargarArtistasSimilares();
 		
@@ -44,12 +50,13 @@ public class Artistas_similares extends VistaArtistas_similares{
 	}
 	
 	public void cargarArtistasSimilares() {
-		Artista__bloque_ a;
-		for(int i = 0; i < 6; i++) {
-			a = new Artista__bloque_(cuerpo, minireproductor);
-			a.getStyle().set("margin-right", "var(--lumo-space-m)");
-			a.getStyle().set("max-width", "15.5%");
-			_list_Artista__bloque_.add(a);
+		basededatos.Artista[] artistasSimilares = _iComun.cargar_artistas_similares(artista.getLogin());
+		if(artistasSimilares != null) {
+			Artista__bloque_ a;
+			for(int i = 0; i < artistasSimilares.length; i++) {
+				a = new Artista__bloque_(cuerpo, minireproductor, artistasSimilares[i]);
+				_list_Artista__bloque_.add(a);
+			}
 		}
 	}
 		

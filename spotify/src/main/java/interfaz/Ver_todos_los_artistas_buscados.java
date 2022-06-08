@@ -16,7 +16,7 @@ public class Ver_todos_los_artistas_buscados extends VistaVer_todos_los_artistas
 	//ANADIDO A MANO
 	public Barra_buscador _barra_buscador;
 	
-	public Ver_todos_los_artistas_buscados(VerticalLayout cuerpo, HorizontalLayout minireproductor) {
+	public Ver_todos_los_artistas_buscados(VerticalLayout cuerpo, HorizontalLayout minireproductor, String cadenaBusqueda, basededatos.Artista[] artistasBuscados) {
 		this.getStyle().set("margin", "0px");
 		this.getStyle().set("padding", "0px");
 		this.getStyle().set("width", "100%");
@@ -24,8 +24,10 @@ public class Ver_todos_los_artistas_buscados extends VistaVer_todos_los_artistas
 		
 		_barra_buscador = new Barra_buscador();
 		this.gethL_barraBuscador().add(_barra_buscador);
-		_lista_de_artistas__ver_todo_ = new Lista_de_artistas__ver_todo_(cuerpo, minireproductor);
+		_lista_de_artistas__ver_todo_ = new Lista_de_artistas__ver_todo_(cuerpo, minireproductor, artistasBuscados);
 		this.getvL_cuerpo().as(VerticalLayout.class).add(_lista_de_artistas__ver_todo_);
+		
+		this.getLabel_todosArtistasPara().setText("Todas los artistas para:  \" " + cadenaBusqueda + " \"");
 		
 		_barra_buscador.getButton_buscar().addClickListener(new ComponentEventListener<ClickEvent<NativeButton>>() {
 			

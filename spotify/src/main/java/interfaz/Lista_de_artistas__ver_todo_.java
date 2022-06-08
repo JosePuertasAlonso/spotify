@@ -15,12 +15,16 @@ public class Lista_de_artistas__ver_todo_ extends VistaLista_de_artistas_ver_tod
 	private VerticalLayout cuerpo;
 	private HorizontalLayout minireproductor;
 	
-	public Lista_de_artistas__ver_todo_(VerticalLayout cuerpo, HorizontalLayout minireproductor) {
+	public Lista_de_artistas__ver_todo_(VerticalLayout cuerpo, HorizontalLayout minireproductor, basededatos.Artista[] artistasBuscados) {
 		
 		this.cuerpo = cuerpo;
 		this.minireproductor = minireproductor;
 		
-		cargarArtistasVerTodo();
+		Artista__bloque_ a;
+		for(int i = 0; i < artistasBuscados.length; i++) {
+			a = new Artista__bloque_(cuerpo, minireproductor, artistasBuscados[i]);
+			_list_Artista__bloque_.add(a);
+		}
 		
 		int cont = 0;
 		HorizontalLayout layout = this.gethL_contenedorArtista();
@@ -41,16 +45,6 @@ public class Lista_de_artistas__ver_todo_ extends VistaLista_de_artistas_ver_tod
 		}
 		
 		this.getStyle().set("margin", "0px");
-	}
-	
-	public void cargarArtistasVerTodo() {
-		Artista__bloque_ a;
-		for(int i = 0; i < 25; i++) {
-			a = new Artista__bloque_(cuerpo, minireproductor);
-			a.getStyle().set("margin-right", "var(--lumo-space-m)");
-			a.getStyle().set("max-width", "15.5%");
-			_list_Artista__bloque_.add(a);
-		}
 	}
 	
 }
