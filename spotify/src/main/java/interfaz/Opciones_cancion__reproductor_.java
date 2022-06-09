@@ -30,7 +30,7 @@ public class Opciones_cancion__reproductor_ extends Opciones_cancion {
 			@Override
 			public void onComponentEvent(ClickEvent<NativeButton> event) {
 				popUp.close();
-				basededatos.Lista[] l_aux = GestorUsuarios._cancionReproduciendose.esta_en.toArray();
+				basededatos.Lista[] l_aux = cancion.esta_en.toArray();
 				basededatos.Album a = null;
 				for(int i = 0; i < l_aux.length; i++) {
 					if(l_aux[i] instanceof basededatos.Album) {
@@ -59,14 +59,10 @@ public class Opciones_cancion__reproductor_ extends Opciones_cancion {
 				cuerpo.getStyle().set("max-height", "80%");
 				minireproductor.setVisible(true);
 				cuerpo.add(_ver_perfil_artista);
-				
-//				ELIMINAR TRES LINEAS:
-//				iAdministrador iadmin = new BDPrincipal();
-//				iadmin.eliminar_cancion(cancion.getId_Cancion());
-//				popUp.close();
-				
 			}
 		});
+		
+		
 		
 	}
 }

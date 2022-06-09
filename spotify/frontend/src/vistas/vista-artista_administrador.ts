@@ -29,7 +29,7 @@ export class VistaArtista_administrador extends LitElement {
     return html`
 <vaadin-horizontal-layout class="content" style="background-color:#181818; width: 100%; height: 100%; align-items: center; justify-content: space-between; max-width: 100%; max-height: 100%;" id="hL_fondo">
  <vaadin-horizontal-layout theme="spacing" style="max-width: 70%; width: 100%; height: 100%; align-items: center; margin: 0px;" id="hL_imagenArtista">
-  <img style="max-height: 100%; max-width: 100%; margin: 0px;" src="https://i.scdn.co/image/51488d1b1de7f592bcea6c66291dd274b95a9fc4" id="imagen">
+  <img style="max-height: 100%; max-width: 100%; margin: 0px;" id="imagen">
   <vaadin-vertical-layout class="label-lista" style="align-self: center; width: 100%; height: 100%; align-items: center; justify-content: center; flex-direction: column; display: flex; align-items: center;" id="vL_nombreArtista">
    <label style="align-self: flex-start; color:#FFFFFF; width: 100%;" id="label_nombre">Bizarrap</label>
    <label style="align-self: flex-start; color:#9D9D9D; font-weight: 400; width: 100%;" id="label_artista">Artista</label>

@@ -1,5 +1,7 @@
 package interfaz;
 
+import java.io.File;
+
 import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.ComponentEventListener;
 import com.vaadin.flow.component.html.NativeButton;
@@ -65,6 +67,8 @@ public class Modificar_perfil__artista_ extends Modificar_perfil {
 			if(foto == null || foto.isBlank()) {
 				_iArtista.modificar_perfil_artista(correo_actual, correo_nuevo, GestorUsuarios._u.getFoto());
 			} else {
+				File f = new File(foto);
+				foto = "/img/" + f.getName();
 				_iArtista.modificar_perfil_artista(correo_actual, correo_nuevo, foto);
 
 			}

@@ -12,6 +12,7 @@ import com.vaadin.flow.component.html.Input;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import vistas.VistaEstilos;
 import com.vaadin.flow.component.html.NativeButton;
+import com.vaadin.flow.component.html.Span;
 
 /**
  * A Designer generated component for the vista-modificar_artista template.
@@ -27,14 +28,6 @@ public class VistaModificar_artista extends LitTemplate {
 	private Element vL_fondo;
 	@Id("label_modificarArtista")
 	private Label label_modificarArtista;
-	@Id("vL_fotoBoton")
-	private Element vL_fotoBoton;
-	@Id("foto")
-	private Image foto;
-	@Id("file")
-	private Input file;
-	@Id("labelBoton_elegirFoto")
-	private Label labelBoton_elegirFoto;
 	@Id("vL_estilosArtista")
 	private Element vL_estilosArtista;
 	@Id("label_estilosArtista")
@@ -43,6 +36,16 @@ public class VistaModificar_artista extends LitTemplate {
 	private HorizontalLayout hL_estilos;
 	@Id("button_modificarArtista")
 	private NativeButton button_modificarArtista;
+	@Id("vL_imagen")
+	private Element vL_imagen;
+	@Id("imagen")
+	private Image imagen;
+	@Id("span")
+	private Span span;
+	@Id("input_file")
+	private Input input_file;
+	@Id("labelinput_file")
+	private Label labelinput_file;
 	
 	
 
@@ -70,50 +73,62 @@ public class VistaModificar_artista extends LitTemplate {
 
 
 
-	public Element getvL_fotoBoton() {
-		return vL_fotoBoton;
+	public Element getvL_imagen() {
+		return vL_imagen;
 	}
 
 
 
-	public void setvL_fotoBoton(Element vL_fotoBoton) {
-		this.vL_fotoBoton = vL_fotoBoton;
+	public void setvL_imagen(Element vL_imagen) {
+		this.vL_imagen = vL_imagen;
 	}
 
 
 
-	public Image getFoto() {
-		return foto;
+	public Image getImagen() {
+		return imagen;
 	}
 
 
 
-	public void setFoto(Image foto) {
-		this.foto = foto;
+	public void setImagen(Image imagen) {
+		this.imagen = imagen;
 	}
 
 
 
-	public Input getFile() {
-		return file;
+	public Span getSpan() {
+		return span;
 	}
 
 
 
-	public void setFile(Input file) {
-		this.file = file;
+	public void setSpan(Span span) {
+		this.span = span;
 	}
 
 
 
-	public Label getLabelBoton_elegirFoto() {
-		return labelBoton_elegirFoto;
+	public Input getInput_file() {
+		return input_file;
 	}
 
 
 
-	public void setLabelBoton_elegirFoto(Label labelBoton_elegirFoto) {
-		this.labelBoton_elegirFoto = labelBoton_elegirFoto;
+	public void setInput_file(Input input_file) {
+		this.input_file = input_file;
+	}
+
+
+
+	public Label getLabelinput_file() {
+		return labelinput_file;
+	}
+
+
+
+	public void setLabelinput_file(Label labelinput_file) {
+		this.labelinput_file = labelinput_file;
 	}
 
 

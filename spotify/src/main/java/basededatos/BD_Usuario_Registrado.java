@@ -90,6 +90,7 @@ public class BD_Usuario_Registrado {
 			}
 			Usuario_registradoDAO.save(usuario);
 			t.commit();
+			MDS12022PFCastellsTorresPersistentManager.instance().disposePersistentManager();
 			return true;
 		} catch (Exception e) {
 			t.rollback();
@@ -115,20 +116,101 @@ public class BD_Usuario_Registrado {
 		MDS12022PFCastellsTorresPersistentManager.instance().disposePersistentManager();
 	}
 
-	public void eliminar_perfil(String aLogin) {
-		throw new UnsupportedOperationException();
+	public void eliminar_perfil(String aLogin) throws PersistentException {
+		Usuario_registradoCriteria criteria = new Usuario_registradoCriteria();
+		criteria.login.eq(aLogin);
+		Usuario_registrado usuario = Usuario_registradoDAO.loadUsuario_registradoByCriteria(criteria);
+		PersistentTransaction t = MDS12022PFCastellsTorresPersistentManager.instance().getSession().beginTransaction();
+		try {
+			if(usuario instanceof basededatos.Artista) {
+				Anuncio[] AnunciosDelArtista = ((basededatos.Artista) usuario).anuncia.toArray();
+				for(Anuncio a : AnunciosDelArtista) {
+					AnuncioDAO.delete(a);
+				}
+				
+				Album[] albumesDelArtista = ((basededatos.Artista) usuario).es_autor_de.toArray();
+				for(Album a : albumesDelArtista) {
+					a.es_creado_por.remove((basededatos.Artista) usuario);
+					AlbumDAO.save(a);
+					if(a.es_creado_por.size() == 0) {
+						AlbumDAO.delete(a);
+					}
+				}
+				
+				Artista[] artistasSimilaresDelArtista = ((basededatos.Artista) usuario).es_similar_a.toArray();
+				for(Artista a : artistasSimilaresDelArtista) {
+					a.es_similar_de.remove((basededatos.Artista) usuario);
+					ArtistaDAO.save(a);
+				}
+				
+				Artista[] artistasSimilaresAlArtista = ((basededatos.Artista) usuario).es_similar_de.toArray();
+				for(Artista a : artistasSimilaresAlArtista) {
+					a.es_similar_a.remove((basededatos.Artista) usuario);
+					ArtistaDAO.save(a);
+				}
+				
+				Estilo[] estilosDelArtista = ((basededatos.Artista) usuario).es_identificado_por.toArray();
+				for(Estilo e : estilosDelArtista) {
+					((basededatos.Artista) usuario).es_identificado_por.remove(e);
+					e.identifica_a.remove((basededatos.Artista) usuario);
+					EstiloDAO.save(e);
+				}
+				
+				Cancion[] cancionesDelArtista = ((basededatos.Artista) usuario).realiza.toArray();
+				for(Cancion c : cancionesDelArtista) {
+					if(c.realizada_por.size() <= 1) {
+						Artista[] artistasConLaCancion = c.realizada_por.toArray();
+						for(Artista a : artistasConLaCancion) {
+							a.realiza.remove(c);
+							ArtistaDAO.save(a);
+						}
+						Lista[] listasConLaCancion = c.esta_en.toArray();
+						for(Lista l : listasConLaCancion) {
+							l.contiene.remove(c);
+							ListaDAO.save(l);
+						}
+						Usuario_registrado[] usuariosConLaCancion = c.es_marcada_como_favorita_por.toArray();
+						for(Usuario_registrado u : usuariosConLaCancion) {
+							u.marca_como_favorita.remove(c);
+							Usuario_registradoDAO.save(u);
+						}
+						Usuario_registrado[] usuariosConLaCancion2 = c.es_historial_de.toArray();
+						for(Usuario_registrado u : usuariosConLaCancion2) {
+							u.reproduce.remove(c);
+							Usuario_registradoDAO.save(u);
+						}
+						CancionDAO.delete(c);
+					} else {
+						c.realizada_por.remove((basededatos.Artista) usuario);
+					}
+
+				}
+			}
+			
+			Lista[] listasDelUsuario = usuario.gestiona.toArray();
+			for(Lista l : listasDelUsuario) {
+				ListaDAO.delete(l);
+			}
+			
+			Lista[] listasGuardadas = usuario.guarda.toArray();
+			for(Lista l : listasGuardadas) {
+				ListaDAO.delete(l);
+			}
+			
+			Usuario_registradoDAO.delete(usuario);
+			t.commit();
+		} catch (Exception e) {
+			t.rollback();
+		}
+		MDS12022PFCastellsTorresPersistentManager.instance().disposePersistentManager();
 	}
 
-	public void eliminar_perfil_administrador(String aLogin) {
-		throw new UnsupportedOperationException();
-	}
 
-	public boolean es_usuario_registrado(String aLogin) {
-		throw new UnsupportedOperationException();
-	}
-
-	public Usuario_registrado[] buscar_perfiles_administrador(String aCadena_busqueda) {
-		throw new UnsupportedOperationException();
+	public Usuario_registrado[] buscar_perfiles_administrador(String aCadena_busqueda) throws PersistentException {
+		Usuario_registradoCriteria criteria = new Usuario_registradoCriteria();
+		criteria.nick.like("%" + aCadena_busqueda + "%");
+		Usuario_registrado[] result = Usuario_registradoDAO.listUsuario_registradoByCriteria(criteria);
+		return result;
 	}
 
 	public Usuario_registrado recargar_usuario(String login_u) throws PersistentException {

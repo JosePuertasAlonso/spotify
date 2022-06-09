@@ -14,7 +14,7 @@ public class Ver_todos_los_albumes_buscados__administrador_ extends VistaVer_tod
 	//ANADIDO A MANO
 	public Barra_buscador _barra_buscador;
 	
-	public Ver_todos_los_albumes_buscados__administrador_(VerticalLayout cuerpo) {
+	public Ver_todos_los_albumes_buscados__administrador_(VerticalLayout cuerpo, String cadenaBusqueda, basededatos.Album[] albumes) {
 		this.getStyle().set("margin", "0px");
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
@@ -22,14 +22,16 @@ public class Ver_todos_los_albumes_buscados__administrador_ extends VistaVer_tod
 		_barra_buscador = new Barra_buscador();
 		this.gethL_barraBuscador().add(_barra_buscador);
 		
-		_lista_de_albumes__ver_todo_administrador_ = new Lista_de_albumes__ver_todo_administrador_(cuerpo);
+		this.getLabel_todosAlbumesPara().setText("Todos los albumes para:  \" " + cadenaBusqueda + " \"");
+		
+		_lista_de_albumes__ver_todo_administrador_ = new Lista_de_albumes__ver_todo_administrador_(cuerpo, albumes);
 		this.gethL_listaDeAlbumesVerTodoAdmin().add(_lista_de_albumes__ver_todo_administrador_);
 		
 		_barra_buscador.getButton_buscar().addClickListener(new ComponentEventListener<ClickEvent<NativeButton>>() {
 			
 			@Override
 			public void onComponentEvent(ClickEvent<NativeButton> event) {
-				_buscador_administrador = new Buscador_administrador(cuerpo);
+				_buscador_administrador = new Buscador_administrador(cuerpo, _barra_buscador.getInput_buscar().getValue());
 				cuerpo.removeAll();
 				cuerpo.add(_buscador_administrador);
 			}

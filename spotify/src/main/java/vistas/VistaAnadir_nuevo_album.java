@@ -12,6 +12,7 @@ import vistas.VistaCanciones_del_album_administrador;
 import com.vaadin.flow.component.html.NativeButton;
 import com.vaadin.flow.component.html.Input;
 import com.vaadin.flow.component.html.Image;
+import com.vaadin.flow.component.html.Span;
 
 /**
  * A Designer generated component for the vista-anadir_nuevo_album template.
@@ -51,16 +52,22 @@ public class VistaAnadir_nuevo_album extends LitTemplate {
 	private Label label_fechaAlbum;
 	@Id("input_fechaAlbum")
 	private Input input_fechaAlbum;
-	@Id("vL_Imagen")
-	private Element vL_Imagen;
-	@Id("imagen")
-	private Image imagen;
-	@Id("file")
-	private Input file;
-	@Id("label")
-	private Label label;
 	@Id("button_anadirAlbum")
 	private NativeButton button_anadirAlbum;
+	@Id("label_errorTitulo")
+	private Label label_errorTitulo;
+	@Id("label_errorArtistas")
+	private Label label_errorArtistas;
+	@Id("vL_imagen")
+	private Element vL_imagen;
+	@Id("imagen")
+	private Image imagen;
+	@Id("span")
+	private Span span;
+	@Id("labelinput_file")
+	private Label labelinput_file;
+	@Id("input_file")
+	private Input input_file;
 	
 	
 
@@ -233,14 +240,30 @@ public class VistaAnadir_nuevo_album extends LitTemplate {
 
 
 
-	public Element getvL_Imagen() {
-		return vL_Imagen;
+	public NativeButton getButton_anadirAlbum() {
+		return button_anadirAlbum;
 	}
 
 
 
-	public void setvL_Imagen(Element vL_Imagen) {
-		this.vL_Imagen = vL_Imagen;
+	public void setButton_anadirAlbum(NativeButton button_anadirAlbum) {
+		this.button_anadirAlbum = button_anadirAlbum;
+	}
+
+
+	public Label getLabel_errorTitulo() {
+		return label_errorTitulo;
+	}
+
+
+	public Element getvL_imagen() {
+		return vL_imagen;
+	}
+
+
+
+	public void setvL_imagen(Element vL_imagen) {
+		this.vL_imagen = vL_imagen;
 	}
 
 
@@ -257,38 +280,56 @@ public class VistaAnadir_nuevo_album extends LitTemplate {
 
 
 
-	public Input getFile() {
-		return file;
+	public Span getSpan() {
+		return span;
 	}
 
 
 
-	public void setFile(Input file) {
-		this.file = file;
+	public void setSpan(Span span) {
+		this.span = span;
 	}
 
 
 
-	public Label getLabel() {
-		return label;
+	public Label getLabelinput_file() {
+		return labelinput_file;
 	}
 
 
 
-	public void setLabel(Label label) {
-		this.label = label;
+	public void setLabelinput_file(Label labelinput_file) {
+		this.labelinput_file = labelinput_file;
 	}
 
 
 
-	public NativeButton getButton_anadirAlbum() {
-		return button_anadirAlbum;
+	public Input getInput_file() {
+		return input_file;
 	}
 
 
 
-	public void setButton_anadirAlbum(NativeButton button_anadirAlbum) {
-		this.button_anadirAlbum = button_anadirAlbum;
+	public void setInput_file(Input input_file) {
+		this.input_file = input_file;
+	}
+
+
+
+	public void setLabel_errorTitulo(Label label_errorTitulo) {
+		this.label_errorTitulo = label_errorTitulo;
+	}
+
+
+
+	public Label getLabel_errorArtistas() {
+		return label_errorArtistas;
+	}
+
+
+
+	public void setLabel_errorArtistas(Label label_errorArtistas) {
+		this.label_errorArtistas = label_errorArtistas;
 	}
 
 

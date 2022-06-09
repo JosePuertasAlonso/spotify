@@ -8,6 +8,7 @@ import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.html.NativeButton;
+import com.vaadin.flow.component.html.Input;
 
 /**
  * A Designer generated component for the vista-cancion_album template.
@@ -29,13 +30,10 @@ public class VistaCancion_album extends LitTemplate {
 	private Label label_titulo;
 	@Id("label_artista")
 	private Label label_artista;
-	@Id("hL_botones")
-	private HorizontalLayout hL_botones;
-	@Id("button_eliminar")
-	private NativeButton button_eliminar;
-	
-	
-
+	@Id("hL_checkbox")
+	private HorizontalLayout hL_checkbox;
+	@Id("input_checkbox")
+	private Input input_checkbox;
 	public HorizontalLayout gethL_fondo() {
 		return hL_fondo;
 	}
@@ -96,26 +94,26 @@ public class VistaCancion_album extends LitTemplate {
 
 
 
-	public HorizontalLayout gethL_botones() {
-		return hL_botones;
+	public HorizontalLayout gethL_checkbox() {
+		return hL_checkbox;
 	}
 
 
 
-	public void sethL_botones(HorizontalLayout hL_botones) {
-		this.hL_botones = hL_botones;
+	public void sethL_checkbox(HorizontalLayout hL_checkbox) {
+		this.hL_checkbox = hL_checkbox;
 	}
 
 
 
-	public NativeButton getButton_eliminar() {
-		return button_eliminar;
+	public Input getInput_checkbox() {
+		return input_checkbox;
 	}
 
 
 
-	public void setButton_eliminar(NativeButton button_eliminar) {
-		this.button_eliminar = button_eliminar;
+	public void setInput_checkbox(Input input_checkbox) {
+		this.input_checkbox = input_checkbox;
 	}
 
 

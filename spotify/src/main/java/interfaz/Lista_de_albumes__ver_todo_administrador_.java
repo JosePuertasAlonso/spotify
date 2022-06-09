@@ -13,11 +13,15 @@ public class Lista_de_albumes__ver_todo_administrador_ extends VistaLista_de_alb
 
 	private VerticalLayout cuerpo;
 	
-	public Lista_de_albumes__ver_todo_administrador_(VerticalLayout cuerpo) {
+	public Lista_de_albumes__ver_todo_administrador_(VerticalLayout cuerpo, basededatos.Album[] albumesBuscados) {
 		
 		this.cuerpo = cuerpo;
 		
-		cargarAlbumesBuscadosAdmin();
+		Album__lista_administrador_ a;
+		for(int i = 0; i < albumesBuscados.length; i++) {
+			a = new Album__lista_administrador_(cuerpo, albumesBuscados[i]);
+			_list_Album__lista_administrador_.add(a);
+		}
 		
 		for(int i = 0; i < _list_Album__lista_administrador_.size(); i++) {
 			this.getvL_contenedorAlbumesAdministrador().as(VerticalLayout.class).add(_list_Album__lista_administrador_.get(i));
@@ -26,18 +30,6 @@ public class Lista_de_albumes__ver_todo_administrador_ extends VistaLista_de_alb
 		this.getStyle().set("margin", "0px");
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
-		
-	}
-	
-	public void cargarAlbumesBuscadosAdmin() {
-		
-		Album__lista_administrador_ a;
-		
-		for(int i = 0; i < 6; i++) {
-			a = new Album__lista_administrador_(cuerpo);
-			a.getStyle().set("margin-top", "var(--lumo-space-m)");
-			_list_Album__lista_administrador_.add(a);
-		}
 		
 	}
 

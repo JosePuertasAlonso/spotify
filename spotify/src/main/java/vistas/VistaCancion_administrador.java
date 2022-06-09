@@ -43,6 +43,8 @@ public class VistaCancion_administrador extends LitTemplate {
 	private Label label_exito;
 	@Id("button_editar")
 	private NativeButton button_editar;
+	@Id("hL_checkbox")
+	private HorizontalLayout hL_checkbox;
 	
 	
 
@@ -175,6 +177,18 @@ public class VistaCancion_administrador extends LitTemplate {
 
 	public void setButton_editar(NativeButton button_editar) {
 		this.button_editar = button_editar;
+	}
+
+
+
+	public HorizontalLayout gethL_checkbox() {
+		return hL_checkbox;
+	}
+
+
+
+	public void sethL_checkbox(HorizontalLayout hL_checkbox) {
+		this.hL_checkbox = hL_checkbox;
 	}
 
 

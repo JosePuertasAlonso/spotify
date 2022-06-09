@@ -24,6 +24,8 @@ public class VistaEstilo extends LitTemplate {
 	private Input input_checkbox;
 	@Id("label_estilo")
 	private Label label_estilo;
+	@Id("hL_estilo")
+	private HorizontalLayout hL_estilo;
 	
 	
 
@@ -59,6 +61,20 @@ public class VistaEstilo extends LitTemplate {
 
 	public void setLabel_estilo(Label label_estilo) {
 		this.label_estilo = label_estilo;
+	}
+	
+	
+
+
+
+	public HorizontalLayout gethL_estilo() {
+		return hL_estilo;
+	}
+
+
+
+	public void sethL_estilo(HorizontalLayout hL_estilo) {
+		this.hL_estilo = hL_estilo;
 	}
 
 

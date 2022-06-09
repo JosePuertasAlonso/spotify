@@ -10,6 +10,7 @@ import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.html.Input;
 import vistas.VistaReproductor_resumido;
 import com.vaadin.flow.component.html.NativeButton;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 
 /**
  * A Designer generated component for the vista-crear_anuncio template.
@@ -37,9 +38,23 @@ public class VistaCrear_anuncio extends LitTemplate {
 	private Label label_descripcion;
 	@Id("button_publicarAnuncio")
 	private NativeButton button_publicarAnuncio;
+	@Id("hL_textarea")
+	private HorizontalLayout hL_textarea;
+	@Id("label_errorTitulo")
+	private Label label_errorTitulo;
 	
 	
 	
+	public Label getLabel_errorTitulo() {
+		return label_errorTitulo;
+	}
+
+
+	public void setLabel_errorTitulo(Label label_errorTitulo) {
+		this.label_errorTitulo = label_errorTitulo;
+	}
+
+
 	public Element getvL_fondo() {
 		return vL_fondo;
 	}
@@ -117,6 +132,18 @@ public class VistaCrear_anuncio extends LitTemplate {
 
 	public void setButton_publicarAnuncio(NativeButton button_publicarAnuncio) {
 		this.button_publicarAnuncio = button_publicarAnuncio;
+	}
+
+	
+	
+
+	public HorizontalLayout gethL_textarea() {
+		return hL_textarea;
+	}
+
+
+	public void sethL_textarea(HorizontalLayout hL_textarea) {
+		this.hL_textarea = hL_textarea;
 	}
 
 

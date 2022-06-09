@@ -7,6 +7,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.BDPrincipal;
 import basededatos.iAdministrador;
+import spotify.GestorUsuarios;
 import vistas.VistaCrear_nuevo_estilo;
 
 public class Crear_nuevo_estilo extends VistaCrear_nuevo_estilo{
@@ -29,7 +30,12 @@ public class Crear_nuevo_estilo extends VistaCrear_nuevo_estilo{
 			
 			@Override
 			public void onComponentEvent(ClickEvent<NativeButton> event) {
-				Anadir_estilo();
+				if(getInput_nombreEstilo().getValue() == null || getInput_nombreEstilo().getValue().isBlank()) {
+					getLabel_errorEstilo().setVisible(true);
+				} else {
+					Anadir_estilo();
+				}
+				
 			}
 		});
 		
@@ -41,6 +47,7 @@ public class Crear_nuevo_estilo extends VistaCrear_nuevo_estilo{
 			this.getLabel_errorEstilo().setVisible(true);
 		}else {
 			_iAdministrador.anadir_estilo(estilo);
+			GestorUsuarios.administrador();
 		}
 	}
 }

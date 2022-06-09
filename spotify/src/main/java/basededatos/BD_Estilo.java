@@ -34,7 +34,9 @@ public class BD_Estilo {
 		return result;
 	}
 
-	public Estilo[] cargar_estilos() {
-		throw new UnsupportedOperationException();
+	public Estilo[] cargar_estilos() throws PersistentException {
+		EstiloCriteria criteria = new EstiloCriteria();
+		criteria.nombre.like("%" + "" + "%");
+		return EstiloDAO.listEstiloByCriteria(criteria);
 	}
 }

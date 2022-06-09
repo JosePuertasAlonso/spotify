@@ -45,7 +45,9 @@ export class VistaEstilo extends LitElement {
   render() {
     return html`
 <vaadin-horizontal-layout class="content fuentes" style="width: 100%; height: 100%; background-color:#121212; align-items: center; padding: 0px; margin: 0px;" id="hL_fondo">
- <input type="checkbox" id="input_checkbox">
+ <vaadin-horizontal-layout theme="spacing" id="hL_estilo" style="align-self: center;">
+  <input type="checkbox" id="input_checkbox" style="align-self: center;">
+ </vaadin-horizontal-layout>
  <label style="align-self: center; color:#9D9D9D; font-weight: 400; margin: var(--lumo-space-s); font-size:1rem" id="label_estilo">estilo</label>
 </vaadin-horizontal-layout>
 `;

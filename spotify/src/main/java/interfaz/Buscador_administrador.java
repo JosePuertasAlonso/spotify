@@ -30,33 +30,45 @@ public class Buscador_administrador extends VistaBuscador_administrador {
 	
 	//ANADIDO A MANO
 	public Barra_buscador _barra_buscador;
+	public Buscador_administrador _buscador_administrador;
 	
-	public Buscador_administrador(VerticalLayout cuerpo) {
+	public Buscador_administrador(VerticalLayout cuerpo, String cadenaBusqueda) {
 		this.getStyle().set("margin", "0px");
 		this.getStyle().set("padding", "0px");
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
 		
+		this.getLabel_resultadosPara().setText("Resultados para:  \" " + cadenaBusqueda + " \"");
+		
 		_barra_buscador = new Barra_buscador();
 		this.gethL_barraBuscador().add(_barra_buscador);
+		_barra_buscador.getButton_buscar().addClickListener(new ComponentEventListener<ClickEvent<NativeButton>>() {
+			
+			@Override
+			public void onComponentEvent(ClickEvent<NativeButton> event) {
+				_buscador_administrador = new Buscador_administrador(cuerpo, _barra_buscador.getInput_buscar().getValue());
+				cuerpo.removeAll();
+				cuerpo.add(_buscador_administrador);
+			}
+		});
 		
-		_lista_de_canciones_buscadas__administrador_ = new Lista_de_canciones_buscadas__administrador_(cuerpo);
+		_lista_de_canciones_buscadas__administrador_ = new Lista_de_canciones_buscadas__administrador_(cuerpo, cadenaBusqueda);
 		this.gethL_listaDeCancionesBuscadasAdmin().add(_lista_de_canciones_buscadas__administrador_);
 		
-		_lista_de_albumbes_buscados__administrador_ = new Lista_de_albumbes_buscados__administrador_(cuerpo);
+		_lista_de_albumbes_buscados__administrador_ = new Lista_de_albumbes_buscados__administrador_(cuerpo, cadenaBusqueda);
 		this.gethL_listaDeAlbumesBuscadosAdmin().add(_lista_de_albumbes_buscados__administrador_);
 		
-		_lista_de_artistas_buscados__administrador_ = new Lista_de_artistas_buscados__administrador_(cuerpo);
+		_lista_de_artistas_buscados__administrador_ = new Lista_de_artistas_buscados__administrador_(cuerpo, cadenaBusqueda);
 		this.gethL_listaDeArtistasBuscadosAdmin().add(_lista_de_artistas_buscados__administrador_);
 		
-		_lista_de_perfiles_buscados__administrador_ = new Lista_de_perfiles_buscados__administrador_();
+		_lista_de_perfiles_buscados__administrador_ = new Lista_de_perfiles_buscados__administrador_(cuerpo, cadenaBusqueda);
 		this.gethL_listaDePerfilesBuscadosAdmin().add(_lista_de_perfiles_buscados__administrador_);
 		
 		this.getButton_verTodoCanciones().addClickListener(new ComponentEventListener<ClickEvent<NativeButton>>() {
 			
 			@Override
 			public void onComponentEvent(ClickEvent<NativeButton> event) {
-				_ver_todas_canciones_buscadas__administrador_ = new Ver_todas_canciones_buscadas__administrador_(cuerpo);
+				_ver_todas_canciones_buscadas__administrador_ = new Ver_todas_canciones_buscadas__administrador_(cuerpo, cadenaBusqueda, _lista_de_canciones_buscadas__administrador_.canciones_buscadas);
 				cuerpo.removeAll();
 				cuerpo.add(_ver_todas_canciones_buscadas__administrador_);
 			}
@@ -66,7 +78,7 @@ public class Buscador_administrador extends VistaBuscador_administrador {
 			
 			@Override
 			public void onComponentEvent(ClickEvent<NativeButton> event) {
-				_ver_todos_los_artistas_buscados__administrador_ = new Ver_todos_los_artistas_buscados__administrador_(cuerpo);
+				_ver_todos_los_artistas_buscados__administrador_ = new Ver_todos_los_artistas_buscados__administrador_(cuerpo, cadenaBusqueda, _lista_de_artistas_buscados__administrador_.artistas_buscados);
 				cuerpo.removeAll();
 				cuerpo.add(_ver_todos_los_artistas_buscados__administrador_);
 			}
@@ -76,7 +88,7 @@ public class Buscador_administrador extends VistaBuscador_administrador {
 			
 			@Override
 			public void onComponentEvent(ClickEvent<NativeButton> event) {
-				_ver_todos_los_albumes_buscados__administrador_ = new Ver_todos_los_albumes_buscados__administrador_(cuerpo);
+				_ver_todos_los_albumes_buscados__administrador_ = new Ver_todos_los_albumes_buscados__administrador_(cuerpo, cadenaBusqueda, _lista_de_albumbes_buscados__administrador_.albumes_buscados);
 				cuerpo.removeAll();
 				cuerpo.add(_ver_todos_los_albumes_buscados__administrador_);
 			}
@@ -86,7 +98,7 @@ public class Buscador_administrador extends VistaBuscador_administrador {
 			
 			@Override
 			public void onComponentEvent(ClickEvent<NativeButton> event) {
-				_ver_todos_perfiles_buscados__administrador_ = new Ver_todos_perfiles_buscados__administrador_(cuerpo);
+				_ver_todos_perfiles_buscados__administrador_ = new Ver_todos_perfiles_buscados__administrador_(cuerpo, cadenaBusqueda, _lista_de_perfiles_buscados__administrador_.usuarios_buscados);
 				cuerpo.removeAll();
 				cuerpo.add(_ver_todos_perfiles_buscados__administrador_);
 			}

@@ -35,13 +35,24 @@ public class Administrador extends VistaAdministrador{
 //		_cabecera.gethL_registrarseIniciarSesion().setVisible(false);
 		
 		/*CAMBIO*/
-		_cabecera = new Cabecera_cibernauta_registrado(cuerpo, null);
-		_cabecera.gethL_fotoNombreUsuario().setVisible(false);
+		_cabecera = new Cabecera();
+		_cabecera.gethL_fotoNombreUsuario().setVisible(true);
+		_cabecera.getLabel_nombreUsuario().setText("administrador");
+		_cabecera.gethL_registrarseIniciarSesion().setVisible(false);
 		_cabecera._logo.getButton_logo().addClickListener(new ComponentEventListener<ClickEvent<NativeButton>>() {
 			
 			@Override
 			public void onComponentEvent(ClickEvent<NativeButton> event) {
 				GestorUsuarios.administrador();
+				
+			}
+		});
+		
+		_cabecera.getButton_cerrarSesion().addClickListener(new ComponentEventListener<ClickEvent<NativeButton>>() {
+			
+			@Override
+			public void onComponentEvent(ClickEvent<NativeButton> event) {
+				GestorUsuarios.cibernauta(true);
 				
 			}
 		});
@@ -57,7 +68,7 @@ public class Administrador extends VistaAdministrador{
 			
 			@Override
 			public void onComponentEvent(ClickEvent<NativeButton> event) {
-				_buscador_administrador = new Buscador_administrador(cuerpo);
+				_buscador_administrador = new Buscador_administrador(cuerpo, _barra_buscador.getInput_buscar().getValue());
 				cuerpo.removeAll();
 				cuerpo.add(_buscador_administrador);
 			}

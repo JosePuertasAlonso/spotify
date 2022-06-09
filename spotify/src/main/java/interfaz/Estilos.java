@@ -4,6 +4,8 @@ import java.util.Vector;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import basededatos.BDPrincipal;
+import basededatos.iAdministrador;
 import interfaz.Estilo;
 import vistas.VistaEstilos;
 
@@ -12,7 +14,13 @@ public class Estilos extends VistaEstilos{
 	public Modificar_artista _modificar_artista;
 	public Vector<Estilo> _list_Estilo = new Vector<Estilo>();
 	
-	public Estilos() {
+	private basededatos.Artista artista;
+	private iAdministrador _iAdministrador = new BDPrincipal();
+	
+	public Estilos(basededatos.Artista artista) {
+		
+		this.artista = artista;
+		
 		cargarEstilos();
 		
 		for(int i = 0; i < _list_Estilo.size(); i++) {
@@ -27,10 +35,11 @@ public class Estilos extends VistaEstilos{
 	
 	public void cargarEstilos() {
 		
+		basededatos.Estilo[] estilos = _iAdministrador.cargar_estilos();
 		Estilo e;
 		
-		for(int i = 0; i < 20; i++) {
-			e = new Estilo();
+		for(int i = 0; i < estilos.length; i++) {
+			e = new Estilo(estilos[i], this.artista);
 			if(i != 0) {
 				e.getStyle().set("margin-top", "var(--lumo-space-m)");
 			}

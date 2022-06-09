@@ -14,7 +14,7 @@ public class Ver_todos_los_artistas_buscados__administrador_ extends VistaVer_to
 	//ANADIDO A MANO
 	public Barra_buscador _barra_buscador;
 	
-	public Ver_todos_los_artistas_buscados__administrador_(VerticalLayout cuerpo) {
+	public Ver_todos_los_artistas_buscados__administrador_(VerticalLayout cuerpo, String cadenaBusqueda, basededatos.Artista[] artistas) {
 		this.getStyle().set("margin", "0px");
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
@@ -22,14 +22,17 @@ public class Ver_todos_los_artistas_buscados__administrador_ extends VistaVer_to
 		_barra_buscador = new Barra_buscador();
 		this.gethL_barraBuscador().add(_barra_buscador);
 		
-		_lista_de_artistas__ver_todo_administrador_ = new Lista_de_artistas__ver_todo_administrador_(cuerpo);
+		_lista_de_artistas__ver_todo_administrador_ = new Lista_de_artistas__ver_todo_administrador_(cuerpo, artistas);
 		this.gethL_listaDeArtistasVerTodoAdmin().add(_lista_de_artistas__ver_todo_administrador_);
+		
+		this.getLabel_todosArtistasPara().setText("Todos los artistas para:  \" " + cadenaBusqueda + " \"");
+
 		
 		_barra_buscador.getButton_buscar().addClickListener(new ComponentEventListener<ClickEvent<NativeButton>>() {
 			
 			@Override
 			public void onComponentEvent(ClickEvent<NativeButton> event) {
-				_buscador_administrador = new Buscador_administrador(cuerpo);
+				_buscador_administrador = new Buscador_administrador(cuerpo, _barra_buscador.getInput_buscar().getValue());
 				cuerpo.removeAll();
 				cuerpo.add(_buscador_administrador);
 			}

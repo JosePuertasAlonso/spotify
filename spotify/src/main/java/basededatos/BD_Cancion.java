@@ -96,9 +96,6 @@ public class BD_Cancion {
 		return null;
 	}
 
-	public Cancion cargar_ultima_reproduccion(String aLogin) {
-		throw new UnsupportedOperationException();
-	}
 
 	public void anadir_cancion(Cancion aCancion) throws PersistentException {
 		PersistentTransaction t = MDS12022PFCastellsTorresPersistentManager.instance().getSession().beginTransaction();
@@ -117,6 +114,26 @@ public class BD_Cancion {
 		Cancion c = CancionDAO.loadCancionByCriteria(criteria);
 		PersistentTransaction t = MDS12022PFCastellsTorresPersistentManager.instance().getSession().beginTransaction();
 		try {
+			Artista[] artistasConLaCancion = c.realizada_por.toArray();
+			for(Artista a : artistasConLaCancion) {
+				a.realiza.remove(c);
+				ArtistaDAO.save(a);
+			}
+			Lista[] listasConLaCancion = c.esta_en.toArray();
+			for(Lista l : listasConLaCancion) {
+				l.contiene.remove(c);
+				ListaDAO.save(l);
+			}
+			Usuario_registrado[] usuariosConLaCancion = c.es_marcada_como_favorita_por.toArray();
+			for(Usuario_registrado u : usuariosConLaCancion) {
+				u.marca_como_favorita.remove(c);
+				Usuario_registradoDAO.save(u);
+			}
+			Usuario_registrado[] usuariosConLaCancion2 = c.es_historial_de.toArray();
+			for(Usuario_registrado u : usuariosConLaCancion2) {
+				u.reproduce.remove(c);
+				Usuario_registradoDAO.save(u);
+			}
 			CancionDAO.delete(c);
 			t.commit();
 		} catch (Exception e) {
@@ -125,8 +142,32 @@ public class BD_Cancion {
 		MDS12022PFCastellsTorresPersistentManager.instance().disposePersistentManager();
 	}
 
-	public void modificar_cancion(int aId_Cancion, String aTitulo_cancion, String aArtistas, String aAlbum) {
-		throw new UnsupportedOperationException();
+	public void modificar_cancion(int aId_Cancion, Cancion aCancion, Artista[] nuevosArtistas) throws PersistentException {
+		CancionCriteria criteria = new CancionCriteria();
+		criteria.id_Cancion.eq(aId_Cancion);
+		Cancion c = CancionDAO.loadCancionByCriteria(criteria);
+		
+		PersistentTransaction t = MDS12022PFCastellsTorresPersistentManager.instance().getSession().beginTransaction();
+		try {
+			c.setCompositor(aCancion.getCompositor());
+			c.setProductor(aCancion.getProductor());
+			c.setInterprete(aCancion.getInterprete());
+			c.setImagen(aCancion.getImagen());
+			c.setTitulo(aCancion.getTitulo());
+			Artista[] artistasActuales = c.realizada_por.toArray();
+			for(int i = 0; i < artistasActuales.length; i++) {
+				c.realizada_por.remove(artistasActuales[i]);
+			}
+			for(int i = 0; i < nuevosArtistas.length; i++) {
+				c.realizada_por.add(nuevosArtistas[i]);
+			}
+			CancionDAO.save(c);
+			t.commit();
+		} catch (Exception e) {
+			t.rollback();
+		}
+		MDS12022PFCastellsTorresPersistentManager.instance().disposePersistentManager();
+		
 	}
 
 	public void establecer_ultimo_exito(int aId_Cancion) throws PersistentException {

@@ -20,29 +20,15 @@ public interface iComun {
 
 	public boolean anadir_a_favoritos(int aId_Cancion, String aLogin);
 
-	public Lista_de_reproduccion[] cargar_listas_perfil(String aLogin);
-
 	public void anadir_cancion_a_la_lista(String aLogin, int aId_Cancion, int aId_Lista);
 
 	public void crear_lista(String aLogin, String aNombre_lista, String aFoto);
 
-	public Cancion[] cargar_hits(String aLogin_artista);
-
-	public Album[] cargar_albumes_artista(String aLogin_artista);
-
 	public Artista[] cargar_artistas_similares(String aLogin_artista);
-
-	public Lista_de_reproduccion[] cargar_listas_artista(String aLogin_artista);
 
 	public boolean seguir_usuario(String aLogin_usuario, String aLogin_usuario_a_seguir);
 
-	public Cancion[] cargar_canciones_album(int aId_Album);
-
-	public Cancion[] cargar_canciones_lista(int aId_Lista);
-
 	public Cancion cargar_cancion_mas_escuchada();
-
-	public Cancion cargar_ultima_reproduccion(String aLogin);
 
 	public Anuncio[] cargar_anuncios(String aLogin);
 

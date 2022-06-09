@@ -349,3 +349,16 @@ input[type="checkbox"]:hover {
 input[type="checkbox"]:checked {
 	background-color: #1ED760;
 }
+
+.fuentes textarea {
+	color: #FFFFFF;
+	font-size: 1.1rem;
+	font-family: helvetica;
+	border: 1px solid #FFFFFF;
+	background-color: #121212;
+	outline-color: #FFFFFF;
+}
+
+.fuentes textarea::placeholder {
+	color: #A8A8A8;
+}

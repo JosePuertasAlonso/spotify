@@ -202,10 +202,6 @@ public class BDPrincipal implements iCibernauta_no_registrado, iCibernauta_regis
 		return result;
 	}
 
-	public Lista_de_reproduccion[] cargar_listas_perfil(String aLogin) {
-		throw new UnsupportedOperationException();
-	}
-
 	public void anadir_cancion_a_la_lista(String aLogin, int aId_Cancion, int aId_Lista) {
 		try {
 			_bd_list.anadir_cancion_a_la_lista(aLogin, aId_Cancion, aId_Lista);
@@ -223,15 +219,8 @@ public class BDPrincipal implements iCibernauta_no_registrado, iCibernauta_regis
 			e.printStackTrace();
 		}
 	}
-
-	public Cancion[] cargar_hits(String aLogin_artista) {
-		throw new UnsupportedOperationException();
-	}
-
-	public Album[] cargar_albumes_artista(String aLogin_artista) {
-		throw new UnsupportedOperationException();
-	}
-
+	
+	
 	public basededatos.Artista[] cargar_artistas_similares(String aLogin_artista) {
 		basededatos.Artista[] result = null;
 		try {
@@ -243,9 +232,6 @@ public class BDPrincipal implements iCibernauta_no_registrado, iCibernauta_regis
 		return result;
 	}
 
-	public Lista_de_reproduccion[] cargar_listas_artista(String aLogin_artista) {
-		throw new UnsupportedOperationException();
-	}
 
 	public boolean seguir_usuario(String aLogin_usuario, String aLogin_usuario_a_seguir) {
 		boolean result = false;
@@ -258,14 +244,6 @@ public class BDPrincipal implements iCibernauta_no_registrado, iCibernauta_regis
 		return result;
 	}
 
-	public Cancion[] cargar_canciones_album(int aId_Album) {
-		throw new UnsupportedOperationException();
-	}
-
-	public Cancion[] cargar_canciones_lista(int aId_Lista) {
-		throw new UnsupportedOperationException();
-	}
-
 	public Cancion cargar_cancion_mas_escuchada() {
 		Cancion result = null;
 		try {
@@ -275,10 +253,6 @@ public class BDPrincipal implements iCibernauta_no_registrado, iCibernauta_regis
 			e.printStackTrace();
 		}
 		return result;
-	}
-
-	public Cancion cargar_ultima_reproduccion(String aLogin) {
-		throw new UnsupportedOperationException();
 	}
 
 	public Anuncio[] cargar_anuncios(String aLogin) {
@@ -293,7 +267,12 @@ public class BDPrincipal implements iCibernauta_no_registrado, iCibernauta_regis
 	}
 
 	public void eliminar_perfil(String aLogin) {
-		throw new UnsupportedOperationException();
+		try {
+			_bd_us_reg.eliminar_perfil(aLogin);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public void eliminar_lista(int aId_Lista) {
@@ -324,7 +303,12 @@ public class BDPrincipal implements iCibernauta_no_registrado, iCibernauta_regis
 	}
 
 	public void publicar_anuncio(String aLogin_artista, Anuncio aAnuncio) {
-		throw new UnsupportedOperationException();
+		try {
+			_bd_anun.publicar_anuncio(aLogin_artista, aAnuncio);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public void modificar_perfil_artista(String aLogin_artista, String aCorreo_nuevo, String aFoto) {
@@ -354,20 +338,34 @@ public class BDPrincipal implements iCibernauta_no_registrado, iCibernauta_regis
 		}
 	}
 
-	public Cancion[] cargar_canciones_album_administrador(int aId_Album) {
-		throw new UnsupportedOperationException();
-	}
 
 	public void anadir_album(Album aAlbum) {
-		throw new UnsupportedOperationException();
+		try {
+			_bd_list.anadir_album(aAlbum);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public Estilo[] cargar_estilos() {
-		throw new UnsupportedOperationException();
+		Estilo[] result = null;
+		try {
+			result = _bd_estilo.cargar_estilos();
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
 	}
 
 	public void anadir_artista(basededatos.Artista aArtista) {
-		throw new UnsupportedOperationException();
+		try {
+			_bd_art.anadir_artista(aArtista);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public void eliminar_cancion(int aId_Cancion) {
@@ -379,8 +377,13 @@ public class BDPrincipal implements iCibernauta_no_registrado, iCibernauta_regis
 		}
 	}
 
-	public void modificar_cancion(int aId_Cancion, String aTitulo_cancion, String aArtistas, String aAlbum) {
-		throw new UnsupportedOperationException();
+	public void modificar_cancion(int aId_Cancion, Cancion aCancion, basededatos.Artista[] nuevosArtistas) {
+		try {
+			_bd_can.modificar_cancion(aId_Cancion, aCancion, nuevosArtistas);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public void establecer_ultimo_exito(int aId_Cancion) {
@@ -393,23 +396,40 @@ public class BDPrincipal implements iCibernauta_no_registrado, iCibernauta_regis
 	}
 
 	public void eliminar_album(int aId_album) {
-		throw new UnsupportedOperationException();
+		try {
+			_bd_list.eliminar_album(aId_album);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
-	public void modificar_album(Album aAlbum) {
-		throw new UnsupportedOperationException();
+	public void modificar_album(int aId_album, Album aAlbum, basededatos.Artista[] artistas_album) {
+		try {
+			_bd_list.modificar_album(aId_album, aAlbum, artistas_album);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
-	public void eliminar_artista(String aLogin) {
-		throw new UnsupportedOperationException();
-	}
 
-	public void modificar_artista_administrador(String aFoto, Estilo[] aEstilos) {
-		throw new UnsupportedOperationException();
+	public void modificar_artista_administrador(String login_artista, String aFoto) {
+		try {
+			_bd_art.modificar_artista_administrador(login_artista, aFoto);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public void eliminar_perfil_administrador(String aLogin) {
-		throw new UnsupportedOperationException();
+		try {
+			_bd_us_reg.eliminar_perfil(aLogin);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public Cibernauta_no_registrado get_Cibernauta_no_registrado() {
@@ -453,19 +473,47 @@ public class BDPrincipal implements iCibernauta_no_registrado, iCibernauta_regis
 	}
 
 	public Cancion[] buscar_canciones_administrador(String aCadena_busqueda) {
-		throw new UnsupportedOperationException();
+		Cancion[] result = null;
+		try {
+			result = _bd_can.buscar_canciones(aCadena_busqueda);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
 	}
 
 	public Album[] buscar_albumes_administrador(String aCadena_busqueda) {
-		throw new UnsupportedOperationException();
+		Album[] result = null;
+		try {
+			result = _bd_list.buscar_albumes_administrador(aCadena_busqueda);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
 	}
 
 	public basededatos.Artista[] buscar_artistas_administrador(String aCadena_busqueda) {
-		throw new UnsupportedOperationException();
+		basededatos.Artista[] result = null;
+		try {
+			result = _bd_art.buscar_artistas(aCadena_busqueda);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
 	}
 
 	public Usuario_registrado[] buscar_perfiles_administrador(String aCadena_busqueda) {
-		throw new UnsupportedOperationException();
+		Usuario_registrado[] result = null;
+		try {
+			result = _bd_us_reg.buscar_perfiles_administrador(aCadena_busqueda);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
 	}
 
 	@Override
@@ -520,11 +568,67 @@ public class BDPrincipal implements iCibernauta_no_registrado, iCibernauta_regis
 	public boolean login_ya_registrado_modificacion_artista(String aLogin) {
 		boolean result = false;
 		try {
-			result = _bd_art.login_ya_registrado_modificacion_artista(aLogin);
+			result = _bd_us_reg.login_ya_registrado(aLogin);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return result;
+	}
+
+	@Override
+	public basededatos.Artista[] existen_artistas(String[] artistas) {
+		basededatos.Artista[] result = null;
+		try {
+			result = _bd_art.existen_artistas(artistas);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
+	}
+
+	@Override
+	public boolean nick_ya_registrado_administrador(String aNick) {
+		boolean result = false;
+		try {
+			result = _bd_us_reg.nick_ya_registrado(aNick);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
+	}
+
+	@Override
+	public boolean login_ya_registrado_administrador(String aLogin) {
+		boolean result = false;
+		try {
+			result = _bd_us_reg.login_ya_registrado(aLogin);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
+	}
+
+	@Override
+	public void anadir_cancion_al_album(int aId_cancion, int aId_album) {
+		try {
+			_bd_list.anadir_cancion_al_album(aId_cancion, aId_album);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	public void asignar_estilo(Estilo estilo, String login_artista) {
+		try {
+			_bd_art.asignar_estilo(estilo, login_artista);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

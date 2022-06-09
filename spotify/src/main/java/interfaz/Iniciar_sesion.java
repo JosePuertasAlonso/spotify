@@ -70,7 +70,6 @@ public class Iniciar_sesion extends VistaIniciar_sesion{
 					GestorUsuarios.usuario(true);
 				} else {
 					if(_iCibernauta_no_registrado.existe_usuarioAdmin(email, contrasena)) {
-						GestorUsuarios.inicializarUsuario(null);
 						GestorUsuarios.administrador();
 					}else {
 						getLabel_errorInicioSesion().setVisible(true);
