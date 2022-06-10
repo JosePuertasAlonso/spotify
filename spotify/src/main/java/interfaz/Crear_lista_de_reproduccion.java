@@ -35,7 +35,12 @@ public class Crear_lista_de_reproduccion extends VistaCrear_lista_de_reproduccio
 			@Override
 			public void onComponentEvent(ClickEvent<NativeButton> event) {
 				Crear_lista();
-				GestorUsuarios.usuario(false);
+				if(GestorUsuarios._u instanceof basededatos.Artista) {
+					GestorUsuarios.artista(false);
+				} else {
+					GestorUsuarios.usuario(false);
+				}
+				
 			}
 		});
 	}

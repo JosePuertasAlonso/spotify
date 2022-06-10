@@ -1,6 +1,5 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 
 @customElement('vista-crear_anuncio')
 export class VistaCrear_anuncio extends LitElement {
@@ -59,7 +58,7 @@ export class VistaCrear_anuncio extends LitElement {
     </svg>No se puede crear un anuncio sin título</label>
    <input type="text" placeholder="Pon un título a tu anuncio." style="width: 100%; padding: 10px;" id="input_titulo">
    <label style="flex-shrink: 0; margin-top: var(--lumo-space-l);" id="label_descripcion">Descripción del anuncio</label>
-   <vaadin-horizontal-layout theme="spacing" id="hL_textarea" style="width: 103%; height: 100%; padding: 0px; margin-left: 0px;"></vaadin-horizontal-layout>
+   <input type="text" id="input_textArea" style="width: 100%; text-align: center; height: 100%;" placeholder="Escribe la descripción del anuncio">
    <textarea type="text" placeholder="Escribe la descripción del anuncio" style="width: 100%; padding: 10px; height: 100%; display:none" id="textarea_descripcion1"></textarea>
   </vaadin-vertical-layout>
   <button id="button_publicarAnuncio" style="margin-bottom: var(--lumo-space-m); width: 100%; max-width: 16%;">PUBLICAR ANUNCIO</button>

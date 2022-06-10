@@ -188,4 +188,10 @@ public class BD_Cancion {
 		}
 		MDS12022PFCastellsTorresPersistentManager.instance().disposePersistentManager();
 	}
+	
+	public Cancion recargar_cancion(int id_cancion) throws PersistentException {
+		CancionCriteria criteria = new CancionCriteria();
+		criteria.id_Cancion.eq(id_cancion);
+		return CancionDAO.loadCancionByCriteria(criteria);
+	}
 }

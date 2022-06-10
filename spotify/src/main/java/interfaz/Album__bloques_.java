@@ -23,6 +23,29 @@ public class Album__bloques_ extends VistaAlbum_bloques{
 		
 		this.getStyle().set("margin-right", "var(--lumo-space-m)");
 		this.getStyle().set("max-width", "15.5%");
+		this.getStyle().set("min-width", "213px");
+
+		//Titulo cancion
+		if(album.getNombre().length() > 13) {
+			String labelTitulo = album.getNombre().substring(0, 12) + "...";
+			this.getLabel_titulo().setText(labelTitulo);
+		} else {
+			this.getLabel_titulo().setText(album.getNombre());
+		}
+		//Artistas cancion
+		basededatos.Artista[] artistasCancion = album.es_creado_por.toArray();
+		String cadenaArtistas = "";
+		for(int j = 0; j < artistasCancion.length; j++) {
+			if(j == artistasCancion.length - 1) {
+				cadenaArtistas += artistasCancion[j].getNick();
+			} else {
+				cadenaArtistas += artistasCancion[j].getNick() + ", "; 
+			}
+		}
+		this.getLabel_artista().setText(cadenaArtistas);
+		
+		this.getImagen().setSrc(album.getImagen());
+		
 		
 		this.getButton_play().addClickListener(new ComponentEventListener<ClickEvent<NativeButton>>() {
 			

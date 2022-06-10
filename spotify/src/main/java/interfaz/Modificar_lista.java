@@ -70,7 +70,12 @@ public class Modificar_lista extends Lista {
 				if(!getInput_titulo().getValue().equals(lista.getNombre())) {
 					Cambiar_nombre_de_lista();
 				}
-				GestorUsuarios.usuario(false);
+				
+				if(GestorUsuarios._u instanceof basededatos.Artista) {
+					GestorUsuarios.artista(false);
+				} else {
+					GestorUsuarios.usuario(false);
+				}
 			}
 		});
 		

@@ -17,6 +17,7 @@ public class Artista__lista_ extends VistaArtista_lista {
 		this.getStyle().set("padding", "0px");
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
+		this.getStyle().set("min-height", "55px");
 		
 		this.getStyle().set("margin-top", "var(--lumo-space-m)");
 		

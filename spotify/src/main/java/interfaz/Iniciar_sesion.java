@@ -53,28 +53,7 @@ public class Iniciar_sesion extends VistaIniciar_sesion{
 			
 			@Override
 			public void onComponentEvent(ClickEvent<NativeButton> event) {
-				String email = getInput_correoElectronico().getValue();
-				String contrasena = getInput_contrasena().getValue();
-				
-				Usuario_registrado u = new Usuario_registrado();
-				u.setLogin(email);
-				u.setPassword(contrasena);
-				
-				Usuario_registrado aux = _iCibernauta_no_registrado.existe_usuario(u);
-				
-				if(aux instanceof Artista) {
-					GestorUsuarios.inicializarUsuario(aux);
-					GestorUsuarios.artista(true);
-				} else if (aux instanceof Usuario_registrado) {
-					GestorUsuarios.inicializarUsuario(aux);
-					GestorUsuarios.usuario(true);
-				} else {
-					if(_iCibernauta_no_registrado.existe_usuarioAdmin(email, contrasena)) {
-						GestorUsuarios.administrador();
-					}else {
-						getLabel_errorInicioSesion().setVisible(true);
-					}
-				}
+				Validar_iniciar_sesion();
 			}
 		});
     	
@@ -119,7 +98,28 @@ public class Iniciar_sesion extends VistaIniciar_sesion{
 	}
 
 	public void Validar_iniciar_sesion() {
-		throw new UnsupportedOperationException();
+		String email = getInput_correoElectronico().getValue();
+		String contrasena = getInput_contrasena().getValue();
+		
+		Usuario_registrado u = new Usuario_registrado();
+		u.setLogin(email);
+		u.setPassword(contrasena);
+		
+		Usuario_registrado aux = _iCibernauta_no_registrado.existe_usuario(u);
+		
+		if(aux instanceof Artista) {
+			GestorUsuarios.inicializarUsuario(aux);
+			GestorUsuarios.artista(true);
+		} else if (aux instanceof Usuario_registrado) {
+			GestorUsuarios.inicializarUsuario(aux);
+			GestorUsuarios.usuario(true);
+		} else {
+			if(_iCibernauta_no_registrado.existe_usuarioAdmin(email, contrasena)) {
+				GestorUsuarios.administrador();
+			}else {
+				getLabel_errorInicioSesion().setVisible(true);
+			}
+		}
 	}
 	
 }

@@ -43,9 +43,12 @@ public class Favoritas extends Lista_canciones {
 		basededatos.Cancion[] canciones = _iComun.cargar_favoritas(GestorUsuarios._u.getLogin()); 		
 		Cancion__bloque_con_opciones_ c;
 		
+		int cont = 0;
 		for(int i = 0; i < canciones.length; i++) {
 			c = new Cancion__bloque_con_opciones_(cuerpo, minireproductor, canciones[i]);
 			_list_Cancion__bloque_con_opciones_.add(c);
+			cont ++;
+			if(cont == 6) break;
 		}
 	}
 }

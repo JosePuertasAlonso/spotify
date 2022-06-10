@@ -9,6 +9,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.BDPrincipal;
 import basededatos.iComun;
+import spotify.GestorUsuarios;
 import vistas.VistaEliminar_lista;
 
 public class Eliminar_lista extends VistaEliminar_lista{
@@ -29,7 +30,12 @@ public class Eliminar_lista extends VistaEliminar_lista{
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
 		
+		this.getLabel_atencion().setText("¡Atención! va a elimiar la lista");
+
+		
 		this.getButtonCancelar().addClickListener(new ComponentEventListener<ClickEvent<NativeButton>>() {
+			
+			
 			
 			@Override
 			public void onComponentEvent(ClickEvent<NativeButton> event) {
@@ -43,6 +49,11 @@ public class Eliminar_lista extends VistaEliminar_lista{
 			public void onComponentEvent(ClickEvent<NativeButton> event) {
 				Confirmar_eliminar_lista();
 				popUp.close();
+				if(GestorUsuarios._u instanceof basededatos.Artista) {
+					GestorUsuarios.artista(false);
+				} else {
+					GestorUsuarios.usuario(false);
+				}
 				
 			}
 		});

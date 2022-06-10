@@ -224,4 +224,10 @@ public class BD_Lista {
 		}
 		MDS12022PFCastellsTorresPersistentManager.instance().disposePersistentManager();
 	}
+	
+	public Lista recargar_lista(int id_lista) throws PersistentException {
+		ListaCriteria criteria = new ListaCriteria();
+		criteria.id_Lista.eq(id_lista);
+		return ListaDAO.loadListaByCriteria(criteria);
+	}
 }

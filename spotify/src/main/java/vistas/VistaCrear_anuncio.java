@@ -1,5 +1,7 @@
 package vistas;
 
+import org.w3c.dom.html.HTMLTextAreaElement;
+
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.littemplate.LitTemplate;
@@ -11,6 +13,7 @@ import com.vaadin.flow.component.html.Input;
 import vistas.VistaReproductor_resumido;
 import com.vaadin.flow.component.html.NativeButton;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import spotify.TextArea;
 
 /**
  * A Designer generated component for the vista-crear_anuncio template.
@@ -38,13 +41,34 @@ public class VistaCrear_anuncio extends LitTemplate {
 	private Label label_descripcion;
 	@Id("button_publicarAnuncio")
 	private NativeButton button_publicarAnuncio;
-	@Id("hL_textarea")
-	private HorizontalLayout hL_textarea;
 	@Id("label_errorTitulo")
 	private Label label_errorTitulo;
+	@Id("textarea_descripcion1")
+	private TextArea textarea_descripcion1;
+	@Id("input_textArea")
+	private Input input_textArea;
 	
-	
-	
+
+	public TextArea getTextarea_descripcion1() {
+		return textarea_descripcion1;
+	}
+
+
+	public void setTextarea_descripcion1(TextArea textarea_descripcion1) {
+		this.textarea_descripcion1 = textarea_descripcion1;
+	}
+
+
+	public Input getInput_textArea() {
+		return input_textArea;
+	}
+
+
+	public void setInput_textArea(Input input_textArea) {
+		this.input_textArea = input_textArea;
+	}
+
+
 	public Label getLabel_errorTitulo() {
 		return label_errorTitulo;
 	}
@@ -135,16 +159,6 @@ public class VistaCrear_anuncio extends LitTemplate {
 	}
 
 	
-	
-
-	public HorizontalLayout gethL_textarea() {
-		return hL_textarea;
-	}
-
-
-	public void sethL_textarea(HorizontalLayout hL_textarea) {
-		this.hL_textarea = hL_textarea;
-	}
 
 
 	/**

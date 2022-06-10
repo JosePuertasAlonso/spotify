@@ -42,10 +42,7 @@ public class BD_Artista {
 		Artista[] result = new Artista[aux.size()];
 		for(int i = 0; i < result.length; i++) {
 			result[i] = aux.get(i);
-		}
-		
-		System.out.println("Resultado de artistas similares: " + result.length);
-		
+		}		
 		return result;
 	}
 

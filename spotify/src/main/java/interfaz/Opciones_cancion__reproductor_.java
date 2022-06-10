@@ -20,8 +20,8 @@ public class Opciones_cancion__reproductor_ extends Opciones_cancion {
 	public Ver_album _ver_album;
 	public Ver_perfil_artista _ver_perfil_artista;
 	
-	public Opciones_cancion__reproductor_(VerticalLayout cuerpo, HorizontalLayout minireproductor, Dialog popUp, basededatos.Cancion cancion) {
-		super(cuerpo, minireproductor, popUp, cancion);
+	public Opciones_cancion__reproductor_(VerticalLayout cuerpo, HorizontalLayout minireproductor, Dialog popUp, basededatos.Cancion can) {
+		super(cuerpo, minireproductor, popUp, can);
 		this.getButton_verAlbum().setVisible(true);
 		this.getButton_verArtista().setVisible(true);
 		
@@ -30,6 +30,7 @@ public class Opciones_cancion__reproductor_ extends Opciones_cancion {
 			@Override
 			public void onComponentEvent(ClickEvent<NativeButton> event) {
 				popUp.close();
+				
 				basededatos.Lista[] l_aux = cancion.esta_en.toArray();
 				basededatos.Album a = null;
 				for(int i = 0; i < l_aux.length; i++) {
@@ -61,8 +62,6 @@ public class Opciones_cancion__reproductor_ extends Opciones_cancion {
 				cuerpo.add(_ver_perfil_artista);
 			}
 		});
-		
-		
 		
 	}
 }

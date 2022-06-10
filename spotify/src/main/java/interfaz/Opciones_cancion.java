@@ -23,11 +23,12 @@ public class Opciones_cancion extends VistaOpciones_cancion {
 	
 	iComun _iComun = new BDPrincipal();
 	
-	private basededatos.Cancion cancion;
+	protected basededatos.Cancion cancion;
 
 	
 	public Opciones_cancion(VerticalLayout cuerpo, HorizontalLayout minireproductor, Dialog popUp, basededatos.Cancion cancion) {
 		this.cancion = cancion;
+		recagar_cancion();
 		
 		this.getStyle().set("margin", "0px");
 		this.getStyle().set("padding", "0px");
@@ -47,7 +48,7 @@ public class Opciones_cancion extends VistaOpciones_cancion {
 		boolean contiene = false;
 		Cancion[] aux = GestorUsuarios._u.marca_como_favorita.toArray();
 		for(int i = 0; i < aux.length; i++) {
-			if(aux[i].getId_Cancion() == cancion.getDuracion()) {
+			if(aux[i].getId_Cancion() == cancion.getId_Cancion()) {
 				contiene = true;
 				break;
 			}
@@ -113,5 +114,9 @@ public class Opciones_cancion extends VistaOpciones_cancion {
 	
 	public void anadir_cancion_historial() {
 		_iComun.anadir_cancion_historial(cancion.getId_Cancion(), GestorUsuarios.login_u);
+	}
+	
+	public void recagar_cancion() {
+		this.cancion = _iComun.recargar_cancion(cancion.getId_Cancion());
 	}
 }

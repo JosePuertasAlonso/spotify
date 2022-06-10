@@ -9,7 +9,7 @@ public class Lista_de_reproduccion extends Lista {
 	
 	public Lista_de_reproduccion(VerticalLayout cuerpo, HorizontalLayout minireproductor, basededatos.Lista lista) {
 		super(cuerpo, minireproductor, lista);
-		_canciones_de_lista = new Canciones_de_lista(lista);
+		_canciones_de_lista = new Canciones_de_lista(this.lista);
 		this.getvL_cancionesDeListaAlbumListaeliminar().as(VerticalLayout.class).add(_canciones_de_lista);
 		this.gethL_tituloAceptar().setVisible(false);
 		this.getButton_modificar().setVisible(false);

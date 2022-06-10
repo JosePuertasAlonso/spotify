@@ -43,4 +43,8 @@ public interface iComun {
 	public Artista recargar_artista(String aLogin);
 
 	public Usuario_registrado recargar_usuario(String login_u);
+	
+	public Cancion recargar_cancion(int id_cancion);
+	
+	public Lista recargar_lista(int id_lista);
 }

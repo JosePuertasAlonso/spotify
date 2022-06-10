@@ -15,7 +15,12 @@ public class Artista_ extends VistaArtista{
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
 		
-		this.getLabel_nombre().setText(artista.getNick());
+		if(artista.getNick().length() > 13) {
+			String labelTitulo = artista.getNick().substring(0, 12) + "...";
+			this.getLabel_nombre().setText(labelTitulo);
+		} else {
+			this.getLabel_nombre().setText(artista.getNick());
+		}
 		this.getImagen().setSrc(artista.getFoto());
 	}
 }

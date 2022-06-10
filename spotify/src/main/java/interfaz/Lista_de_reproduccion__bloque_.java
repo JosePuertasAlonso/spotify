@@ -19,7 +19,12 @@ public class Lista_de_reproduccion__bloque_ extends VistaLista_de_reproduccion_b
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
 		
-		this.getLabel_titulo().setText(lista.getNombre());
+		if(lista.getNombre().length() > 13) {
+			String labelTitulo = lista.getNombre().substring(0, 12) + "...";
+			this.getLabel_titulo().setText(labelTitulo);
+		} else {
+			this.getLabel_titulo().setText(lista.getNombre());
+		}
 		
 		this.getImagen().setSrc(lista.getImagen());
 		

@@ -50,7 +50,12 @@ public class Cancion_de_lista_a_eliminar extends VistaCancion_de_lista_a_elimina
 			@Override
 			public void onComponentEvent(ClickEvent<NativeButton> event) {
 				Eliminar_cancion_de_lista();
-				GestorUsuarios.usuario(false);
+				if(GestorUsuarios._u instanceof basededatos.Artista) {
+					GestorUsuarios.artista(false);
+				} else {
+					GestorUsuarios.usuario(false);
+				}
+				
 			}
 		});
 		

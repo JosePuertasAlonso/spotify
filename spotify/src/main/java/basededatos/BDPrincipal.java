@@ -631,4 +631,27 @@ public class BDPrincipal implements iCibernauta_no_registrado, iCibernauta_regis
 			e.printStackTrace();
 		}
 	}
+
+	@Override
+	public Cancion recargar_cancion(int id_cancion) {
+		Cancion result = null;
+		try {
+			result = _bd_can.recargar_cancion(id_cancion);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
+	}
+	
+	public Lista recargar_lista(int id_lista) {
+		Lista result = null;
+		try {
+			result = _bd_list.recargar_lista(id_lista);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
+	}
 }

@@ -23,7 +23,7 @@ public class Opciones_cancion__cancion_ extends Opciones_cancion {
 			
 			@Override
 			public void onComponentEvent(ClickEvent<NativeButton> event) {
-				_reproducir_cancion_cibernauta_registrado = new Reproducir_cancion_cibernauta_registrado(cuerpo, minireproductor);
+				_reproducir_cancion_cibernauta_registrado = new Reproducir_cancion_cibernauta_registrado(cuerpo, minireproductor, cancion);
 				popUp.close();
 				cuerpo.removeAll();
 				cuerpo.getStyle().set("max-height", "90%");

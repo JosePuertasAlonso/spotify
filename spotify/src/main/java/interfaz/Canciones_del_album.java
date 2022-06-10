@@ -4,6 +4,8 @@ import java.util.Vector;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import basededatos.BDPrincipal;
+import basededatos.iComun;
 import interfaz.Cancion__lista_;
 import vistas.VistaCanciones_del_album;
 
@@ -11,9 +13,20 @@ public class Canciones_del_album extends VistaCanciones_del_album{
 	public Ver_album _ver_album;
 	public Vector<Cancion__lista_> _list_Cancion__lista_ = new Vector<Cancion__lista_>();
 	
-	public Canciones_del_album() {
+	private basededatos.Album album;
+	private iComun _iComun = new BDPrincipal();
+	
+	public Canciones_del_album(basededatos.Album album) {
 		
-		cargarCancionesAlbum();
+		this.album = album;
+		recargar_album();
+		
+		basededatos.Cancion[] cancionesAlbum = this.album.contiene.toArray();
+		Cancion__lista_ c;
+		for(int i = 0; i < cancionesAlbum.length; i++) {
+			c = new Cancion__lista_(cancionesAlbum[i]);
+			_list_Cancion__lista_.add(c);
+		}
 		
 		for(int i = 0; i < _list_Cancion__lista_.size(); i++) {
 			this.getvL_contenedorCancionesLista().as(VerticalLayout.class).add(_list_Cancion__lista_.get(i));
@@ -25,16 +38,8 @@ public class Canciones_del_album extends VistaCanciones_del_album{
 		
 	}
 	
-	public void cargarCancionesAlbum() {
-		
-//		Cancion__lista_ c;
-//		
-//		for(int i = 0; i < 6; i++) {
-//			c = new Cancion__lista_();
-//			c.getStyle().set("margin-top", "var(--lumo-space-m)");
-//			_list_Cancion__lista_.add(c);
-//		}
-		
+	public void recargar_album() {
+		this.album = (basededatos.Album)_iComun.recargar_lista(this.album.getId_Lista());
 	}
 	
 }

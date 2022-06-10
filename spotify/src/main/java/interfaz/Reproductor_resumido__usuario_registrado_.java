@@ -5,6 +5,8 @@ import com.vaadin.flow.component.ComponentEventListener;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import spotify.GestorUsuarios;
+
 public class Reproductor_resumido__usuario_registrado_ extends Reproductor_resumido {
 	public Comun _comun;
 	public Cancion__lista_ _cancion__lista_;
@@ -16,7 +18,7 @@ public class Reproductor_resumido__usuario_registrado_ extends Reproductor_resum
 		this.gethL_imagen().addClickListener(new ComponentEventListener() {
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
-				_reproducir_cancion_cibernauta_registrado = new Reproducir_cancion_cibernauta_registrado(cuerpo, minireproductor);
+				_reproducir_cancion_cibernauta_registrado = new Reproducir_cancion_cibernauta_registrado(cuerpo, minireproductor, GestorUsuarios._cancionReproduciendose);
 				cuerpo.removeAll();
 				cuerpo.getStyle().set("max-height", "90%");
 				minireproductor.setVisible(false);

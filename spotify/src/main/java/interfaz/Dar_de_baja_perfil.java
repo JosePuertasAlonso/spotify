@@ -7,6 +7,9 @@ import com.vaadin.flow.component.html.NativeButton;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import basededatos.BDPrincipal;
+import basededatos.iComun;
+import spotify.GestorUsuarios;
 import vistas.VistaDar_de_baja_perfil;
 
 public class Dar_de_baja_perfil extends VistaDar_de_baja_perfil{
@@ -16,6 +19,8 @@ public class Dar_de_baja_perfil extends VistaDar_de_baja_perfil{
 //	private Label _desea_ContinuarL;
 //	private Label _cancelarL;
 	public Ver_perfil _ver_perfil;
+	
+	private iComun _iComun = new BDPrincipal();
 	
 	public Dar_de_baja_perfil(VerticalLayout cuerpo, Dialog popUp) {
 		this.getStyle().set("margin", "0px");
@@ -31,9 +36,19 @@ public class Dar_de_baja_perfil extends VistaDar_de_baja_perfil{
 				
 			}
 		});
+		
+		this.getButton_siEliminar().addClickListener(new ComponentEventListener<ClickEvent<NativeButton>>() {
+			
+			@Override
+			public void onComponentEvent(ClickEvent<NativeButton> event) {
+				popUp.close();
+				Confirmar_dar_de_baja_perfil();
+				GestorUsuarios.cibernauta(true);
+			}
+		});
 	}
 
 	public void Confirmar_dar_de_baja_perfil() {
-		throw new UnsupportedOperationException();
+		_iComun.eliminar_perfil(GestorUsuarios.login_u);
 	}
 }

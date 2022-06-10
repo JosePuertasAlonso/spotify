@@ -3,6 +3,7 @@ package interfaz;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import spotify.GestorUsuarios;
 import vistas.VistaCibernauta_no_registrado;
 
 //import basededatos.iCibernauta_no_registrado;

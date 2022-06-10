@@ -35,7 +35,14 @@ public class Cancion extends VistaCancion{
 		this.getStyle().set("max-width", "15.5%");
 		//this.getStyle().set("max-width", "30%");
 		//Titulo cancion
-		this.getLabel_titulo().setText(cancion.getTitulo());
+		//this.getLabel_titulo().setText(cancion.getTitulo());
+		if(cancion.getTitulo().length() > 13) {
+			String labelTitulo = cancion.getTitulo().substring(0, 12) + "...";
+			this.getLabel_titulo().setText(labelTitulo);
+		} else {
+			this.getLabel_titulo().setText(cancion.getTitulo());
+		}
+		
 		//Artistas cancion
 		basededatos.Artista[] artistasCancion = cancion.realizada_por.toArray();
 		String cadenaArtistas = "";
@@ -46,7 +53,12 @@ public class Cancion extends VistaCancion{
 				cadenaArtistas += artistasCancion[j].getNick() + ", "; 
 			}
 		}
-		this.getLabel_artista().setText(cadenaArtistas);
+		if(cadenaArtistas.length() > 13) {
+			String labelArtistas = cadenaArtistas.substring(0, 12) + "...";
+			this.getLabel_artista().setText(labelArtistas);
+		} else {
+			this.getLabel_artista().setText(cadenaArtistas);
+		}
 		
 		//Foto cancion
 		//border-radius: 0.7rem; max-height: 80%; max-width: 100%;

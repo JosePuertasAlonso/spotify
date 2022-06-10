@@ -9,9 +9,9 @@ public class Ver_album extends Lista {
 	public Album__bloques_ _album__bloques_;
 	public Canciones_del_album _canciones_del_album;
 	
-	public Ver_album(VerticalLayout cuerpo, HorizontalLayout minireproductor, basededatos.Album album) {
-		super(cuerpo, minireproductor, album);
-		_canciones_del_album = new Canciones_del_album();
+	public Ver_album(VerticalLayout cuerpo, HorizontalLayout minireproductor, basededatos.Album alb) {
+		super(cuerpo, minireproductor, alb);
+		_canciones_del_album = new Canciones_del_album(alb);
 		this.getvL_cancionesDeListaAlbumListaeliminar().as(VerticalLayout.class).add(_canciones_del_album);
 		this.gethL_tituloAceptar().setVisible(false);
 		this.getButton_modificar().setVisible(false);
@@ -20,5 +20,17 @@ public class Ver_album extends Lista {
 		this.getLabel_fechaPublicacion().setVisible(false);
 		this.getButton_anadirCancion().setVisible(false);
 		this.getButton_compartir().setVisible(false);
+		
+		//Artistas cancion
+		basededatos.Artista[] artistasCancion = ((basededatos.Album) this.lista).es_creado_por.toArray();
+		String cadenaArtistas = "";
+		for(int j = 0; j < artistasCancion.length; j++) {
+			if(j == artistasCancion.length - 1) {
+				cadenaArtistas += artistasCancion[j].getNick();
+			} else {
+				cadenaArtistas += artistasCancion[j].getNick() + ", "; 
+			}
+		}
+		this.getLabel_creador().setText(cadenaArtistas);
 	}
 }

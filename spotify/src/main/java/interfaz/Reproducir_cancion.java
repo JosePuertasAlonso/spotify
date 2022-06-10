@@ -44,7 +44,7 @@ public class Reproducir_cancion extends VistaReproducir_cancion{
 	public Ver_creditos_cancion _ver_creditos_cancion;
 	public AudioPlayer _audioPlayer;
 	
-	public Reproducir_cancion(VerticalLayout cuerpo, HorizontalLayout minireproductor) {
+	public Reproducir_cancion(VerticalLayout cuerpo, HorizontalLayout minireproductor, basededatos.Cancion cancion) {
 		this.getStyle().set("margin", "0px");
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
@@ -52,10 +52,10 @@ public class Reproducir_cancion extends VistaReproducir_cancion{
 		this._audioPlayer = GestorUsuarios._audioPlayer;
 		this.gethL_reproductor().add(_audioPlayer);
 		this.getButton_opciones().setVisible(false);
-		this.getLabel_titulo().setText(GestorUsuarios._cancionReproduciendose.getTitulo());
+		this.getLabel_titulo().setText(cancion.getTitulo());
 		this.getLabel_artista().setText(GestorUsuarios.artistasCancion);
 		
-		Imagen img = new Imagen(GestorUsuarios._cancionReproduciendose.getImagen());
+		Imagen img = new Imagen(cancion.getImagen());
 		img.setMaxWidth("100%"); img.setMaxHeight("100%"); img.setHeight("100%");
 		this.gethL_imagen().add(img);
 		
@@ -68,7 +68,7 @@ public class Reproducir_cancion extends VistaReproducir_cancion{
 				popUp.getElement().getStyle().set("widht", "100%");
 				popUp.getElement().getStyle().set("border", "none");
 				
-				_ver_creditos_cancion = new Ver_creditos_cancion(cuerpo, popUp);
+				_ver_creditos_cancion = new Ver_creditos_cancion(cuerpo, popUp, cancion);
 				
 				popUp.add(_ver_creditos_cancion);
 				popUp.open();

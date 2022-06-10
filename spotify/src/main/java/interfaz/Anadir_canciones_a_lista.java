@@ -34,7 +34,11 @@ public class Anadir_canciones_a_lista extends Buscar_canciones_a_anadir {
 			
 			@Override
 			public void onComponentEvent(ClickEvent<NativeButton> event) {
-				GestorUsuarios.usuario(false);
+				if(GestorUsuarios._u instanceof basededatos.Artista) {
+					GestorUsuarios.artista(false);
+				} else {
+					GestorUsuarios.usuario(false);
+				}
 			}
 		});
 	}

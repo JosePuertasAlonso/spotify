@@ -125,6 +125,7 @@ public class BD_Usuario_Registrado {
 			if(usuario instanceof basededatos.Artista) {
 				Anuncio[] AnunciosDelArtista = ((basededatos.Artista) usuario).anuncia.toArray();
 				for(Anuncio a : AnunciosDelArtista) {
+					((basededatos.Artista) usuario).anuncia.remove(a);
 					AnuncioDAO.delete(a);
 				}
 				
@@ -187,16 +188,32 @@ public class BD_Usuario_Registrado {
 				}
 			}
 			
-			Lista[] listasDelUsuario = usuario.gestiona.toArray();
-			for(Lista l : listasDelUsuario) {
+			Usuario_registrado[] usuariosSeguidos = usuario.sigue.toArray();
+			for(Usuario_registrado u : usuariosSeguidos) {
+				u.es_seguido_por.remove(usuario);
+				Usuario_registradoDAO.save(u);
+			}
+			
+			Usuario_registrado[] usuariosSeguidores = usuario.es_seguido_por.toArray();
+			for(Usuario_registrado u : usuariosSeguidores) {
+				u.sigue.remove(usuario);
+				Usuario_registradoDAO.save(u);
+			}
+			
+			Lista_de_reproduccion[] listasDelUsuario = usuario.gestiona.toArray();
+			for(Lista_de_reproduccion l : listasDelUsuario) {
+				usuario.gestiona.remove(l);
 				ListaDAO.delete(l);
 			}
 			
-			Lista[] listasGuardadas = usuario.guarda.toArray();
-			for(Lista l : listasGuardadas) {
+			Lista_de_reproduccion[] listasGuardadas = usuario.guarda.toArray();
+			for(Lista_de_reproduccion l : listasGuardadas) {
+				usuario.guarda.remove(l);
 				ListaDAO.delete(l);
 			}
-			
+			if(usuario instanceof basededatos.Artista) {
+				ArtistaDAO.delete((basededatos.Artista)usuario);
+			}
 			Usuario_registradoDAO.delete(usuario);
 			t.commit();
 		} catch (Exception e) {
